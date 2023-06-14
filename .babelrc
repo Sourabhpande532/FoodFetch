@@ -1,0 +1,4 @@
+{
+    // "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+}
+/*it remove the console.log just read documentation above one so should we remove error in the production or NOt ?? No. it's all of to us.*/
