@@ -114,4 +114,58 @@ what is Defference between REACT & JSX🤔🧐?;
    React mean that you do 
 
 -----------------------------------@👨‍💻CODE
+
+
+-------------)NEW)-------------------
+-------------)HEADING)---------------
+
+@TITLE: WHAT IS REACT FRAGMENTS?
+@ABOUT: All about React COMPONENT,Header COMPONENT  
+@LOCATION: App.js
+
+Does JSX🤔,Typescript,Es6 mandatory in react 🤔??
+React it is a library it already gives you a lot more thing,it doesn't force you to inject any other peace of code.it doesn't ristict you do to extra thing.
+
+Let's beggin with Header portion know ""AppLayout"".
+@➡️FOLLOWBELOW_STRUCTURE@ via building this App.
+{/* 
+@🤔What We Discuss on it As we discussed in Diagram those thing🤔@
+  HEADER
+    -LOGO
+    -Nav Items(Right Side)
+    -Cart 
+  BODY
+    -Search braces
+    -RestrauranCart
+      -Image
+      -Nameaste
+      -Rating
+      -Cusines
+  FOOTER
+    - links
+    - Copyright      
+*}
+
+What is React fragment ?
+it just a COMPONENT which is exported by above React.
+-🎗️JSX - has only expect one parent & is know/consider for empty tag(<></>) additionaly root element as well!
+-🎗️Protect you from ugly code or repeaded code see and inspect sometimes.
+-🎗️Don't use div it consume extra space if inspect & check Element! if you want to use inline CSS then use
+-🎗️How do you give style in React style expect one "Object" itself to colorize so turn it <div style={{color: "red"}}> like that inside "JSX🤔"
+By the term "Object" Means it's nothing but an JAVASCRIPT;
+
+@👨‍💻CODE....................................
+const styleObj = {
+backgroundColor: "red"}
+const JSX = (
+<div style={styleObj}><h1>JSX</h1></div>);
+root.render(JSX)
+-----------------------------------@👨‍💻CODE
+
+
+
+
+
+
+
 */

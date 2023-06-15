@@ -2948,97 +2948,122 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 // JSX
-const Heading = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "titlee",
-        children: "Nameaste React, Functional COMPONENT E.g"
-    }, "namastehead", false, {
-        fileName: "src/app.js",
-        lineNumber: 5,
-        columnNumber: 23
-    }, undefined);
-_c = Heading;
-// JSX
-const title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Nameaste React title, Functional COMPONENT E.g"
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+        href: "/",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+            className: "logo",
+            alt: "logo",
+            src: "https://pbs.twimg.com/profile_images/1472170906625716233/wyw6zyp4_400x400.jpg"
+        }, void 0, false, {
+            fileName: "src/app.js",
+            lineNumber: 6,
+            columnNumber: 5
+        }, undefined)
     }, void 0, false, {
         fileName: "src/app.js",
-        lineNumber: 9,
+        lineNumber: 5,
         columnNumber: 21
     }, undefined);
-// NORMAl CODE
-const normalVar = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-    id: "title",
-    children: "This is Normal Variable Example"
-}, "normalkey", false, {
-    fileName: "src/app.js",
-    lineNumber: 14,
-    columnNumber: 19
-}, undefined);
-// JS CODE
-const x = 10;
-const y = 11;
-const z = x + y;
+_c = Title;
 // REACT COMPONENT
 const HeaderComponent = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Heading, {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 24,
-                columnNumber: 8
-            }, undefined),
-            Heading(),
-            normalVar,
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "javascript JSX Code of addition",
-                    console.log(z),
-                    " ",
-                    3
-                ]
-            }, void 0, true, {
-                fileName: "src/app.js",
-                lineNumber: 27,
-                columnNumber: 8
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: "Manually inject HTML code E.g "
-            }, void 0, false, {
-                fileName: "src/app.js",
-                lineNumber: 28,
-                columnNumber: 8
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Hello,This is Saurabh"
-            }, void 0, false, {
-                fileName: "src/app.js",
-                lineNumber: 29,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Hello,This is Saurabh 2"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "src/app.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About"
+                        }, void 0, false, {
+                            fileName: "src/app.js",
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact"
+                        }, void 0, false, {
+                            fileName: "src/app.js",
+                            lineNumber: 17,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "src/app.js",
+                            lineNumber: 18,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/app.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined)
             }, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 30,
+                lineNumber: 13,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app.js",
-        lineNumber: 23,
+        lineNumber: 11,
         columnNumber: 10
     }, undefined);
 };
 _c1 = HeaderComponent;
-const roots = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeaderComponent, {}, void 0, false, {
+const AppLayout = ()=>{
+    return {};
+};
+_c2 = AppLayout;
+const styleObj = {
+    backgroundColor: "red"
+};
+// NORMAl JSX CODE
+const JSX = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    style: styleObj,
+    children: [
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "JSX"
+        }, void 0, false, {
+            fileName: "src/app.js",
+            lineNumber: 32,
+            columnNumber: 5
+        }, undefined),
+        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+            children: "JSX small"
+        }, void 0, false, {
+            fileName: "src/app.js",
+            lineNumber: 33,
+            columnNumber: 5
+        }, undefined)
+    ]
+}, void 0, true, {
     fileName: "src/app.js",
-    lineNumber: 34,
-    columnNumber: 14
-}, undefined));
-var _c, _c1;
-$RefreshReg$(_c, "Heading");
+    lineNumber: 31,
+    columnNumber: 13
+}, undefined);
+const roots = (0, _clientDefault.default).createRoot(document.getElementById("root"));
+// roots.render(<HeaderComponent />);
+roots.render(JSX);
+var _c, _c1, _c2;
+$RefreshReg$(_c, "Title");
 $RefreshReg$(_c1, "HeaderComponent");
+$RefreshReg$(_c2, "AppLayout");
 
   $parcel$ReactRefreshHelpers$f79a.postlude(module);
 } finally {
