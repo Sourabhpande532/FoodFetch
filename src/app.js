@@ -12,7 +12,7 @@ const Title = () => (
 );
 
 // REACT COMPONENT
-const HeaderComponent = () => {
+const Header = () => {
   return (
     <div className='header'>
       <Title />
@@ -28,23 +28,59 @@ const HeaderComponent = () => {
   );
 };
 
-const AppLayout = () => {
-  return {};
+const Body = () => {
+  return (
+    <div className="restaurant-list">
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+      <RestrauntCart />
+    </div>
+  );
+};
+const Footer = () => {
+  return <h3>Footer</h3>;
 };
 
-const styleObj = {
-  backgroundColor: "red"
-}
+const burgarKing = {
+  name: "Burgar King",
+  image:
+    "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
+  cusines: ["Burgar", "American"],
+  rating: "4.5",
+};
 
-// NORMAl JSX CODE
-const JSX = (
-  <div style={styleObj}>
-    <h1>JSX</h1>
-    <h2>JSX small</h2>
-  </div>
-);
+const RestrauntCart = () => {
+  return (
+    <div className='card'>
+      <img alt='logo' src={burgarKing.image} />
+      <h2>{burgarKing.name}</h2>
+      <h4>{burgarKing.cusines.join(",")}</h4>
+      <h5>{burgarKing.rating}</h5>
+    </div>
+  );
+};
 
+
+
+const AppLayout = () => {
+  return (
+    <React.Fragment>
+      <Header />
+      <Body />
+      {Footer()}
+    </React.Fragment>
+  );
+};
 
 const roots = ReactDOM.createRoot(document.getElementById("root"));
 // roots.render(<HeaderComponent />);
-roots.render(JSX);
+roots.render(<AppLayout />);

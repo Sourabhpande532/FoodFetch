@@ -2966,7 +2966,7 @@ const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
     }, undefined);
 _c = Title;
 // REACT COMPONENT
-const HeaderComponent = ()=>{
+const Header = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
@@ -3025,45 +3025,175 @@ const HeaderComponent = ()=>{
         columnNumber: 10
     }, undefined);
 };
-_c1 = HeaderComponent;
+_c1 = Header;
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 25,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 30,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 33,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 34,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 35,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 36,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app.js",
+        lineNumber: 24,
+        columnNumber: 10
+    }, undefined);
+};
+_c2 = Body;
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+        children: "Footer"
+    }, void 0, false, {
+        fileName: "src/app.js",
+        lineNumber: 40,
+        columnNumber: 10
+    }, undefined);
+};
+_c3 = Footer;
+const burgarKing = {
+    name: "Burgar King",
+    image: "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
+    cusines: [
+        "Burgar",
+        "American"
+    ],
+    rating: "4.5"
+};
+const RestrauntCart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: burgarKing.image
+            }, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 50,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: burgarKing.name
+            }, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 51,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: burgarKing.cusines.join(",")
+            }, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 52,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                children: burgarKing.rating
+            }, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 53,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/app.js",
+        lineNumber: 49,
+        columnNumber: 10
+    }, undefined);
+};
+_c4 = RestrauntCart;
 const AppLayout = ()=>{
-    return {};
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 58,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "src/app.js",
+                lineNumber: 59,
+                columnNumber: 7
+            }, undefined),
+            Footer()
+        ]
+    }, void 0, true, {
+        fileName: "src/app.js",
+        lineNumber: 57,
+        columnNumber: 10
+    }, undefined);
 };
-_c2 = AppLayout;
-const styleObj = {
-    backgroundColor: "red"
-};
-// NORMAl JSX CODE
-const JSX = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-    style: styleObj,
-    children: [
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "JSX"
-        }, void 0, false, {
-            fileName: "src/app.js",
-            lineNumber: 32,
-            columnNumber: 5
-        }, undefined),
-        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-            children: "JSX small"
-        }, void 0, false, {
-            fileName: "src/app.js",
-            lineNumber: 33,
-            columnNumber: 5
-        }, undefined)
-    ]
-}, void 0, true, {
-    fileName: "src/app.js",
-    lineNumber: 31,
-    columnNumber: 13
-}, undefined);
+_c5 = AppLayout;
 const roots = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 // roots.render(<HeaderComponent />);
-roots.render(JSX);
-var _c, _c1, _c2;
+roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
+    fileName: "src/app.js",
+    lineNumber: 65,
+    columnNumber: 14
+}, undefined));
+var _c, _c1, _c2, _c3, _c4, _c5;
 $RefreshReg$(_c, "Title");
-$RefreshReg$(_c1, "HeaderComponent");
-$RefreshReg$(_c2, "AppLayout");
+$RefreshReg$(_c1, "Header");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Footer");
+$RefreshReg$(_c4, "RestrauntCart");
+$RefreshReg$(_c5, "AppLayout");
 
   $parcel$ReactRefreshHelpers$f79a.postlude(module);
 } finally {

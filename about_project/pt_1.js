@@ -157,10 +157,49 @@ By the term "Object" Means it's nothing but an JAVASCRIPT;
 @👨‍💻CODE....................................
 const styleObj = {
 backgroundColor: "red"}
+ NORMAl JSX CODE
 const JSX = (
 <div style={styleObj}><h1>JSX</h1></div>);
 root.render(JSX)
 -----------------------------------@👨‍💻CODE
+
+
+-------------)NEW)-------------------
+-------------)HEADING)---------------
+
+@TITLE: CONFIG DRIVEN UI?
+@ABOUT: CARD & COMPONENT  
+@LOCATION:
+
+@ABOUT:CONFIG DRIVEN UI
+
+ @OVERVIEW@
+ in the real world, the data is not coming like this it atually in Array of Object does make sence. e.g const list = [{},{},{}]
+ if you visit any website & inspect & surfing on preview of Network Tab you'll find Array of Data 
+ & additionaly you would get defferent name with defferent type e.g 
+ -🔺cardType:"carousel"
+ -🔺cardType: "seeAllRestaurantslist"
+ Why 🤔🤨 this is defferent type ??
+
+ @OVERVIEW@
+ Lets Suppose i've to designed whole page i want to build this carousel,i want to build this restaurant card library as well let each and every city having some swiggy offer accept one pune city it doe's not have any offer for pune city then What🤔?
+ so our browser don't show any offer in "carousel list" it look like normal website it'll deleted automatically. 
+
+ Q )- But we've to make our UI Dyanamics Then How 🤔?
+ This type of UI is know as 😍"CONFIG DRIVEN UI" which is combo of carousel & seeAllRestaurantslist....GOOD PRACTIC FOWLLOW INDUSTROY PREFFERENCE!!
+
+ @BIG_COMPANAY_USE_SOMETHING_KNOW_AS: 😍"CONFIG DRIVEN UI" 
+
+ @KEEP_NOTE :All this UI IS DRIVEN CONFIG which is send via backend
+ @CONCLUSSION@: when you build real world application OR large scale -Application should we want defferent defferent website for defferent city like for nagpur defferent,pune defferent: obivious NO. so for we controll our fronted via "CONFIG DRIVEN UI"
+
+ Q )- Who is DRIVEN this CONFIG 🤔??
+ obivious Backend, & the data which is coming for API.
+
+thus, So in this one we'r Build a website in a such way it'll be build via CONFIG base on inforamtion it'will show data like so backend controll what type UI/OFFER in kolkata,what look in delhi base on city we Do that. & everything is done by this 😍"CONFIG DRIVEN UI"
+
+🐪----@interviewPerspective@----🐪
+If you tell to you'r interviewer I'm Building this API, A'm Desingning this data via using ""CONFIG DRIVEN UI"" it will be + point for you
 
 
 
