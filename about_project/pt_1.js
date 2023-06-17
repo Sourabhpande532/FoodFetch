@@ -196,13 +196,70 @@ root.render(JSX)
  Q )- Who is DRIVEN this CONFIG 🤔??
  obivious Backend, & the data which is coming for API.
 
-thus, So in this one we'r Build a website in a such way it'll be build via CONFIG base on inforamtion it'will show data like so backend controll what type UI/OFFER in kolkata,what look in delhi base on city we Do that. & everything is done by this 😍"CONFIG DRIVEN UI"
+thus, So in this one we'r Build a website in a such way it'll be build via CONFIG base on inforamtion it'will show data like so backend controll what type UI/OFFER in kolkata,what look in delhi base on city we Do that. & everything is done by this 😍"CONFIG DRIVEN UI" @NOTE: everything is run on backend base on city it take action. All this process Depend on "CONFIG" Array.
 
 🐪----@interviewPerspective@----🐪
 If you tell to you'r interviewer I'm Building this API, A'm Desingning this data via using ""CONFIG DRIVEN UI"" it will be + point for you
 
 
+---------------
 
+-------------)NEW)-------------------
+-------------)HEADING)---------------
+
+@TITLE: UNDERSTANDING THE ARCHITECTUERS CONFIG DRIVEN UI?
+@ABOUT: CARD & COMPONENT  
+@LOCATION:
+
+@OVERVIEW
+Building Via CONFIG DRIVEN UI(Coming from Backend)
+
+-🎗️Let Suppose i want to designed my website like having one carousel(has list of carousel,has own cards & each card have some list of offers{},{}),after carousel i can have my list of restaurant restrauntList(1st Need type restraunt then i want list of burger items) then i want some offer 3 section How would we do ?
+-🎗️Let Suppose delhi is having this 1st offer of carousel 50% & so in kolkata having Another offer only backend will change this offer & website will accordinly. it will show defferent offer. 
+-🎗️& let Suppose in baglore there is no offer it won't show backend it just send empty list of cards
+so this peace of archetechers is know as 🔺""CONFIG DRIVEN UI""
+config = [
+  {
+    type: "carousel",
+    cards: [
+      {offerName: "50% off",},
+      {offerName: "No delivery charges",},],
+  },
+  List of RestrauntCart
+  {
+    type: "restraunt",
+    cards: [
+      {
+        name: "Burgar King",
+        image:
+          "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
+        cusines: ["Burgar", "American"],
+        rating: "4.5",
+      },{
+        name: "KFC",
+        image:
+          "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
+        cusines: ["Burgar", "American"],
+        rating: "4.4",
+      },],},];
+   
+      @😗KEEP_NOTE
+      While fetching some data from cloudnary use optional chaining(?.) something like that if data doesn't exit in API 
+      e.g {restaurant[0].data?.name}
+
+      What is PROPS 🤔🤨- Properties
+      Passing some Data into COMPONENT is know as props? this is the way of Passing data inside COMPONENT know as props. Lets Supposeif I've to pass some data from parent COMPONENT to child COMPONENT i need something know as "Props" this is the way
+
+      E.g <RestrauntCard restraunt={restrauntList[0]}
+
+      So How do we pass data inside function(Functional COMPONENT) so how do we'll get data inside function ??
+      :-> OF Course in Parameters, At the end of the day Props is just Normal function in React which is work under Arguments & Parameters. OR you can name it function call;
+      -Props it just an Object; 
+      -we can pass multiple props E.g hello: "World"
+      -you can use this Props as a variable while Receive as an Parameters.
+      -some cool developer they do Distructure on the Fly while reciving Data in Parameters like ({restaurant})
+
+      😗KEEP_NOTE:PROPS WORK under the instuction of Arguments & Parameters The data we get in the form of Arguments(pass Info) & Parameters(Receive Info) This E.g is an Arguments we need pass in Parameters.
 
 
 

@@ -3108,7 +3108,7 @@ const Footer = ()=>{
     }, undefined);
 };
 _c3 = Footer;
-const burgarKing = {
+const restrauntList = {
     name: "Burgar King",
     image: "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
     cusines: [
@@ -3123,28 +3123,28 @@ const RestrauntCart = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 alt: "logo",
-                src: burgarKing.image
+                src: restrauntList.image
             }, void 0, false, {
                 fileName: "src/app.js",
                 lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: burgarKing.name
+                children: restrauntList.name
             }, void 0, false, {
                 fileName: "src/app.js",
                 lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: burgarKing.cusines.join(",")
+                children: restrauntList.cusines.join(",")
             }, void 0, false, {
                 fileName: "src/app.js",
                 lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                children: burgarKing.rating
+                children: restrauntList.rating
             }, void 0, false, {
                 fileName: "src/app.js",
                 lineNumber: 53,

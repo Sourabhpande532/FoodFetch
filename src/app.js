@@ -30,15 +30,17 @@ const Header = () => {
 
 const Body = () => {
   return (
-    <div className="restaurant-list">
+    <div className='restaurant-list'>
       <RestrauntCart />
       <RestrauntCart />
       <RestrauntCart />
       <RestrauntCart />
+
       <RestrauntCart />
       <RestrauntCart />
       <RestrauntCart />
       <RestrauntCart />
+      
       <RestrauntCart />
       <RestrauntCart />
       <RestrauntCart />
@@ -50,7 +52,8 @@ const Footer = () => {
   return <h3>Footer</h3>;
 };
 
-const burgarKing = {
+
+const restrauntList = {
   name: "Burgar King",
   image:
     "https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350?im=FaceCrop,algorithm=dnn,width=1200,height=886",
@@ -61,15 +64,13 @@ const burgarKing = {
 const RestrauntCart = () => {
   return (
     <div className='card'>
-      <img alt='logo' src={burgarKing.image} />
-      <h2>{burgarKing.name}</h2>
-      <h4>{burgarKing.cusines.join(",")}</h4>
-      <h5>{burgarKing.rating}</h5>
+      <img alt='logo' src={restrauntList.image} />
+      <h2>{restrauntList.name}</h2>
+      <h4>{restrauntList.cusines.join(",")}</h4>
+      <h5>{restrauntList.rating}</h5>
     </div>
   );
 };
-
-
 
 const AppLayout = () => {
   return (
