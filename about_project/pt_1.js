@@ -248,16 +248,19 @@ config = [
       e.g {restaurant[0].data?.name}
 
       What is PROPS 🤔🤨- Properties
-      Passing some Data into COMPONENT is know as props? this is the way of Passing data inside COMPONENT know as props. Lets Supposeif I've to pass some data from parent COMPONENT to child COMPONENT i need something know as "Props" this is the way
+      -🎗️This is the way of pass inforamtion inside COMPONENT e.g 
+      "<RestrauntCart restaurant = {restrauntList[1]}/>"
+      -🎗️Passing some Data into COMPONENT is know as props? this is the way of Passing data inside COMPONENT know as props. Lets Supposeif I've to pass some data from parent COMPONENT to child COMPONENT i need something know as "Props" this is the way
 
-      E.g <RestrauntCard restraunt={restrauntList[0]}
+      🔺E.g <RestrauntCard restraunt={restrauntList[0]}
+      -🎗️if you console.log(props) at reciving end mean Parameters term you'll get function call like object in easy term it just function call
 
-      So How do we pass data inside function(Functional COMPONENT) so how do we'll get data inside function ??
+      -🎗️So How do we pass data inside function(Functional COMPONENT) so how do we'll get data inside function ??
       :-> OF Course in Parameters, At the end of the day Props is just Normal function in React which is work under Arguments & Parameters. OR you can name it function call;
-      -Props it just an Object; 
-      -we can pass multiple props E.g hello: "World"
-      -you can use this Props as a variable while Receive as an Parameters.
-      -some cool developer they do Distructure on the Fly while reciving Data in Parameters like ({restaurant})
+       -🎗️Props it just an Object; 
+       -🎗️we can pass multiple props E.g hello: "World"
+       -🎗️you can use this Props as a variable while Receive as an Parameters.
+       -🎗️some cool developer they do Distructure on the Fly while reciving Data in Parameters like ({restaurant})
 
       😗KEEP_NOTE:PROPS WORK under the instuction of Arguments & Parameters The data we get in the form of Arguments(pass Info) & Parameters(Receive Info) This E.g is an Arguments we need pass in Parameters.
 
