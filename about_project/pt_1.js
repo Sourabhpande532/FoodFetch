@@ -265,6 +265,17 @@ config = [
       😗KEEP_NOTE:PROPS WORK under the instuction of Arguments & Parameters The data we get in the form of Arguments(pass Info) & Parameters(Receive Info) This E.g is an Arguments we need pass in Parameters.
 
 
+-------------)NEW)-------------------
+-------------)HEADING)---------------
+
+@TITLE: 
+-@ALL ABOUT TRANSFORM CODE PROPS TO RENDER CONFIG DRIVEN UI
+-@HOW WE CAN PASS PROPS TAKE ADVANTAGE OF SPREAD OPERATOR & ALL STUFF.
+-@PROPS DRILING
+@ABOUT: PROPS,CONFIG DRIVEN UI,CARD RENDERING VIA API 
+
+@OVERVIEW
+TO MORE UNDERSTAND TAKE REFFERENCE OF transform.js file in this folder.
 
 
 */
