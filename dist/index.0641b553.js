@@ -4770,13 +4770,16 @@ const Body = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "restaurant-list",
         children: restrauntList.map((restaurant)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestrauntCart, {
-                ...restaurant.data.data
-            }, void 0, false, {
-                fileName: "src/app.js",
-                lineNumber: 1620,
-                columnNumber: 14
-            }, undefined);
+            return /*#__PURE__*/ (0, _react.createElement)(RestrauntCart, {
+                ...restaurant.data.data,
+                key: restaurant.data.data.id,
+                __source: {
+                    fileName: "src/app.js",
+                    lineNumber: 1620,
+                    columnNumber: 14
+                },
+                __self: undefined
+            });
         })
     }, void 0, false, {
         fileName: "src/app.js",

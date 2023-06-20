@@ -11,6 +11,7 @@
 //   return (
 //     <div className='restaurant-list'>
 //       <RestrauntCart restaurant={restrauntList[0]}/>
+//       <RestrauntCart restaurant={restrauntList[1]}/>
 // }
 
 // const RestrauntCart = (props) => {

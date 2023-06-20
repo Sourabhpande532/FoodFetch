@@ -275,7 +275,56 @@ config = [
 @ABOUT: PROPS,CONFIG DRIVEN UI,CARD RENDERING VIA API 
 
 @OVERVIEW
-TO MORE UNDERSTAND TAKE REFFERENCE OF transform.js file in this folder.
+TO MORE UNDERSTAND TAKE REFFERENCE OF 🗃️🗃️transform.js file in this folder.
 
 
+-------------)NEW)-------------------
+-------------)HEADING)---------------
+
+@TITLE: WHAT IS VIRTUAL DOM !!
+@ABOUT: 
+
+@OVERVIEW
+TO MORE UNDERSTAND TAKE REFFERENCE OF 🗃️🗃️transform.js file in this folder.
+
+if we've this above HTML Struture ...Consisder this is DOM in tree formate where all head,body,parent,siblings all stuff.....
+
+-🎗️VIRTUAL DOM is not consept just of React this virtual Dom it's Software engineer concept it just not limit for react it use in multiple places but react has something know as VIRTUAL Dom.
+-🎗️it just REPRESENTATION OF VIRTUAL DOM!! KEEP a reapresentation of DOM with us !! Is know as virtual dom(tree like REPRESENTATION)
+
+-So, Why do we need VIRTUAL Dom 🧐🤔??
+ -🎗️we need VIRTUAL Dom for something know as RECONSCILIATION IN REACT that we already discussed in PROPS if you remember !
+ -🎗️when react does RECONSCILIATION Why React is Fast ??
+  first🤔🧐 what is RECONSCILIATION?
+  -🎗️The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+  -🎗️it is an Algorithm that react use to "diff" one tree from other 
+  -🎗️it determined what needs to be change in UI or what does'nt change 
+  -🎗️@CONCLUDE:React uses algorithm "Diff" Algorithm to find out the defference Between your trees by the term trees mean (You'r Actual Dom & VIRTUAL Dom trees) it finds out what needs to be UPADATED that deff Algorithm & base on that it just UPADATED small portion of React.
+  -🎗️It will only re-render specific portion of you'r app which is found by ""Diff"" Algorithm!!
+  -🎗️It Does not re-render the Whole App it UPADATED small portion what you need to UPADATED base on that render!
+  -🎗️LETS You'r having NODE LIST(HTML Element LIST LIKE TREE) & want to UPADATED targeted COMPONENT 9 No. line Div it shoot that COMPONENT div first updated & render on our Webpage!! 😱Given the fact it not load the Whole page it just load targeted one!!
+  -🎗️TREEs is basically VIRTUAL REPRESENTATION of YOU'r DOM!!
+  -🎗️This Diff Algorithm react uses & it finds out the defference Between the tress this PROCESS is know as RECONSCILIATION;
+   
+  -🎗️Fact: whenever you'v multiple childrean with same attributes like div inside parent one that's where KEYS plays a vital Role Need to pass ""key"" & it suppose to be "Unique" on partucular attributes base on that it shoot!!
+  -🎗️All this proccess is gonna happednd via ""Diff"" Algorithm!!
+
+  -😱Given the fact DON't Need mention key's if you'r having defferent defferent Attributes like img,body,div,Ul key's only for same Attributes
+
+  @CONCLUDION:
+  🤔React Uses VIRTUAL DOM - It REPRESENTATION of ACTUAl DOM - thus Process uses know as RECONSCILIATION - Handle By Diff Algorithm - Diff find out what Needs to be UPADATED Ui What Not - to get rid of complex use "KEY"
+
+  REF: ✈️🔗 https://legacy.reactjs.org/docs/reconciliation.html
+
+   UPADATED INFO: react fiber !!
+  -🎗️it's an new RECONSCILIATION engine!
+  -🎗️it's responsible for "Diff"
+  -🎗️React Fiber is an internal engine change geared to make React faster and smarter. The Fiber reconciler, which became the default reconciler for React 16 and above, is a complete rewrite of React's reconciliation algorithm to solve some long-standing issues in React.
+  REF: ✈️🔗 https://github.com/acdlite/react-fiber-architecture
+
+
+  H.W: react why not use index as key ??
+  -🎗️You may wonder, why don't we just use indexes as keys when looping through an array. Although, many developers have done that in their code it is not necessarily ideal. React recommends that you do not use indexes as keys, since it could impact performance negatively and could lead to some unstable component behaviour.
+  REF: ✈️🔗 https://legacy.reactjs.org/docs/lists-and-keys.html
+  REF: ✈️🔗 https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
 */

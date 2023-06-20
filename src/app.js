@@ -1746,7 +1746,7 @@ const Body = () => {
   return (
     <div className='restaurant-list'>
       {restrauntList.map((restaurant) => {
-        return <RestrauntCart {...restaurant.data.data} />;
+        return <RestrauntCart {...restaurant.data.data} key={restaurant.data.data.id}/>;
       })}
     </div>
   );
