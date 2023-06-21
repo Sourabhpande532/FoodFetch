@@ -11,4 +11,6 @@ CONFIG DRIVEN UI
 Functional COMPONENT & PROPS
 -This is JAVASCRIPT function At the end of day 😱Given the Fact of PROPS work under the instuction of function Arguments(while calling end) & Parameters(receive end).
 
+REACONCILIATION USE DIFF Algorithm know the process know as Virtual Dom it finds out which portion needs to be updated UI
+
 */

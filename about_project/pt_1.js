@@ -278,7 +278,7 @@ config = [
 TO MORE UNDERSTAND TAKE REFFERENCE OF 🗃️🗃️transform.js file in this folder.
 
 
--------------)NEW)-------------------
+🥊-------------)NEW)-------------------🥊
 -------------)HEADING)---------------
 
 @TITLE: WHAT IS VIRTUAL DOM !!
@@ -289,8 +289,8 @@ TO MORE UNDERSTAND TAKE REFFERENCE OF 🗃️🗃️transform.js file in this fo
 
 if we've this above HTML Struture ...Consisder this is DOM in tree formate where all head,body,parent,siblings all stuff.....
 
--🎗️VIRTUAL DOM is not consept just of React this virtual Dom it's Software engineer concept it just not limit for react it use in multiple places but react has something know as VIRTUAL Dom.
--🎗️it just REPRESENTATION OF VIRTUAL DOM!! KEEP a reapresentation of DOM with us !! Is know as virtual dom(tree like REPRESENTATION)
+- 🎗️VIRTUAL DOM is not consept just of React this virtual Dom it's Software engineer concept it just not limit for react it use in multiple places but react has something know as VIRTUAL Dom.
+- 🎗️it just REPRESENTATION OF VIRTUAL DOM!! KEEP a reapresentation of DOM with us !! Is know as virtual dom(tree like REPRESENTATION)
 
 -So, Why do we need VIRTUAL Dom 🧐🤔??
  -🎗️we need VIRTUAL Dom for something know as RECONSCILIATION IN REACT that we already discussed in PROPS if you remember !
@@ -327,4 +327,26 @@ if we've this above HTML Struture ...Consisder this is DOM in tree formate where
   -🎗️You may wonder, why don't we just use indexes as keys when looping through an array. Although, many developers have done that in their code it is not necessarily ideal. React recommends that you do not use indexes as keys, since it could impact performance negatively and could lead to some unstable component behaviour.
   REF: ✈️🔗 https://legacy.reactjs.org/docs/lists-and-keys.html
   REF: ✈️🔗 https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
+
+
+
+  🥊-------------)NEW)-------------------🥊
+-------------)HEADING)---------------
+
+@TITLE: IMPORT & EXPORT !!
+@ABOUT: How react work behind the sence 
+
+@OVERVIEW
+Take a REFFERENCE of transform_2.js file to UNDERSTAND More 
+@LOCATION: 🗃️about_project/transform_2.js
+
+
+What should we put inside config or constant file 🤨🧐?
+
+-🎗️desired to put all hard coded file inside/into config file that's a good convection!
+-🎗️why Use because to get rid of copy & pest URL same stuff again & again!
+-🎗️is it another replecment of config.js yes it is some company use constant.js
+
+@ABOUT:REACT Folder structure: // 🥊https://legacy.reactjs.org/docs/faq-structure.html
+
 */
