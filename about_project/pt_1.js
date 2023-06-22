@@ -349,4 +349,88 @@ What should we put inside config or constant file 🤨🧐?
 
 @ABOUT:REACT Folder structure: // 🥊https://legacy.reactjs.org/docs/faq-structure.html
 
+
+
+@ABOUT:SEARCH FUNCTIONALITY
+@😱Given The fact search <input type="text"/> working in index.html file but not work in react Jsx while returning.
+
+  what if happednd if I write something inside value={} outside variable:
+      🧑‍💻-------------
+      code:
+      const searchTxt = "KFC"
+      return <input value={searchTxt}/>
+      ---------------🧑‍💻
+      but not able to edited why a'm not able to edited.
+      -🎗️because it's hard coded value that's why!
+      -🎗️and react uses one way data binding something why mean ?
+      -🎗️let'you've variable like above it's OK but but you need modify somehow this variable As a'm when i writing 
+      -🎗️you need to modify anyhow to make it work this is one way data binding. see above e.g 
+      -🎗️but still we won't be able to edited serch field not work yet.
+      -🎗️so we need to change this searchTxt somehow how will do that.
+      🧑‍💻-------------
+      Code: 
+      nChange={(e)=>onChangeInput} OR 
+      onChange{(e)=>console.log("xyz")}OR 
+      onChange{(e)=>console.log(e.target.value)} output:KFC+(search type value)
+       onChange{(e)=>{searchTxt=e.target.value}} output:NOT WORK! 
+      (POW)
+      ---------------🧑‍💻
+      -🎗️so it takes a function & it basically callback function which has e event need to pass mandatory event inside (e) one what is e mean "event" provided by react & e.taret.value avail in JS
+      🔺-So whenever input search field chage(while typing x word) this function will be called "onChange/onChangeInput" let's console.log("cdfd") inside callback;
+      -😱Given the fact react rerender its COMPONENT when input change
+      -Stil Not Edited So how it will work to make this work local variable just like "let searchTxt = "KFC" Not preffer in React whenever you'change in react;
+      ---
+      So How will you'invite chage in react You need something know as React Variable! what is React variable it's Like State Variable!
+
+
+@REACT STATE VARIABLE
+-🎗️somehow you need to maintain variable that is react kind of variable by the term it mean state kind of variable.
+-🎗️every COMPONENT in react maintain a State & need to inject all the variable into state & everytime you'v to create local variable you use state inside react.
+-🎗️What is state(e.g useState)🧐🤔?
+  🔺Let suppose you've to create like local variable E.g 
+  let searchTxt = "KFC" i'll use something know as useState inside react.
+  
+  what is Hooks 🧐🤔?
+  -🎗️Hooks is nothing but an JS Normal Function 
+  -🎗️EveryHooks has a specefic function for it.
+  -🎗️this function written by facebook Develope & provide FUNCTIONALITY.
+  -🎗️what is function of useState() Hooks;
+[to create state variable,local state variable]
+
+-🎗️somehow it control by react so how will it work 🤔?
+-🎗️somehow you need to maintain variable that is react kind of variable by the term it mean state kind of variable.
+-🎗️every COMPONENT in react maintain a State & need to inject all the variable into state & everytime you'v to create local variable you use state inside react.
+
+   🧑‍💻-------------
+      @ABOUT: To create Local State Variable 
+      Code: 
+      IN Normal Js: const searchText = "XYZ";
+      In React  Js: const [searchText] = useState("XYZ")
+      ---------------🧑‍💻
+
+-What is state(e.g useState)🧐🤔?
+ -🎗️Let suppose you've to create like local variable E.g 
+  let searchTxt = "KFC" i'll use something know as useState HOOK inside react whenever when desired to create local variable I preffer useState() inside react!
+ -🎗️it's coming from React 
+ 
+ 
+  what is Hooks 🤔🧐?
+  -🎗️Hooks is nothing but an JS Normal Function 
+  -🎗️Every Hooks has a specefic/individual function for it.
+  -🎗️this function written by facebook Develope & provide FUNCTIONALITY.
+  -🎗️GREAT & very IMP hooks is e.g useState() use for to create Local state variable in Js we use E.g const searchTxt = "xyz" for creting but in react Need to use useState to create Local variable!
+
+
+  -🎗️that it's why I create like this useState()//call function recall it.
+  -🎗️what is function of useState() Hooks & where it Come 🤔🧐?
+   -🎗️to create state variable,local state variable
+   -🎗️it came from react library & fb dev written use named export;
+
+   So How do I use this useState🤔🧐();
+   so this useState() function return an array the firstName of array is an "variableName" & it's "local state Variable" been discussed till now!
+   E.g const [firstName,setFirstName] = useState();
+
+
+
+
 */

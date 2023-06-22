@@ -2981,7 +2981,7 @@ roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, fal
     fileName: "src/app.js",
     lineNumber: 15,
     columnNumber: 14
-}, undefined)); // 🥊https://legacy.reactjs.org/docs/faq-structure.html
+}, undefined));
 var _c;
 $RefreshReg$(_c, "AppLayout");
 
@@ -27460,27 +27460,66 @@ var _react = require("react");
 var _contants = require("../contants");
 var _restaurantCart = require("./RestaurantCart");
 var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
+var _s = $RefreshSig$();
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: (0, _contants.restrauntList).map((restaurant)=>{
-            return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCartDefault.default), {
-                ...restaurant.data.data,
-                key: restaurant.data.data.id,
-                __source: {
-                    fileName: "src/component/Body.js",
-                    lineNumber: 6,
-                    columnNumber: 14
-                },
-                __self: undefined
-            });
-        })
-    }, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 4,
-        columnNumber: 10
-    }, undefined);
+    _s();
+    const searchTxt = "KFC";
+    const [searchText] = (0, _react.useState)("KFC");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "search",
+                        value: searchTxt,
+                        // onChange={()=>onChangeInput}
+                        // onChange={(e)=>console.log("dsdf")}
+                        onChange: (e)=>console.log(e.target.value)
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "search-btn",
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 13,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Body.js",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: (0, _contants.restrauntList).map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCartDefault.default), {
+                        ...restaurant.data.data,
+                        key: restaurant.data.data.id,
+                        __source: {
+                            fileName: "src/component/Body.js",
+                            lineNumber: 17,
+                            columnNumber: 16
+                        },
+                        __self: undefined
+                    });
+                })
+            }, void 0, false, {
+                fileName: "src/component/Body.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
 };
+_s(Body, "B/CQkuJwc6B/JVbShI8nh1OULrc=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -29235,14 +29274,7 @@ const restrauntList = [
         },
         parentWidget: false
     }
-]; /*
-What should we put inside config file ?
--desired to put all hard coded file inside/into config file that's a good convection!
--why Use because to get rid of copy & pest URL same stuff again & again!
--is it another replecment of config.js yes it is some company use constant.js 
--
-
-*/ 
+];
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aW5DX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
