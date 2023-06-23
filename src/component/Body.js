@@ -3,24 +3,32 @@ import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
 
 const Body = () => {
-  const searchTxt = "KFC"
-  const [searchText] = useState("KFC");
+  //IN JS - CONST SEARCHTEXT = "KFC"
+  //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
+  const [searchText, setSearchText] = useState("KFC");
+
+  //SEARCH FUNCTIONALITY
+  const [restaurants, setRestaurants] = useState(restrauntList);
   return (
     <>
       <div className='search-container'>
         <input
           type='text'
+          placeholder='Search'
           className='search-input'
-          placeholder='search'
-          value={searchTxt}
-          // onChange={()=>onChangeInput}
-          // onChange={(e)=>console.log("dsdf")}
-          onChange={(e)=>console.log(e.target.value)}
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
         />
-        <button className="search-btn">Search</button>
+        <button className='search-btn' onClick={() => {}}>
+          Search
+        </button>
+        {/*<h1>{searchClicked}</h1>
+           <h1>{searchText}</h1> */}
       </div>
       <div className='restaurant-list'>
-        {restrauntList.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <RestaurantCart
               {...restaurant.data.data}
@@ -34,3 +42,23 @@ const Body = () => {
 };
 
 export default Body;
+
+/**
+// const searchTxt = "KFC"
+
+// searchText is local state varaible 
+// const [searchText,setSearchText] = useState("KFC");
+
+//  <input
+//  type='text'
+//  className='search-input'
+//  placeholder='search'
+//  value={searchText}
+//  // onChange={()=>onChangeInput}
+//  // onChange={(e)=>console.log("dsdf")}
+//  // onChange={(e)=>console.log(e.target.value)}
+//  onChange={(e)=>{
+//    setSearchText(e.target.value)
+//  }}
+// />
+ */

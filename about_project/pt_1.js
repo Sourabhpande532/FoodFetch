@@ -431,6 +431,79 @@ What should we put inside config or constant file 🤨🧐?
    E.g const [firstName,setFirstName] = useState();
 
 
+   ------------------(NEW)------------------
+   @ABOUT:REACT useState Hook work!!
 
+
+        -When we did on onChange we were modifying my searchText => like e.target.value(input field) react tell that you cannot directly modify your searchText like that 
+          🎯e.g const[searchText]=useState("kfc")  
+         how I can modify this varaible ??
+         I can only modifying this varaible(searchText) by using "function" where from will I get from this useState. useState give this function & we call it as "setSet,setSearch"
+         🎯E.G const [searchText,setSearchText]=useState("KFC");   
+          How will get to know a'm writing something into {searchText} put it anywhere 
+         🎯E.g 
+         <button className="search-btn">Search-{searchText}</button>
+
+         @REAPEAT:How useState Hook Work!!
+         -🎗️So input field does not work in react for sake When you write input you need data binding to it!
+         -🎗️Why it is good thing varaible won't update in search field it's an extra advantage of react ok let me clear let suppose you use this same variable at other place it's nightmare for react Dev & it not also good for optimization so for sake of that reack first ask for in syntax function to update value like
+         🎯E.G const [searchText,setSearchText]=useState("KFC");
+          by taking advantage of this useState it return an array that's why we set value in array
+          if you'r confusing you can also Distructure like this.
+          🧑‍💻-------------
+          @ABOUT: 
+          Code: 
+          const searchValue = useState();
+          const [searchText,setSearchText]=searchValue;
+          ---------------🧑‍💻
+          -🎗️Need onChange to update state - Need callback function & need to pass "event" inside it this event for read whatsoever you type in searchText field inside setSearchText(...).
+          -🎗️This is how we update/modify;
+          -🎗️This is know as Two way binding because you can use this variable now whenever you want!!
+
+------------------(NEW)------------------
+@ABOUT: TURN ON TO OFF TOGGLE & INTERVIEW Process!!
+
+---INTERVIEW PERSPECTIVE---
+Why Do I need this State Variable 🧐??
+-So as for know React has one way binding;
+React dos's have idea from where this variable came Let suppose there is 1000 variables like one it all mess arround;
+-react can't keep tracking each variable;
+-to want some updation in UI You need use Hook useState hook Does make any sence i keeps on contunuous tracking That's Why!!
+
+@TURN FALSE TO TURE-WHILE ON ONCLICK@
+🧑‍💻-------------
+@ABOUT: @TURN FALSE TO TURE
+Code: 
+IN JS - CONST SEARCH_CLICKED = FALSE;
+IN REACT
+CODE:
+const [searchClicked,setSearchClicked] = useState("false");
+<button className='search-btn' onClick={()=>{
+setSearchClicked("true")}}>
+
+OR:Want in TOGGLE FORMATE 
+CODE:
+<button className='search-btn' onClick={()=>{
+searchClicked === "true"?setSearchClicked("false"):setSearchClicked("true")}}>
+------------------🧑‍💻
+
+So How do I my UI get UPADATED 🧐??
+because of RECONSCILIATION Diff Algorithm work behind the sence it update selected one this is react is false if you want "Toggle" on/off
+
+------------------🧑‍💻
+
+------------------(NEW)------------------
+@ABOUT: SEARCH
+
+
+@SEARCH_FUNCTIOALITY@
+-For Searching any element Need to filter Data on onClick method 
+-which Data restrauntList data Need to filter
+-for sake creete function filterData() after that next one 
+-update restrauntList with stats(@REM: Can't update Directly accept state & create variable with one)
+-to maintain the list of restrauntList Need to maintain local Variable
+-create Local State Variable with default value restaurant dummy data 
+        
+      
 
 */
