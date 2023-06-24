@@ -502,7 +502,49 @@ because of RECONSCILIATION Diff Algorithm work behind the sence it update select
 -for sake creete function filterData() after that next one 
 -update restrauntList with stats(@REM: Can't update Directly accept state & create variable with one)
 -to maintain the list of restrauntList Need to maintain local Variable
--create Local State Variable with default value restaurant dummy data 
+-create Local State Variable with default value restaurant dummy data
+
+/*-create Local State Variable with default value restaurant dummy data
+🧑‍💻-------------
+Syntax
+array.filter(function(currentValue, index, arr), thisValue)
+""use filter to filterout selective Data""
+-------------🧑‍💻
+
+-Now,Let's I pass filterData() function in restaurant.map here.. -
+-By the sence it mean Let suppose i updated this restaurant.map.. array with filterData() function will the list change yes ofCourse 🤣🤣
+-Let's first Modify this restaurant array 
+
+@@FOLLW_PROCESS@@
+"Inside onClick() Pass inforamtion this one "
+
+-🔺Need To filter Data 
+-🔺update the State 
+-🔺pass function filterData()
+@@FOLLW_PROCESS@@
+
+-create separate filterData()function outside of Functional component
+-Need to filter this restrauntList/restaurant using the input whatever am typing over there talked about search field.
+-How will get input(search field) using searchText(isDiD) State local variable
+-pass searchText & restaurant inside filterData(searchText,restaurant)
+  🔺searchText-responsible for this is text that you want to exactly search
+  🔺restaurant- & where you've to search this text obivious it from list of restaurant array(isDiD) in that wake use one
+  @CONCLUDE@: I will search my text inside my restaurant & give me the filterData.
+  -Let's suppose I get "data" here while calling this filterData(s..,r...) function here Let's first stored into variable named "data"
+  -will update this one into my restaurant So how do I do that by using setSearchText LOCAL STATE VARIABLE
+
+  🧑‍💻-------------
+  CODE:
+  const data = filterData(searchText,restaurants);
+  setRestaurants(data);
+  Inside call onClick()
+🧑‍💻-------------
+
+-pass above this option into Parameters while calling filterData() & filter out 
+IF INSIDE ARRAY IT INCLUDES SEARCHTEXT JUST FILTEROUT 
+👍👍👍
+
+H.W Once after search why search button not work because the state got updated!! because it loss the original state 
         
       
 

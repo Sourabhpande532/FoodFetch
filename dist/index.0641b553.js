@@ -27461,12 +27461,17 @@ var _contants = require("../contants");
 var _restaurantCart = require("./RestaurantCart");
 var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
 var _s = $RefreshSig$();
+// SEARCH FUNCTIONALITY with filtering process
+function filterData(searchText, restaurant) {
+    const filterDatas = restaurant.filter((restaurant)=>restaurant.data.data.name.includes(searchText));
+    return filterDatas;
+}
 const Body = ()=>{
     _s();
     //IN JS - CONST SEARCHTEXT = "KFC"
     //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
-    const [searchText, setSearchText] = (0, _react.useState)("KFC");
-    //SEARCH FUNCTIONALITY
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    // SEARCH FUNCTIONALITY
     const [restaurants, setRestaurants] = (0, _react.useState)((0, _contants.restrauntList));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -27483,22 +27488,25 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 13,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
-                        onClick: ()=>{},
+                        onClick: ()=>{
+                            const data = filterData(searchText, restaurants);
+                            setRestaurants(data);
+                        },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 16,
+                        lineNumber: 25,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 12,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27509,7 +27517,7 @@ const Body = ()=>{
                         key: restaurant.data.data.id,
                         __source: {
                             fileName: "src/component/Body.js",
-                            lineNumber: 24,
+                            lineNumber: 36,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27517,13 +27525,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 22,
+                lineNumber: 34,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "1IMksnKUoXZwPjahNfNV21XVDF4=");
+_s(Body, "EK1Ly75YYF8cvra9FwGYPdHtwgk=");
 _c = Body;
 exports.default = Body; /**
 // const searchTxt = "KFC"
