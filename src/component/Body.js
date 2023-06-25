@@ -15,6 +15,7 @@ const Body = () => {
   //IN JS - CONST SEARCHTEXT = "KFC"
   //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
   const [searchText, setSearchText] = useState("");
+  // console.log("Render"); EVERYTIME IT CALLED
 
   // SEARCH FUNCTIONALITY
   const [restaurants, setRestaurants] = useState(restrauntList);

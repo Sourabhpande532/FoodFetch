@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Title = () => {
   return (
@@ -12,12 +12,11 @@ const Title = () => {
   );
 };
 
-
 //REACT COMPONENT
 const Header = () => {
   return (
     <div className='header'>
-      <Title/>
+      <Title />
       <div className='nav-items'>
         <ul>
           <li>Home</li>
@@ -31,5 +30,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
