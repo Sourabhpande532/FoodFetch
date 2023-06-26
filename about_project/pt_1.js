@@ -546,6 +546,24 @@ IF INSIDE ARRAY IT INCLUDES SEARCHTEXT JUST FILTEROUT
 
 H.W Once after search why search button not work because the state got updated!! because it loss the original state 
         
-      
+@SEARCH_FUNCTIOALITY WHY NOT Work:
+@LOCATION:🗃️component/Body.js    
+Why my search FUNCTIONALITY Not working Properly Once after search if you do  
+  console.log(restaurants); you'll get multiple array on each press Key it triggers reconsiliation process it rernder on each key press 
+  -🎗️once after search you get only one restaurants Why? By the term it mean you'll get Updated Value beacuse it sync with UI card;
+  -🎗️Why it not re-render it got empty list []Why ?
+  -🎗️beacuse we modify(search) our restaurants with one data as we saw with Pizza & it is trying to find out "Chaska" inside one how would it be possible that's why you get []
+  -🎗️if you'r search data match pizza to izza it give same one data.
+  -🎗️LET's Explore that word our Application Doesn't KNOW which is know as MICROSERVECES 
+  -🎗️What is MICROSERVECES It is a combination of mulatiple services at one HUB use by one website like UI for deffernt,backend for deffernt,notification for deffernt with deffernt PORT..
+  -🎗️what is Fetch API??
+   it is available to us throught JS Engine window object it is prebuild it's an browser API having superPowers with us!
+  -🎗️Where I NEED This Api shoot on restrauntList over there
+  -@KEEP_NOTE:-> don't call this Fetch() api Near the searchText LOCAL STATE O.w it'll re-render again and again on every press KEY
+  -🎗️the best way to called it API is let me tell you feature Build As we our Body/Page Loads it used to call api & fill the DATA Make sence 👍 
+
+ H.W
+-https://youtu.be/tcLW5d0KAYE (cors)
+-OPTIONAL CHANING
 
 */

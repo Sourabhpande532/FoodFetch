@@ -19,6 +19,7 @@ const Body = () => {
 
   // SEARCH FUNCTIONALITY
   const [restaurants, setRestaurants] = useState(restrauntList);
+  console.log(restaurants);
   return (
     <>
       <div className='search-container'>
@@ -40,7 +41,7 @@ const Body = () => {
           Search
         </button>
         {/*<h1>{searchClicked}</h1>
-           <h1>{searchText}</h1> */}
+        <h1>{searchText}</h1> */}
       </div>
       <div className='restaurant-list'>
         {restaurants.map((restaurant) => {
