@@ -27474,7 +27474,8 @@ const Body = ()=>{
     // console.log("Render"); EVERYTIME IT CALLED
     // SEARCH FUNCTIONALITY
     const [restaurants, setRestaurants] = (0, _react.useState)((0, _contants.restrauntList));
-    console.log(restaurants);
+    console.log("Render");
+    // console.log(restaurants);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27490,7 +27491,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27502,13 +27503,13 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 27,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27519,7 +27520,7 @@ const Body = ()=>{
                         key: restaurant.data.data.id,
                         __source: {
                             fileName: "src/component/Body.js",
-                            lineNumber: 57,
+                            lineNumber: 39,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27527,7 +27528,7 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 55,
+                lineNumber: 37,
                 columnNumber: 7
             }, undefined)
         ]

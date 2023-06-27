@@ -19,7 +19,8 @@ const Body = () => {
 
   // SEARCH FUNCTIONALITY
   const [restaurants, setRestaurants] = useState(restrauntList);
-  console.log(restaurants);
+  console.log("Render");
+  // console.log(restaurants);
   return (
     <>
       <div className='search-container'>

@@ -554,13 +554,45 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
   -🎗️Why it not re-render it got empty list []Why ?
   -🎗️beacuse we modify(search) our restaurants with one data as we saw with Pizza & it is trying to find out "Chaska" inside one how would it be possible that's why you get []
   -🎗️if you'r search data match pizza to izza it give same one data.
-  -🎗️LET's Explore that word our Application Doesn't KNOW which is know as MICROSERVECES 
+
+  ---
+
+  -🎗️LET's Explore that world our Application Doesn't KNOW which is know as MICROSERVECES 
   -🎗️What is MICROSERVECES It is a combination of mulatiple services at one HUB use by one website like UI for deffernt,backend for deffernt,notification for deffernt with deffernt PORT..
+  To More INFO FOLLOW ONE 
+  @REF: 🔗✈️ about-project/micor-&-mono.js 
+
+  So How do I Make API Call IN JAVASCRIPT??
   -🎗️what is Fetch API??
-   it is available to us throught JS Engine window object it is prebuild it's an browser API having superPowers with us!
+   it is available to us throught JS Engine window object it is prebuild it's an browser API it's tree having superPowers with us!
   -🎗️Where I NEED This Api shoot on restrauntList over there
-  -@KEEP_NOTE:-> don't call this Fetch() api Near the searchText LOCAL STATE O.w it'll re-render again and again on every press KEY
-  -🎗️the best way to called it API is let me tell you feature Build As we our Body/Page Loads it used to call api & fill the DATA Make sence 👍 
+  -@KEEP_NOTE:-> don't call this Fetch() api Near the searchText LOCAL STATE O.w it'll re-render again and again on every press KEY take E.g of console.log("render"); Let's try it.
+  -🎗️the best way to called it API is let me tell you feature that I'm going to Build; 
+  As we our Body/Page COMPONENT Loads it used to call api & fill the DATA  Make sence 👍 
+  🔺E.g Load browser + call API = fill the DATA 
+  
+  Let's use discuss there is Two Way of loading & API Calling 
+  path: ✈️🔗assets\render-quick-via-useEffect.png
+  🔺-1ST_APPROACH: As soon as loads Page =>Then call API(300Ms) =>Then render the Page(500Ms) TT:800Ms
+  🔺-2ND_APPROACH: As soon as Page Loads disply/render(100Ms) info on Page => then call the API(300Ms) => then Upadate the UI(500Ms) 
+  
+  So The CONCLUSSION is that 2nd 2ND_APPROACH Alway Better for User Experience beacuse it has having superPowers with us that is RECONSCILIATION it Quickly Refresh & loads 
+  -It Quickly find & Update the DOM
+  -as compared 1ST_APPROACH it takes less time while first one takes too time to render.
+
+  🤔😗😵SO This All process Happend only & only Via ""useEffect"" Hook !! which copowered by react & give this fancy FUNCTIONALITY with us 
+
+   So What is useEffect HOOK ??
+      -It is JAVASCRIPT Normal Fuction at endly
+      -It expect One callback function & optionally 2nd_one dependecies array like after callback ,[];
+      -what is callback function This will not called immediately it will be called whenever useEffect want 
+      -it will call at specefic Time let's know which time ??
+      -WhenEver my body(x) COMPONENT keep on continuous re-render our code of this body(x) COMPONENT func called & after every render it will call the function whatever you pass inside useEffect know as "callback". 
+      -When will my component render 🤔?? inside useEffect(()=>console.log("render"));
+      Obivious On State Change isn't it So
+      -See Two Way to my COMPONENT Re-render either my STATE Change Or PROPS Changes
+      -After every re-render this useEffect Hook Call !! 
+
 
  H.W
 -https://youtu.be/tcLW5d0KAYE (cors)
