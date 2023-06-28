@@ -583,19 +583,56 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
   🤔😗😵SO This All process Happend only & only Via ""useEffect"" Hook !! which copowered by react & give this fancy FUNCTIONALITY with us 
 
    So What is useEffect HOOK ??
-      -It is JAVASCRIPT Normal Fuction at endly
-      -It expect One callback function & optionally 2nd_one dependecies array like after callback ,[];
-      -what is callback function This will not called immediately it will be called whenever useEffect want 
-      -it will call at specefic Time let's know which time ??
-      -WhenEver my body(x) COMPONENT keep on continuous re-render our code of this body(x) COMPONENT func called & after every render it will call the function whatever you pass inside useEffect know as "callback". 
-      -When will my component render 🤔?? inside useEffect(()=>console.log("render"));
+   -  @Befour Start take REFFERENCE of png of render-quick
+      -🎗️It is JAVASCRIPT Normal Fuction at endly
+      -🎗️It expect One callback function & optionally 2nd_one dependecies array like after callback ,[];
+      -🎗️what is callback function This will not called immediately it will be called whenever useEffect want 
+      -🎗️it will call at specefic Time let's know which time ??
+      -🎗️WhenEver my body(x) COMPONENT keep on continuous re-render our code of this body(x) COMPONENT func called & after every render it will call the function whatever you pass inside useEffect know as "callback". 
+      -🎗️When will my component render 🤔?? inside useEffect(()=>console.log("render"));
       Obivious On State Change isn't it So
-      -See Two Way to my COMPONENT Re-render either my STATE Change Or PROPS Changes
-      -After every re-render this useEffect Hook Call !! 
+      -🎗️See Two Way to my COMPONENT Re-render either my STATE Change Or PROPS Changes
+      -After every re-render each time this useEffect Hook Call !! 
+      -👎 not good way to call every render so if you don't want after every re-render it call pass it dependecies array inside useEffect hook after callback + [xyz]
+      -🎗️Let's suppose Want to call this useEffect only when searchText change - it simple call it inside dependecies array like [searchText] it call every time search or everytime you press key;
+      -🎗️it mean useEffect Depende on searchText
+      -🎗️if you don't pass anything inside dependecies array it one time render only or whenever it render next time
+      -🎗️Let's suppose Want to call this useEffect only when restrauntList(restaurants) change - it simple call it inside dependecies array like [restaurants] it call every time when updated. 😱@given the fact it will only work after search it mean restrauntList updated.
+      🧑‍💻---------------------
+      @CODE@: ==
+      useEffect(() => {console.log("useEffect call only when restaurants change");},[restaurants]);
+      console.log("Render");
+      ----------------------🧑‍💻
 
+      Q) will it call useEffect after or befour page load 🤔😵?? - of couse it render after, it will call only one time after initial render!!
+      :: try it via console.log("render") + call useEffect = in body component; or don't UNDERSTAND see above code ==;
+      🔺-Empty dependecies Array = once after render 
+      🔺-dep arry [searchText,restaurants] = once after initial render + everytime when search & restaurants got updated;
 
- H.W
--https://youtu.be/tcLW5d0KAYE (cors)
--OPTIONAL CHANING
+      🎯Now, want to make API Call As soon as Page Load & just one So where should i make API Call - Of Course in useEffect Make sence 👍
+      -🎗️because it load/render page first then call api 
+      -🎗️by using fetch()
+      -🎗️fetch from swiggy public api
+       ref:https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING 
+
+       -🎗️Operation perform by asynchronously so for that use async/await for fetch API 
+       -🎗️call api inside function,create function & fetch
+       -🎗️then turn into json Data
+       -🎗️then it'll return a readiable stream,it needs to be converted in json object that we can read it;
+       -🎗️then log data for Proof;
+       -🎗️Might be face this error unhandled Rejection because browser block this one so to get rid of we need add extention CORS in chrome 
+       -🎗️NEED TO TOGGLE ON Of extention
+
+       THIS IS HOW WE EXPLORED WORLD 
+       you get some data in console So let's demonstrate this data on to our website!! or should we insert this data on UI yes 😍 & take test of Live dat on to our UI 
+       -🎗️So How? do we Need restrauntList Now: NO 
+       -🎗️Push New data from our JSON Into my State restaurants which is setRestaurants it is setRestaurants(...Path...);
+       e.g: setRestaurants(json?.data?.cards)
+     
+      H.W
+     -https://youtu.be/tcLW5d0KAYE (cors)
+     -OPTIONAL CHANING
+      -Let's suppose .data not there my code will breack
+      -it almost like figuring out my cards with proper path
 
 */

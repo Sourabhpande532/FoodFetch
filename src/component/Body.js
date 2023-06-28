@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
 
@@ -15,12 +15,27 @@ const Body = () => {
   //IN JS - CONST SEARCHTEXT = "KFC"
   //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
   const [searchText, setSearchText] = useState("");
-  // console.log("Render"); EVERYTIME IT CALLED
 
   // SEARCH FUNCTIONALITY
   const [restaurants, setRestaurants] = useState(restrauntList);
+
+  //CALL USEFFECT
+  useEffect(() => {
+    //call API Here once after completion of "render" UI/loads
+    getRestaurants();
+  }, []);
+
+  // LIVE DATA
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
+    );
+    const json = await data.json();
+    setRestaurants(json?.data?.cards);
+    // console.log(json);
+  }
+
   console.log("Render");
-  // console.log(restaurants);
   return (
     <>
       <div className='search-container'>
