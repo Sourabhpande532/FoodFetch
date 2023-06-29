@@ -2965,8 +2965,7 @@ const AppLayout = ()=>{
                 fileName: "src/app.js",
                 lineNumber: 9,
                 columnNumber: 7
-            }, undefined),
-            (0, _footerDefault.default)()
+            }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/app.js",
@@ -27460,6 +27459,8 @@ var _react = require("react");
 var _contants = require("../contants");
 var _restaurantCart = require("./RestaurantCart");
 var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
+var _shimmerUi = require("./ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
 var _s = $RefreshSig$();
 // SEARCH FUNCTIONALITY with filtering process
 function filterData(searchText, restaurant) {
@@ -27472,7 +27473,7 @@ const Body = ()=>{
     //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
     const [searchText, setSearchText] = (0, _react.useState)("");
     // SEARCH FUNCTIONALITY
-    const [restaurants, setRestaurants] = (0, _react.useState)((0, _contants.restrauntList));
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
     //CALL USEFFECT
     (0, _react.useEffect)(()=>{
         //call API Here once after completion of "render" UI/loads
@@ -27482,11 +27483,15 @@ const Body = ()=>{
     async function getRestaurants() {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
         const json = await data.json();
+        console.log(json);
         setRestaurants(json?.data?.cards);
-    // console.log(json);
     }
     console.log("Render");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return restaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 36,
+        columnNumber: 37
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "search-container",
@@ -27544,7 +27549,7 @@ const Body = ()=>{
         ]
     }, void 0, true);
 };
-_s(Body, "lix6XRv1Rhn26phiT2tQcjh0KrM=");
+_s(Body, "5dIE6/gBRmpUOXcZI0Cu0TQPHwU=");
 _c = Body;
 exports.default = Body; /**
 // const searchTxt = "KFC"
@@ -27573,7 +27578,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","./RestaurantCart":"aW5DX"}],"6xi3Y":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh"}],"6xi3Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
@@ -28646,7 +28651,38 @@ $RefreshReg$(_c, "RestaurantCart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"4ifUV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"3UJAh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d020.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ShimmerUi = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Shimmer UI Loading......"
+    }, void 0, false, {
+        fileName: "src/component/ShimmerUi.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ShimmerUi;
+exports.default = ShimmerUi;
+var _c;
+$RefreshReg$(_c, "ShimmerUi");
+
+  $parcel$ReactRefreshHelpers$d020.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ifUV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28660,17 +28696,14 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const Footer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: "Footer"
-            }, void 0, false, {
-                fileName: "src/component/Footer.js",
-                lineNumber: 3,
-                columnNumber: 15
-            }, undefined),
-            ";"
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            children: "Footer"
+        }, void 0, false, {
+            fileName: "src/component/Footer.js",
+            lineNumber: 3,
+            columnNumber: 15
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/component/Footer.js",
         lineNumber: 3,
         columnNumber: 10

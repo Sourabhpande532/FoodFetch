@@ -10,7 +10,7 @@ const AppLayout = () => {
     <React.Fragment>
       <Header />
       <Body />
-      {Footer()}
+      {/* Footer() */}
     </React.Fragment>
   );
 };

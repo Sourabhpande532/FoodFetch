@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
+import ShimmerUi from "./ShimmerUi";
 
 // SEARCH FUNCTIONALITY with filtering process
 function filterData(searchText, restaurant) {
@@ -17,7 +18,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   // SEARCH FUNCTIONALITY
-  const [restaurants, setRestaurants] = useState(restrauntList);
+  const [restaurants, setRestaurants] = useState([]);
 
   //CALL USEFFECT
   useEffect(() => {
@@ -31,12 +32,13 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     setRestaurants(json?.data?.cards);
-    // console.log(json);
+    
   }
 
   console.log("Render");
-  return (
+  return (restaurants.length === 0) ? <ShimmerUi/>:(
     <>
       <div className='search-container'>
         <input

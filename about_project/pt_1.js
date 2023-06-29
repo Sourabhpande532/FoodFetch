@@ -628,10 +628,49 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
        -🎗️So How? do we Need restrauntList Now: NO 
        -🎗️Push New data from our JSON Into my State restaurants which is setRestaurants it is setRestaurants(...Path...);
        e.g: setRestaurants(json?.data?.cards)
+
+       -Might be you 😗amaze first render old data that you passed in STATS (@hint:restrauntList)then call api data with updated one(@hint:setRestaurants) as per Diagram(render-quick.png) so there RECONSCILIATION proccess treking & quckly refresh the page!! this is only happend by useEffect HOOK!
+       🥊🥊@FOLLOW_UP
+       -Do inspect - go Source - ctrl+o - put debugger on useEffect content & next one into card render section
+
+      -@REMEMBER: FIRST Render The Use useEffect
+      -Now, Remove restrauntList INTO STATES DON"T Want OLD DATA Want New/Updated one ⤵️⤵️
+      🧑‍💻---------------------
+      OLD:
+      const [restaurants, setRestaurants] = useState(restrauntList);
+      NEW:
+      const [restaurants, setRestaurants] = useState([]);
+      ------------------------🧑‍💻
+
+
+      ------------------NEW--------------------
+      @SECTION:SHIMMER DESIGN 
+
+      -🎗️🎯LET's Move On Shimmer Design 
+      -🎗️🎯When our website load sometimes it take times too fetch data from API so in the midtime we need to show something this is know as @search:"shimmer effect in UI" Or may PWA(Progressive web application)
+      Q) SO,where will we put SHIMMER UI ??
+       -you've to render it so How do we render it ??
+       -when the Data is not called !!
+       -so how do show loading by using CONDITIONAL RENDERING
+
+       @NEW_TOPIC: CONDITIONAL RENDERING
+       When we render it Either need to call SHIMMER UI or a Normal UI Mean API UI 
+       @SUDO_CODE:
+       🔺if restrauntList is empty = SHIMMER UI 
+       🔺if restrauntList has data = ACTUAL DATA UI (API)
+
+       -CREATE SHIMMER UI COMPONENT 
+       -By the name ShimmerUi
+       -Then call it after return
+       -By Using Ternary OPERATOR
+
+
+
      
       H.W
+     -How do we handles error inside useEffect 
      -https://youtu.be/tcLW5d0KAYE (cors)
-     -OPTIONAL CHANING
+     -OPTIONAL CHANING(.?)
       -Let's suppose .data not there my code will breack
       -it almost like figuring out my cards with proper path
 
