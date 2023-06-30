@@ -27469,11 +27469,14 @@ function filterData(searchText, restaurant) {
 }
 const Body = ()=>{
     _s();
-    //IN JS - CONST SEARCHTEXT = "KFC"
-    //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    // SEARCH FUNCTIONALITY
-    const [restaurants, setRestaurants] = (0, _react.useState)([]);
+    // COPY OF ALL RESTURANT 
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    //FILTERED LIST 
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    /* 
+  -SEARCH FUNCTIONALITY
+  -IN JS - CONST SEARCHTEXT = "KFC"
+  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
     //CALL USEFFECT
     (0, _react.useEffect)(()=>{
         //call API Here once after completion of "render" UI/loads
@@ -27484,13 +27487,14 @@ const Body = ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
         const json = await data.json();
         console.log(json);
-        setRestaurants(json?.data?.cards);
+        setAllRestaurants(json?.data?.cards);
+        setFilteredRestaurants(json?.data?.cards);
     }
     console.log("Render");
-    return restaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+    return filteredRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 36,
-        columnNumber: 37
+        lineNumber: 42,
+        columnNumber: 45
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27506,36 +27510,37 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 38,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
                         onClick: ()=>{
-                            const data = filterData(searchText, restaurants);
-                            setRestaurants(data);
+                            const data = filterData(searchText, allRestaurants);
+                            //UPDATE THE STATE - RESTURANT
+                            setFilteredRestaurants(data);
                         },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 41,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 37,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: restaurants.map((restaurant)=>{
+                children: filteredRestaurants.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCartDefault.default), {
                         ...restaurant.data.data,
                         key: restaurant.data.data.id,
                         __source: {
                             fileName: "src/component/Body.js",
-                            lineNumber: 52,
+                            lineNumber: 59,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27543,13 +27548,13 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 50,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "5dIE6/gBRmpUOXcZI0Cu0TQPHwU=");
+_s(Body, "7qBCbMasD3wgFZOaohLYrNPvx0s=");
 _c = Body;
 exports.default = Body; /**
 // const searchTxt = "KFC"

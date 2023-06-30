@@ -494,6 +494,7 @@ because of RECONSCILIATION Diff Algorithm work behind the sence it update select
 
 ------------------(NEW)------------------
 @ABOUT: SEARCH
+@OVER_ALL: View an BODY.js 
 
 
 @SEARCH_FUNCTIOALITY@
@@ -664,9 +665,38 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
        -Then call it after return
        -By Using Ternary OPERATOR
 
+       ----------------------NEW
+       @ABOUT:BODY.js      
 
+       -🎯Our search functionlity still not work fine it show shimmer UI over there while searching any food;
+       -🎯if you mispelaed anything in Search Bar still show Shimmer UI 
 
-     
+       Why is not working/happening?
+       -🎯we change Layout of DATA it won't work we'll have to update a List so WHY not work our STATEs "restaurants"(restrauntList) get filter out.
+       -🎯everytime we don't have to upadate this "restaurants"(restrauntList)
+       - we'll have to maintain two Variable In STATEs 
+         🔺1st : want restrauntList of all restaurant for browser Ui 
+         🔺2nd : want my filtered restaurants on search 
+
+       Q) while filtering Should i filter from all restaurant Or filter restaurant ??
+       -of Course, From all restaurant so we'll maintain two copies of my restaurant So REPLACE "restaurants to FILTERRESTAURANT" & setFilteredRestaurants in STATEs !!
+       -🎯Now keep a copy of all restaurants above on FILTERRESTAURANT So how do i do that 
+       -🎯CREATE A STATE 
+        const [allRestaurants,setAllRestaurants] = useState([]);
+       -🎯Now what I Do is I'll POPULATE My all restaurant specially when I Make an API Call over there instead of "setFilteredRestaurants use setAllRestaurant"s
+       THIS Is how all my restaurant fill;
+
+       Now Go➡️ to ONCLICK EVENT 
+       REMEMBER When I Click I Do Filter you'll get filterData over so what should we passed inside "FILTERRESTAURANT Or All restaurant"
+       -🎯I want to Always filter from All restaurant 
+       Then, 
+       Comes to SHIMMER want to demonstrate this is it allRestaurants or filteredRestaurants !! 
+       Of Course From filteredRestaurants!! 
+       -🎯But Why ?? filteredRestaurants tell me what you'r RENDERING while .map is it filteredRestaurants Yes so if any time this time is not there show a shimmer UI.
+       -🎯if Let Assume If i've allRestaurants.length shimmer is shown or either filterData show it's not good way 
+
+       🤨@CONCLUSSION:🤨 ON our first Webapage you've to show "ALL_RESTAURANT" And as soon as you search something Then you've to show any cost "FILTER_RESTAURANT" any given Cost!! that's convection. 
+
       H.W
      -How do we handles error inside useEffect 
      -https://youtu.be/tcLW5d0KAYE (cors)

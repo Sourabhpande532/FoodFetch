@@ -13,12 +13,17 @@ function filterData(searchText, restaurant) {
 }
 
 const Body = () => {
-  //IN JS - CONST SEARCHTEXT = "KFC"
-  //IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE
-  const [searchText, setSearchText] = useState("");
+  // COPY OF ALL RESTURANT
+  const [allRestaurants, setAllRestaurants] = useState([]);
 
-  // SEARCH FUNCTIONALITY
-  const [restaurants, setRestaurants] = useState([]);
+  //FILTERED LIST
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  /* 
+  -SEARCH FUNCTIONALITY
+  -IN JS - CONST SEARCHTEXT = "KFC"
+  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */
+  const [searchText, setSearchText] = useState("");
 
   //CALL USEFFECT
   useEffect(() => {
@@ -33,12 +38,14 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setRestaurants(json?.data?.cards);
-    
+    setAllRestaurants(json?.data?.cards);
+    setFilteredRestaurants(json?.data?.cards);
   }
 
   console.log("Render");
-  return (restaurants.length === 0) ? <ShimmerUi/>:(
+  return filteredRestaurants.length === 0 ? (
+    <ShimmerUi />
+  ) : (
     <>
       <div className='search-container'>
         <input
@@ -53,8 +60,9 @@ const Body = () => {
         <button
           className='search-btn'
           onClick={() => {
-            const data = filterData(searchText, restaurants);
-            setRestaurants(data);
+            const data = filterData(searchText, allRestaurants);
+            //UPDATE THE STATE - RESTURANT
+            setFilteredRestaurants(data);
           }}>
           Search
         </button>
@@ -62,7 +70,7 @@ const Body = () => {
         <h1>{searchText}</h1> */}
       </div>
       <div className='restaurant-list'>
-        {restaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCart
               {...restaurant.data.data}
