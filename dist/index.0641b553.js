@@ -27354,6 +27354,10 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const loggedInUser = ()=>{
+    return true;
+};
 const Title = ()=>{
     return(// JSX
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -27364,24 +27368,26 @@ const Title = ()=>{
             src: "https://pbs.twimg.com/profile_images/1472170906625716233/wyw6zyp4_400x400.jpg"
         }, void 0, false, {
             fileName: "src/component/Header.js",
-            lineNumber: 6,
+            lineNumber: 9,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Header.js",
-        lineNumber: 5,
+        lineNumber: 8,
         columnNumber: 5
     }, undefined));
 };
 _c = Title;
 //REACT COMPONENT
 const Header = ()=>{
+    _s();
+    const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 14,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27392,48 +27398,64 @@ const Header = ()=>{
                             children: "Home"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 17,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "About"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 18,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Contact"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 19,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 20,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header.js",
-                    lineNumber: 16,
+                    lineNumber: 20,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 15,
+                lineNumber: 19,
                 columnNumber: 7
+            }, undefined),
+            isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsLoggedIn(false),
+                children: "Logout"
+            }, void 0, false, {
+                fileName: "src/component/Header.js",
+                lineNumber: 28,
+                columnNumber: 21
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>setIsLoggedIn(true),
+                children: "Login"
+            }, void 0, false, {
+                fileName: "src/component/Header.js",
+                lineNumber: 28,
+                columnNumber: 84
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Header.js",
-        lineNumber: 13,
+        lineNumber: 17,
         columnNumber: 10
     }, undefined);
 };
+_s(Header, "g0MSgNVZk+vKiEFnDJ9VPEfswFA=");
 _c1 = Header;
 exports.default = Header;
 var _c, _c1;
@@ -27464,14 +27486,14 @@ var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
 var _s = $RefreshSig$();
 // SEARCH FUNCTIONALITY with filtering process
 function filterData(searchText, restaurant) {
-    const filterDatas = restaurant.filter((restaurant)=>restaurant.data.data.name.includes(searchText));
+    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
     return filterDatas;
 }
 const Body = ()=>{
     _s();
-    // COPY OF ALL RESTURANT 
+    // COPY OF ALL RESTURANT
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    //FILTERED LIST 
+    //FILTERED LIST
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     /* 
   -SEARCH FUNCTIONALITY
@@ -27490,11 +27512,20 @@ const Body = ()=>{
         setAllRestaurants(json?.data?.cards);
         setFilteredRestaurants(json?.data?.cards);
     }
-    console.log("Render");
-    return filteredRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
+    // AVOID(Early render)!RENDER COMPONENT
+    if (!allRestaurants) return null;
+    if (filteredRestaurants?.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "No Restaurant Match Your Filter"
+    }, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 42,
-        columnNumber: 45
+        lineNumber: 45,
+        columnNumber: 49
+    }, undefined);
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 46,
+        columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27510,7 +27541,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 44,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27523,13 +27554,13 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 47,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 43,
+                lineNumber: 47,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27540,7 +27571,7 @@ const Body = ()=>{
                         key: restaurant.data.data.id,
                         __source: {
                             fileName: "src/component/Body.js",
-                            lineNumber: 59,
+                            lineNumber: 64,
                             columnNumber: 16
                         },
                         __self: undefined
@@ -27548,7 +27579,7 @@ const Body = ()=>{
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 57,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined)
         ]

@@ -53,5 +53,11 @@ Whenever ther is some change in the state this tree MODIFIED
        <button onClick={() => setTitle("NEW FOOD APP")}>CHANGE</button>
        --------------------🧑‍💻
 
+🔺Q) Can we write inside jsx like this 
+      🔺{a =10; console.log(a)}
+      -NO. You cannot write like this it expect EXPRESSION Not STATEMENT
+      -At Above Example there 2 statement in order to make it work you need either converted into EXPRESSION So how Do?? wrapped like 
+      🔺{(a = 10, console.log(a))}
+
 
 */

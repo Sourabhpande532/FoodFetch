@@ -697,11 +697,60 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
 
        🤨@CONCLUSSION:🤨 ON our first Webapage you've to show "ALL_RESTAURANT" And as soon as you search something Then you've to show any cost "FILTER_RESTAURANT" any given Cost!! that's convection. 
 
-      H.W
-     -How do we handles error inside useEffect 
+       WHY allRestaurant Is required🤔 & which one we'r RENDERING On UI??
+       Restaurant:-is for only Search & filter 
+       RENDERING:-felterRestaurant we'r RENDERING in return function;
+
+       
+
+
+       ➡️##How we do Avoid RENDERING PROBLEM(@Hint:.length(ND))
+       -you can use either optional chaining when you RENDERING or use CONDITIONAL RENDERING 
+
+       🔺#code: if(!allRestaurants) return null;
+          Know as: "Early return" when don't have restaurant Don't return anything;
+          -Not Render COMPONENT
+
+       🔺#code: if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+       😏H.W: first check for allRestaurants & show the SHIMMER Then need to show weather filteredRestaurants there or NOT 
+
+      -----------------------------NEW 
+      LET's WRITE CODE FOR LOWER CASE & UPPER CASE Match case while SEARCHING🔎 !!
+
+       "Moti" === "moth" 
+       -output: false ❌(NOT WORK IN JS)
+       "Moti".toLowerCase() === "moti".toLowerCase()
+       -output: true 💹 (WORK IN JS)
+
+      So change in Filter Restaurant above Body COMPONENT Need to Explicetely mention OPTIONAL chaining O.W show 🥊🥊error LIKE xyz UNDEFINED 
+
+      -----------------------------NEW 
+      @LOCATION: 🗃️Header.js 
+
+      LOGIN/SIGNUP
+      -create authentication user function
+      -Call Authenticate API & check weather it is is exit or not if exit return true & if not false;
+      -Use Ternary OPERATOR 
+      -Let's FUNCTIONALITY work on Click of LOGIN/Logout
+      -So for CREATE STATEs Like above function 
+      -TOGGLE it(RECONSCILIATION PROCESS trigring)
+
+      Where Diff & firber Algorithm return in which library??
+      -It's an core of an React 
+      -It's written in the React Code 
+      -DOM Updates via React-dom 
+      -Use Ternary OPERATOR 
+
+      REF: ✈️🔗 https://react.dev/learn/javascript-in-jsx-with-curly-braces
+      
+
+     H.W
+     😏-How do we handles error inside useEffect 
      -https://youtu.be/tcLW5d0KAYE (cors)
      -OPTIONAL CHANING(.?)
-      -Let's suppose .data not there my code will breack
-      -it almost like figuring out my cards with proper path
+      😏?-Let's suppose .data not there my code will breack
+      😏?-it almost like figuring out my cards with proper path
+      😏?-What is JS EXPRESSION & STATEMENT 
+      😏?- first check for allRestaurants & show the SHIMMER Then need to show weather filteredRestaurants there or NOT  
 
 */

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+const loggedInUser = () => {
+  return true;
+};
+
 const Title = () => {
   return (
     // JSX
@@ -14,6 +18,8 @@ const Title = () => {
 
 //REACT COMPONENT
 const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className='header'>
       <Title />
@@ -25,6 +31,12 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {/* TERNARY OPERATOR */}
+      {isLoggedIn ? (
+        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+      )}
     </div>
   );
 };
