@@ -47,7 +47,7 @@ const Body = () => {
   // AVOID(Early render)!RENDER COMPONENT
   if(!allRestaurants) return null;
 
-  if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+  // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
 
   return allRestaurants?.length === 0 ? (
     <ShimmerUi />

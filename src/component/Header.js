@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Logo from "../../assets/logo.png"
+
 
 const loggedInUser = () => {
   return true;
@@ -11,7 +13,7 @@ const Title = () => {
       <img
         className='logo'
         alt='logo'
-        src='https://pbs.twimg.com/profile_images/1472170906625716233/wyw6zyp4_400x400.jpg'></img>
+        src={Logo}></img>
     </a>
   );
 };
@@ -19,7 +21,7 @@ const Title = () => {
 //REACT COMPONENT
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  
   return (
     <div className='header'>
       <Title />

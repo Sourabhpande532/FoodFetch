@@ -610,6 +610,16 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       🔺-Empty dependecies Array = once after render 
       🔺-dep arry [searchText,restaurants] = once after initial render + everytime when search & restaurants got updated;
 
+      Q) What if we don't have dependecies Array in useEffect hook, Will it work??
+      -> it will be called after every render whenever you UI first page load with one e.g  useEffect(()=>{console.log("useEffect call");}); console.log(render);
+      ->if it dependant [] it will call after initial render 
+      ->if anything pass [xyz], then it called upadated one
+      ->while one Need to Remove <Body/> & <footer/> for more understand in 🗃️app
+      @LOCATION: 🗃️component/Header.js
+
+      NOTE: 😵YOU CAN CREATE AS MANY AS useEffect HOOK A/C TO CASE !!
+
+  
       🎯Now, want to make API Call As soon as Page Load & just one So where should i make API Call - Of Course in useEffect Make sence 👍
       -🎗️because it load/render page first then call api 
       -🎗️by using fetch()
@@ -646,6 +656,8 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
 
       ------------------NEW--------------------
       @SECTION:SHIMMER DESIGN 
+      @OPTIONAL_NPM: Ref:✈️🔗https://www.npmjs.com/package/is-odd
+      Don't use it's for an study!!
 
       -🎗️🎯LET's Move On Shimmer Design 
       -🎗️🎯When our website load sometimes it take times too fetch data from API so in the midtime we need to show something this is know as @search:"shimmer effect in UI" Or may PWA(Progressive web application)
@@ -663,6 +675,8 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
        -CREATE SHIMMER UI COMPONENT 
        -By the name ShimmerUi
        -Then call it after return
+
+
        -By Using Ternary OPERATOR
 
        ----------------------NEW
@@ -718,9 +732,9 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       LET's WRITE CODE FOR LOWER CASE & UPPER CASE Match case while SEARCHING🔎 !!
 
        "Moti" === "moth" 
-       -output: false ❌(NOT WORK IN JS)
-       "Moti".toLowerCase() === "moti".toLowerCase()
-       -output: true 💹 (WORK IN JS)
+       -🎯output: false ❌(NOT WORK IN JS)
+       -🎯"Moti".toLowerCase() === "moti".toLowerCase()
+       -🎯output: true 💹 (WORK IN JS)
 
       So change in Filter Restaurant above Body COMPONENT Need to Explicetely mention OPTIONAL chaining O.W show 🥊🥊error LIKE xyz UNDEFINED 
 
@@ -728,20 +742,45 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       @LOCATION: 🗃️Header.js 
 
       LOGIN/SIGNUP
-      -create authentication user function
-      -Call Authenticate API & check weather it is is exit or not if exit return true & if not false;
-      -Use Ternary OPERATOR 
-      -Let's FUNCTIONALITY work on Click of LOGIN/Logout
-      -So for CREATE STATEs Like above function 
-      -TOGGLE it(RECONSCILIATION PROCESS trigring)
+      -🎯create authentication user function
+      -🎯Call Authenticate API & check weather it is is exit or not if exit return true & if not false;
+      -🎯Use Ternary OPERATOR 
+      -🎯Let's FUNCTIONALITY work on Click of LOGIN/Logout
+      -🎯So for CREATE STATEs Like above function 
+      -🎯TOGGLE it(RECONSCILIATION PROCESS trigring)
 
       Where Diff & firber Algorithm return in which library??
-      -It's an core of an React 
-      -It's written in the React Code 
-      -DOM Updates via React-dom 
-      -Use Ternary OPERATOR 
+      -🎯It's an core of an React 
+      -🎯It's written in the React Code 
+      -🎯DOM Updates via React-dom 
+      -🎯Use Ternary OPERATOR 
 
       REF: ✈️🔗 https://react.dev/learn/javascript-in-jsx-with-curly-braces
+
+
+
+
+
+
+      -------------------------NEW-----------------------------
+      @ABOUT:::::-> 
+      @LOCATION::->
+      @KEEP_NOTE:
+      ->Never ever create COMPONENT Inside COMPONENT O.W it create Huge mess Does not make any sence it's high change of memory consumtion because it render again and again keep on !! 
+      ->Never ever keep STATES(useState,useEffect) inside if else & for loop it creates own STATE varaible react does not know in-consistency it's not optimize way! It's exactly know from where should i Track the COMPONENT then only work o.w not work!!
+
+      Q) Why CDN IMAGES Always 🎗️GREAT choise to host Images ??
+         -when you build an app or x website 
+         -because it's faster as compared other it cached you'r image 
+         -100% up time & optimize way 
+         -preOptimize our images over on CDN 
+
+
+    
+
+
+
+
       
 
      H.W
