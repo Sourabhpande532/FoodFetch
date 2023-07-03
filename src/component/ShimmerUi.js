@@ -3,7 +3,7 @@ import React from "react";
 const ShimmerUi = () => {
   return (
     <div className='restaurant-list'>
-      {Array(10)
+      {Array(18)
         .fill("")
         .map((e,index) => (
           <div key={index} className='shimmer-card'></div>

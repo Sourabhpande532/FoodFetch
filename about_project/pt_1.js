@@ -759,21 +759,41 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
 
 
 
-
-
-
       -------------------------NEW-----------------------------
-      @ABOUT:::::-> 
+      @ABOUT:::::-> ROUTING (react-router-dom)
+      @AUTHER: remix not fb developer
       @LOCATION::->
-      @KEEP_NOTE:
-      ->Never ever create COMPONENT Inside COMPONENT O.W it create Huge mess Does not make any sence it's high change of memory consumtion because it render again and again keep on !! 
-      ->Never ever keep STATES(useState,useEffect) inside if else & for loop it creates own STATE varaible react does not know in-consistency it's not optimize way! It's exactly know from where should i Track the COMPONENT then only work o.w not work!!
-
+      
       Q) Why CDN IMAGES Always 🎗️GREAT choise to host Images ??
-         -when you build an app or x website 
-         -because it's faster as compared other it cached you'r image 
-         -100% up time & optimize way 
-         -preOptimize our images over on CDN 
+         -🎯when you build an app or x website 
+         -🎯because it's faster as compared other it cached you'r image 
+         -🎯100% up time & optimize way 
+         -🎯preOptimize our images over on CDN 
+      
+      Q) which library is best for Desingning Form with validation !!   
+      ref: 🔗✈️https://formik.org/
+
+      
+      ref: 🔗✈️https://reactrouter.com/en/main (v6)
+        
+     we'r exploring finding the path know as ROUTING !!
+     -🎯npm i react-router-dom 
+     -🎯create step-by-step COMPONENT(about,contact,home,Cart)
+     -🎯Then comes to 🗃️app.js file 
+     -🎯Here import createBrowserRouter from react-router-dom AS PER DOCUMENTATION take REFFERENCE of above LINK 
+     -🎯createBrowserRouter Takes a configuration this configuration is an array is a list of path & each path it's an OBJECT
+     -🎯Inside Object pass "path" & 'element' to migrates stuff!!
+     -🎯pass this 'appRouter' to root.render it's because want to render this according to path "configuration";
+     -🎯for that we'll use "RouterProvider" As Per DOCUMENTATION
+     -🎯pass component 
+     -🎯then use 'useRouteError' hook for identify route error 
+     
+
+
+
+
+
+
 
 
     

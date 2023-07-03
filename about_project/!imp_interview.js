@@ -60,4 +60,12 @@ Whenever ther is some change in the state this tree MODIFIED
       🔺{(a = 10, console.log(a))}
 
 
+🔺@KEEP_NOTE:
+      ->Never ever create COMPONENT Inside COMPONENT O.W it create Huge mess Does not make any sence it's high change of memory consumtion because it render again and again keep on !! 
+      ->Never ever keep STATES(useState,useEffect) inside if else & for loop it creates own STATE varaible react does not know in-consistency it's not optimize way! It's exactly know from where should i Track the COMPONENT then only work o.w not work!!
+
+      
+
+
+
 */
