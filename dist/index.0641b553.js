@@ -2957,24 +2957,29 @@ var _aboutJs = require("../src/component/About.js");
 var _aboutJsDefault = parcelHelpers.interopDefault(_aboutJs);
 var _error = require("../src/component/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
+var _contact = require("../src/component/Contact");
+var _contactDefault = parcelHelpers.interopDefault(_contact);
+var _cart = require("../src/component/Cart");
+var _cartDefault = parcelHelpers.interopDefault(_cart);
 var _reactRouterDom = require("react-router-dom");
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 11,
+                lineNumber: 13,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 12,
+                lineNumber: 14,
                 columnNumber: 7
-            }, undefined)
+            }, undefined),
+            (0, _footerDefault.default)()
         ]
     }, void 0, true, {
         fileName: "src/app.js",
-        lineNumber: 10,
+        lineNumber: 12,
         columnNumber: 10
     }, undefined);
 };
@@ -2984,22 +2989,48 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 18,
+            lineNumber: 20,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 19,
+            lineNumber: 21,
             columnNumber: 17
-        }, undefined)
-    },
-    {
-        path: "/about",
-        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutJsDefault.default), {}, void 0, false, {
-            fileName: "src/app.js",
-            lineNumber: 22,
-            columnNumber: 12
-        }, undefined)
+        }, undefined),
+        children: [
+            {
+                path: "/",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 24,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/about",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutJsDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 27,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/contact",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 30,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/cart",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 33,
+                    columnNumber: 14
+                }, undefined)
+            }
+        ]
     }
 ]);
 const roots = (0, _clientDefault.default).createRoot(document.getElementById("root"));
@@ -3008,7 +3039,7 @@ roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Router
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 26,
+    lineNumber: 38,
     columnNumber: 14
 }, undefined));
 var _c;
@@ -3019,7 +3050,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","./component/Body":"iizf5","./component/Footer":"4ifUV","react-router-dom":"9xmpe","../src/component/About.js":"94Koj","react-dom/client":"lOjBx","../src/component/Error":"cosKY"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","./component/Body":"iizf5","./component/Footer":"4ifUV","react-router-dom":"9xmpe","../src/component/About.js":"94Koj","react-dom/client":"lOjBx","../src/component/Error":"cosKY","../src/component/Contact":"3He1d","../src/component/Cart":"dclnc"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -5906,10 +5937,11 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _logoPng = require("../../assets/logo.png");
 var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
-const loggedInUser = ()=>{
-    return true;
-};
+// const loggedInUser = () => {
+//   return true;
+// };
 const Title = ()=>{
     return(// JSX
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -5920,12 +5952,12 @@ const Title = ()=>{
             src: (0, _logoPngDefault.default)
         }, void 0, false, {
             fileName: "src/component/Header.js",
-            lineNumber: 10,
+            lineNumber: 13,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Header.js",
-        lineNumber: 9,
+        lineNumber: 12,
         columnNumber: 5
     }, undefined));
 };
@@ -5939,7 +5971,7 @@ const Header = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 19,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -5947,42 +5979,70 @@ const Header = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "Home"
-                        }, void 0, false, {
-                            fileName: "src/component/Header.js",
-                            lineNumber: 22,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "About"
-                        }, void 0, false, {
-                            fileName: "src/component/Header.js",
-                            lineNumber: 23,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "Contact"
-                        }, void 0, false, {
-                            fileName: "src/component/Header.js",
-                            lineNumber: 24,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: "Cart"
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: "Home"
+                            }, void 0, false, {
+                                fileName: "src/component/Header.js",
+                                lineNumber: 26,
+                                columnNumber: 13
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
                             lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/about",
+                                children: "About"
+                            }, void 0, false, {
+                                fileName: "src/component/Header.js",
+                                lineNumber: 29,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/component/Header.js",
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/contact",
+                                children: "Contact"
+                            }, void 0, false, {
+                                fileName: "src/component/Header.js",
+                                lineNumber: 32,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/component/Header.js",
+                            lineNumber: 31,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/cart",
+                                children: "Cart"
+                            }, void 0, false, {
+                                fileName: "src/component/Header.js",
+                                lineNumber: 35,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/component/Header.js",
+                            lineNumber: 34,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header.js",
-                    lineNumber: 21,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 20,
+                lineNumber: 23,
                 columnNumber: 7
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -5990,20 +6050,20 @@ const Header = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 29,
+                lineNumber: 40,
                 columnNumber: 21
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 onClick: ()=>setIsLoggedIn(true),
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 29,
+                lineNumber: 40,
                 columnNumber: 84
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Header.js",
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 10
     }, undefined);
 };
@@ -6019,7 +6079,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/logo.png":"heqVD"}],"heqVD":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/logo.png":"heqVD","react-router-dom":"9xmpe"}],"heqVD":[function(require,module,exports) {
 module.exports = require("184cf235c86ff5e0").getBundleURL("lPpKD") + "logo.f0c67fd0.png" + "?" + Date.now();
 
 },{"184cf235c86ff5e0":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -6057,1296 +6117,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"iizf5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$cee4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contants = require("../contants");
-var _restaurantCart = require("./RestaurantCart");
-var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
-var _shimmerUi = require("./ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
-var _s = $RefreshSig$();
-// SEARCH FUNCTIONALITY with filtering process
-function filterData(searchText, restaurant) {
-    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterDatas;
-}
-const Body = ()=>{
-    _s();
-    // COPY OF ALL RESTURANT
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    //FILTERED LIST
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    /* 
-  -SEARCH FUNCTIONALITY
-  -IN JS - CONST SEARCHTEXT = "KFC"
-  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
-    //CALL USEFFECT
-    (0, _react.useEffect)(()=>{
-        //call API Here once after completion of "render" UI/loads
-        getRestaurants();
-    }, []);
-    // LIVE DATA
-    async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
-        const json = await data.json();
-        console.log(json);
-        setAllRestaurants(json?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards);
-    }
-    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
-    // AVOID(Early render)!RENDER COMPONENT
-    if (!allRestaurants) return null;
-    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
-    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 48,
-        columnNumber: 41
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        placeholder: "Search",
-                        className: "search-input",
-                        value: searchText,
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 50,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "search-btn",
-                        onClick: ()=>{
-                            const data = filterData(searchText, allRestaurants);
-                            //UPDATE THE STATE - RESTURANT
-                            setFilteredRestaurants(data);
-                        },
-                        children: "Search"
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 53,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Body.js",
-                lineNumber: 49,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "restaurant-list",
-                children: filteredRestaurants.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCartDefault.default), {
-                        ...restaurant.data.data,
-                        key: restaurant.data.data.id,
-                        __source: {
-                            fileName: "src/component/Body.js",
-                            lineNumber: 66,
-                            columnNumber: 16
-                        },
-                        __self: undefined
-                    });
-                })
-            }, void 0, false, {
-                fileName: "src/component/Body.js",
-                lineNumber: 63,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "7qBCbMasD3wgFZOaohLYrNPvx0s=");
-_c = Body;
-exports.default = Body; /**
-// const searchTxt = "KFC"
-
-// searchText is local state varaible 
-// const [searchText,setSearchText] = useState("KFC");
-
-//  <input
-//  type='text'
-//  className='search-input'
-//  placeholder='search'
-//  value={searchText}
-//  // onChange={()=>onChangeInput}
-//  // onChange={(e)=>console.log("dsdf")}
-//  // onChange={(e)=>console.log(e.target.value)}
-//  onChange={(e)=>{
-//    setSearchText(e.target.value)
-//  }}
-// />
- */ 
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$cee4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh"}],"6xi3Y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
-parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
-const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
-const restrauntList = [
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56347",
-                name: "Shabana's Bakery & Kitchen",
-                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
-                city: "16",
-                area: "Chaoni",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "wskutvs1uewnasd0xakj",
-                cuisines: [
-                    "Bakery",
-                    "Fast Food",
-                    "Chinese"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 23,
-                minDeliveryTime: 23,
-                maxDeliveryTime: 23,
-                slaString: "23 MINS",
-                lastMileTravel: 3,
-                slugs: {
-                    restaurant: "shabanas-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "36, Koradi Rd, Byramji Town, Nagpur",
-                locality: "Koradi Road",
-                parentId: 180414,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56347",
-                    deliveryTime: 23,
-                    minDeliveryTime: 23,
-                    maxDeliveryTime: 23,
-                    lastMileTravel: 3,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.9",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "54053",
-                name: "Pizza Hut",
-                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "1000+ ratings",
-                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-                cuisines: [
-                    "Pizzas"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
-                locality: "Sitabuldi",
-                parentId: 721,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "60% OFF",
-                    subHeader: "UPTO ₹120",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "54053",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.4",
-                totalRatings: 1000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "368226",
-                name: "Maharashtrian Aaswad",
-                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
-                cuisines: [
-                    "Indian",
-                    "Maharashtrian",
-                    "Snacks",
-                    "North Indian",
-                    "Desserts",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 3.700000047683716,
-                slugs: {
-                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
-                locality: "Shankar Nagar",
-                parentId: 8483,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹499",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "368226",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 3.700000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.6",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "620948",
-                name: "Chaskaa",
-                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "20+ ratings",
-                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
-                cuisines: [
-                    "North Indian",
-                    "Chinese",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 18,
-                minDeliveryTime: 18,
-                maxDeliveryTime: 18,
-                slaString: "18 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "chaskaa-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
-                locality: "AmBazaari Road ",
-                parentId: 14224,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "UPTO ₹100",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "620948",
-                    deliveryTime: 18,
-                    minDeliveryTime: 18,
-                    maxDeliveryTime: 18,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.9",
-                totalRatings: 20,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "578720",
-                name: "Thali corner",
-                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
-                cuisines: [
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "thali-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Hanuman Street",
-                parentId: 204150,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "578720",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "588863",
-                name: "GetAWay-Desserts",
-                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "100+ ratings",
-                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
-                cuisines: [
-                    "Healthy Food",
-                    "Ice Cream",
-                    "Desserts",
-                    "Sweets"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 19,
-                minDeliveryTime: 19,
-                maxDeliveryTime: 19,
-                slaString: "19 MINS",
-                lastMileTravel: 3.799999952316284,
-                slugs: {
-                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
-                locality: "Dharmpeth Extention",
-                parentId: 354819,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "588863",
-                    deliveryTime: 19,
-                    minDeliveryTime: 19,
-                    maxDeliveryTime: 19,
-                    lastMileTravel: 3.799999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 100,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56382",
-                name: "Krishnum Food Plaza",
-                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
-                city: "16",
-                area: "Civil Lines",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "guubti1buwtjyhywkzkv",
-                cuisines: [
-                    "South Indian",
-                    "Biryani",
-                    "Pizzas",
-                    "Thalis",
-                    "North Indian",
-                    "Indian",
-                    "American"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 24,
-                minDeliveryTime: 24,
-                maxDeliveryTime: 24,
-                slaString: "24 MINS",
-                lastMileTravel: 2.200000047683716,
-                slugs: {
-                    restaurant: "krishnum-food-plaza-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Mount Road, Sadar, Nagpur",
-                locality: "Mount Road",
-                parentId: 121089,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹199",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56382",
-                    deliveryTime: 24,
-                    minDeliveryTime: 24,
-                    maxDeliveryTime: 24,
-                    lastMileTravel: 2.200000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "4.0",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "579495",
-                name: "Aaloo Paratha corner",
-                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
-                cuisines: [
-                    "Indian",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Sadar Bazaar Road",
-                parentId: 346992,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "579495",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "443149",
-                name: "Udupi Gokula",
-                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
-                city: "16",
-                area: "Sadar",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "qla5mtyndfbgrglahah4",
-                cuisines: [
-                    "South Indian",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 22,
-                minDeliveryTime: 22,
-                maxDeliveryTime: 22,
-                slaString: "22 MINS",
-                lastMileTravel: 2.299999952316284,
-                slugs: {
-                    restaurant: "udupi-gokula-sadar-sadar-2",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
-                locality: "Mohan Nagar",
-                parentId: 258496,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹75 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "443149",
-                    deliveryTime: 22,
-                    minDeliveryTime: 22,
-                    maxDeliveryTime: 22,
-                    lastMileTravel: 2.299999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aW5DX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8b14.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _contants = require("../contants");
-const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "card",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                alt: "logo",
-                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: name
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: cuisines
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    avgRating,
-                    " Rating"
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/RestaurantCart.js",
-        lineNumber: 8,
-        columnNumber: 10
-    }, undefined);
-};
-_c = RestaurantCart;
-exports.default = RestaurantCart;
-var _c;
-$RefreshReg$(_c, "RestaurantCart");
-
-  $parcel$ReactRefreshHelpers$8b14.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"3UJAh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d020.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const ShimmerUi = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, index, false, {
-                fileName: "src/component/ShimmerUi.js",
-                lineNumber: 4,
-                columnNumber: 45
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/component/ShimmerUi.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = ShimmerUi;
-exports.default = ShimmerUi;
-var _c;
-$RefreshReg$(_c, "ShimmerUi");
-
-  $parcel$ReactRefreshHelpers$d020.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ifUV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bcf9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-            children: "Footer"
-        }, void 0, false, {
-            fileName: "src/component/Footer.js",
-            lineNumber: 3,
-            columnNumber: 15
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/Footer.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports) {
+},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.14.1
  *
@@ -13101,7 +11872,1296 @@ function getDoneFetcher(data) {
     return fetcher;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"94Koj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iizf5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cee4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contants = require("../contants");
+var _restaurantCart = require("./RestaurantCart");
+var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
+var _shimmerUi = require("./ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _s = $RefreshSig$();
+// SEARCH FUNCTIONALITY with filtering process
+function filterData(searchText, restaurant) {
+    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterDatas;
+}
+const Body = ()=>{
+    _s();
+    // COPY OF ALL RESTURANT
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    //FILTERED LIST
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    /* 
+  -SEARCH FUNCTIONALITY
+  -IN JS - CONST SEARCHTEXT = "KFC"
+  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
+    //CALL USEFFECT
+    (0, _react.useEffect)(()=>{
+        //call API Here once after completion of "render" UI/loads
+        getRestaurants();
+    }, []);
+    // LIVE DATA
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const json = await data.json();
+        console.log(json);
+        setAllRestaurants(json?.data?.cards);
+        setFilteredRestaurants(json?.data?.cards);
+    }
+    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
+    // AVOID(Early render)!RENDER COMPONENT
+    if (!allRestaurants) return null;
+    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 48,
+        columnNumber: 41
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        placeholder: "Search",
+                        className: "search-input",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 50,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "search-btn",
+                        onClick: ()=>{
+                            const data = filterData(searchText, allRestaurants);
+                            //UPDATE THE STATE - RESTURANT
+                            setFilteredRestaurants(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Body.js",
+                lineNumber: 49,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: filteredRestaurants.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _react.createElement)((0, _restaurantCartDefault.default), {
+                        ...restaurant.data.data,
+                        key: restaurant.data.data.id,
+                        __source: {
+                            fileName: "src/component/Body.js",
+                            lineNumber: 66,
+                            columnNumber: 16
+                        },
+                        __self: undefined
+                    });
+                })
+            }, void 0, false, {
+                fileName: "src/component/Body.js",
+                lineNumber: 63,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "7qBCbMasD3wgFZOaohLYrNPvx0s=");
+_c = Body;
+exports.default = Body; /**
+// const searchTxt = "KFC"
+
+// searchText is local state varaible 
+// const [searchText,setSearchText] = useState("KFC");
+
+//  <input
+//  type='text'
+//  className='search-input'
+//  placeholder='search'
+//  value={searchText}
+//  // onChange={()=>onChangeInput}
+//  // onChange={(e)=>console.log("dsdf")}
+//  // onChange={(e)=>console.log(e.target.value)}
+//  onChange={(e)=>{
+//    setSearchText(e.target.value)
+//  }}
+// />
+ */ 
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$cee4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh"}],"6xi3Y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
+parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
+const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
+const restrauntList = [
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56347",
+                name: "Shabana's Bakery & Kitchen",
+                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
+                city: "16",
+                area: "Chaoni",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "wskutvs1uewnasd0xakj",
+                cuisines: [
+                    "Bakery",
+                    "Fast Food",
+                    "Chinese"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 23,
+                minDeliveryTime: 23,
+                maxDeliveryTime: 23,
+                slaString: "23 MINS",
+                lastMileTravel: 3,
+                slugs: {
+                    restaurant: "shabanas-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "36, Koradi Rd, Byramji Town, Nagpur",
+                locality: "Koradi Road",
+                parentId: 180414,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56347",
+                    deliveryTime: 23,
+                    minDeliveryTime: 23,
+                    maxDeliveryTime: 23,
+                    lastMileTravel: 3,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.9",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "54053",
+                name: "Pizza Hut",
+                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "1000+ ratings",
+                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                cuisines: [
+                    "Pizzas"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
+                locality: "Sitabuldi",
+                parentId: 721,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "60% OFF",
+                    subHeader: "UPTO ₹120",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "54053",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.4",
+                totalRatings: 1000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "368226",
+                name: "Maharashtrian Aaswad",
+                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
+                cuisines: [
+                    "Indian",
+                    "Maharashtrian",
+                    "Snacks",
+                    "North Indian",
+                    "Desserts",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 3.700000047683716,
+                slugs: {
+                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
+                locality: "Shankar Nagar",
+                parentId: 8483,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹499",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "368226",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 3.700000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.6",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "620948",
+                name: "Chaskaa",
+                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "20+ ratings",
+                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
+                cuisines: [
+                    "North Indian",
+                    "Chinese",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 18,
+                minDeliveryTime: 18,
+                maxDeliveryTime: 18,
+                slaString: "18 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "chaskaa-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
+                locality: "AmBazaari Road ",
+                parentId: 14224,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "UPTO ₹100",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "620948",
+                    deliveryTime: 18,
+                    minDeliveryTime: 18,
+                    maxDeliveryTime: 18,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.9",
+                totalRatings: 20,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "578720",
+                name: "Thali corner",
+                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
+                cuisines: [
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "thali-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Hanuman Street",
+                parentId: 204150,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "578720",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "588863",
+                name: "GetAWay-Desserts",
+                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "100+ ratings",
+                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
+                cuisines: [
+                    "Healthy Food",
+                    "Ice Cream",
+                    "Desserts",
+                    "Sweets"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 19,
+                minDeliveryTime: 19,
+                maxDeliveryTime: 19,
+                slaString: "19 MINS",
+                lastMileTravel: 3.799999952316284,
+                slugs: {
+                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
+                locality: "Dharmpeth Extention",
+                parentId: 354819,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "588863",
+                    deliveryTime: 19,
+                    minDeliveryTime: 19,
+                    maxDeliveryTime: 19,
+                    lastMileTravel: 3.799999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 100,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56382",
+                name: "Krishnum Food Plaza",
+                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
+                city: "16",
+                area: "Civil Lines",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "guubti1buwtjyhywkzkv",
+                cuisines: [
+                    "South Indian",
+                    "Biryani",
+                    "Pizzas",
+                    "Thalis",
+                    "North Indian",
+                    "Indian",
+                    "American"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 24,
+                minDeliveryTime: 24,
+                maxDeliveryTime: 24,
+                slaString: "24 MINS",
+                lastMileTravel: 2.200000047683716,
+                slugs: {
+                    restaurant: "krishnum-food-plaza-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Mount Road, Sadar, Nagpur",
+                locality: "Mount Road",
+                parentId: 121089,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹199",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56382",
+                    deliveryTime: 24,
+                    minDeliveryTime: 24,
+                    maxDeliveryTime: 24,
+                    lastMileTravel: 2.200000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "4.0",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "579495",
+                name: "Aaloo Paratha corner",
+                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
+                cuisines: [
+                    "Indian",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Sadar Bazaar Road",
+                parentId: 346992,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "579495",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "443149",
+                name: "Udupi Gokula",
+                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
+                city: "16",
+                area: "Sadar",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "qla5mtyndfbgrglahah4",
+                cuisines: [
+                    "South Indian",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 22,
+                minDeliveryTime: 22,
+                maxDeliveryTime: 22,
+                slaString: "22 MINS",
+                lastMileTravel: 2.299999952316284,
+                slugs: {
+                    restaurant: "udupi-gokula-sadar-sadar-2",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
+                locality: "Mohan Nagar",
+                parentId: 258496,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹75 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "443149",
+                    deliveryTime: 22,
+                    minDeliveryTime: 22,
+                    maxDeliveryTime: 22,
+                    lastMileTravel: 2.299999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aW5DX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8b14.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _contants = require("../contants");
+const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: name
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRating,
+                    " Rating"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/RestaurantCart.js",
+        lineNumber: 8,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantCart;
+exports.default = RestaurantCart;
+var _c;
+$RefreshReg$(_c, "RestaurantCart");
+
+  $parcel$ReactRefreshHelpers$8b14.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"3UJAh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d020.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ShimmerUi = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, index, false, {
+                fileName: "src/component/ShimmerUi.js",
+                lineNumber: 4,
+                columnNumber: 45
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/component/ShimmerUi.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ShimmerUi;
+exports.default = ShimmerUi;
+var _c;
+$RefreshReg$(_c, "ShimmerUi");
+
+  $parcel$ReactRefreshHelpers$d020.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ifUV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bcf9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            children: "Footer"
+        }, void 0, false, {
+            fileName: "src/component/Footer.js",
+            lineNumber: 3,
+            columnNumber: 15
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/Footer.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"94Koj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$77f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34691,6 +34751,77 @@ $RefreshReg$(_c, "Error");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"3He1d":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fc23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fc23.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Contact us Page"
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 3,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "contact us page finding the path..."
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$fc23.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dclnc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fd8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Cart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Cart"
+    }, void 0, false, {
+        fileName: "src/component/Cart.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
 
 //# sourceMappingURL=index.0641b553.js.map

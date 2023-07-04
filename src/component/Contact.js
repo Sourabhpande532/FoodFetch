@@ -1,9 +1,9 @@
-const About = () => {
+const Contact = () => {
   return (
     <>
-      <h1>About us Page</h1>
-      <p>about us page finding the path...</p>
+      <h1>Contact us Page</h1>
+      <p>contact us page finding the path...</p>
     </>
   );
 };
-export default About;
+export default Contact;

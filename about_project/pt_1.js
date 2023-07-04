@@ -763,6 +763,7 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       @ABOUT:::::-> ROUTING (react-router-dom)
       @AUTHER: remix not fb developer
       @LOCATION::->
+      @SWITCH: Create COMPONENT + app.js + Navbar/Header (Link)
       
       Q) Why CDN IMAGES Always 🎗️GREAT choise to host Images ??
          -🎯when you build an app or x website 
@@ -787,7 +788,45 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
      -🎯for that we'll use "RouterProvider" As Per DOCUMENTATION
      -🎯pass component 
      -🎯then use 'useRouteError' hook for identify route error 
+
+     Now, if i want to click on "About" want to go on his page!
+     So,How?? 
+     So,Basically we'r building 'SINGLE PAGE APPLICATION' Mojorily There is Two type of routing 
+     🔺1st : client side routing 
+     🔺2nd : server side routing 
+           All gonna pages comes from server side Let say want to go on "/about","/contact Us" page by putting Manually like that; 
      
+     🤔But, our in this React Application we'r focusing on "client side routing" because everything is already available Just randomly Click on any route & go t o Tab e.g "/Home", "/Logout" !!
+     😗OPTIONALLY You can do like that also E.g <a href='/about'>
+     <li>About</li> dont' use anchor tag "<a/>"
+     But not a good Practice it loads a whole browser page like refresh it is an drawback for us!! 
+
+     -🎯So in order to Resolve that react-router-dom provide us {Link} to navigate from one to another in 🗃️Header.js 
+
+     🤔@NOTE: Link uses Anchor tag behind the sence knowgly & unknowlinly & ultimately we'r at the end of the day we need to convert this into browser readiable formate.
+
+    ----------------
+    Q) What is Neasted Routing 🤔?? 
+    -> one PROBLEM that we'r dealing With As we hit on "/about" "/childrean" the Header & footer disappear Why 🤔??
+    -> So we need to fix this out first we want header & footer everywhere! 
+    -> create a children of your all route By them term it mean if i've this "/" home(AppLayout) create an children of it
+    ->create as many as children as you needed 
+    -> it'll take [...] exactly configuration inside it form of Object  
+    ->Now Let's create "/about" Now this "/about" is the children of AppLayout: 
+
+    -> 🤔But How we configured it Do you know yes react-router-dom give a FUNCTIONALITY Know As "OUTLET" 
+    -> OUTLET is what it's an COMPONENT
+    -> OUTLET filled by All children configuration 
+    -> OUTLET suppose to be render A/c to config
+    -> When we use Outlet when perform CONDITIONAL RENDERING 
+    -> OUTLET is like an container
+    ->All the children go into "outlet" e.g "/about","/contact"
+
+
+
+
+
+
 
 
 
