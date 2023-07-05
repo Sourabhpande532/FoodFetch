@@ -794,7 +794,7 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
      So,Basically we'r building 'SINGLE PAGE APPLICATION' Mojorily There is Two type of routing 
      🔺1st : client side routing 
      🔺2nd : server side routing 
-           All gonna pages comes from server side Let say want to go on "/about","/contact Us" page by putting Manually like that; 
+           All gonna pages comes from server side Let say want to go on "/about","/contact Us" page ; 
      
      🤔But, our in this React Application we'r focusing on "client side routing" because everything is already available Just randomly Click on any route & go t o Tab e.g "/Home", "/Logout" !!
      😗OPTIONALLY You can do like that also E.g <a href='/about'>
@@ -805,7 +805,8 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
 
      🤔@NOTE: Link uses Anchor tag behind the sence knowgly & unknowlinly & ultimately we'r at the end of the day we need to convert this into browser readiable formate.
 
-    ----------------
+    ----------------------------SECTION
+
     Q) What is Neasted Routing 🤔?? 
     -> one PROBLEM that we'r dealing With As we hit on "/about" "/childrean" the Header & footer disappear Why 🤔??
     -> So we need to fix this out first we want header & footer everywhere! 
@@ -821,6 +822,27 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
     -> When we use Outlet when perform CONDITIONAL RENDERING 
     -> OUTLET is like an container
     ->All the children go into "outlet" e.g "/about","/contact"
+
+    ----------------------------SECTION
+
+    Now, we'r focusing on Dyanamics Routing ?? 
+    ref: 🔗✈️https://reactrouter.com/en/main/start/overview#dynamic-segments
+
+    Let say if you want go Dyanamically from one page to another which click on Any "x" Cart Then this ROUTING Came into Play 
+    -🎯 create COMPONENT (RestrauntMenu.js)
+    -🎯 Demo of Dyanamics Routing {path:"/restaurant/:id" element:<x/>};
+    -🎯 /:id suppose to be Dyanamics :id can be anything e.g 123,456,xyz on search bar note it down;
+    -🎯 Demo: 🔗✈️http://localhost:1234/restaurant/124
+    -🎯 Now let's use now Read this Id(123,xyz) But How let's use one Hook That 🔻react-router-dom provide us "useParams" At end of the it's an Normal Function;  
+    -🎯 Now let's make an API CALL
+        🔗✈️:https://www.swiggy.com/
+        Do inspect & go Network Tab fetch API 
+    -🎯 to make an API Call use useEffect() once after one click 
+    -🎯 So how do we render First Create STATS 
+    -🎯 Create an default Empty Object {} inside stats & fill all api Data 
+    
+
+
 
 
 
