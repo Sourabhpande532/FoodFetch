@@ -39,3 +39,8 @@
   margin: 20px;
   background: lightgray;
 }
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+}

@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
 import ShimmerUi from "./ShimmerUi";
+import { Link } from "react-router-dom";
 
 // SEARCH FUNCTIONALITY with filtering process
 function filterData(searchText, restaurant) {
   const filterDatas = restaurant.filter(
-    (restaurant) => restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+    (restaurant) =>
+      restaurant?.data?.data?.name
+        ?.toLowerCase()
+        ?.includes(searchText.toLowerCase())
     // IF INSIDE ARRAY IT INCLUDES SEARCHTEXT JUST FILTEROUT
   );
   return filterDatas;
@@ -31,7 +35,6 @@ const Body = () => {
     getRestaurants();
   }, []);
 
-
   // LIVE DATA
   async function getRestaurants() {
     const data = await fetch(
@@ -45,7 +48,7 @@ const Body = () => {
   console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
 
   // AVOID(Early render)!RENDER COMPONENT
-  if(!allRestaurants) return null;
+  if (!allRestaurants) return null;
 
   // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
 
@@ -76,13 +79,14 @@ const Body = () => {
         <h1>{searchText}</h1> */}
       </div>
       <div className='restaurant-list'>
-      {/* you'v to write logic for No restaurant found Here */}
+        {/* you'v to write logic for No restaurant found Here */}
         {filteredRestaurants.map((restaurant) => {
           return (
-            <RestaurantCart
-              {...restaurant.data.data}
-              key={restaurant.data.data.id}
-            />
+            <Link
+              to={"/restaurant/" + restaurant.data.data.id}
+              key={restaurant.data.data.id}>
+              <RestaurantCart {...restaurant.data.data} />
+            </Link>
           );
         })}
       </div>
@@ -93,6 +97,8 @@ const Body = () => {
 export default Body;
 
 /**
+//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
+
 // const searchTxt = "KFC"
 
 // searchText is local state varaible 

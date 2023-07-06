@@ -41,4 +41,9 @@
   margin: 20px;
 }
 
+.menu {
+  justify-content: space-between;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.61d3354a.css.map */

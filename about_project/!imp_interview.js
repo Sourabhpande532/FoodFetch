@@ -64,8 +64,22 @@ Whenever ther is some change in the state this tree MODIFIED
       ->Never ever create COMPONENT Inside COMPONENT O.W it create Huge mess Does not make any sence it's high change of memory consumtion because it render again and again keep on !! 
       ->Never ever keep STATES(useState,useEffect) inside if else & for loop it creates own STATE varaible react does not know in-consistency it's not optimize way! It's exactly know from where should i Track the COMPONENT then only work o.w not work!!
 
-      
+
+While Fetching API 
+    -If you notice No. of Object List anywhere then How will you loop loop through 🤔?? 
+    -🎯Need to use Object.values;
+    -🎯Turn The Object list into Array is know know Object.values;
+    -🎯Ref: ✈️🔗https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values     
+    👍👍👍👍👍---------------
+          <div>
+            <ul>{Object.values(restaurant).map((item,index)=>(
+              <li key={index}>{item.id}</li>
+            ))}</ul>
+          </div>
+    ---------------👍👍👍👍
 
 
+🔺@MAKE YOUR COMPONENT BE LOGICAL:
+  That will help you to make you'r code readible,maintable,modular,teastable,reusable 
 
 */

@@ -839,7 +839,16 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
         Do inspect & go Network Tab fetch API 
     -🎯 to make an API Call use useEffect() once after one click 
     -🎯 So how do we render First Create STATS 
-    -🎯 Create an default Empty Object {} inside stats & fill all api Data 
+    -🎯 Create an default Empty Object {} inside stats & fill all api Data
+    
+    
+    While Fetching API 
+    -If you notice No. of Object List anywhere then How will you loop loop through 🤔?? 
+    -🎯Need to use Object.values;
+    -🎯Turn The Object list into Array is know know Object.values;
+    -🎯Ref: ✈️🔗https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
+    
+
     
 
 
