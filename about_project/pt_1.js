@@ -822,6 +822,9 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
     -> When we use Outlet when perform CONDITIONAL RENDERING 
     -> OUTLET is like an container
     ->All the children go into "outlet" e.g "/about","/contact"
+    ->NOTE: children Always render on inside OUTLET But where should i create an OUTLET it should Always be in Parent so in this Case our <About/> so it supossed to be Always inject over there OUTLET!!
+    Either use OUTLET OR Profile both are correct on way;
+
 
     ----------------------------SECTION
 
@@ -849,7 +852,43 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
     -🎯Ref: ✈️🔗https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
     
 
-    
+
+    ----------------------------SECTION
+
+
+    @TITLE : CLASS BASE COMPONENT 
+    @LOCATION: [🔺app.js, 🔺profile.js,🔺profileClass.js,🔺About.js]
+    @OVERVIEW:
+
+    -🎯When you use class base COMPONENT Think use to get messay code was not very clean 
+    -🎯it is used to be very big as compared function COMPONENT & less maintainable 
+
+    LET's Reacap 
+    Let's want to make Profile section inside About So how'll you Make like 
+    :✈️🔗http://localhost:1234/about/profile
+    Make a childrean of childrea take REFFERENCE of 🗃️app.js
+
+    NOTE: but don't use "slash" "/profile" Always use "profile" o.w it consider as localhost:1234/profile.
+    ->🎯All the children go into "outlet" e.g "/about","/contact"
+    ->🎯NOTE: children Always render on inside OUTLET But where should i create an OUTLET it should Always be in Parent so in this Case our <About/> so it supossed to be Always inject over there OUTLET!!
+    Either use OUTLET OR Profile both are correct on way;
+
+
+    @CLASS_BASE_COMPONENT@
+    AT the end of the Day it's an JAVASCRIPT class!
+    React.Component comes from React
+      -🎯Can't create class base Component Without render() Methode
+      -🎯in function COMPONENT return JSX But inside Class base COMPONENT "render" method return "JSX"
+      -🎯whatever you return it inject on our DOM 
+   Q) What is extends 🤔?
+      => it is a class that needs to be inherit some properties in This react do such thing this is how react know this is class base COMPONENT
+   Q) So How do i pass props inside Class base COMPONENT 🤔??
+      => Use simply {this.props.name} 
+      -So when the react Tracking COMPONENT it takes this props & attach to this keyword;
+      -Props it's an object at end of the it play a key role 
+
+
+
 
 
 

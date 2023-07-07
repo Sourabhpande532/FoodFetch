@@ -2964,24 +2964,26 @@ var _cartDefault = parcelHelpers.interopDefault(_cart);
 var _reactRouterDom = require("react-router-dom");
 var _restrauntMenu = require("./component/RestrauntMenu");
 var _restrauntMenuDefault = parcelHelpers.interopDefault(_restrauntMenu);
+var _profile = require("../src/component/Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
 const AppLayout = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/app.js",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             (0, _footerDefault.default)()
         ]
     }, void 0, true, {
         fileName: "src/app.js",
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 10
     }, undefined);
 };
@@ -2991,12 +2993,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 21,
+            lineNumber: 22,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 22,
+            lineNumber: 23,
             columnNumber: 17
         }, undefined),
         children: [
@@ -3004,7 +3006,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3012,15 +3014,26 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/about",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutJsDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 14
-                }, undefined)
+                }, undefined),
+                // parentPath/{path} = localhost:1244/about
+                children: [
+                    {
+                        path: "profile",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
+                            fileName: "src/app.js",
+                            lineNumber: 33,
+                            columnNumber: 16
+                        }, undefined)
+                    }
+                ]
             },
             {
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 31,
+                    lineNumber: 38,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3028,7 +3041,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 34,
+                    lineNumber: 41,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3036,7 +3049,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrauntMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 37,
+                    lineNumber: 44,
                     columnNumber: 14
                 }, undefined)
             }
@@ -3049,7 +3062,7 @@ roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Router
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 42,
+    lineNumber: 49,
     columnNumber: 14
 }, undefined));
 var _c;
@@ -3060,7 +3073,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","./component/Body":"iizf5","./component/Footer":"4ifUV","react-router-dom":"9xmpe","../src/component/About.js":"94Koj","react-dom/client":"lOjBx","../src/component/Error":"cosKY","../src/component/Contact":"3He1d","../src/component/Cart":"dclnc","./component/RestrauntMenu":"kwDLv"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","./component/Body":"iizf5","./component/Footer":"4ifUV","react-router-dom":"9xmpe","../src/component/About.js":"94Koj","react-dom/client":"lOjBx","../src/component/Error":"cosKY","../src/component/Contact":"3He1d","../src/component/Cart":"dclnc","./component/RestrauntMenu":"kwDLv","../src/component/Profile":"7kLfj"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -13190,6 +13203,11 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+// import { Outlet } from "react-router-dom"; Optionally you can use ProfileFunctionalComponent with the help of {OUTLET}
+var _profileClass = require("./ProfileClass");
+var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
+var _profile = require("./Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
 const About = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -13197,20 +13215,35 @@ const About = ()=>{
                 children: "Hellow, this is About page"
             }, void 0, false, {
                 fileName: "src/component/About.js",
-                lineNumber: 4,
-                columnNumber: 5
+                lineNumber: 8,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "Hello,this is ...."
+                children: "page is about Functional & CLASS base COMPONENT for UNDERSTANDING Perpose"
             }, void 0, false, {
                 fileName: "src/component/About.js",
-                lineNumber: 5,
-                columnNumber: 5
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                name: "Saurabh,pass via Props from function"
+            }, void 0, false, {
+                fileName: "src/component/About.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                name: "Kunal,pass via Props from class",
+                xyz: "Shankar Dadmal"
+            }, void 0, false, {
+                fileName: "src/component/About.js",
+                lineNumber: 12,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/About.js",
-        lineNumber: 3,
+        lineNumber: 7,
         columnNumber: 10
     }, undefined);
 };
@@ -13220,6 +13253,120 @@ var _c;
 $RefreshReg$(_c, "About");
 
   $parcel$ReactRefreshHelpers$77f7.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ProfileClass":"bMaBv","./Profile":"7kLfj"}],"bMaBv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8d39 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8d39.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Profile extends (0, _reactDefault.default).Component {
+    render() {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "Profile Class Base Component"
+                }, void 0, false, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 5,
+                    columnNumber: 5
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "Name:",
+                        this.props.name
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 6,
+                    columnNumber: 5
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "XYZ:",
+                        this.props.xyz
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 7,
+                    columnNumber: 5
+                }, this)
+            ]
+        }, void 0, true);
+    }
+}
+exports.default = Profile; /*
+-React.Component comes from React
+-Can't create class base Component Without render() Methode
+-in function COMPONENT return JSX But inside Class base COMPONENT "render" method return "JSX"
+-whatever you return it inject on our DOM 
+-What is extends?
+=> it is a class that needs to be inherit some properties in This react do such thing this is how react know this is class base COMPONENT
+ -So How do i pass props inside Class base COMPONENT??
+ => Use simply {this.props.name} 
+-So when the react Tracking COMPONENT it takes this props & attach to this keyword;
+ -Props it's an object at end of the it play a key role  
+*/ 
+
+  $parcel$ReactRefreshHelpers$8d39.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8530.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Profile = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Profile Functional Base Component"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 4,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Name:",
+                    props.name
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 5,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Profile.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$8530.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

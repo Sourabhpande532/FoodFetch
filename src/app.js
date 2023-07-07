@@ -9,6 +9,7 @@ import Contact from "../src/component/Contact";
 import Cart from "../src/component/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
+import Profile from "../src/component/Profile";
 
 const AppLayout = () => {
   return (
@@ -33,6 +34,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+          // parentPath/{path} = localhost:1244/about
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+            // parentPath/{path} = localhost:1244/about/profile
+          },
+        ],
       },
       {
         path: "/contact",
