@@ -13270,15 +13270,30 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class Profile extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        //CREATE STATE
+        this.state = {
+            count: 0,
+            count2: "2nd time"
+        };
+        console.log("Constructor");
+    }
+    // COMPONENT DID UPDATE
+    componentDidMount() {
+        console.log("ComponentDidMount");
+    }
     render() {
+        // const {count} = this.state; Optionally Distructure
+        console.log("render");
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: "Profile Class Base Component"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 5,
-                    columnNumber: 5
+                    lineNumber: 21,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                     children: [
@@ -13287,8 +13302,8 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 6,
-                    columnNumber: 5
+                    lineNumber: 22,
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                     children: [
@@ -13297,24 +13312,64 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 7,
-                    columnNumber: 5
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "C-count:",
+                        this.state.count
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 24,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    onClick: ()=>{
+                        // Do Not MUTATE STATE DIRECTLY
+                        // Never Do This.state = something
+                        this.setState({
+                            count: 1,
+                            count2: "Become first"
+                        });
+                    },
+                    children: "Update State"
+                }, void 0, false, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                    children: [
+                        "C-count:",
+                        this.state.count2
+                    ]
+                }, void 0, true, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 35,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true);
     }
 }
 exports.default = Profile; /*
--React.Component comes from React
--Can't create class base Component Without render() Methode
--in function COMPONENT return JSX But inside Class base COMPONENT "render" method return "JSX"
--whatever you return it inject on our DOM 
--What is extends?
-=> it is a class that needs to be inherit some properties in This react do such thing this is how react know this is class base COMPONENT
- -So How do i pass props inside Class base COMPONENT??
- => Use simply {this.props.name} 
--So when the react Tracking COMPONENT it takes this props & attach to this keyword;
- -Props it's an object at end of the it play a key role  
+-How do I Create STATE in Class Base COMPONENT !! 
+-Take REFFERENCE of 🗃️Profile.js & 🗃️ProfileClass.js  
+-In function we use STATE But,In class base We've Constructor to create STATE !
+-H.W: Why do use super(props) inside Constructor(props){super(props);}
+-> Ans: 
+✈️🔗https://www.geeksforgeeks.org/what-is-the-purpose-of-using-super-constructor-with-props-argument-in-reactjs/
+✈️🔗https://www.geeksforgeeks.org/whats-the-difference-between-super-and-superprops-in-react/
+Role of Constructor: ->it is place use for initialization; when a instance of class is created/invoke while RENDERING a Constructor is called ! & this is best place to create STATEs;
+-whenever you load card Constructor is called it's first Step!
+-To create STATE Here Called something Know as "This.state" just similar like react gives access of this.props.name 
+Q) -> Then How do I updated state By using "This.setState({count:1})"
+   -> Always REMEMBER according To LifeCycle Methode First Constructor Then Render Called in Class BASE COMPONENT But In function Base COMPONENT it called after every each time render;
+Q) -> How to call API Call In Function & class Base COMPONENT & what is best method ?? 
+   In function we use useEffect(()=>{}) after every reder it call("First render + Then 2nd Call API(useEffect)") But in Class base Same process we apply First render & Then we'll update something So react Provide use some functionality Know as "componentDidMount" it work under lifeCycle like ["Constructor",componentDidMount,render] it render the array sequence what we mention here...   
+
 */ 
 
   $parcel$ReactRefreshHelpers$8d39.postlude(module);
@@ -13334,15 +13389,20 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
 const Profile = (props)=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    const [count2, setCount2] = (0, _react.useState)(2);
+    console.log("render");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Profile Functional Base Component"
             }, void 0, false, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 4,
-                columnNumber: 5
+                lineNumber: 7,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: [
@@ -13351,16 +13411,48 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 5,
-                columnNumber: 5
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setCount(count + 1);
+                    setCount2(count + 1);
+                },
+                children: "Add"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count2
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 16,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Profile.js",
-        lineNumber: 3,
+        lineNumber: 6,
         columnNumber: 10
     }, undefined);
 };
+_s(Profile, "CrxQGlCmi7kvTIXNZHCMNfH2qjE=");
 _c = Profile;
 exports.default = Profile;
 var _c;

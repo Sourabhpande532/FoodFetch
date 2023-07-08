@@ -1,3 +1,35 @@
+/* 
+@-------------------FUNTION_BASE_COMPONENT 
+import React, { useState } from "react";
+
+const Profile = (props) => {
+  const [count, setCount] = useState(0);
+  const [count2,setCount2] = useState(2);
+  console.log("render")
+  return (
+    <div>
+      <h1>Profile Functional Base Component</h1>
+      <h3>Name:{props.name}</h3>
+      <h3>F-Count:{count}</h3>
+      <button
+        onClick={() => {
+          setCount(count+1);
+          setCount2(count+1);
+        }}>
+        Add
+      </button>
+      <h3>F-Count:{count2}</h3>
+    </div>
+  );
+};
+
+export default Profile;
+*/
+
+/* ---------OBSERVED THE DEFFERENCE BETWEEN---------- */
+
+/* 
+@----------------------CLASS_BASE_COMPONENT
 import React from "react";
 class Profile extends React.Component {
   constructor(props) {
@@ -39,7 +71,9 @@ class Profile extends React.Component {
 }
 export default Profile;
 
-/*
+
+
+@OVERVIEW
 -How do I Create STATE in Class Base COMPONENT !! 
 -Take REFFERENCE of 🗃️Profile.js & 🗃️ProfileClass.js  
 -In function we use STATE But,In class base We've Constructor to create STATE !
@@ -54,5 +88,9 @@ Q) -> Then How do I updated state By using "This.setState({count:1})"
    -> Always REMEMBER according To LifeCycle Methode First Constructor Then Render Called in Class BASE COMPONENT But In function Base COMPONENT it called after every each time render;
 Q) -> How to call API Call In Function & class Base COMPONENT & what is best method ?? 
    In function we use useEffect(()=>{}) after every reder it call("First render + Then 2nd Call API(useEffect)") But in Class base Same process we apply First render & Then we'll update something So react Provide use some functionality Know as "componentDidMount" it work under lifeCycle like ["Constructor",componentDidMount,render] it render the array sequence what we mention here...   
+
+
+
+
 
 */

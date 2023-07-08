@@ -884,8 +884,9 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       => it is a class that needs to be inherit some properties in This react do such thing this is how react know this is class base COMPONENT
    Q) So How do i pass props inside Class base COMPONENT 🤔??
       => Use simply {this.props.name} 
-      -So when the react Tracking COMPONENT it takes this props & attach to this keyword;
-      -Props it's an object at end of the it play a key role 
+      -🎯So when the react Tracking COMPONENT it takes this props & attach to this keyword;
+      -🎯Props it's an object at end of the it play a key role 
+      -🎯
 
 
 
