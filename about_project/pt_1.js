@@ -886,7 +886,22 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
       => Use simply {this.props.name} 
       -🎯So when the react Tracking COMPONENT it takes this props & attach to this keyword;
       -🎯Props it's an object at end of the it play a key role 
-      -🎯
+      --How do I Create STATE in Class Base COMPONENT !! 
+-🎯Take REFFERENCE of 🗃️Profile.js & 🗃️ProfileClass.js  
+-🎯In function we use STATE But,In class base We've Constructor to create STATE !
+-H.W: ❓Why do use super(props) inside Constructor(props){super(props);}
+-> Ans: 
+✈️🔗https://www.geeksforgeeks.org/what-is-the-purpose-of-using-super-constructor-with-props-argument-in-reactjs/
+✈️🔗https://www.geeksforgeeks.org/whats-the-difference-between-super-and-superprops-in-react/
+
+Role of Constructor: ->it is place use for initialization; when a instance of class is created/invoke while RENDERING a Constructor is called ! & this is best place to create STATEs;
+-whenever you load card Constructor is called it's first Step!
+-To create STATE Here Called something Know as "This.state" just similar like react gives access of this.props.name 
+Q)❓ -> Then How do I updated state By using "This.setState({count:1})"
+   -> Always REMEMBER according To LifeCycle Methode First Constructor Then Render Called in Class BASE COMPONENT But In function Base COMPONENT it called after every each time render;
+Q)❓ -> How to call API Call In Function & class Base COMPONENT & what is best method ?? 
+   ->🎯In function we use useEffect(()=>{}) after every reder it call("First render + Then 2nd Call API(useEffect)") But in Class base Same process we apply First render & Then we'll update something So react Provide use some functionality Know as "componentDidMount" it work under lifeCycle like ["Constructor",render,componentDidMount] it render the array sequence what we mention here...  
+   ->🎯it is best way to call API in "componentDidMount"
 
 
 

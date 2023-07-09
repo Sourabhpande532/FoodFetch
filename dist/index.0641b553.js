@@ -13208,49 +13208,106 @@ var _profileClass = require("./ProfileClass");
 var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
 var _profile = require("./Profile");
 var _profileDefault = parcelHelpers.interopDefault(_profile);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Hellow, this is About page"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 8,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "page is about Functional & CLASS base COMPONENT for UNDERSTANDING Perpose"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
-                name: "Saurabh,pass via Props from function"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                name: "Kunal,pass via Props from class",
-                xyz: "Shankar Dadmal"
-            }, void 0, false, {
-                fileName: "src/component/About.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/About.js",
-        lineNumber: 7,
-        columnNumber: 10
-    }, undefined);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
+class About extends (0, _reactDefault.default).Component {
+    // PROPS & STATE PLACE
+    constructor(props){
+        super(props);
+        console.log("[Parent-constructor]:AT 1st Position The Constructor Called");
+    }
+    // API PLACE
+    componentDidMount() {
+        console.log("[Parent-componentDidMount]:At 3rd Position It API called");
+    }
+    //COMPONENT PLACE
+    render() {
+        console.log("[Parent-render]At 2nd Position it Render Called");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "Hellow, this is About page"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 22,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: "page is about Functional & CLASS base COMPONENT for UNDERSTANDING Perpose"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                    name: "Saurabh (from function)"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 28,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                    name: "First Child-(from:class)"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 29,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
+                    name: "second Child-(from:class)"
+                }, void 0, false, {
+                    fileName: "src/component/About.js",
+                    lineNumber: 30,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/component/About.js",
+            lineNumber: 21,
+            columnNumber: 12
+        }, this);
+    }
+}
+exports.default = About; /* 
+-@WHERE DO We INITIALIZED STATE, in At Constructor whenever you'r class is INITIALIZED You'r constructor is by default Called
+
+-@How_it_STEP_BY_STEP_Rendered@ 
+
+ *Parent Constructor
+ *Parent Render 
+ *First child - Constructor
+ *first Child - Render 
+ *second child -Constructor
+ *second child -Render 
+ *First Child  -ComponentDidMount 
+ *Second Child  -ComponentDidMount 
+ *Parent - componentDidMount
+ 
+❓How & Why ??
+ When react is Rendering the stuff first it goes in Two phase when reconcialation is happening 
+-* Render Phase &  *Commit phase 
+ Diagram Ref: 🔗✈️ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+ -🎯In the Render React first finished the render phase it include first "constructor"& then "Render" methods called & fact It's very fast as compared to Commit;
+ -🎯Commit Phase is the phase WHERE React Atually Modify you'r Dom Then after INITIALIZED render Then componentDidMount Updated 
+
+ @NOTE: Who help us to convert JSX To HTML It's Obivious "BABAl" As per process First called "Constructor" Then Called "Render" here inside one it Generate the Core HTML That BABAl convert JSX To HTML it plays Key Role!!
+*/  // FUNCTION BASE COMPONENT
+ // const About2 = () => {
+ //   return (
+ //     <div>
+ //       <h1>Hellow, this is About page</h1>
+ //       <p>
+ //         page is about Functional & CLASS base COMPONENT for UNDERSTANDING
+ //         Perpose
+ //       </p>
+ //       {/* <Outlet /> */}
+ //       <ProfileFunctionalComponent
+ //         name={"Saurabh,pass via Props from function"}
+ //       />
+ //       <Profile name={"Kunal,pass via Props from class"} xyz='Shankar Dadmal' />
+ //     </div>
+ //   );
+ // };
+ // export default About2;
 
   $parcel$ReactRefreshHelpers$77f7.postlude(module);
 } finally {
@@ -13277,15 +13334,15 @@ class Profile extends (0, _reactDefault.default).Component {
             count: 0,
             count2: "2nd time"
         };
-        console.log("Constructor");
+        console.log("[Child- Constructor]" + this.props.name);
     }
     // COMPONENT DID UPDATE
     componentDidMount() {
-        console.log("ComponentDidMount");
+        console.log("[Child - ComponentDidMount]" + this.props.name);
     }
     render() {
         // const {count} = this.state; Optionally Distructure
-        console.log("render");
+        console.log("[child - render]" + this.props.name);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -13355,20 +13412,6 @@ class Profile extends (0, _reactDefault.default).Component {
     }
 }
 exports.default = Profile; /*
--How do I Create STATE in Class Base COMPONENT !! 
--Take REFFERENCE of 🗃️Profile.js & 🗃️ProfileClass.js  
--In function we use STATE But,In class base We've Constructor to create STATE !
--H.W: Why do use super(props) inside Constructor(props){super(props);}
--> Ans: 
-✈️🔗https://www.geeksforgeeks.org/what-is-the-purpose-of-using-super-constructor-with-props-argument-in-reactjs/
-✈️🔗https://www.geeksforgeeks.org/whats-the-difference-between-super-and-superprops-in-react/
-Role of Constructor: ->it is place use for initialization; when a instance of class is created/invoke while RENDERING a Constructor is called ! & this is best place to create STATEs;
--whenever you load card Constructor is called it's first Step!
--To create STATE Here Called something Know as "This.state" just similar like react gives access of this.props.name 
-Q) -> Then How do I updated state By using "This.setState({count:1})"
-   -> Always REMEMBER according To LifeCycle Methode First Constructor Then Render Called in Class BASE COMPONENT But In function Base COMPONENT it called after every each time render;
-Q) -> How to call API Call In Function & class Base COMPONENT & what is best method ?? 
-   In function we use useEffect(()=>{}) after every reder it call("First render + Then 2nd Call API(useEffect)") But in Class base Same process we apply First render & Then we'll update something So react Provide use some functionality Know as "componentDidMount" it work under lifeCycle like ["Constructor",componentDidMount,render] it render the array sequence what we mention here...   
 
 */ 
 
