@@ -13212,11 +13212,15 @@ class About extends (0, _reactDefault.default).Component {
     // PROPS & STATE PLACE
     constructor(props){
         super(props);
-        console.log("[Parent-constructor]:AT 1st Position The Constructor Called");
+        this.state = {
+            userInfo: "Dummy Name",
+            location: "India"
+        };
+        console.log("[Parent-constructor]:AT 1st");
     }
-    // API PLACE
+    // API CALL PLACE
     componentDidMount() {
-        console.log("[Parent-componentDidMount]:At 3rd Position It API called");
+        console.log("[Parent-componentDidMount]:At 3rd");
     }
     //COMPONENT PLACE
     render() {
@@ -13227,70 +13231,39 @@ class About extends (0, _reactDefault.default).Component {
                     children: "Hellow, this is About page"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 22,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                     children: "page is about Functional & CLASS base COMPONENT for UNDERSTANDING Perpose"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 23,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
                     name: "Saurabh (from function)"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 28,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
                     name: "First Child-(from:class)"
                 }, void 0, false, {
                     fileName: "src/component/About.js",
-                    lineNumber: 29,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                    name: "second Child-(from:class)"
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 30,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/component/About.js",
-            lineNumber: 21,
+            lineNumber: 25,
             columnNumber: 12
         }, this);
     }
 }
-exports.default = About; /* 
--@WHERE DO We INITIALIZED STATE, in At Constructor whenever you'r class is INITIALIZED You'r constructor is by default Called
-
--@How_it_STEP_BY_STEP_Rendered@ 
-
- *Parent Constructor
- *Parent Render 
- *First child - Constructor
- *first Child - Render 
- *second child -Constructor
- *second child -Render 
- *First Child  -ComponentDidMount 
- *Second Child  -ComponentDidMount 
- *Parent - componentDidMount
- 
-❓How & Why ??
- When react is Rendering the stuff first it goes in Two phase when reconcialation is happening 
--* Render Phase &  *Commit phase 
- Diagram Ref: 🔗✈️ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-
- -🎯In the Render React first finished the render phase it include first "constructor"& then "Render" methods called & fact It's very fast as compared to Commit;
- -🎯Commit Phase is the phase WHERE React Atually Modify you'r Dom Then after INITIALIZED render Then componentDidMount Updated 
-
- @NOTE: Who help us to convert JSX To HTML It's Obivious "BABAl" As per process First called "Constructor" Then Called "Render" here inside one it Generate the Core HTML That BABAl convert JSX To HTML it plays Key Role!!
-*/  // FUNCTION BASE COMPONENT
+exports.default = About; // FUNCTION BASE COMPONENT
  // const About2 = () => {
  //   return (
  //     <div>
@@ -13331,17 +13304,27 @@ class Profile extends (0, _reactDefault.default).Component {
         super(props);
         //CREATE STATE
         this.state = {
-            count: 0,
-            count2: "2nd time"
+            userInfo: "Dummy Name",
+            location: "India"
         };
         console.log("[Child- Constructor]" + this.props.name);
     }
-    // COMPONENT DID UPDATE
-    componentDidMount() {
+    // COMPONENT DID MOUNT FOR API CALL
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/Sourabhpande532");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            userInfo: json
+        });
         console.log("[Child - ComponentDidMount]" + this.props.name);
     }
+    // COMPONENT DID UPDATE
+    componentDidUpdate() {
+        console.log("ComponentDidUpdate");
+    }
     render() {
-        // const {count} = this.state; Optionally Distructure
+        // const {count,location} = this.state.userInfo; Optionally Distructure
         console.log("[child - render]" + this.props.name);
         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
@@ -13349,37 +13332,44 @@ class Profile extends (0, _reactDefault.default).Component {
                     children: "Profile Class Base Component"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 21,
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: this.state?.userInfo?.avatar_url
+                }, void 0, false, {
+                    fileName: "src/component/ProfileClass.js",
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                     children: [
                         "Name:",
-                        this.props.name
+                        this.state?.userInfo?.name
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 22,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                     children: [
-                        "XYZ:",
-                        this.props.xyz
+                        "Location:",
+                        this?.state?.userInfo?.location
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 23,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                     children: [
-                        "C-count:",
-                        this.state.count
+                        "UserId:",
+                        this?.state?.userInfo?.login
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 24,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -13394,7 +13384,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     children: "Update State"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 25,
+                    lineNumber: 39,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13404,14 +13394,40 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 35,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true);
     }
 }
-exports.default = Profile; /*
+exports.default = Profile; /* 
+H.w: We can use async componentDidMount But why not we use async operation with useEffect(async) !!
+-useEffect runs asynchronously after a render is painted to the screen, unblocking the browser paint process.
+-Why? Because React's useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called.
+Ref: 🔗✈️https://www.designcise.com/web/tutorial/why-cant-react-useeffect-callback-be-async
+
+How we can disply Api Data on UI ??
+-for that Need to create STATE inside constructor !! 
+-STATE is Nothing but an big Object
+-How do i STATE Data into state use this.state on componentDidMount
+
+-😱Given:Fact Parent - componentDidMount it call befour API first first Parent-componentDidMount call then API because API take certain time to load so it FOLLOW the sequence see below 
+/***
+ * call.....
+ * child constructor
+ * child render
+ * child componentDidMount 
+ * 
+ * Then'll Make API Call
+ * set State 
+ * begain to start with Updata see Diagram render.png secode Coloum 'Updata'(ComponentDidUpdate) @hint first is "Mounting" & 3rd one "Unmounting"
+ * 
+ * 
+ * 
+ *NOTE:As soon as You make an API Call inside componentDidMount you'r component Already mounted then Goes in 2nd phase "ComponentDidUpdate"
+ *NOTE: MOUNT'll be called when ""after first render"" & Updata called be when "after every next render" 
+ * 
 
 */ 
 

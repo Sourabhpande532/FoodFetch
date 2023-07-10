@@ -903,6 +903,33 @@ Q)❓ -> How to call API Call In Function & class Base COMPONENT & what is best 
    ->🎯In function we use useEffect(()=>{}) after every reder it call("First render + Then 2nd Call API(useEffect)") But in Class base Same process we apply First render & Then we'll update something So react Provide use some functionality Know as "componentDidMount" it work under lifeCycle like ["Constructor",render,componentDidMount] it render the array sequence what we mention here...  
    ->🎯it is best way to call API in "componentDidMount"
 
+   @CLASS_BASE_COMPONENT_RENDER_PROCESS@
+   -@WHERE DO We INITIALIZED STATE, in At Constructor whenever you'r class is INITIALIZED You'r constructor is by default Called
+
+ -------------------------------------NEW!!  
+ @How_it_STEP_BY_STEP_RenderedOrCalled@ 
+
+ *Parent Constructor
+ *Parent Render 
+ *First child - Constructor
+ *first Child - Render 
+ *second child -Constructor
+ *second child -Render 
+ *First Child  -ComponentDidMount 
+ *Second Child  -ComponentDidMount 
+ *Parent - componentDidMount
+ 
+❓How & Why ??
+ When react is Rendering the stuff first it goes in Two phase when reconcialation is happening 
+-* Render Phase &  *Commit phase 
+ Diagram Ref: 🔗✈️ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+ -🎯In the Render React first finished the render phase it include first "constructor"& then "Render" methods called & fact It's very fast as compared to Commit;
+ -🎯Commit Phase is the phase WHERE React Atually Modify you'r Dom Then after INITIALIZED render Then componentDidMount Updated 
+
+ @NOTE: Who help us to convert JSX To HTML It's Obivious "BABAl" As per process First called "Constructor" Then Called "Render" here inside one it Generate the Core HTML That BABAl convert JSX To HTML it plays Key Role!!
+
+ https://api.github.com/users/Sourabhpande532
 
 
 
