@@ -13311,6 +13311,9 @@ class Profile extends (0, _reactDefault.default).Component {
     }
     // COMPONENT DID MOUNT FOR API CALL
     async componentDidMount() {
+        // this.timer = setInterval(()=>{
+        //   console.log("Hellow")
+        // },1000)
         const data = await fetch("https://api.github.com/users/Sourabhpande532");
         const json = await data.json();
         console.log(json);
@@ -13323,6 +13326,10 @@ class Profile extends (0, _reactDefault.default).Component {
     componentDidUpdate() {
         console.log("ComponentDidUpdate");
     }
+    componentWillUnmount() {
+        clearInterval(this.timer);
+        console.log("CompoundWillUnmount");
+    }
     render() {
         // const {count,location} = this.state.userInfo; Optionally Distructure
         console.log("[child - render]" + this.props.name);
@@ -13332,14 +13339,14 @@ class Profile extends (0, _reactDefault.default).Component {
                     children: "Profile Class Base Component"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 33,
+                    lineNumber: 41,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     src: this.state?.userInfo?.avatar_url
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 34,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13349,7 +13356,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 35,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13359,7 +13366,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 36,
+                    lineNumber: 44,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13369,7 +13376,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 37,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -13384,7 +13391,7 @@ class Profile extends (0, _reactDefault.default).Component {
                     children: "Update State"
                 }, void 0, false, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 39,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13394,42 +13401,14 @@ class Profile extends (0, _reactDefault.default).Component {
                     ]
                 }, void 0, true, {
                     fileName: "src/component/ProfileClass.js",
-                    lineNumber: 49,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true);
     }
 }
-exports.default = Profile; /* 
-H.w: We can use async componentDidMount But why not we use async operation with useEffect(async) !!
--useEffect runs asynchronously after a render is painted to the screen, unblocking the browser paint process.
--Why? Because React's useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called.
-Ref: 🔗✈️https://www.designcise.com/web/tutorial/why-cant-react-useeffect-callback-be-async
-
-How we can disply Api Data on UI ??
--for that Need to create STATE inside constructor !! 
--STATE is Nothing but an big Object
--How do i STATE Data into state use this.state on componentDidMount
-
--😱Given:Fact Parent - componentDidMount it call befour API first first Parent-componentDidMount call then API because API take certain time to load so it FOLLOW the sequence see below 
-/***
- * call.....
- * child constructor
- * child render
- * child componentDidMount 
- * 
- * Then'll Make API Call
- * set State 
- * begain to start with Updata see Diagram render.png secode Coloum 'Updata'(ComponentDidUpdate) @hint first is "Mounting" & 3rd one "Unmounting"
- * 
- * 
- * 
- *NOTE:As soon as You make an API Call inside componentDidMount you'r component Already mounted then Goes in 2nd phase "ComponentDidUpdate"
- *NOTE: MOUNT'll be called when ""after first render"" & Updata called be when "after every next render" 
- * 
-
-*/ 
+exports.default = Profile;
 
   $parcel$ReactRefreshHelpers$8d39.postlude(module);
 } finally {
@@ -13453,6 +13432,17 @@ const Profile = (props)=>{
     _s();
     const [count, setCount] = (0, _react.useState)(0);
     const [count2, setCount2] = (0, _react.useState)(2);
+    (0, _react.useEffect)(()=>{
+        const timer = setInterval(()=>{
+            console.log("Hellow");
+        }, 1000);
+        console.log("useEffect");
+        // Unmounting The stuff(class:componentWillUnmount)
+        return ()=>{
+            clearInterval(timer);
+            console.log("useEffect return");
+        };
+    }, []);
     console.log("render");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -13460,7 +13450,7 @@ const Profile = (props)=>{
                 children: "Profile Functional Base Component"
             }, void 0, false, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 7,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13470,7 +13460,7 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 8,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13480,7 +13470,7 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 9,
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -13491,7 +13481,7 @@ const Profile = (props)=>{
                 children: "Add"
             }, void 0, false, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 10,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -13501,17 +13491,17 @@ const Profile = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/Profile.js",
-                lineNumber: 16,
+                lineNumber: 27,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Profile.js",
-        lineNumber: 6,
+        lineNumber: 17,
         columnNumber: 10
     }, undefined);
 };
-_s(Profile, "CrxQGlCmi7kvTIXNZHCMNfH2qjE=");
+_s(Profile, "wkdueDwNjmx3dT3WXTCEgF3grs4=");
 _c = Profile;
 exports.default = Profile;
 var _c;

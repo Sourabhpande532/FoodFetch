@@ -853,6 +853,7 @@ Why my search FUNCTIONALITY Not working Properly Once after search if you do
     
 
 
+
     ----------------------------SECTION
 
 
@@ -930,6 +931,45 @@ Q)❓ -> How to call API Call In Function & class Base COMPONENT & what is best 
  @NOTE: Who help us to convert JSX To HTML It's Obivious "BABAl" As per process First called "Constructor" Then Called "Render" here inside one it Generate the Core HTML That BABAl convert JSX To HTML it plays Key Role!!
 
  https://api.github.com/users/Sourabhpande532
+
+ H.w: We can use async componentDidMount But why not we use async operation with useEffect(async) !!
+-useEffect runs asynchronously after a render is painted to the screen, unblocking the browser paint process.
+-Why? Because React's useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called.
+Ref: 🔗✈️https://www.designcise.com/web/tutorial/why-cant-react-useeffect-callback-be-async
+
+How we can disply Api Data on UI ??
+-for that Need to create STATE inside constructor !! 
+-STATE is Nothing but an big Object
+-How do i STATE Data into state use this.state on componentDidMount
+
+-😱Given:Fact Parent - componentDidMount it call befour API first first Parent-componentDidMount call then API because API take certain time to load so it FOLLOW the sequence see below 
+/***
+ * call.....
+ * child constructor
+ * child render
+ * child componentDidMount 
+ * 
+ * Then'll Make API Call
+ * set State 
+ * begain to start with Updata see Diagram render.png secode Coloum 'Updata'(ComponentDidUpdate) @hint first is "Mounting" & 3rd one "Unmounting"
+ * 
+ * <Updata CYCLEES>
+ * render component
+ * 
+ *NOTE:As soon as You make an API Call inside 🔻("componentDidMoun")t you'r component Already mounted then Goes in 2nd phase 🔻("ComponentDidUpdate")
+ *NOTE: MOUNT'll be called when ""after first render"" & Updata called be when "after every next render" & 😱Given fact then 3rd stage came 🔻("CompoundWillUnmount") it'll called when you go to next page Or leaving Page ...as soon as &&  in function base component you can use something know as""return () => {clearInterval(timer);console.log("useEffect return");"" REPLACE(CompoundWillUnmount) it atually cleanup the the page Take Refference of 🗃️Profile.js &  🗃️ProfileClass.js see useEffect function clearly!!};
+ *
+ *
+ * 
+ * How'll useEffect call without dependencies array after every render & in class base after first render componentDidMount "Called" & after every subsequent result it is updated "componentDidUpdate" called;
+ * How useEffect call with dependencies it called  only one time render not every time;
+ * 
+ * 
+ * 
+ * What if with we pass some info in dependencies array like inside useEffect(()=>{},[count]) it called after every count updated! 
+ * Now How i do with class Base component as we know one life CYCLEES methods runs after every render that lifecycles methods is "ComponentDidUpdate" it will call every Update
+ * 
+ *
 
 
 
