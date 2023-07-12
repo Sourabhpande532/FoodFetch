@@ -1,5 +1,8 @@
 export const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/"
 
+export const FETCH_RESTRA_MENU_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
+
+
 // RESTAURANT LIST 
 export const restrauntList = [
   {

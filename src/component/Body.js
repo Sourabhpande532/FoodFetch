@@ -3,18 +3,8 @@ import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
 
-// SEARCH FUNCTIONALITY with filtering process
-function filterData(searchText, restaurant) {
-  const filterDatas = restaurant.filter(
-    (restaurant) =>
-      restaurant?.data?.data?.name
-        ?.toLowerCase()
-        ?.includes(searchText.toLowerCase())
-    // IF INSIDE ARRAY IT INCLUDES SEARCHTEXT JUST FILTEROUT
-  );
-  return filterDatas;
-}
 
 const Body = () => {
   // COPY OF ALL RESTURANT

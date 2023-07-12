@@ -969,7 +969,42 @@ How we can disply Api Data on UI ??
  * What if with we pass some info in dependencies array like inside useEffect(()=>{},[count]) it called after every count updated! 
  * Now How i do with class Base component as we know one life CYCLEES methods runs after every render that lifecycles methods is "ComponentDidUpdate" it will call every Update
  * 
- *
+ * 
+ * 
+ * 
+
+ ----------------------------SECTION
+
+
+    @TITLE : CREATE OUR OWN CUSTOM HOOK  
+    @LOCATION: [🔺app.js, 🔺,🔺,🔺]
+    @OVERVIEW:
+
+    !Q) Why should we build hooks >??
+    ->  reusability & readibility,SOP(separation of conrcern), maintainability, teastable, & modulirity(we've broken down code into meaningful peaces)
+    -> at end of the day it's an HOOK @@!!
+
+    Now,let's us create on our Hook of 🗃️RestrauntMenu.js
+    -🎯it is doing two thing Fatching Data & disply Data 
+    -🎯1st it find "id" 2nd is get the details from "Server" then 3rd is come to disply data on UI 
+    -🎯so let's create Own Hook that'll help us get RestrauntMenu details 
+    -🎯Make sure create an hook with "use" prefix name initially like 🗃️"useRestrauntMenu.js"
+    
+   Surly you can use named export but Generally when we created 1 file for 1 component/hook ultimately we'r designed hook so it should be rafce type not named export!
+   
+   it usually fetch the data for us 🗃️useRestrauntMenuHook(has triggers own RECONSCILIATION PROCESS going on) 
+   -🎯so where this id come from come from URL i'll fetch data from this MENU with respect this id 
+   -🎯im putting the data into restaurant see observerly in 🗃️RestrauntMenu.js  it's a state variable what if if i'm have useRestrauntMenuHook & don't care about data from where attually it's coming from literally in that wake we create own Hook; 
+   -🎯I literally don't care from where it's coming weather it's hard coded or any...
+
+   @DEFFINATION@ of Functional Component@@!! 
+   -🎯it is functiion that return JSX 
+   -🎯So hooks does not return JSX it is a peace of JAVASCRIPT code that extract peace of LOGIC out of it! 
+
+
+   @NEXT : When INTERNET GOES OFF 🥱
+
+
 
 
 
