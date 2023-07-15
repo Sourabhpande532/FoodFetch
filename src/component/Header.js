@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 // const loggedInUser = () => {
 //   return true;
@@ -18,6 +19,7 @@ const Title = () => {
 //REACT COMPONENT
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isOnline = useOnline();
 
   return (
     <div className='header'>
@@ -38,6 +40,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
+      <h1>{isOnline ?"💹":"🔴"}</h1>
       {/* TERNARY OPERATOR */}
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>

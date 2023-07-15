@@ -4,6 +4,7 @@ import RestaurantCart from "./RestaurantCart";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 
 const Body = () => {
@@ -36,6 +37,13 @@ const Body = () => {
     setFilteredRestaurants(json?.data?.cards);
   }
   console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
+
+
+  // IN CASE, OFFLINE  
+  const isOnline =  useOnline();
+  if(!isOnline){
+    return <h1>🔴🔴 Seems Like internet OFF, Please Check</h1>
+  }
 
   // AVOID(Early render)!RENDER COMPONENT
   if (!allRestaurants) return null;

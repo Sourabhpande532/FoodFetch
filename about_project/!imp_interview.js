@@ -82,4 +82,23 @@ While Fetching API
 🔺@MAKE YOUR COMPONENT BE LOGICAL:
   That will help you to make you'r code readible,maintable,modular,teastable,reusable 
 
+  ---------------------------------------------------------------
+
+🔺 Using thing INTO large scale application!
+   As i know BUNDLERS(parsel) store all this thing into index.js But what if there is 1000 component still it store or create mess ??
+   it obivious create an mess & it would make our app very slow 🤔🥱??
+
+   -🎯So instead what should i do just
+    use 🔺Chunking,🔺Code Spliting,🔺Dyanmic 🔺Bundling,🔺Lazy Loading is BUNDLEING Always Good for large production!
+
+ Q) So How do we large scale application like makeMytrip Bundles/split all those things How they compress thousand(100) component?
+
+     first discuss 👁️SEANARIO if use visit makeMytrip
+     ✈️🔗https://www.makemytrip.com/
+     & want to go to flight anywhere So do you literally open train section/component it's less chance or no chance So that's way Chunking/Spliting code! Base on use cases we Bundles thing for good dev Experience!
+    😵For INTERVIEW_PERSPECTIVE 
+    Tell above 👁️SEANARIO what they ask Although you designed makeMytrip app So how it Build??
+    -🎯while Building this makeMytrip app i'll use code Spliting/Chunking for all of them 
+    -🎯when i'm doing BUNDLEING or using some webpack,parsel i'll make sure mybunderlers doe'nt INCLUDES random code !
+
 */
