@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -10,6 +10,11 @@ import Cart from "../src/component/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
 import Profile from "../src/component/Profile";
+import ShimmerUi from "../src/component/ShimmerUi";
+// import Instamart from "./component/Instamart";
+
+// CHUNKING,ON DEMAND LOADING,DYANAMIC IMPORT,LAZY IMPORT
+const Instamart = lazy(() => import("./component/Instamart"));
 
 const AppLayout = () => {
   return (
@@ -34,7 +39,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-          // parentPath/{path} = localhost:1244/about
+        // parentPath/{path} = localhost:1244/about
         children: [
           {
             path: "profile",
@@ -54,6 +59,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestrauntMenu />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<ShimmerUi />}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

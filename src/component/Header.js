@@ -38,9 +38,12 @@ const Header = () => {
           <li>
             <Link to='/cart'>Cart</Link>
           </li>
+          <li>
+            <Link to='/instamart'>instamart</Link>
+          </li>
         </ul>
       </div>
-      <h1>{isOnline ?"💹":"🔴"}</h1>
+      <h1>{isOnline ? "💹" : "🔴"}</h1>
       {/* TERNARY OPERATOR */}
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>

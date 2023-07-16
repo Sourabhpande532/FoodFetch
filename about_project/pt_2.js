@@ -483,34 +483,34 @@ How we can disply Api Data on UI ??
  ----------------------------SECTION
 
 
-    @TITLE : CREATE OUR OWN CUSTOM HOOK  
-    @LOCATION: [🔺app.js, 🔺,🔺,🔺]
-    @OVERVIEW:
+@TITLE : CREATE OUR OWN CUSTOM HOOK  
+@LOCATION: [🔺app.js, 🔺,🔺,🔺]
+@OVERVIEW:
 
-    !Q) Why should we build hooks >??
-    ->  reusability & readibility,SOP(separation of conrcern), maintainability, teastable, & modulirity(we've broken down code into meaningful peaces)
-    -> at end of the day it's an HOOK @@!!
+!Q) Why should we build hooks >??
+->  reusability & readibility,SOP(separation of conrcern), maintainability, teastable, & modulirity(we've broken down code into meaningful peaces)
+-> at end of the day it's an HOOK @@!!
 
-    Now,let's us create on our Hook of 🗃️RestrauntMenu.js
-    -🎯it is doing two thing Fatching Data & disply Data 
-    -🎯1st it find "id" 2nd is get the details from "Server" then 3rd is come to disply data on UI 
-    -🎯so let's create Own Hook that'll help us get RestrauntMenu details 
-    -🎯Make sure create an hook with "use" prefix name initially like 🗃️"useRestrauntMenu.js"
-    
-   Surly you can use named export but Generally when we created 1 file for 1 component/hook ultimately we'r designed hook so it should be rafce type not named export!
-   
-   it usually fetch the data for us 🗃️useRestrauntMenuHook(has triggers own RECONSCILIATION PROCESS going on) 
-   -🎯so where this id come from come from URL i'll fetch data from this MENU with respect this id 
-   -🎯im putting the data into restaurant see observerly in 🗃️RestrauntMenu.js  it's a state variable what if if i'm have useRestrauntMenuHook & don't care about data from where attually it's coming from literally in that wake we create own Hook; 
-   -🎯I literally don't care from where it's coming weather it's hard coded or any...
+Now,let's us create on our Hook of 🗃️RestrauntMenu.js
+-🎯it is doing two thing Fatching Data & disply Data 
+-🎯1st it find "id" 2nd is get the details from "Server" then 3rd is come to disply data on UI 
+-🎯so let's create Own Hook that'll help us get RestrauntMenu details 
+-🎯Make sure create an hook with "use" prefix name initially like 🗃️"useRestrauntMenu.js"
 
-   @DEFFINATION@ of Functional Component@@!! 
-   -🎯it is functiion that return JSX 
-   -🎯So hooks does not return JSX it is a peace of JAVASCRIPT code that extract peace of LOGIC out of it! 
+Surly you can use named export but Generally when we created 1 file for 1 component/hook ultimately we'r designed hook so it should be rafce type not named export!
+
+it usually fetch the data for us 🗃️useRestrauntMenuHook(has triggers own RECONSCILIATION PROCESS going on) 
+-🎯so where this id come from come from URL i'll fetch data from this MENU with respect this id 
+-🎯im putting the data into restaurant see observerly in 🗃️RestrauntMenu.js  it's a state variable what if if i'm have useRestrauntMenuHook & don't care about data from where attually it's coming from literally in that wake we create own Hook; 
+-🎯I literally don't care from where it's coming weather it's hard coded or any...
+
+@DEFFINATION@ of Functional Component@@!! 
+-🎯it is functiion that return JSX 
+-🎯So hooks does not return JSX it is a peace of JAVASCRIPT code that extract peace of LOGIC out of it! 
 
  
  
-   ----------------------------SECTION
+----------------------------SECTION
 
 @NEXT : When INTERNET GOES OFF 🥱
 @BUILD_FUCTIONALITY: When INTERNET Goes OFF
@@ -523,13 +523,16 @@ How we can disply Api Data on UI ??
 🔗✈️https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event
 
 -🎯so how many times i need to set event listener "just one" whenever page is load eventListner track it "ONCE" so for that we need useEffect at one time only;
-if you've to write senior developer code Need to clean "addEventListener" cleaining the cache because we want only for our body component Not other o.w it create mess 
+if you've to write senior developer code Need to clean "addEventListener" cleaining the cache because we want only for our body component Not other like 'contact' o.w it create mess 
 -🎯it is Always a good idea to clean the eventListner when you go other component like "about,contact" o.w you'r browser holds keep eventListner & create mess & blown up !
 -🎯so how do we that use "return" The process is unmounts || CompoundWillUnmount
 
 
 
-------------------------------------------------------------------
+-----------------------------@SECTION 
+@ABOUT: INDIVIDUAL SPLITING,CHUNKING,ON DEMAND LOADING 
+@LOCATION: 🗃️component/Instamart, 🗃️app.js 
+
 
    Using thing INTO large scale application!
    As i know BUNDLERS(parsel) store all this thing into index.js But what if there is 1000 component still it store or create mess ??
@@ -538,24 +541,49 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
    -🎯So instead what should i do just
     use 🔺Chunking,🔺Code Spliting,🔺Dyanmic 🔺Bundling,🔺Lazy Loading is BUNDLEING Always Good for large production!
 
- Q) So How do we large scale application like makeMytrip Bundles/split all those things How they compress thousand(100) component?
+ Q) So How do we large scale application like makeMytrip Bundles/split all those things How they compress thousand(1000) component?
 
      first discuss 👁️SEANARIO if use visit makeMytrip
-     ✈️🔗https://www.makemytrip.com/
+     ref: ✈️🔗https://www.makemytrip.com/
+
      & want to go to flight anywhere So do you literally open train section/component it's less chance or no chance So that's way Chunking/Spliting code! Base on use cases we Bundles thing for good dev Experience!
     😵For INTERVIEW_PERSPECTIVE 
-    Tell above 👁️SEANARIO what they ask Although you designed makeMytrip app So how it Build??
+    Tell above 👁️SEANARIO what they ask Although you designed makeMytrip app So how it Build & how do you BUNDLEING stuff or what is need of BUNDLEING??
     -🎯while Building this makeMytrip app i'll use code Spliting/Chunking for all of them 
     -🎯when i'm doing BUNDLEING or using some webpack,parsel i'll make sure mybunderlers doe'nt INCLUDES random code !
     -🎯to be honest doesn't make any sence to be loaded train component into my flights component as i visit flights on makeMytrip
-    -🎯How do we do that so whenever our home page loads it should only loads component for flights it make genuine sence! & whenever visit train it only load train section not others
-    -🎯Make my trip its image heavy side so i put all those images on to CDN 
+    -🎯How do we do that so whenever our home page loads it should only loads component for flights it make genuine sence! & whenever visit train it only load train section not others @NOTE: not run on same time both component o.w crate mess and delay the process!
+    -🎯Make my trip its image heavy side so i put all those images on to CDN or compress it
     
-
     All this know as 
-   🔺On Demand Loading, 🔺Chunking,🔺code Spliting, 🔺dyanamic BUNDLEING,🔺Lazy Loading, 🔺Dyanmic import
+   🔺On Demand Loading(separate component individual load), 🔺Chunking,🔺code Spliting, 🔺dyanamic BUNDLEING,🔺Lazy Loading, 🔺Dyanmic import
 
+   LET"s Build a BUNDLERS for Instamart 
+   -🎯feature for instant delevery 
+   -🎯Quick response
+   -🎯if you go /instamart & check Network tab while inspect you'll still get inside index.js file why🤔?
+   -🎯Let's us try to do Chunking on import see 🗃️app.js where we import instamart let's do separately! 
+   -🎯Need to perform lazy loading or 🔺Dyanmic import separately so don't import instamart as usually instead create a separate method for it called "lazy()"
+   -🎯lazy() comes form "React library"! as an nameed import
+   -🎯expect one function to perform 🔺Dyanmic import/loading And it's and Promise consept of JAVASCRIPT(H.w! explore)
 
+    ------------CODE 👨‍💻
+    const Instamart = lazy(() => import("./component/Instamart"))
+    ------------CODE 👨‍💻
+  
+   🤩Now,check the Network tab again And see As soon as you visit /instamart route you'll get to know instamart.add separate BUNDLEING it won't be in index.js it specially load This is know all above on Demand loading
+
+   All this know as 
+   🔺On Demand Loading(separate component individual load), 🔺Chunking,🔺code Spliting, 🔺dyanamic BUNDLEING,🔺Lazy Loading, 🔺Dyanmic import
+
+   Might be you'r facing one error Oops went wrong Why 
+   -🎯because it's ultimately separate BUNDLERS So it takes time to load script in this process react "suspend" the thing/ 🎗️Operation so what should we show in the midtime/intermidet time Show Shimmer inside "fallback" it's props which react takes us while Suspense 
+   -🎯At the end of the day it's SPA
+   -🎯In order to overcoem react library provide use Suspense & wrapped up instamart into <Suspense/> rest of the thing react take care 
+
+   -😵NOTE: NEVER EVER CHUNKING inside another Component It Always on Top
+
+    
 
 
      H.W
