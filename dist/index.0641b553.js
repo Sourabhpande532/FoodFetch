@@ -12040,9 +12040,13 @@ const Body = ()=>{
     // AVOID(Early render)!RENDER COMPONENT
     if (!allRestaurants) return null;
     // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+    // INLINE CSS
+    const searchBtnCss = {
+        backgroundColor: "pink"
+    };
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 48,
+        lineNumber: 52,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -12059,11 +12063,12 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 50,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
+                        style: searchBtnCss,
                         onClick: ()=>{
                             const data = (0, _helper.filterData)(searchText, allRestaurants);
                             //UPDATE THE STATE - RESTURANT
@@ -12072,13 +12077,13 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 53,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 49,
+                lineNumber: 53,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -12090,18 +12095,18 @@ const Body = ()=>{
                             ...restaurant.data.data
                         }, void 0, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 67,
+                            lineNumber: 71,
                             columnNumber: 15
                         }, undefined)
                     }, restaurant.data.data.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 66,
+                        lineNumber: 70,
                         columnNumber: 16
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 63,
+                lineNumber: 67,
                 columnNumber: 7
             }, undefined)
         ]

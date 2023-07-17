@@ -583,8 +583,41 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
 
    -😵NOTE: NEVER EVER CHUNKING inside another Component It Always on Top
 
-    
+-----------------------------@SECTION 
+@ABOUT: TAILWIND CSS  
+@LOCATION: 🗃️, 🗃️ 
 
+    H.W read about pros and conse of all  
+   -🎯1st)scss & Normal Native css 
+   -🎯2nd way INLINE inside object 
+
+   -🎯3rd Component Libraries 
+   ![Base UI(company use)]🔗✈️https://baseweb.design/
+   [Meterial UI]-ref:🔗✈️https://mui.com/material-ui/getting-started/
+   [Ant Design]-ref:🔗✈️https://ant.design/components/layout
+   [Chakra UI]-ref: 🔗✈️https://chakra-ui.com/getting-started
+   [styled Component UI]-ref: 🔗✈️ https://styled-components.com/docs
+   @OVERVIEW:_style component use inside JSX {..here..} for designing the component it's kind of apply css on JSX 
+
+   -🎯4th Tailwind CSS Framwork 
+   -it came with mix of thing 
+   -it work on the go(in the same file)
+   -reusability 
+   -come with prebuild classes 
+   -less Bundles size As compare others 
+   -flexible UI (Customize Easily)
+   -really good DOCUMENTATION for begginar 
+   -use CDN Go 4th option CDN & inject into our index.html [😗OPTIONALLY]
+   -But not recommended way 
+   -Best way 3rd option "FRAMWORK & GUIDE" LOOK FOR ...what you'r project using like parsel,create-react-app 
+   -what is postcss? it is a tool for transforming css into JAVASCRIPT 
+   -we need to tell the parsel project that we'r using tailwindcss 
+   -it's compilation process that browser easy to understand we'r using tailwindcss
+   -what is .postcssrc Need to tell this one compiled tailwindcss into normal css 
+   -it change the default behaviour of our browser,change size,font;
+
+   Ref: ✈️🔗https://tailwindcss.com/docs/installation
+   Ref: ✈️🔗https://postcss.org/ H.w 
 
      H.W
      😏-How do we handles error inside useEffect 
@@ -593,7 +626,8 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
       😏?-Let's suppose .data not there my code will breack
       😏?-it almost like figuring out my cards with proper path
       😏?-What is JS EXPRESSION & STATEMENT 
-      😏?- first check for allRestaurants & show the SHIMMER Then need to show weather filteredRestaurants there or NOT  
+      😏?- first check for allRestaurants & show the SHIMMER Then need to show weather filteredRestaurants there or NOT 
+      😏?-https://postcss.org/  read about it 
 
 
 

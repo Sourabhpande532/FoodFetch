@@ -50,6 +50,11 @@ const Body = () => {
 
   // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
 
+  // INLINE CSS
+  const searchBtnCss = {
+    backgroundColor:"pink"
+  }
+
   return allRestaurants?.length === 0 ? (
     <ShimmerUi />
   ) : (
@@ -66,6 +71,7 @@ const Body = () => {
         />
         <button
           className='search-btn'
+          style={searchBtnCss}
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             //UPDATE THE STATE - RESTURANT
