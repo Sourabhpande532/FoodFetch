@@ -600,24 +600,38 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
    @OVERVIEW:_style component use inside JSX {..here..} for designing the component it's kind of apply css on JSX 
 
    -🎯4th Tailwind CSS Framwork 
-   -it came with mix of thing 
-   -it work on the go(in the same file)
-   -reusability 
-   -come with prebuild classes 
-   -less Bundles size As compare others 
-   -flexible UI (Customize Easily)
-   -really good DOCUMENTATION for begginar 
-   -use CDN Go 4th option CDN & inject into our index.html [😗OPTIONALLY]
-   -But not recommended way 
-   -Best way 3rd option "FRAMWORK & GUIDE" LOOK FOR ...what you'r project using like parsel,create-react-app 
-   -what is postcss? it is a tool for transforming css into JAVASCRIPT 
-   -we need to tell the parsel project that we'r using tailwindcss 
-   -it's compilation process that browser easy to understand we'r using tailwindcss
-   -what is .postcssrc Need to tell this one compiled tailwindcss into normal css 
-   -it change the default behaviour of our browser,change size,font;
+   -🎯it came with mix of thing 
+   -🎯it work on the go(in the same file)
+   -🎯reusability 
+   -🎯come with prebuild classes 
+   -🎯less Bundles size As compare others 
+   -🎯flexible UI (Customize Easily)
+   -🎯really good DOCUMENTATION for begginar 
+   -🎯use CDN Go 4th option CDN & inject into our index.html [😗OPTIONALLY]
+   -🎯But not recommended way 
+   -🎯Best way 3rd option "FRAMWORK & GUIDE" LOOK FOR ...what you'r project using like parsel,create-react-app 
+   -🎯what is postcss? it is a tool for transforming css into JAVASCRIPT 
+   -🎯we need to tell the parsel project that we'r using tailwindcss 
+   -🎯it's compilation process that browser easy to understand we'r using tailwindcss
+   -🎯what is .postcssrc Need to tell this one compiled tailwindcss into normal css 
+   -🎯it change the default behaviour of our browser,change size,font;
 
    Ref: ✈️🔗https://tailwindcss.com/docs/installation
    Ref: ✈️🔗https://postcss.org/ H.w 
+
+
+   PROS AND CONSE OF TAILWIND CSS !!
+   @PROS-
+   -🎯it is easy to debugg and reusable 
+   -🎯less code & save times 
+   -🎯no duplicate css,less Bundles size small, faster development
+   -🎯much Customize 
+   @COMSE 
+   -🎯too much className, much complicate see the code 
+   -🎯there is initial learning curver associated with new begginar not understand at one go 
+   -🎯it not too much readiable
+
+   
 
      H.W
      😏-How do we handles error inside useEffect 

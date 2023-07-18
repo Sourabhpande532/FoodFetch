@@ -5994,7 +5994,7 @@ const Title = ()=>{
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
         href: "/",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-            className: "logo",
+            className: " h-28 py-2",
             alt: "logo",
             src: (0, _logoPngDefault.default)
         }, void 0, false, {
@@ -6015,7 +6015,7 @@ const Header = ()=>{
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const isOnline = (0, _useOnlineDefault.default)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "header",
+        className: "flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
@@ -6025,6 +6025,7 @@ const Header = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-items",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "flex py-10 gap-4",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -12051,12 +12052,12 @@ const Body = ()=>{
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container",
+                className: "search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
                         placeholder: "Search",
-                        className: "search-input",
+                        className: "h-10 rounded mt-2 focus:bg-green-50",
                         value: searchText,
                         onChange: (e)=>{
                             setSearchText(e.target.value);
@@ -12067,7 +12068,7 @@ const Body = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "search-btn",
+                        className: "p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg",
                         style: searchBtnCss,
                         onClick: ()=>{
                             const data = (0, _helper.filterData)(searchText, allRestaurants);
@@ -12087,7 +12088,7 @@ const Body = ()=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "restaurant-list",
+                className: "flex flex-wrap  bg-pink-100",
                 children: filteredRestaurants.map((restaurant)=>{
                     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurant/" + restaurant.data.data.id,
@@ -13171,7 +13172,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _contants = require("../contants");
 const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "card",
+        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 alt: "logo",
@@ -13182,6 +13183,7 @@ const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
                 children: name
             }, void 0, false, {
                 fileName: "src/component/RestaurantCart.js",
@@ -13236,9 +13238,9 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const ShimmerUi = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
+        className: "flex flex-wrap",
         children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
+                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
             }, index, false, {
                 fileName: "src/component/ShimmerUi.js",
                 lineNumber: 4,

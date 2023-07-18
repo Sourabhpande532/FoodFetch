@@ -59,18 +59,18 @@ const Body = () => {
     <ShimmerUi />
   ) : (
     <>
-      <div className='search-container'>
+      <div className='search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex'>
         <input
           type='text'
           placeholder='Search'
-          className='search-input'
+          className='h-10 rounded mt-2 focus:bg-green-50'
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
         <button
-          className='search-btn'
+          className='p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg'
           style={searchBtnCss}
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
@@ -82,7 +82,7 @@ const Body = () => {
         {/*<h1>{searchClicked}</h1>
         <h1>{searchText}</h1> */}
       </div>
-      <div className='restaurant-list'>
+      <div className='flex flex-wrap  bg-pink-100'>
         {/* you'v to write logic for No restaurant found Here */}
         {filteredRestaurants.map((restaurant) => {
           return (
