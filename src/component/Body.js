@@ -7,7 +7,7 @@ import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 
 
-const Body = () => {
+const Body = ({user}) => {
   // COPY OF ALL RESTURANT
   const [allRestaurants, setAllRestaurants] = useState([]);
 
@@ -89,7 +89,7 @@ const Body = () => {
             <Link
               to={"/restaurant/" + restaurant.data.data.id}
               key={restaurant.data.data.id}>
-              <RestaurantCart {...restaurant.data.data} />
+              <RestaurantCart {...restaurant.data.data} user={user} />
             </Link>
           );
         })}

@@ -4,14 +4,13 @@
  -@PROPS DRILING
 */
 
-
 // 🔺transformation_1
 
 // const Body = () => {
 //   return (
 //     <div className='restaurant-list'>
-//       <RestrauntCart restaurant={restrauntList[0]}/>
-//       <RestrauntCart restaurant={restrauntList[1]}/>
+//    🔴    <RestrauntCart restaurant={restrauntList[0]}/>
+//    🔴   <RestrauntCart restaurant={restrauntList[1]}/>
 // }
 
 // const RestrauntCart = (props) => {
@@ -31,7 +30,7 @@
 // const Body = () => {
 //   return (
 //     <div className='restaurant-list'>
-//       <RestrauntCart restaurant={restrauntList[0]}/>
+//    🔴   <RestrauntCart restaurant={restrauntList[0]}/>
 // }
 
 // const RestrauntCart = ({restaurant}) => {
@@ -147,8 +146,8 @@
 
 // const Body = () => {
 //   return (
-//     <div className='restaurant-list'>
-//       <RestrauntCart {...restrauntList[0].data.data} />
+//      🔴 <div className='restaurant-list'>
+//      <RestrauntCart {...restrauntList[0].data.data} />
 //       <RestrauntCart {...restrauntList[1].data.data} />
 //       <RestrauntCart {...restrauntList[2].data.data} />
 //       <RestrauntCart {...restrauntList[3].data.data} />
@@ -184,7 +183,7 @@
 //   return (
 //     <div className='restaurant-list'>
 //       {restrauntList.map((restaurant) => {
-//         return <RestrauntCart {...restaurant.data.data} />;
+//     🔴     return <RestrauntCart {...restaurant.data.data} />;
 //       })}
 //     </div>
 //   );

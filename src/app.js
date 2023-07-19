@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -17,6 +17,7 @@ import ShimmerUi from "../src/component/ShimmerUi";
 const Instamart = lazy(() => import("./component/Instamart"));
 
 const AppLayout = () => {
+  const [user, setUser] = useState();
   return (
     <React.Fragment>
       <Header />
@@ -34,7 +35,10 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Body user={{
+          name: "Namaste React",
+          email: "sp4343@gmail.com",
+        }} />,
       },
       {
         path: "/about",

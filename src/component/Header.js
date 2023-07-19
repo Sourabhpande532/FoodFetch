@@ -25,8 +25,8 @@ const Header = () => {
     <div className='flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950'>
       <Title />
       <div className='nav-items'>
-        <ul className="flex py-10 gap-4">
-          <li>
+        <ul className="flex py-10 gap-4 text-white">
+          <li className="hover:text-red-400">
             <Link to='/'>Home</Link>
           </li>
           <li>
