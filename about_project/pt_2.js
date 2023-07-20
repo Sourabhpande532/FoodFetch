@@ -634,45 +634,70 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
 
 
 -----------------------------@SECTION
-@TITLE: DATA IS THE EW OIL  
-@ABOUT:   
+@TITLE: DATA IS THE NEW OIL  
+@ABOUT: redux OVERVIEW  
 @LOCATION: 
 
 @OVERVIEW:
 Handling data for webapp most challenges task weather it is any application angular Js,react application, any!
 Always you'll get to see two layer on you'r frontend
-1)UI Layer 2) Data Layer 
+🔻1)UI Layer 🔻2) Data Layer 
 Let's overview an JSX first turn it into Big OBJECT in react & big object structure know as Virtual DOM RECONSCILIATION proccess came in picture which has diff Algorithm what it does it compare previous dom and new dom(defference calculate of two object) & it kept sync with ACTUAL HTML dom 
 
-whole UI Layer is powered by data layer !! what does data layer consist of in UI ? how the UI is rendered with data ? how it used ?
-NOT json,rest API, am i saying How you'r data within the application is maintain ??
+whole UI Layer is powered by data layer !! what does data layer consist of in UI ? how the UI is rendered with data ? how it used 🤔?
+NOT json,rest API, am i saying How you'r data within the application is maintain 🤔??
 -::->
--With the help of "STATE And PROPS" not only with that maintain there are more thing of it!
+-🎯With the help of "STATE And PROPS" not only with that maintain there are more thing of it!
 
-*) Basic defference between PROPS AND STATE 
- +STATE-> let's you'v container you want a variable which has scope just within that container/component Know as STATE !!
- +PROPS->sending inforamtion from one component to another
- +it is like local state for our parent which stored no. of information end of the day it's an function call pass argumen()t while calling function & receive as an Parameters! 
+Q)Basic defference between PROPS AND STATE 😗
+ ➕STATE-> let's you'v container you want a variable which has scope just within that container/component Know as STATE !!
 
- How would i pass the data from root app.js to Restaurant Cart data Below rating ?? if give someone task!
+ ➕PROPS->sending inforamtion from one component to another
+ ➕It is like local state for our parent which stored no. of information end of the day it's an function call pass argumen()t while calling function & receive as an Parameters! 
+
+Q) How would pass the data from root app.js to Restaurant Cart data Below rating  🤔?? if give someone task! 🤔
  simple using props first need to find body route 
  E.g of PROPS ↙️
- SEE User inforamtion of 🗃️+app.js 🗃️+component/body 🗃️+component/RestaurantCart
+ SEE {User} inforamtion in 🗃️+app.js 🗃️+component/body 🗃️+component/RestaurantCart
 
  /**
   * AppLayout Which is having local state variable "user"(top level pass it to children proccess)
   * it's like an chain it's come from AppLayout to +body then to you'r +RestaurantCart see below e.g how it pass information via prop
-  * When you pass the data from parent to child then it's child know as "PROPS Drilling" in chain formate
+  * When you pass the data from parent to child then it's child know as 🔴"PROPS Drilling" in chain formate
   * 
   * 
   * Chain(props DRILLING)
   * AppLayout(user-Local state variable; it's an parent & owner)
-  *   -<Body user = {user}/>(Child)
-  *      -RestrauntContainer user={user}
-  *      -RestaurantCart user={user}
-  *        -<h4>{user}</h4>
+  *   -🔺<Body user = {user}/>(Child)
+  *      -🔺RestrauntContainer user={user}
+  *      -🔺RestaurantCart user={user}
+  *        -🔺<h4>{user}</h4>
+  *          🔺xyz
   *  
-  *
+  * this chain continuous ...............
+  * 
+  * ALL PROCESS KNOW AS PROPS DRILLING from Parent to child pass info But what if Need to send info from child to parent it's very less chance but for info So how would do that ?? 
+  * 
+  * 
+  * use localStorage but not good way  Then we can build our "CustomHook" or use anywhere it's not also recommended way 
+  * 
+  * !So this props DRILLING makes our code messy/CLUTTER it's ok to send info from 2 or 3 times via chain(parent to child) but what if there is huge hierchey where need to send info 200 times from parent to child & it rendered again and again it's an DISADVANTAGE... Then How would you Build! 
+  * 
+  * => we use "Redux" to solve this proble but later discust  
+  * see demo in 🗃️component/instamart 👇
+  * 
+ 
+  
+
+  @LOCATION: 🗃️component/instamart
+  BUILDING A FEATURES ABOUT COLLPSING ACCORDIAN
+
+  EVERY COMPONENT has it's own state if you'r gonna notice there is 3 section each section has it's own separate PROPS & STATE 
+
+  -maintain state in parent instead sibling(as had been control to individual component(<Section/>) now pass to parent(instamart))
+  -know as lifting the state up 
+  
+
 
 
 
