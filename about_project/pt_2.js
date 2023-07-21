@@ -686,16 +686,50 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
   * => we use "Redux" to solve this proble but later discust  
   * see demo in 🗃️component/instamart 👇
   * 
- 
-  
+ ----------------------------NEW-----------------------------
 
   @LOCATION: 🗃️component/instamart
-  BUILDING A FEATURES ABOUT COLLPSING ACCORDIAN
+  @TITLE:BUILDING A FEATURES ABOUT COLLPSING ACCORDIAN
 
   EVERY COMPONENT has it's own state if you'r gonna notice there is 3 section each section has it's own separate PROPS & STATE 
+  and everytime it's sibling Change true to false && false to true open react developer tools and look at! so we need to modify our state of sibling which is work under parent "Instamart" So how would i Colaps ?? first we can't Directly modify a state of another sibling from component
+  Ans:->
 
-  -maintain state in parent instead sibling(as had been control to individual component(<Section/>) now pass to parent(instamart))
-  -know as lifting the state up 
+  -🎯maintain state in "parent" instead sibling(as had been control to individual component(<Section/>) now pass to parent(instamart))
+  -🎯parent has its control on it's children to manage all stuff 
+  -🎯will take a control of show/hide from this Section children to parent  
+  -🎯concept know as lifting the state up 
+
+  Now, create a state inside Instamart & pass object into it!
+  & base on section No. How many is as of now 3 three so pass three KEYs inside it! showAbout,showTeam,showCareers! 
+  -🎯Now, how can i show at one time one all others automatically Colaps while clicking on button 
+  -🎯Now the button is inside children component Now If I click on to this button & want to change my parent State How would i perform ??
+  => setIsVisible(false/true) i will pass this as a parent this control will pass as a "props" previous we passed it in via state Not now! when the setIsVisible there just setSectionConfig my config show about 3 keys as per 👁️SEANARIO
+
+  this type of code not work in production it's not maintainable,teastable,readiable it's sheets  
+  if you think logically what is CONDITION of this features the CONDITION is we need only one at a time we need to only one that we need to show either you create a keys for defferent section or create a state only one "state" that you you want to demonstrate "visibleSection" & don't mention OBJECT now with key's
+
+ ----------------------------NEW-----------------------------
+
+ @TITLE: USE React CONTAX API 
+ @ABOUT: Moreover now about props Drilling & contax Api 
+ @LOCATION:
+
+ @OVERVIEW:
+ -Let's suppose you've user login Info & want to share this info into component that we did in PROPS Drilling How would do that Go app.js & look at AppLayout we pass it into OBJECT
+ -So, how do we build login type of flow what do we use Obivious useEffect to call an API
+ -Now let Assume supossed you logged in & you want share this info to cart component or any other...componet like header,footer.. How can i do thay Obivious using PROP DRILLING from parent to children .. like  
+ -But It's not recommended! When the 👁️SEANARIO came like you'need to store somewhere or central place Know as "React Contax" or big company usees "Redux" store one more "MOb X && NgRx"
+ -accept localStorage: bcz updating it's very heavy and costly operation fo users 
+ -after that any component will use this data from anywhere!
+ 
+
+
+
+
+
+
+
   
 
 

@@ -607,58 +607,58 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const Section = ({ title , description  })=>{
-    _s();
-    const [isVisible, setIsVisible] = (0, _react.useState)(false);
+// Function Pass PROPS
+const Section = ({ title , description , isVisible , toggleVisibility  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: " border border-black p-2 m-2",
+        className: "border border-black p-2 m-2",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 className: "font-bold",
                 children: title
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 8,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setIsVisible(false);
-                },
+                onClick: toggleVisibility,
                 className: "cursor-pointer",
                 children: "➖"
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 9,
+                lineNumber: 12,
                 columnNumber: 20
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setIsVisible(true);
-                },
+                onClick: toggleVisibility,
                 className: "cursor-pointer",
                 children: "➕"
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 21
             }, undefined),
             isVisible && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: description
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 18,
+                lineNumber: 17,
                 columnNumber: 21
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Instamart.js",
-        lineNumber: 7,
+        lineNumber: 10,
         columnNumber: 10
     }, undefined);
 };
-_s(Section, "QjDZesRvLCmcrZLxgN677nXnVLA=");
 _c = Section;
+// Parent
 const Instamart = ()=>{
+    _s();
+    const [visibleSection, setVisibleSection] = (0, _react.useState)("");
+    const toggleSectionVisibility = (sectionName)=>{
+        setVisibleSection((prevVisibleSection)=>prevVisibleSection === sectionName ? "" : sectionName);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -666,40 +666,57 @@ const Instamart = ()=>{
                 children: "Instamart"
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 23,
+                lineNumber: 28,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
                 title: "About Instamart",
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ...",
+                isVisible: visibleSection === "about",
+                toggleVisibility: ()=>toggleSectionVisibility("about")
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 24,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
                 title: "Team Instamart",
-                description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
+                description: "There are many variations of passages of Lorem Ipsum available, ...",
+                isVisible: visibleSection === "team",
+                toggleVisibility: ()=>toggleSectionVisibility("team")
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 25,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
                 title: "Career",
-                description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
+                description: "There are many variations of passages of Lorem Ipsum available, ...",
+                isVisible: visibleSection === "career",
+                toggleVisibility: ()=>toggleSectionVisibility("career")
             }, void 0, false, {
                 fileName: "src/component/Instamart.js",
-                lineNumber: 26,
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Product",
+                description: "There are many variations of passages of Lorem Ipsum available, ...",
+                isVisible: visibleSection === "product",
+                toggleVisibility: ()=>toggleSectionVisibility("product")
+            }, void 0, false, {
+                fileName: "src/component/Instamart.js",
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Instamart.js",
-        lineNumber: 22,
+        lineNumber: 27,
         columnNumber: 10
     }, undefined);
 };
+_s(Instamart, "P8eXMXMTTVeBznxeuZQrhOS6tbc=");
 _c1 = Instamart;
 exports.default = Instamart;
 var _c, _c1;
