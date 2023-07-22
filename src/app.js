@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
-import Footer from "./component/Footer";
+import Footer from "../src/component/Footer";
 import About from "../src/component/About.js";
 import Error from "../src/component/Error";
 import Contact from "../src/component/Contact";

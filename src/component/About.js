@@ -3,6 +3,8 @@ import React from "react";
 
 import Profile from "./ProfileClass";
 import ProfileFunctionalComponent from "./Profile";
+import UserContext from "../utils/UserContext";
+
 
 class About extends React.Component {
   // PROPS & STATE PLACE
@@ -27,10 +29,14 @@ class About extends React.Component {
     return (
       <div>
         <h1>Hellow, this is About page</h1>
+
         <p>
           page is about Functional & CLASS base COMPONENT for UNDERSTANDING
           Perpose
         </p>
+        <UserContext.Consumer>
+         {({user})=><h4 className="font-bold text-red-500">{user.name} - {user.email}</h4>}
+        </UserContext.Consumer>
         {/* <Outlet /> */}
         <ProfileFunctionalComponent name={"Saurabh (from function)"} />
         <Profile name={"First Child-(from:class)"} />

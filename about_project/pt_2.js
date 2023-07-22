@@ -698,7 +698,7 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
   -🎯maintain state in "parent" instead sibling(as had been control to individual component(<Section/>) now pass to parent(instamart))
   -🎯parent has its control on it's children to manage all stuff 
   -🎯will take a control of show/hide from this Section children to parent  
-  -🎯concept know as lifting the state up 
+  -🎯concept know as "lifting the state up" 
 
   Now, create a state inside Instamart & pass object into it!
   & base on section No. How many is as of now 3 three so pass three KEYs inside it! showAbout,showTeam,showCareers! 
@@ -722,6 +722,29 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
  -But It's not recommended! When the 👁️SEANARIO came like you'need to store somewhere or central place Know as "React Contax" or big company usees "Redux" store one more "MOb X && NgRx"
  -accept localStorage: bcz updating it's very heavy and costly operation fo users 
  -after that any component will use this data from anywhere!
+
+ Let Assumes Contax is a big Object or peace of Data ]
+ -create file Name as UserContext.js 
+ -import {createContext} Named import from react
+ -createContext At end of the It's an Function 
+ -it takes some data that you use across whole application 
+ -want to show this info into header so there firstly import as a import {useContext} & UserContext 
+ -Then call this like below that...
+  e.g 🔴 const {name} = useContext(UserContext)
+  -then use as like  
+  e.g 🔴 <h3>{user.name}-{user.email}</h3> 
+
+ -KEEP_NOTE:useContext is an HOOK! & class Component doesn't Have this Hook it uses as a Component & for Fetching inforamtion You need wrapped Like that <UserContext.Consumer></UserContext.Consumer> Take Ref:🗃️component/About/
+ 
+
+ 
+
+
+  Then why🤔 Do we need props ??
+  Can you I put everything inside Contax No. you cannot do like that
+  -Contax has it's own separate thing & it's separate place like storeHouse only use for share info across whole application
+  -it's like useState for you'r whole application
+  -State and Props are tight to the component  
  
 
 
