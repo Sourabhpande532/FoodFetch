@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { restrauntList } from "../contants";
 import RestaurantCart from "./RestaurantCart";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
-
-const Body = ({user}) => {
+const Body = () => {
   // COPY OF ALL RESTURANT
   const [allRestaurants, setAllRestaurants] = useState([]);
 
@@ -19,6 +19,9 @@ const Body = ({user}) => {
   -IN JS - CONST SEARCHTEXT = "KFC"
   -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */
   const [searchText, setSearchText] = useState("");
+
+  // USE CONTAX
+  const { user, setUser } = useContext(UserContext);
 
   //CALL USEFFECT
   useEffect(() => {
@@ -38,11 +41,10 @@ const Body = ({user}) => {
   }
   console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
 
-
-  // IN CASE, OFFLINE  
-  const isOnline =  useOnline();
-  if(!isOnline){
-    return <h1>🔴🔴 Seems Like internet OFF, Please Check</h1>
+  // IN CASE, OFFLINE
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>🔴🔴 Seems Like internet OFF, Please Check</h1>;
   }
 
   // AVOID(Early render)!RENDER COMPONENT
@@ -52,8 +54,8 @@ const Body = ({user}) => {
 
   // INLINE CSS
   const searchBtnCss = {
-    backgroundColor:"pink"
-  }
+    backgroundColor: "pink",
+  };
 
   return allRestaurants?.length === 0 ? (
     <ShimmerUi />
@@ -79,8 +81,25 @@ const Body = ({user}) => {
           }}>
           Search
         </button>
-        {/*<h1>{searchClicked}</h1>
-        <h1>{searchText}</h1> */}
+
+        {/* Use Context Here.. */}
+        <input
+          value={user.name}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              name: e.target.value,
+            })
+          }></input>
+
+        <input
+          value={user.email}
+          onChange={(e) =>
+            setUser({
+              ...user,
+              email: e.target.value,
+            })
+          }></input>
       </div>
       <div className='flex flex-wrap  bg-pink-100'>
         {/* you'v to write logic for No restaurant found Here */}
@@ -89,7 +108,7 @@ const Body = ({user}) => {
             <Link
               to={"/restaurant/" + restaurant.data.data.id}
               key={restaurant.data.data.id}>
-              <RestaurantCart {...restaurant.data.data} user={user} />
+              <RestaurantCart {...restaurant.data.data} />
             </Link>
           );
         })}

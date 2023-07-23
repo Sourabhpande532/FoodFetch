@@ -2949,12 +2949,10 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _header = require("./component/Header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
-var _body = require("./component/Body");
+var _body = require("../src/component/Body");
 var _bodyDefault = parcelHelpers.interopDefault(_body);
 var _footer = require("../src/component/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
-var _aboutJs = require("../src/component/About.js");
-var _aboutJsDefault = parcelHelpers.interopDefault(_aboutJs);
 var _error = require("../src/component/Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _contact = require("../src/component/Contact");
@@ -2968,47 +2966,66 @@ var _profile = require("../src/component/Profile");
 var _profileDefault = parcelHelpers.interopDefault(_profile);
 var _shimmerUi = require("../src/component/ShimmerUi");
 var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _userContext = require("./utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
 var _s = $RefreshSig$();
 // import Instamart from "./component/Instamart";
 // CHUNKING,ON DEMAND LOADING,DYANAMIC IMPORT,LAZY IMPORT
 const Instamart = /*#__PURE__*/ (0, _react.lazy)(()=>require("75a0d0971cdea459"));
 _c = Instamart;
+const About = /*#__PURE__*/ (0, _react.lazy)(()=>require("39ec3b27db37ab81"));
+_c1 = About;
 const AppLayout = ()=>{
     _s();
-    const [user, setUser] = (0, _react.useState)();
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).Fragment, {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
-                fileName: "src/app.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
-                fileName: "src/app.js",
-                lineNumber: 22,
-                columnNumber: 7
-            }, undefined),
-            (0, _footerDefault.default)()
-        ]
-    }, void 0, true, {
-        fileName: "src/app.js",
-        lineNumber: 20,
-        columnNumber: 10
-    }, undefined);
+    const [user, setUser] = (0, _react.useState)({
+        name: "Saurabh Pande",
+        email: "suport@pande.com"
+    });
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Provider, {
+            value: {
+                user: user,
+                setUser: setUser
+            },
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 30,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 31,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                    fileName: "src/app.js",
+                    lineNumber: 33,
+                    columnNumber: 10
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/app.js",
+            lineNumber: 26,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
 };
-_s(AppLayout, "kGLk6m4BT90iK1d91zRYm0C2usk=");
-_c1 = AppLayout;
-const appRouter = (0, _reactRouterDom.createBrowserRouter)([
+_s(AppLayout, "HJQBrGmzV5ghyvQAOPaPQZ5hOSE=");
+_c2 = AppLayout;
+/* 
+---------))--------
+*/ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 28,
+            lineNumber: 44,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 29,
+            lineNumber: 45,
             columnNumber: 17
         }, undefined),
         children: [
@@ -3021,15 +3038,22 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     }
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 32,
+                    lineNumber: 48,
                     columnNumber: 14
                 }, undefined)
             },
             {
                 path: "/about",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutJsDefault.default), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, void 0, void 0),
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
+                        fileName: "src/app.js",
+                        lineNumber: 55,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 38,
+                    lineNumber: 54,
                     columnNumber: 14
                 }, undefined),
                 // parentPath/{path} = localhost:1244/about
@@ -3038,7 +3062,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/app.js",
-                            lineNumber: 42,
+                            lineNumber: 60,
                             columnNumber: 16
                         }, undefined)
                     }
@@ -3048,7 +3072,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 47,
+                    lineNumber: 65,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3056,7 +3080,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 50,
+                    lineNumber: 68,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3064,7 +3088,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrauntMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 53,
+                    lineNumber: 71,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3074,12 +3098,12 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/app.js",
-                        lineNumber: 57,
+                        lineNumber: 75,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 56,
+                    lineNumber: 74,
                     columnNumber: 14
                 }, undefined)
             }
@@ -3092,19 +3116,20 @@ roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Router
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 63,
+    lineNumber: 81,
     columnNumber: 14
 }, undefined));
-var _c, _c1;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "Instamart");
-$RefreshReg$(_c1, "AppLayout");
+$RefreshReg$(_c1, "About");
+$RefreshReg$(_c2, "AppLayout");
 
   $parcel$ReactRefreshHelpers$f79a.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","./component/Body":"iizf5","react-router-dom":"9xmpe","../src/component/About.js":"94Koj","react-dom/client":"lOjBx","../src/component/Error":"cosKY","../src/component/Contact":"3He1d","../src/component/Cart":"dclnc","./component/RestrauntMenu":"kwDLv","../src/component/Profile":"7kLfj","75a0d0971cdea459":"4EFS6","../src/component/ShimmerUi":"3UJAh","../src/component/Footer":"4ifUV"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Header":"knXDc","react-router-dom":"9xmpe","react-dom/client":"lOjBx","../src/component/Error":"cosKY","../src/component/Contact":"3He1d","../src/component/Cart":"dclnc","./component/RestrauntMenu":"kwDLv","../src/component/Profile":"7kLfj","75a0d0971cdea459":"4EFS6","../src/component/ShimmerUi":"3UJAh","../src/component/Footer":"4ifUV","./utils/UserContext":"c5vgB","../src/component/Body":"iizf5","39ec3b27db37ab81":"3UZbe"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -12023,6 +12048,7 @@ const UserContext = /*#__PURE__*/ (0, _react.createContext)({
         email: "dummy@gmail.com"
     }
 });
+UserContext.displayName = "UserContext";
 exports.default = UserContext;
 
   $parcel$ReactRefreshHelpers$4ca8.postlude(module);
@@ -12030,1656 +12056,7 @@ exports.default = UserContext;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iizf5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$cee4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contants = require("../contants");
-var _restaurantCart = require("./RestaurantCart");
-var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
-var _shimmerUi = require("./ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
-var _reactRouterDom = require("react-router-dom");
-var _helper = require("../utils/helper");
-var _useOnline = require("../utils/useOnline");
-var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
-var _s = $RefreshSig$();
-const Body = ({ user  })=>{
-    _s();
-    // COPY OF ALL RESTURANT
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    //FILTERED LIST
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    /* 
-  -SEARCH FUNCTIONALITY
-  -IN JS - CONST SEARCHTEXT = "KFC"
-  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
-    //CALL USEFFECT
-    (0, _react.useEffect)(()=>{
-        //call API Here once after completion of "render" UI/loads
-        getRestaurants();
-    }, []);
-    // LIVE DATA
-    async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
-        const json = await data.json();
-        console.log(json);
-        setAllRestaurants(json?.data?.cards);
-        setFilteredRestaurants(json?.data?.cards);
-    }
-    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
-    // IN CASE, OFFLINE  
-    const isOnline = (0, _useOnlineDefault.default)();
-    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "\uD83D\uDD34\uD83D\uDD34 Seems Like internet OFF, Please Check"
-    }, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 42,
-        columnNumber: 12
-    }, undefined);
-    // AVOID(Early render)!RENDER COMPONENT
-    if (!allRestaurants) return null;
-    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
-    // INLINE CSS
-    const searchBtnCss = {
-        backgroundColor: "pink"
-    };
-    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 54,
-        columnNumber: 41
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        placeholder: "Search",
-                        className: "h-10 rounded mt-2 focus:bg-green-50",
-                        value: searchText,
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 56,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg",
-                        style: searchBtnCss,
-                        onClick: ()=>{
-                            const data = (0, _helper.filterData)(searchText, allRestaurants);
-                            //UPDATE THE STATE - RESTURANT
-                            setFilteredRestaurants(data);
-                        },
-                        children: "Search"
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 59,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Body.js",
-                lineNumber: 55,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-wrap  bg-pink-100",
-                children: filteredRestaurants.map((restaurant)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/restaurant/" + restaurant.data.data.id,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCartDefault.default), {
-                            ...restaurant.data.data,
-                            user: user
-                        }, void 0, false, {
-                            fileName: "src/component/Body.js",
-                            lineNumber: 73,
-                            columnNumber: 15
-                        }, undefined)
-                    }, restaurant.data.data.id, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 72,
-                        columnNumber: 16
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/component/Body.js",
-                lineNumber: 69,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "ht0eeLJ9sPR/8OC0U7bIh4eMKrU=", false, function() {
-    return [
-        (0, _useOnlineDefault.default)
-    ];
-});
-_c = Body;
-exports.default = Body; /**
-//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
-
-// const searchTxt = "KFC"
-
-// searchText is local state varaible 
-// const [searchText,setSearchText] = useState("KFC");
-
-//  <input
-//  type='text'
-//  className='search-input'
-//  placeholder='search'
-//  value={searchText}
-//  // onChange={()=>onChangeInput}
-//  // onChange={(e)=>console.log("dsdf")}
-//  // onChange={(e)=>console.log(e.target.value)}
-//  onChange={(e)=>{
-//    setSearchText(e.target.value)
-//  }}
-// />
- */ 
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$cee4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls"}],"6xi3Y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
-parcelHelpers.export(exports, "FETCH_RESTRA_MENU_URL", ()=>FETCH_RESTRA_MENU_URL);
-parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
-const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
-const FETCH_RESTRA_MENU_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING";
-const restrauntList = [
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56347",
-                name: "Shabana's Bakery & Kitchen",
-                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
-                city: "16",
-                area: "Chaoni",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "wskutvs1uewnasd0xakj",
-                cuisines: [
-                    "Bakery",
-                    "Fast Food",
-                    "Chinese"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 23,
-                minDeliveryTime: 23,
-                maxDeliveryTime: 23,
-                slaString: "23 MINS",
-                lastMileTravel: 3,
-                slugs: {
-                    restaurant: "shabanas-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "36, Koradi Rd, Byramji Town, Nagpur",
-                locality: "Koradi Road",
-                parentId: 180414,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56347",
-                    deliveryTime: 23,
-                    minDeliveryTime: 23,
-                    maxDeliveryTime: 23,
-                    lastMileTravel: 3,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.9",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "54053",
-                name: "Pizza Hut",
-                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "1000+ ratings",
-                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-                cuisines: [
-                    "Pizzas"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
-                locality: "Sitabuldi",
-                parentId: 721,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "60% OFF",
-                    subHeader: "UPTO ₹120",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "54053",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.4",
-                totalRatings: 1000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "368226",
-                name: "Maharashtrian Aaswad",
-                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
-                cuisines: [
-                    "Indian",
-                    "Maharashtrian",
-                    "Snacks",
-                    "North Indian",
-                    "Desserts",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 3.700000047683716,
-                slugs: {
-                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
-                locality: "Shankar Nagar",
-                parentId: 8483,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹499",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "368226",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 3.700000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.6",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "620948",
-                name: "Chaskaa",
-                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "20+ ratings",
-                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
-                cuisines: [
-                    "North Indian",
-                    "Chinese",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 18,
-                minDeliveryTime: 18,
-                maxDeliveryTime: 18,
-                slaString: "18 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "chaskaa-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
-                locality: "AmBazaari Road ",
-                parentId: 14224,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "UPTO ₹100",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "620948",
-                    deliveryTime: 18,
-                    minDeliveryTime: 18,
-                    maxDeliveryTime: 18,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.9",
-                totalRatings: 20,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "578720",
-                name: "Thali corner",
-                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
-                cuisines: [
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "thali-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Hanuman Street",
-                parentId: 204150,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "578720",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "588863",
-                name: "GetAWay-Desserts",
-                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "100+ ratings",
-                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
-                cuisines: [
-                    "Healthy Food",
-                    "Ice Cream",
-                    "Desserts",
-                    "Sweets"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 19,
-                minDeliveryTime: 19,
-                maxDeliveryTime: 19,
-                slaString: "19 MINS",
-                lastMileTravel: 3.799999952316284,
-                slugs: {
-                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
-                locality: "Dharmpeth Extention",
-                parentId: 354819,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "588863",
-                    deliveryTime: 19,
-                    minDeliveryTime: 19,
-                    maxDeliveryTime: 19,
-                    lastMileTravel: 3.799999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 100,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56382",
-                name: "Krishnum Food Plaza",
-                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
-                city: "16",
-                area: "Civil Lines",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "guubti1buwtjyhywkzkv",
-                cuisines: [
-                    "South Indian",
-                    "Biryani",
-                    "Pizzas",
-                    "Thalis",
-                    "North Indian",
-                    "Indian",
-                    "American"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 24,
-                minDeliveryTime: 24,
-                maxDeliveryTime: 24,
-                slaString: "24 MINS",
-                lastMileTravel: 2.200000047683716,
-                slugs: {
-                    restaurant: "krishnum-food-plaza-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Mount Road, Sadar, Nagpur",
-                locality: "Mount Road",
-                parentId: 121089,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹199",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56382",
-                    deliveryTime: 24,
-                    minDeliveryTime: 24,
-                    maxDeliveryTime: 24,
-                    lastMileTravel: 2.200000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "4.0",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "579495",
-                name: "Aaloo Paratha corner",
-                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
-                cuisines: [
-                    "Indian",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Sadar Bazaar Road",
-                parentId: 346992,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "579495",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "443149",
-                name: "Udupi Gokula",
-                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
-                city: "16",
-                area: "Sadar",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "qla5mtyndfbgrglahah4",
-                cuisines: [
-                    "South Indian",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 22,
-                minDeliveryTime: 22,
-                maxDeliveryTime: 22,
-                slaString: "22 MINS",
-                lastMileTravel: 2.299999952316284,
-                slugs: {
-                    restaurant: "udupi-gokula-sadar-sadar-2",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
-                locality: "Mohan Nagar",
-                parentId: 258496,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹75 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "443149",
-                    deliveryTime: 22,
-                    minDeliveryTime: 22,
-                    maxDeliveryTime: 22,
-                    lastMileTravel: 2.299999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aW5DX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8b14.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contants = require("../contants");
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-var _s = $RefreshSig$();
-const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
-    _s();
-    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                alt: "logo",
-                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "font-bold text-xl",
-                children: name
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: cuisines
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    avgRating,
-                    " Rating"
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                className: " text-red-600 font-bold",
-                children: [
-                    user.name,
-                    "-",
-                    user.email
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/RestaurantCart.js",
-        lineNumber: 13,
-        columnNumber: 10
-    }, undefined);
-};
-_s(RestaurantCart, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
-_c = RestaurantCart;
-exports.default = RestaurantCart;
-var _c;
-$RefreshReg$(_c, "RestaurantCart");
-
-  $parcel$ReactRefreshHelpers$8b14.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","react":"21dqq","../utils/UserContext":"c5vgB"}],"3UJAh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d020.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const ShimmerUi = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-wrap",
-        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
-            }, index, false, {
-                fileName: "src/component/ShimmerUi.js",
-                lineNumber: 4,
-                columnNumber: 45
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/component/ShimmerUi.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = ShimmerUi;
-exports.default = ShimmerUi;
-var _c;
-$RefreshReg$(_c, "ShimmerUi");
-
-  $parcel$ReactRefreshHelpers$d020.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
-// SEARCH FUNCTIONALITY with filtering process
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "filterData", ()=>filterData);
-function filterData(searchText, restaurant) {
-    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterDatas;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"94Koj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$77f7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$77f7.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-// import { Outlet } from "react-router-dom"; Optionally you can use ProfileFunctionalComponent with the help of {OUTLET}
-var _profileClass = require("./ProfileClass");
-var _profileClassDefault = parcelHelpers.interopDefault(_profileClass);
-var _profile = require("./Profile");
-var _profileDefault = parcelHelpers.interopDefault(_profile);
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-class About extends (0, _reactDefault.default).Component {
-    // PROPS & STATE PLACE
-    constructor(props){
-        super(props);
-        this.state = {
-            userInfo: "Dummy Name",
-            location: "India"
-        };
-        console.log("[Parent-constructor]:AT 1st");
-    }
-    // API CALL PLACE
-    componentDidMount() {
-        console.log("[Parent-componentDidMount]:At 3rd");
-    }
-    //COMPONENT PLACE
-    render() {
-        console.log("[Parent-render]At 2nd Position it Render Called");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "Hellow, this is About page"
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 27,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    children: "page is about Functional & CLASS base COMPONENT for UNDERSTANDING Perpose"
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 29,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
-                    children: ({ user  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                            className: "font-bold text-red-500",
-                            children: [
-                                user.name,
-                                " - ",
-                                user.email
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/component/About.js",
-                            lineNumber: 36,
-                            columnNumber: 15
-                        }, this)
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 33,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
-                    name: "Saurabh (from function)"
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 39,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileClassDefault.default), {
-                    name: "First Child-(from:class)"
-                }, void 0, false, {
-                    fileName: "src/component/About.js",
-                    lineNumber: 40,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/component/About.js",
-            lineNumber: 26,
-            columnNumber: 12
-        }, this);
-    }
-}
-exports.default = About; // FUNCTION BASE COMPONENT
- // const About2 = () => {
- //   return (
- //     <div>
- //       <h1>Hellow, this is About page</h1>
- //       <p>
- //         page is about Functional & CLASS base COMPONENT for UNDERSTANDING
- //         Perpose
- //       </p>
- //       {/* <Outlet /> */}
- //       <ProfileFunctionalComponent
- //         name={"Saurabh,pass via Props from function"}
- //       />
- //       <Profile name={"Kunal,pass via Props from class"} xyz='Shankar Dadmal' />
- //     </div>
- //   );
- // };
- // export default About2;
-
-  $parcel$ReactRefreshHelpers$77f7.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ProfileClass":"bMaBv","./Profile":"7kLfj","../utils/UserContext":"c5vgB"}],"bMaBv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8d39 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8d39.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-class Profile extends (0, _reactDefault.default).Component {
-    constructor(props){
-        super(props);
-        //CREATE STATE
-        this.state = {
-            userInfo: "Dummy Name",
-            location: "India"
-        };
-        console.log("[Child- Constructor]" + this.props.name);
-    }
-    // COMPONENT DID MOUNT FOR API CALL
-    async componentDidMount() {
-        // this.timer = setInterval(()=>{
-        //   console.log("Hellow")
-        // },1000)
-        const data = await fetch("https://api.github.com/users/Sourabhpande532");
-        const json = await data.json();
-        console.log(json);
-        this.setState({
-            userInfo: json
-        });
-        console.log("[Child - ComponentDidMount]" + this.props.name);
-    }
-    // COMPONENT DID UPDATE
-    componentDidUpdate() {
-        console.log("ComponentDidUpdate");
-    }
-    componentWillUnmount() {
-        clearInterval(this.timer);
-        console.log("CompoundWillUnmount");
-    }
-    render() {
-        // const {count,location} = this.state.userInfo; Optionally Distructure
-        console.log("[child - render]" + this.props.name);
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "Profile Class Base Component"
-                }, void 0, false, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 41,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: this.state?.userInfo?.avatar_url
-                }, void 0, false, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "Name:",
-                        this.state?.userInfo?.name
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 43,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "Location:",
-                        this?.state?.userInfo?.location
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 44,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "UserId:",
-                        this?.state?.userInfo?.login
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 45,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: ()=>{
-                        // Do Not MUTATE STATE DIRECTLY
-                        // Never Do This.state = something
-                        this.setState({
-                            count: 1,
-                            count2: "Become first"
-                        });
-                    },
-                    children: "Update State"
-                }, void 0, false, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 47,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                    children: [
-                        "C-count:",
-                        this.state.count2
-                    ]
-                }, void 0, true, {
-                    fileName: "src/component/ProfileClass.js",
-                    lineNumber: 57,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true);
-    }
-}
-exports.default = Profile;
-
-  $parcel$ReactRefreshHelpers$8d39.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8530.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const Profile = (props)=>{
-    _s();
-    const [count, setCount] = (0, _react.useState)(0);
-    const [count2, setCount2] = (0, _react.useState)(2);
-    (0, _react.useEffect)(()=>{
-        const timer = setInterval(()=>{
-            console.log("Hellow");
-        }, 1000);
-        console.log("useEffect");
-        // Unmounting The stuff(class:componentWillUnmount)
-        return ()=>{
-            clearInterval(timer);
-            console.log("useEffect return");
-        };
-    }, []);
-    console.log("render");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Profile Functional Base Component"
-            }, void 0, false, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 18,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "Name:",
-                    props.name
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "F-Count:",
-                    count
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setCount(count + 1);
-                    setCount2(count + 1);
-                },
-                children: "Add"
-            }, void 0, false, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "F-Count:",
-                    count2
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 27,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/Profile.js",
-        lineNumber: 17,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Profile, "wkdueDwNjmx3dT3WXTCEgF3grs4=");
-_c = Profile;
-exports.default = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$8530.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("aaccff5d309d9239");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -35510,7 +33887,1056 @@ $RefreshReg$(_c, "RestrauntMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn"}],"bA7hn":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn"}],"6xi3Y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
+parcelHelpers.export(exports, "FETCH_RESTRA_MENU_URL", ()=>FETCH_RESTRA_MENU_URL);
+parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
+const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
+const FETCH_RESTRA_MENU_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING";
+const restrauntList = [
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56347",
+                name: "Shabana's Bakery & Kitchen",
+                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
+                city: "16",
+                area: "Chaoni",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "wskutvs1uewnasd0xakj",
+                cuisines: [
+                    "Bakery",
+                    "Fast Food",
+                    "Chinese"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 23,
+                minDeliveryTime: 23,
+                maxDeliveryTime: 23,
+                slaString: "23 MINS",
+                lastMileTravel: 3,
+                slugs: {
+                    restaurant: "shabanas-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "36, Koradi Rd, Byramji Town, Nagpur",
+                locality: "Koradi Road",
+                parentId: 180414,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56347",
+                    deliveryTime: 23,
+                    minDeliveryTime: 23,
+                    maxDeliveryTime: 23,
+                    lastMileTravel: 3,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.9",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "54053",
+                name: "Pizza Hut",
+                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "1000+ ratings",
+                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                cuisines: [
+                    "Pizzas"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
+                locality: "Sitabuldi",
+                parentId: 721,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "60% OFF",
+                    subHeader: "UPTO ₹120",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "54053",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.4",
+                totalRatings: 1000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "368226",
+                name: "Maharashtrian Aaswad",
+                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
+                cuisines: [
+                    "Indian",
+                    "Maharashtrian",
+                    "Snacks",
+                    "North Indian",
+                    "Desserts",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 3.700000047683716,
+                slugs: {
+                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
+                locality: "Shankar Nagar",
+                parentId: 8483,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹499",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "368226",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 3.700000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.6",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "620948",
+                name: "Chaskaa",
+                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "20+ ratings",
+                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
+                cuisines: [
+                    "North Indian",
+                    "Chinese",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 18,
+                minDeliveryTime: 18,
+                maxDeliveryTime: 18,
+                slaString: "18 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "chaskaa-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
+                locality: "AmBazaari Road ",
+                parentId: 14224,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "UPTO ₹100",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "620948",
+                    deliveryTime: 18,
+                    minDeliveryTime: 18,
+                    maxDeliveryTime: 18,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.9",
+                totalRatings: 20,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "578720",
+                name: "Thali corner",
+                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
+                cuisines: [
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "thali-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Hanuman Street",
+                parentId: 204150,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "578720",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "588863",
+                name: "GetAWay-Desserts",
+                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "100+ ratings",
+                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
+                cuisines: [
+                    "Healthy Food",
+                    "Ice Cream",
+                    "Desserts",
+                    "Sweets"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 19,
+                minDeliveryTime: 19,
+                maxDeliveryTime: 19,
+                slaString: "19 MINS",
+                lastMileTravel: 3.799999952316284,
+                slugs: {
+                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
+                locality: "Dharmpeth Extention",
+                parentId: 354819,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "588863",
+                    deliveryTime: 19,
+                    minDeliveryTime: 19,
+                    maxDeliveryTime: 19,
+                    lastMileTravel: 3.799999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 100,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56382",
+                name: "Krishnum Food Plaza",
+                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
+                city: "16",
+                area: "Civil Lines",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "guubti1buwtjyhywkzkv",
+                cuisines: [
+                    "South Indian",
+                    "Biryani",
+                    "Pizzas",
+                    "Thalis",
+                    "North Indian",
+                    "Indian",
+                    "American"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 24,
+                minDeliveryTime: 24,
+                maxDeliveryTime: 24,
+                slaString: "24 MINS",
+                lastMileTravel: 2.200000047683716,
+                slugs: {
+                    restaurant: "krishnum-food-plaza-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Mount Road, Sadar, Nagpur",
+                locality: "Mount Road",
+                parentId: 121089,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹199",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56382",
+                    deliveryTime: 24,
+                    minDeliveryTime: 24,
+                    maxDeliveryTime: 24,
+                    lastMileTravel: 2.200000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "4.0",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "579495",
+                name: "Aaloo Paratha corner",
+                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
+                cuisines: [
+                    "Indian",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Sadar Bazaar Road",
+                parentId: 346992,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "579495",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "443149",
+                name: "Udupi Gokula",
+                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
+                city: "16",
+                area: "Sadar",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "qla5mtyndfbgrglahah4",
+                cuisines: [
+                    "South Indian",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 22,
+                minDeliveryTime: 22,
+                maxDeliveryTime: 22,
+                slaString: "22 MINS",
+                lastMileTravel: 2.299999952316284,
+                slugs: {
+                    restaurant: "udupi-gokula-sadar-sadar-2",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
+                locality: "Mohan Nagar",
+                parentId: 258496,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹75 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "443149",
+                    deliveryTime: 22,
+                    minDeliveryTime: 22,
+                    maxDeliveryTime: 22,
+                    lastMileTravel: 2.299999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJAh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d020.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ShimmerUi = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-wrap",
+        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
+            }, index, false, {
+                fileName: "src/component/ShimmerUi.js",
+                lineNumber: 4,
+                columnNumber: 45
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/component/ShimmerUi.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ShimmerUi;
+exports.default = ShimmerUi;
+var _c;
+$RefreshReg$(_c, "ShimmerUi");
+
+  $parcel$ReactRefreshHelpers$d020.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bA7hn":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c526 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35551,7 +34977,104 @@ exports.default = useRestrauntMenuHook;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"4EFS6":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"7kLfj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8530.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const Profile = (props)=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    const [count2, setCount2] = (0, _react.useState)(2);
+    (0, _react.useEffect)(()=>{
+        const timer = setInterval(()=>{
+            console.log("Hellow");
+        }, 1000);
+        console.log("useEffect");
+        // Unmounting The stuff(class:componentWillUnmount)
+        return ()=>{
+            clearInterval(timer);
+            console.log("useEffect return");
+        };
+    }, []);
+    console.log("render");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Profile Functional Base Component"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Name:",
+                    props.name
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setCount(count + 1);
+                    setCount2(count + 1);
+                },
+                children: "Add"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count2
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Profile.js",
+        lineNumber: 17,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Profile, "wkdueDwNjmx3dT3WXTCEgF3grs4=");
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$8530.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4EFS6":[function(require,module,exports) {
 module.exports = require("58e361d82ea135b")(require("f3ffe91b294acba3").getBundleURL("lPpKD") + "Instamart.add16a2c.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
@@ -35666,6 +35189,296 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iizf5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cee4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contants = require("../contants");
+var _restaurantCart = require("./RestaurantCart");
+var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
+var _shimmerUi = require("./ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _reactRouterDom = require("react-router-dom");
+var _helper = require("../utils/helper");
+var _useOnline = require("../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const Body = ()=>{
+    _s();
+    // COPY OF ALL RESTURANT
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    //FILTERED LIST
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    /* 
+  -SEARCH FUNCTIONALITY
+  -IN JS - CONST SEARCHTEXT = "KFC"
+  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
+    // USE CONTAX
+    const { user , setUser  } = (0, _react.useContext)((0, _userContextDefault.default));
+    //CALL USEFFECT
+    (0, _react.useEffect)(()=>{
+        //call API Here once after completion of "render" UI/loads
+        getRestaurants();
+    }, []);
+    // LIVE DATA
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const json = await data.json();
+        console.log(json);
+        setAllRestaurants(json?.data?.cards);
+        setFilteredRestaurants(json?.data?.cards);
+    }
+    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
+    // IN CASE, OFFLINE
+    const isOnline = (0, _useOnlineDefault.default)();
+    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "\uD83D\uDD34\uD83D\uDD34 Seems Like internet OFF, Please Check"
+    }, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 47,
+        columnNumber: 12
+    }, undefined);
+    // AVOID(Early render)!RENDER COMPONENT
+    if (!allRestaurants) return null;
+    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+    // INLINE CSS
+    const searchBtnCss = {
+        backgroundColor: "pink"
+    };
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 59,
+        columnNumber: 41
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        placeholder: "Search",
+                        className: "h-10 rounded mt-2 focus:bg-green-50",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg",
+                        style: searchBtnCss,
+                        onClick: ()=>{
+                            const data = (0, _helper.filterData)(searchText, allRestaurants);
+                            //UPDATE THE STATE - RESTURANT
+                            setFilteredRestaurants(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 64,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: user.name,
+                        onChange: (e)=>setUser({
+                                ...user,
+                                name: e.target.value
+                            })
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 73,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: user.email,
+                        onChange: (e)=>setUser({
+                                ...user,
+                                email: e.target.value
+                            })
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 78,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Body.js",
+                lineNumber: 60,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-wrap  bg-pink-100",
+                children: filteredRestaurants.map((restaurant)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/restaurant/" + restaurant.data.data.id,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCartDefault.default), {
+                            ...restaurant.data.data
+                        }, void 0, false, {
+                            fileName: "src/component/Body.js",
+                            lineNumber: 87,
+                            columnNumber: 15
+                        }, undefined)
+                    }, restaurant.data.data.id, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 86,
+                        columnNumber: 16
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/component/Body.js",
+                lineNumber: 83,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "7QernHtOoj6/wBp3DvuNkfgfMys=", false, function() {
+    return [
+        (0, _useOnlineDefault.default)
+    ];
+});
+_c = Body;
+exports.default = Body; /**
+//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
+
+// const searchTxt = "KFC"
+
+// searchText is local state varaible 
+// const [searchText,setSearchText] = useState("KFC");
+
+//  <input
+//  type='text'
+//  className='search-input'
+//  placeholder='search'
+//  value={searchText}
+//  // onChange={()=>onChangeInput}
+//  // onChange={(e)=>console.log("dsdf")}
+//  // onChange={(e)=>console.log(e.target.value)}
+//  onChange={(e)=>{
+//    setSearchText(e.target.value)
+//  }}
+// />
+ */ 
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$cee4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aW5DX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8b14.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contants = require("../contants");
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
+    _s();
+    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
+                children: name
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRating,
+                    " Rating"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: " text-red-600 font-bold",
+                children: [
+                    user.name,
+                    "-",
+                    user.email
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/RestaurantCart.js",
+        lineNumber: 13,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestaurantCart, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
+_c = RestaurantCart;
+exports.default = RestaurantCart;
+var _c;
+$RefreshReg$(_c, "RestaurantCart");
+
+  $parcel$ReactRefreshHelpers$8b14.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
+// SEARCH FUNCTIONALITY with filtering process
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterData", ()=>filterData);
+function filterData(searchText, restaurant) {
+    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterDatas;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UZbe":[function(require,module,exports) {
+module.exports = require("86d22f0a9311825f")(require("294b19ebd6a9cdd4").getBundleURL("lPpKD") + "About.f8621144.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("94Koj"));
+
+},{"86d22f0a9311825f":"61B45","294b19ebd6a9cdd4":"lgJ39"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
 
 //# sourceMappingURL=index.0641b553.js.map

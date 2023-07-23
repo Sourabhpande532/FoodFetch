@@ -644,6 +644,9 @@ Always you'll get to see two layer on you'r frontend
 🔻1)UI Layer 🔻2) Data Layer 
 Let's overview an JSX first turn it into Big OBJECT in react & big object structure know as Virtual DOM RECONSCILIATION proccess came in picture which has diff Algorithm what it does it compare previous dom and new dom(defference calculate of two object) & it kept sync with ACTUAL HTML dom 
 
+DEFFERENCE BETWEEN DATA AND UI LAYER IS SAME!! 
+NO. This Ui Layer is defferent that Data Layer the Data layer stay The Ui layer does all rest of the work of RECONSCILIATION Rendering all kind of work Does make sence How virtual dom it's work Ok 
+
 whole UI Layer is powered by data layer !! what does data layer consist of in UI ? how the UI is rendered with data ? how it used 🤔?
 NOT json,rest API, am i saying How you'r data within the application is maintain 🤔??
 -::->
@@ -713,38 +716,68 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
 
  @TITLE: USE React CONTAX API 
  @ABOUT: Moreover now about props Drilling & contax Api 
- @LOCATION:
+ @LOCATION: 🗃️utilis/UserContext/ to 🗃️component/header and 🗃️component/footer!! & 🔺🗃️RestrauntCart 
+
 
  @OVERVIEW:
- -Let's suppose you've user login Info & want to share this info into component that we did in PROPS Drilling How would do that Go app.js & look at AppLayout we pass it into OBJECT
- -So, how do we build login type of flow what do we use Obivious useEffect to call an API
- -Now let Assume supossed you logged in & you want share this info to cart component or any other...componet like header,footer.. How can i do thay Obivious using PROP DRILLING from parent to children .. like  
- -But It's not recommended! When the 👁️SEANARIO came like you'need to store somewhere or central place Know as "React Contax" or big company usees "Redux" store one more "MOb X && NgRx"
- -accept localStorage: bcz updating it's very heavy and costly operation fo users 
- -after that any component will use this data from anywhere!
+ -🎯Let's suppose you've user login Info & want to share this info into component that we did in PROPS Drilling How would do that Go 🗃️app.js & look at AppLayout we pass it into OBJECT
+ -🎯So, how do we build login type of flow what do we use Obivious useEffect to call an API
+ -🎯Now let Assume supossed you logged in & you want share this info to cart component or any other...componet like header,footer.. How can i do thay Obivious using PROP DRILLING from parent to children .. like  
+ -🎯But It's not recommended! When the 👁️SEANARIO came like you'need to store somewhere or central place Know as "React Contax" or big company usees "Redux" store one more "MOb X && NgRx"
+ -🎯accept localStorage: bcz updating it's very heavy and costly operation fo users 
+ -🎯after that any component will use this data from anywhere!
 
  Let Assumes Contax is a big Object or peace of Data ]
- -create file Name as UserContext.js 
- -import {createContext} Named import from react
- -createContext At end of the It's an Function 
- -it takes some data that you use across whole application 
- -want to show this info into header so there firstly import as a import {useContext} & UserContext 
- -Then call this like below that...
+
+ -🎯create file Name as UserContext.js 
+ -🎯import {createContext} Named import from react
+ -🎯createContext At end of the It's an Function 
+ -🎯it takes some data that you use across whole application 
+ -🎯want to show this info into header so there firstly import as a import {useContext} & UserContext 
+ -🎯Then call this like below that...
   e.g 🔴 const {name} = useContext(UserContext)
-  -then use as like  
+  -🎯then use as like  
   e.g 🔴 <h3>{user.name}-{user.email}</h3> 
 
- -KEEP_NOTE:useContext is an HOOK! & class Component doesn't Have this Hook it uses as a Component & for Fetching inforamtion You need wrapped Like that <UserContext.Consumer></UserContext.Consumer> Take Ref:🗃️component/About/
+
+ -😗KEEP_NOTE:useContext is an HOOK! & class Component doesn't Have this Hook it uses as a Component & for Fetching inforamtion You need wrapped Like that <UserContext.Consumer></UserContext.Consumer> Take Ref:🗃️component/About/
+
+-----------))-------------
+ Now i don't want my dummyName or dummy@gmail.com inside my cart or anywhere I want to make Actual authentication, Authenticate the user info get it then it ready pass!! how'll i do that you need start Main file first from owner/parent... 🗃️app.js 
+ instead dummy i want my real data so called it overther will make API Call and call the data!! & come here How will you do that 
+ "YOU Can madify your UserContext like UserContext.Provider & Wrapped Data" Then it'll overWrite previous to New one value
+
+ Assuming value ={user is coming from this file 🗃️utils/UserContext} & it overWrite with this current info in this file component with this you can overWrite the default Value it'll modify A/c to useEffect() 
+-🎯Let's us try to modify/Updated this contax with setUser
+-🎯Now let's us create another input box mean search Bar  
+-🎯import useContext(namedimport) && UserContext(simply)
+---------------👨‍💻
+const { user, setUser } = useContext(UserContext);
+<input
+value={user.name}
+onChange={(e) =>
+setUser({name: e.target.value,email: "Hello@gmail.com", })}/>
+----------------👨‍💻
+See How RECONSCILIATION triggers it Then how will modify my email it's quite simple
+
+React uses CONTAX behind the sence if you check profiler and component via react developer tool
+-Below one use for debbuging in component while check react tool it's show Context.Provider but We want UserContext.Provider so that use below
+----------------👨‍💻
+UserContext.displayName = "UserContext"
+----------------👨‍💻
+
+This is how 
+DEFFERENCE BETWEEN DATA AND UI LAYER IS SAME!! 
+NO. This Ui Layer is defferent than Data Layer the Data layer stay The Ui layer does all rest of the work of RECONSCILIATION Rendering all kind of work Does make sence How virtual dom it's work Ok 
+-Both work parallaly & independantly!
  
 
  
-
-
-  Then why🤔 Do we need props ??
-  Can you I put everything inside Contax No. you cannot do like that
-  -Contax has it's own separate thing & it's separate place like storeHouse only use for share info across whole application
-  -it's like useState for you'r whole application
-  -State and Props are tight to the component  
+Then why🤔 Do we need props ??
+Can you I put everything inside Contax No. you cannot do like that
+-🎯Contax has it's own separate thing & it's separate place like storeHouse only use for share info across whole application
+-🎯it's like useState for you'r whole application
+-🎯State and Props are tight to the component  
  
 
 
@@ -767,7 +800,8 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
    
 
      H.W
-     😏-How do we handles error inside useEffect 
+     😏can we we Context inside Context By term Neasted context ??
+     😏How do we handles error inside useEffect 
      -https://youtu.be/tcLW5d0KAYE (cors)
      -OPTIONAL CHANING(.?)
       😏?-Let's suppose .data not there my code will breack

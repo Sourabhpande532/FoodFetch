@@ -1,9 +1,8 @@
 import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
-import Body from "./component/Body";
+import Body from "../src/component/Body";
 import Footer from "../src/component/Footer";
-import About from "../src/component/About.js";
 import Error from "../src/component/Error";
 import Contact from "../src/component/Contact";
 import Cart from "../src/component/Cart";
@@ -11,21 +10,38 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
 import Profile from "../src/component/Profile";
 import ShimmerUi from "../src/component/ShimmerUi";
+import UserContext from "./utils/UserContext";
 // import Instamart from "./component/Instamart";
 
 // CHUNKING,ON DEMAND LOADING,DYANAMIC IMPORT,LAZY IMPORT
 const Instamart = lazy(() => import("./component/Instamart"));
+const About = lazy(() => import("../src/component/About.js"));
 
 const AppLayout = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({
+    name: "Saurabh Pande",
+    email: "suport@pande.com",
+  });
   return (
-    <React.Fragment>
-      <Header />
-      <Outlet />
-      {Footer()}
-    </React.Fragment>
+    <>
+      {/* <Header /> OPTIONAL CHECK*/}
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser
+        }}>
+        <Header />
+        <Outlet />
+        {/* Footer() */}
+        {<Footer />}
+      </UserContext.Provider>
+    </>
   );
 };
+
+/* 
+---------))--------
+*/
 
 const appRouter = createBrowserRouter([
   {
@@ -35,14 +51,22 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body user={{
-          name: "Namaste React",
-          email: "sp4343@gmail.com",
-        }} />,
+        element: (
+          <Body
+            user={{
+              name: "Namaste React",
+              email: "sp4343@gmail.com",
+            }}
+          />
+        ),
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<ShimmerUi />}>
+            <About/>
+          </Suspense>
+        ),
         // parentPath/{path} = localhost:1244/about
         children: [
           {
