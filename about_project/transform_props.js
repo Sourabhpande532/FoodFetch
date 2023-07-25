@@ -305,8 +305,6 @@ const Instamart = () => {
     showAbout: false,
     showTeam: false,
     showCareers: false,
-    showProduct: false,
-    showDetails: false,
   });
 
   return (

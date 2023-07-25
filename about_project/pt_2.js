@@ -641,7 +641,8 @@ if you've to write senior developer code Need to clean "addEventListener" cleain
 @OVERVIEW:
 Handling data for webapp most challenges task weather it is any application angular Js,react application, any!
 Always you'll get to see two layer on you'r frontend
-🔻1)UI Layer 🔻2) Data Layer 
+🔻1)UI Layer(view What you see on frontend) 
+🔻2) Data Layer 
 Let's overview an JSX first turn it into Big OBJECT in react & big object structure know as Virtual DOM RECONSCILIATION proccess came in picture which has diff Algorithm what it does it compare previous dom and new dom(defference calculate of two object) & it kept sync with ACTUAL HTML dom 
 
 DEFFERENCE BETWEEN DATA AND UI LAYER IS SAME!! 
@@ -745,7 +746,7 @@ Q) How would pass the data from root app.js to Restaurant Cart data Below rating
 -----------))-------------
  Now i don't want my dummyName or dummy@gmail.com inside my cart or anywhere I want to make Actual authentication, Authenticate the user info get it then it ready pass!! how'll i do that you need start Main file first from owner/parent... 🗃️app.js 
  instead dummy i want my real data so called it overther will make API Call and call the data!! & come here How will you do that 
- "YOU Can madify your UserContext like UserContext.Provider & Wrapped Data" Then it'll overWrite previous to New one value
+ "YOU Can madify your UserContext like <UserContext.Provider/> & Wrapped Data" Then it'll overWrite previous to New one value
 
  Assuming value ={user is coming from this file 🗃️utils/UserContext} & it overWrite with this current info in this file component with this you can overWrite the default Value it'll modify A/c to useEffect() 
 -🎯Let's us try to modify/Updated this contax with setUser
@@ -768,16 +769,55 @@ UserContext.displayName = "UserContext"
 
 This is how 
 DEFFERENCE BETWEEN DATA AND UI LAYER IS SAME!! 
-NO. This Ui Layer is defferent than Data Layer the Data layer stay The Ui layer does all rest of the work of RECONSCILIATION Rendering all kind of work Does make sence How virtual dom it's work Ok 
+NO. This Ui Layer(view What you see on frontend) is defferent than Data Layer the Data layer stay/resides as it is The Ui layer does all rest of the work of RECONSCILIATION Rendering all kind of work Does make sence How virtual dom it's work Ok 
 -Both work parallaly & independantly!
  
 
- 
 Then why🤔 Do we need props ??
 Can you I put everything inside Contax No. you cannot do like that
 -🎯Contax has it's own separate thing & it's separate place like storeHouse only use for share info across whole application
 -🎯it's like useState for you'r whole application
 -🎯State and Props are tight to the component  
+
+
+
+ ----------------------------NEW-----------------------------
+
+ @TITLE: REDUX 
+ @ABOUT: BUILDING An New Store 
+ @LOCATION: 🗃️
+
+ @OVERVIEW: _In this one we'r gonna focus How we can Mangage Our Data Very efficiently into our web application
+ UI Layer - disply on screen "know as VIEW"
+ What do write inside Code that powers the UI Layer ? Obivious JSX  
+ 🔻Data Layer - passing the data from one to another, The Data Mangage 🔻Between State & Props, Then context that all the part of Data Layer they both syncly work all This happend on BROWSER 
+ -Gonna focus on Handling Data on to our application more systymatic way!
+ -it's crusial thing Handling Data 
+ -For Handling all the stuff we use library KNOW As "REDUX"
+ - why🤔 Do we need Redux bcz We need Redux To manage our Data(Huge Amount of DATA) Layer of application
+ -Data Layer is Mangage By "REDUX"
+ -Why Do we Use useContext use for To Avoid Prop DRILLING
+  useContext: Any Component in your App Can access this "Context" & Any component in you'r App Modify "useContext"
+  
+  So, Now instead of Create "useContext" frequently we can use "Redux Store"
+
+  @HISTROY@ Of Redux 
+  -use for Data Management 
+  -give you proper way to Handling,managing & modifying All the Data;
+  -Major cons/DISADVANTAGE with Redux 
+   -it is complex to set up,it has huge Learning Curve,Need to learn lot more thing,complected & base on copy pest 
+   -To get rid of this complexity we use "Redux-Tookit"
+
+   Ref: ✈️🔗https://redux-toolkit.js.org/
+   -it is intended to be the standerd way to write Redux Logic
+   -Specility of Redux old code not loss for long run & make developer Life easy Not to write Shitti code again and again
+
+   -😱Given: Redux & React are different Thing previous era developer had convection that useContext,useParams are part of "Redux" But In general It's not! Even also unable to UNDERSTAND defference between "BUNDLERS & React" 
+   
+   BUILDING CART FUNCTIONALITY(Add To Cart)
+   22m
+
+
  
 
 
