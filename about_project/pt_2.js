@@ -791,33 +791,65 @@ Can you I put everything inside Contax No. you cannot do like that
  UI Layer - disply on screen "know as VIEW"
  What do write inside Code that powers the UI Layer ? Obivious JSX  
  🔻Data Layer - passing the data from one to another, The Data Mangage 🔻Between State & Props, Then context that all the part of Data Layer they both syncly work all This happend on BROWSER 
- -Gonna focus on Handling Data on to our application more systymatic way!
- -it's crusial thing Handling Data 
+ -🎯Gonna focus on Handling Data on to our application more systymatic way!
+ -🎯it's crusial thing Handling Data 
  -For Handling all the stuff we use library KNOW As "REDUX"
- - why🤔 Do we need Redux bcz We need Redux To manage our Data(Huge Amount of DATA) Layer of application
- -Data Layer is Mangage By "REDUX"
- -Why Do we Use useContext use for To Avoid Prop DRILLING
+ -🎯why🤔 Do we need Redux bcz We need Redux To manage our Data(Huge Amount of DATA) Layer of application
+ -🎯Data Layer is Mangage By "REDUX"
+ -🎯Why Do we Use useContext use for To Avoid Prop DRILLING
   useContext: Any Component in your App Can access this "Context" & Any component in you'r App Modify "useContext"
   
   So, Now instead of Create "useContext" frequently we can use "Redux Store"
 
   @HISTROY@ Of Redux 
-  -use for Data Management 
-  -give you proper way to Handling,managing & modifying All the Data;
-  -Major cons/DISADVANTAGE with Redux 
-   -it is complex to set up,it has huge Learning Curve,Need to learn lot more thing,complected & base on copy pest 
-   -To get rid of this complexity we use "Redux-Tookit"
+  -🎯use for Data Management 
+  -🎯give you proper way to Handling,managing & modifying All the Data;
+  -🎯Major cons/DISADVANTAGE with Redux 
+  -🎯it is complex to set up,it has huge Learning Curve,Need to learn lot more thing,complected & base on copy pest 
+  -🎯To get rid of this complexity we use "Redux-Tookit"
 
    Ref: ✈️🔗https://redux-toolkit.js.org/
-   -it is intended to be the standerd way to write Redux Logic
-   -Specility of Redux old code not loss for long run & make developer Life easy Not to write Shitti code again and again
+
+   -🎯it is intended to be the standerd way to write Redux Logic
+   -🎯Specility of Redux old code not loss for long run & make developer Life easy Not to write Shitti code again and again
 
    -😱Given: Redux & React are different Thing previous era developer had convection that useContext,useParams are part of "Redux" But In general It's not! Even also unable to UNDERSTAND defference between "BUNDLERS & React" 
    
+----------------------------------NEW----------------------------------
+
    BUILDING CART FUNCTIONALITY(Add To Cart)
-   22m
+   REF: ASSETS/REDUCER.PNG
+
+   -🎯As soon as somebuddy Click on Add to Cart It Goes into that page! 
+   -🎯What is Redux Store At the end of the Day It's an Big Object! which have defferent section Those Section are small peaces
+   -🎯Redux has powers that can access any Component it's global thing ultimately
+   -🎯It's Like separate "Store"   
+   -🎯So Recall it While creating State Variable we use useState in react So what is scope of the State variable it only Resticted to those Component is'nt it So? Yes & via props we can get date into the component from it's parent so 
+   -🎯Store it' separate Thing it is not tight to any component & context also Not tight to any component it's an untimately separete entitity!
+   -🎯you'r web app is defferent & store it's an defferent 
+   -🎯In Redux we've single Store for holding everything inside Application
+   -🎯let suppose you want to store Logged in info data you can use this store like Redux & context 
+   -🎯Let suppose you want to hold cart,theme items it can also possible 
+   -🎯Each Store has defferent Slices/Separete Parts to More Clear & easy to UNDERSTAND
+   -🎯By the term Slice mean Header All component like Cart,authentication,Contect ... 
+   -🎯it Break it into small Chunks or small Store 
+   -@😱Given Fact Our component Cannot Directly modify that store  
+   -E.g if i Click on Add Cart button, i Cannot Directly modify redux Slice like Cart,User Object 
+   -🎯for overcome that Need to send/dispatched An action on near to Onclick Event(add Cart)
+   -🎯Give it any name in my case use "Add Items" What This action will do it call a function() 
+   -🎯And Then This Fuction will Call/modify this Slices Cart/user/... anything 
+   -😗This Fuction know as 🔺"REDUCER"
+   -🔊@REMEMBER_LINE: If you Click on Button it dispatched An Action Which call the Reducer Fuction which Upadate The Slice of Store
+
+   -🎯How can I Add info to Cart When somebuddy Click on Add To Cart Button How will it increse +1 goes info over there How will i Read ??
+   -🎯For that need to REMEMBER one more Jurgon 🔺"SELECTOR" for read Cart(+1) 
+   -🎯Want to read Cart(+1) Call this "SELECTOR"(Mean which you want to Add select plz) it give you inforamtion That Updata The Cart!
+   -🎯SELECTOR At the end of the day it's an Hook(Normal Function)
+   -🎯Another Name of this "SELECTOR" Know as "SUBSCRIBING" The Store it Sync with store it wherever my store will modify my cart with automatically "Modify"
 
 
+
+   -Why All this stuff why we cannot Directly modify ?? it's Obivious when we build large application don't want Random component will modify Random component or store Need to everything every component
  
 
 
