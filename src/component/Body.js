@@ -30,15 +30,20 @@ const Body = () => {
   }, []);
 
   // LIVE DATA
-  async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-    setAllRestaurants(json?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards);
+ async function getRestaurants() {
+  const data = await fetch(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
+  );
+  const json = await data.json();
+  console.log(json);
+
+  // Check if data is available before setting states
+  if (json?.data?.cards) {
+    setAllRestaurants(json.data.cards);
+    setFilteredRestaurants(json.data.cards);
   }
+}
+
   console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
 
   // IN CASE, OFFLINE
@@ -101,18 +106,19 @@ const Body = () => {
             })
           }></input>
       </div>
-      <div className='flex flex-wrap  bg-pink-100'>
-        {/* you'v to write logic for No restaurant found Here */}
-        {filteredRestaurants.map((restaurant) => {
-          return (
-            <Link
-              to={"/restaurant/" + restaurant.data.data.id}
-              key={restaurant.data.data.id}>
-              <RestaurantCart {...restaurant.data.data} />
-            </Link>
-          );
-        })}
-      </div>
+      <div className='flex flex-wrap bg-pink-100'>
+      {/*{filteredRestaurants.length > 0 ? (
+        filteredRestaurants.map((restaurant) => (
+          <Link to={"/restaurant/" + restaurant.data.data.id} key={restaurant.data.data.id}>
+            <RestaurantCart {...restaurant.data.data} />
+          </Link>
+        ))
+      ) : (
+        <h1>No Restaurant Match Your Filter</h1>
+      )
+    }*/}
+    </div>
+    
     </>
   );
 };

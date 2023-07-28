@@ -8,9 +8,11 @@ import Contact from "../src/component/Contact";
 import Cart from "../src/component/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
+import { Provider } from "react-redux";
 import Profile from "../src/component/Profile";
 import ShimmerUi from "../src/component/ShimmerUi";
 import UserContext from "./utils/UserContext";
+import store from "./utils/store";
 // import Instamart from "./component/Instamart";
 
 // CHUNKING,ON DEMAND LOADING,DYANAMIC IMPORT,LAZY IMPORT
@@ -24,17 +26,19 @@ const AppLayout = () => {
   });
   return (
     <>
-      {/* <Header /> OPTIONAL CHECK*/}
-      <UserContext.Provider
-        value={{
-          user: user,
-          setUser: setUser
-        }}>
-        <Header />
-        <Outlet />
-        {/* Footer() */}
-        {<Footer />}
-      </UserContext.Provider>
+      <Provider store={store}>
+        {/* <Header /> OPTIONAL CHECK*/}
+        <UserContext.Provider
+          value={{
+            user: user,
+            setUser: setUser,
+          }}>
+          <Header />
+          <Outlet />
+          {/* Footer() */}
+          {<Footer />}
+        </UserContext.Provider>
+      </Provider>
     </>
   );
 };
@@ -64,7 +68,7 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<ShimmerUi />}>
-            <About/>
+            <About />
           </Suspense>
         ),
         // parentPath/{path} = localhost:1244/about

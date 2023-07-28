@@ -846,10 +846,46 @@ Can you I put everything inside Contax No. you cannot do like that
    -🎯Want to read Cart(+1) Call this "SELECTOR"(Mean which you want to Add select plz) it give you inforamtion That Updata The Cart!
    -🎯SELECTOR At the end of the day it's an Hook(Normal Function)
    -🎯Another Name of this "SELECTOR" Know as "SUBSCRIBING" The Store it Sync with store it wherever my store will modify my cart with automatically "Modify"
-
-
-
    -Why All this stuff why we cannot Directly modify ?? it's Obivious when we build large application don't want Random component will modify Random component or store Need to everything every component
+
+
+   ---------------
+
+   Let's Build an FUNCTIONALITY Of Redux 
+   _Need To Install 2 library 
+   -♎npm install @reduxjs/tookkit 
+   -♎npm install react-redux
+
+   So, why do we need Two Libraries 🤔?
+   Because React first Job Maintain the Store,manage it cleare/creates Slices 1st Libraries is Core The redux & other library is Bridge BETWEEN Redux & react!!
+
+@REMEMBER:
+-🎯As per reducer.png we created 🏪store where we call slices 
+-🎯reducer(),Subscriber(SELECTOR) part of react!
+-🎯Create first 🗃️utils/store.js 
+-🎯Store is defferent & our app is different Keep Note
+-🎯How do I Connect my store to App For that We need a ""PROVIDER""!
+
+Ok!
+Who uses this Redux store Will my whole application uses or some COMPONENT 🤔🤔??
+-🎯Basically it's you'r choice you just need to put this ""PROVIDER"" into whole app or some certain portion to you'r app !
+But i'm going to provide this into my application
+Go MAIN File:-> 🗃️app.js
+-🎯Search Root COMPONENT in this case our Root is <AppLayout/> so i'll provide this store.js into whole my app 
+-🎯How will i apply this store we use Know as ""PROVIDER COMPONENT""!
+-🎯Ok Which library will give me this PROVIDER 🤔🤔?? Because Need to Connect My application To Redux store!!
+-🎯It's Obivious "React-Redux"
+-🎯This "PROVIDER" It's and COMPONENT & wrapped everything inside it!
+--------------
+CONNECT LIKE THAT: <Provider store={store}>xyz</Provider/>
+!NOTE: PROPS Name Very Much Important It uses "redux"
+--------------
+Ok ?? 🤔🤔what was the function that use to create store "configureStore" comes from redux-toolkit(RTK)
+
+-------------------
+
+Now It's time to create a slices After finishing above Process!! 
+-🎯create New 🗃️CartSlice.js or any other file & inject it into 🗃️Store.js 
  
 
 
