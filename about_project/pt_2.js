@@ -880,12 +880,16 @@ Go MAIN File:-> 🗃️app.js
 CONNECT LIKE THAT: <Provider store={store}>xyz</Provider/>
 !NOTE: PROPS Name Very Much Important It uses "redux"
 --------------
-Ok ?? 🤔🤔what was the function that use to create store "configureStore" comes from redux-toolkit(RTK)
-
+Ok ?? 🤔🤔what was the function/API that use to create store "configureStore" comes from redux-toolkit(RTK)
+-Now we need to provide this store to my application we use component know as 'PROVIDER' come from "react-redux" we use in the form of store={store}
 -------------------
 
 Now It's time to create a slices After finishing above Process!! 
 -🎯create New 🗃️CartSlice.js or any other file & inject it into 🗃️Store.js 
+-Then Go 🗃️Store.js 
+-Then 🗃️component/Header.js 
+Start 1:56
+ 
  
 
 

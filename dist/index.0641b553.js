@@ -3023,19 +3023,17 @@ const AppLayout = ()=>{
 };
 _s(AppLayout, "HJQBrGmzV5ghyvQAOPaPQZ5hOSE=");
 _c2 = AppLayout;
-/* 
----------))--------
-*/ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
+const appRouter = (0, _reactRouterDom.createBrowserRouter)([
     {
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 48,
+            lineNumber: 43,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/app.js",
-            lineNumber: 49,
+            lineNumber: 44,
             columnNumber: 17
         }, undefined),
         children: [
@@ -3048,7 +3046,7 @@ _c2 = AppLayout;
                     }
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 52,
+                    lineNumber: 47,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3058,12 +3056,12 @@ _c2 = AppLayout;
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(About, {}, void 0, false, {
                         fileName: "src/app.js",
-                        lineNumber: 59,
+                        lineNumber: 54,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 58,
+                    lineNumber: 53,
                     columnNumber: 14
                 }, undefined),
                 // parentPath/{path} = localhost:1244/about
@@ -3072,7 +3070,7 @@ _c2 = AppLayout;
                         path: "profile",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {}, void 0, false, {
                             fileName: "src/app.js",
-                            lineNumber: 64,
+                            lineNumber: 59,
                             columnNumber: 16
                         }, undefined)
                     }
@@ -3082,7 +3080,7 @@ _c2 = AppLayout;
                 path: "/contact",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 69,
+                    lineNumber: 64,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3090,7 +3088,7 @@ _c2 = AppLayout;
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 72,
+                    lineNumber: 67,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3098,7 +3096,7 @@ _c2 = AppLayout;
                 path: "/restaurant/:id",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrauntMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 75,
+                    lineNumber: 70,
                     columnNumber: 14
                 }, undefined)
             },
@@ -3108,12 +3106,12 @@ _c2 = AppLayout;
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Instamart, {}, void 0, false, {
                         fileName: "src/app.js",
-                        lineNumber: 79,
+                        lineNumber: 74,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/app.js",
-                    lineNumber: 78,
+                    lineNumber: 73,
                     columnNumber: 14
                 }, undefined)
             }
@@ -3126,7 +3124,7 @@ roots.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Router
     router: appRouter
 }, void 0, false, {
     fileName: "src/app.js",
-    lineNumber: 85,
+    lineNumber: 80,
     columnNumber: 14
 }, undefined));
 var _c, _c1, _c2;
@@ -33564,34 +33562,33 @@ const Error = ()=>{
     _s();
     const err = (0, _reactRouterDom.useRouteError)();
     const { status , statusText  } = err;
-    console.log(err);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Oops!!"
             }, void 0, false, {
                 fileName: "src/component/Error.js",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: "Something went Wrong \uD83D\uDE35\uD83D\uDE35"
             }, void 0, false, {
                 fileName: "src/component/Error.js",
-                lineNumber: 12,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                 children: status + ": " + statusText
             }, void 0, false, {
                 fileName: "src/component/Error.js",
-                lineNumber: 13,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Error.js",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 10
     }, undefined);
 };
@@ -37290,10 +37287,47 @@ parcelHelpers.defineInteropFlag(exports);
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _toolkit = require("@reduxjs/toolkit");
-const store = configureStore = {};
-exports.default = store;
+var _cartSlice = require("./cartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+const store = (0, _toolkit.configureStore)({
+    reducer: {
+        cart: (0, _cartSliceDefault.default)
+    }
+});
+exports.default = store; /**
+ * @REVISE CONCEPT 
+ * Create Store
+ * API -configureStore() - RTK
+ * Provide my store to app
+ *   -<Provider store={store} - import from react-redux
+ *
+ * create Slice
+ *   Api - RTK - createSlice({
+ *   name:"",
+ *   initialState: reducers:{
+ *   addItem:(state,action)
+ * }})
+ *
+ * export default cartSlice.reducer
+ * export const = {addItem,removeItem} = cartSlice.actions
+ *
+ * Put that Slice into store(store.js)
+ *
+ * - {
+ * reducer:{
+ * cart: cartSlice,
+ * user: userSlice,
+ * }
+ *   }
+ * REMEMBER Each slice export it's his reducers in this care cartSlice.js is personal reducers,userSlice his personal ... So all this come inside this here called it as 'reducer' object see above code
+ * Name of Object is "reducer"
+ * 
+ * Now Finnaly Let's Subscrip the store By using "SELECTOR" for add item to cart 
+ * 
+ * GO To 🗃️component/Header.js 
+ */ 
 
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lL1Ef":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cartSlice":"5RXlr"}],"lL1Ef":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "EnhancerArray", ()=>EnhancerArray);
@@ -41167,6 +41201,73 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5RXlr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addItem", ()=>addItem);
+parcelHelpers.export(exports, "removeItem", ()=>removeItem);
+parcelHelpers.export(exports, "clearCart", ()=>clearCart);
+var _toolkit = require("@reduxjs/toolkit");
+const cartSlice = (0, _toolkit.createSlice)({
+    name: "cart",
+    initialState: {
+        items: []
+    },
+    // MODIFY SLICE State
+    reducers: {
+        addItem: (state, action)=>{
+            state.items.push(action.payload);
+        },
+        removeItem: (state, action)=>{
+            //H.W set it properly it remove from last Need to remove sequentionals
+            state.items.pop();
+        },
+        clearCart: (state)=>{
+            state.items = [];
+        }
+    }
+});
+const { addItem , removeItem , clearCart  } = cartSlice.actions;
+exports.default = cartSlice.reducer; /* 
+-♎initialState Always Empty for counting What should you put into this Cart.js
+-♎For that time being Puts Empty items
+-♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
+-♎For modifying this we use know as "reducer()" function As per 💹reducer.png
+-♎when it is called "on distpatched of an action"
+-♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
+-♎reducer() is the function at end of the day  
+-Here is the mapping BETWEEN Action & reducer function 
+-♎"addItem" is call base on the reducer call 
+-♎ So how do i modify store is this reducer takes two thing (state,action(payload)) so this is the place (talkAbout_action(payload)) where i'll get items which i'll add to my cart or store inside This "addItem"
+-♎state-> it mean initialState that i decleared 
+-♎action-> it is place where the data is coming in 
+Now let's modify Let's suppose i've 1 item with me so how do i put this inside my State Nothing much just push it!!
+-♎state.items.push(action.payload)
+-♎While clicking onClick(add to cart) button which mean we send data or will send data so that data will receive like this because it dispatched and action while clicking add to cart btn that's so that info receive here below one!
+-♎state.items.push(action.payload) @NOTE:here state hold current value 
+Then,
+Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
+🤔😵@REMEMBER:Never ever Return Any stuff O.w create mess/throwgh error Inside reducer 
+This Fuction does'nt return anything it takes a state & directly modify it! 
+Now Need to export this one 
+-♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one
+-♎Need to export It action Also 
+like export const {addItem,removeItem,clearCart} = cartSlice.reducer; 
+
+Why We export Stuff Because cartSlice behind the since it is is Big Object it manage all the things like this is how we manage!
+cartSlice = {
+  actions:{
+    addItem,removeItem,clearCart
+  },
+  reducer: reducers
+}
+
+Now,it's time to inject into our Store!
+
+Go 🗃️store.js & import stuff
+
+ */ 
+
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
 
 //# sourceMappingURL=index.0641b553.js.map

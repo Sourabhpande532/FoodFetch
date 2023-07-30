@@ -43,9 +43,6 @@ const AppLayout = () => {
   );
 };
 
-/* 
----------))--------
-*/
 
 const appRouter = createBrowserRouter([
   {
