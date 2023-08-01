@@ -6029,6 +6029,7 @@ var _useOnline = require("../utils/useOnline");
 var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
 var _userContext = require("../utils/UserContext");
 var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 // const loggedInUser = () => {
 //   return true;
@@ -6043,12 +6044,12 @@ const Title = ()=>{
             src: (0, _logoPngDefault.default)
         }, void 0, false, {
             fileName: "src/component/Header.js",
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Header.js",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 5
     }, undefined));
 };
@@ -6059,12 +6060,13 @@ const Header = ()=>{
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const isOnline = (0, _useOnlineDefault.default)();
     const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 28,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -6079,12 +6081,12 @@ const Header = ()=>{
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 32,
+                                lineNumber: 34,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 31,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6093,12 +6095,12 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 34,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6107,26 +6109,12 @@ const Header = ()=>{
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 38,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 37,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/cart",
-                                children: "Cart"
-                            }, void 0, false, {
-                                fileName: "src/component/Header.js",
-                                lineNumber: 41,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/component/Header.js",
-                            lineNumber: 40,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6135,30 +6123,48 @@ const Header = ()=>{
                                 children: "instamart"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 44,
+                                lineNumber: 43,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 43,
+                            lineNumber: 42,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/cart",
+                                children: [
+                                    "Cart ",
+                                    cartItems.length,
+                                    " items"
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/component/Header.js",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/component/Header.js",
+                            lineNumber: 45,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header.js",
-                    lineNumber: 30,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 29,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: isOnline ? "\uD83D\uDCB9" : "\uD83D\uDD34"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 48,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -6166,7 +6172,7 @@ const Header = ()=>{
                 children: user.name
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 50,
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -6175,7 +6181,7 @@ const Header = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 52,
+                lineNumber: 54,
                 columnNumber: 21
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: " text-white",
@@ -6183,19 +6189,20 @@ const Header = ()=>{
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 54,
+                lineNumber: 56,
                 columnNumber: 21
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Header.js",
-        lineNumber: 27,
+        lineNumber: 29,
         columnNumber: 10
     }, undefined);
 };
-_s(Header, "+w2dW1WOequ5hdvdGvV0X0Vivsc=", false, function() {
+_s(Header, "j/uDf/f16A+GZEbmSw8Sogcrhnc=", false, function() {
     return [
-        (0, _useOnlineDefault.default)
+        (0, _useOnlineDefault.default),
+        (0, _reactRedux.useSelector)
     ];
 });
 _c1 = Header;
@@ -6209,7 +6216,7 @@ $RefreshReg$(_c1, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/logo.png":"heqVD","react-router-dom":"9xmpe","../utils/useOnline":"74Yls","../utils/UserContext":"c5vgB"}],"heqVD":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/logo.png":"heqVD","react-router-dom":"9xmpe","../utils/useOnline":"74Yls","../utils/UserContext":"c5vgB","react-redux":"bdVon"}],"heqVD":[function(require,module,exports) {
 module.exports = require("184cf235c86ff5e0").getBundleURL("lPpKD") + "logo.f0c67fd0.png" + "?" + Date.now();
 
 },{"184cf235c86ff5e0":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -12064,28 +12071,324 @@ exports.default = UserContext;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
-"use strict";
-var m = require("aaccff5d309d9239");
-var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-        return m.createRoot(c, o);
-    } finally{
-        i.usingClientEntryPoint = false;
-    }
-};
-exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-        return m.hydrateRoot(c, h, o);
-    } finally{
-        i.usingClientEntryPoint = false;
-    }
-};
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bdVon":[function(require,module,exports) {
+// The primary entry point assumes we're working with standard ReactDOM/RN, but
+// older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
+// Because of that, the useSyncExternalStore compat shim is needed.
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "batch", ()=>(0, _reactBatchedUpdates.unstable_batchedUpdates));
+var _shim = require("use-sync-external-store/shim");
+var _withSelector = require("use-sync-external-store/shim/with-selector");
+var _reactBatchedUpdates = require("./utils/reactBatchedUpdates");
+var _batch = require("./utils/batch");
+var _useSelector = require("./hooks/useSelector");
+var _connect = require("./components/connect");
+var _exports = require("./exports");
+parcelHelpers.exportAll(_exports, exports);
+(0, _useSelector.initializeUseSelector)((0, _withSelector.useSyncExternalStoreWithSelector));
+(0, _connect.initializeConnect)((0, _shim.useSyncExternalStore)); // Enable batched updates in our subscriptions for use
+// with standard React renderers (ReactDOM, React Native)
+(0, _batch.setBatch)((0, _reactBatchedUpdates.unstable_batchedUpdates));
 
-},{"aaccff5d309d9239":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"use-sync-external-store/shim":"hyxdF","use-sync-external-store/shim/with-selector":"iDrhg","./utils/reactBatchedUpdates":"5K86X","./utils/batch":"ikw0G","./hooks/useSelector":"l3rFI","./components/connect":"5gOIw","./exports":"iAa1P","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hyxdF":[function(require,module,exports) {
+"use strict";
+module.exports = require("5ab7799a565bbe74");
+
+},{"5ab7799a565bbe74":"khU3l"}],"khU3l":[function(require,module,exports) {
+/**
+ * @license React
+ * use-sync-external-store-shim.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+    var React = require("d49206e28a986e9f");
+    var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    function error(format) {
+        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
+        printWarning("error", format, args);
+    }
+    function printWarning(level, format, args) {
+        var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+        var stack = ReactDebugCurrentFrame.getStackAddendum();
+        if (stack !== "") {
+            format += "%s";
+            args = args.concat([
+                stack
+            ]);
+        } // eslint-disable-next-line react-internal/safe-string-coercion
+        var argsWithFormat = args.map(function(item) {
+            return String(item);
+        }); // Careful: RN currently depends on this prefix
+        argsWithFormat.unshift("Warning: " + format); // We intentionally don't use spread (or .apply) directly because it
+        // breaks IE9: https://github.com/facebook/react/issues/13610
+        // eslint-disable-next-line react-internal/no-production-logging
+        Function.prototype.apply.call(console[level], console, argsWithFormat);
+    }
+    /**
+ * inlined Object.is polyfill to avoid requiring consumers ship their own
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+ */ function is(x, y) {
+        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
+        ;
+    }
+    var objectIs = typeof Object.is === "function" ? Object.is : is;
+    // dispatch for CommonJS interop named imports.
+    var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
+    var didWarnOld18Alpha = false;
+    var didWarnUncachedGetSnapshot = false; // Disclaimer: This shim breaks many of the rules of React, and only works
+    // because of a very particular set of implementation details and assumptions
+    // -- change any one of them and it will break. The most important assumption
+    // is that updates are always synchronous, because concurrent rendering is
+    // only available in versions of React that also have a built-in
+    // useSyncExternalStore API. And we only use this shim when the built-in API
+    // does not exist.
+    //
+    // Do not assume that the clever hacks used by this hook also work in general.
+    // The point of this shim is to replace the need for hacks by other libraries.
+    function useSyncExternalStore(subscribe, getSnapshot, // React do not expose a way to check if we're hydrating. So users of the shim
+    // will need to track that themselves and return the correct value
+    // from `getSnapshot`.
+    getServerSnapshot) {
+        if (!didWarnOld18Alpha) {
+            if (React.startTransition !== undefined) {
+                didWarnOld18Alpha = true;
+                error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
+            }
+        }
+        // breaks the rules of React, and only works here because of specific
+        // implementation details, most importantly that updates are
+        // always synchronous.
+        var value = getSnapshot();
+        if (!didWarnUncachedGetSnapshot) {
+            var cachedValue = getSnapshot();
+            if (!objectIs(value, cachedValue)) {
+                error("The result of getSnapshot should be cached to avoid an infinite loop");
+                didWarnUncachedGetSnapshot = true;
+            }
+        }
+        // re-render whenever the subscribed state changes by updating an some
+        // arbitrary useState hook. Then, during render, we call getSnapshot to read
+        // the current value.
+        //
+        // Because we don't actually use the state returned by the useState hook, we
+        // can save a bit of memory by storing other stuff in that slot.
+        //
+        // To implement the early bailout, we need to track some things on a mutable
+        // object. Usually, we would put that in a useRef hook, but we can stash it in
+        // our useState hook instead.
+        //
+        // To force a re-render, we call forceUpdate({inst}). That works because the
+        // new object always fails an equality check.
+        var _useState = useState({
+            inst: {
+                value: value,
+                getSnapshot: getSnapshot
+            }
+        }), inst = _useState[0].inst, forceUpdate = _useState[1]; // Track the latest getSnapshot function with a ref. This needs to be updated
+        // in the layout phase so we can access it during the tearing check that
+        // happens on subscribe.
+        useLayoutEffect(function() {
+            inst.value = value;
+            inst.getSnapshot = getSnapshot; // Whenever getSnapshot or subscribe changes, we need to check in the
+            // commit phase if there was an interleaved mutation. In concurrent mode
+            // this can happen all the time, but even in synchronous mode, an earlier
+            // effect may have mutated the store.
+            if (checkIfSnapshotChanged(inst)) // Force a re-render.
+            forceUpdate({
+                inst: inst
+            });
+        }, [
+            subscribe,
+            value,
+            getSnapshot
+        ]);
+        useEffect(function() {
+            // Check for changes right before subscribing. Subsequent changes will be
+            // detected in the subscription handler.
+            if (checkIfSnapshotChanged(inst)) // Force a re-render.
+            forceUpdate({
+                inst: inst
+            });
+            var handleStoreChange = function() {
+                // TODO: Because there is no cross-renderer API for batching updates, it's
+                // up to the consumer of this library to wrap their subscription event
+                // with unstable_batchedUpdates. Should we try to detect when this isn't
+                // the case and print a warning in development?
+                // The store changed. Check if the snapshot changed since the last time we
+                // read from the store.
+                if (checkIfSnapshotChanged(inst)) // Force a re-render.
+                forceUpdate({
+                    inst: inst
+                });
+            }; // Subscribe to the store and return a clean-up function.
+            return subscribe(handleStoreChange);
+        }, [
+            subscribe
+        ]);
+        useDebugValue(value);
+        return value;
+    }
+    function checkIfSnapshotChanged(inst) {
+        var latestGetSnapshot = inst.getSnapshot;
+        var prevValue = inst.value;
+        try {
+            var nextValue = latestGetSnapshot();
+            return !objectIs(prevValue, nextValue);
+        } catch (error) {
+            return true;
+        }
+    }
+    function useSyncExternalStore$1(subscribe, getSnapshot, getServerSnapshot) {
+        // Note: The shim does not use getServerSnapshot, because pre-18 versions of
+        // React do not expose a way to check if we're hydrating. So users of the shim
+        // will need to track that themselves and return the correct value
+        // from `getSnapshot`.
+        return getSnapshot();
+    }
+    var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+    var isServerEnvironment = !canUseDOM;
+    var shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore;
+    var useSyncExternalStore$2 = React.useSyncExternalStore !== undefined ? React.useSyncExternalStore : shim;
+    exports.useSyncExternalStore = useSyncExternalStore$2;
+    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+})();
+
+},{"d49206e28a986e9f":"21dqq"}],"iDrhg":[function(require,module,exports) {
+"use strict";
+module.exports = require("825b2585cf61f03e");
+
+},{"825b2585cf61f03e":"vU6Qe"}],"vU6Qe":[function(require,module,exports) {
+/**
+ * @license React
+ * use-sync-external-store-shim/with-selector.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
+    var React = require("2f25dc3829c8e76e");
+    var shim = require("c4afd16660885105");
+    /**
+ * inlined Object.is polyfill to avoid requiring consumers ship their own
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+ */ function is(x, y) {
+        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
+        ;
+    }
+    var objectIs = typeof Object.is === "function" ? Object.is : is;
+    var useSyncExternalStore = shim.useSyncExternalStore;
+    // for CommonJS interop.
+    var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue; // Same as useSyncExternalStore, but supports selector and isEqual arguments.
+    function useSyncExternalStoreWithSelector(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
+        // Use this to track the rendered snapshot.
+        var instRef = useRef(null);
+        var inst;
+        if (instRef.current === null) {
+            inst = {
+                hasValue: false,
+                value: null
+            };
+            instRef.current = inst;
+        } else inst = instRef.current;
+        var _useMemo = useMemo(function() {
+            // Track the memoized state using closure variables that are local to this
+            // memoized instance of a getSnapshot function. Intentionally not using a
+            // useRef hook, because that state would be shared across all concurrent
+            // copies of the hook/component.
+            var hasMemo = false;
+            var memoizedSnapshot;
+            var memoizedSelection;
+            var memoizedSelector = function(nextSnapshot) {
+                if (!hasMemo) {
+                    // The first time the hook is called, there is no memoized result.
+                    hasMemo = true;
+                    memoizedSnapshot = nextSnapshot;
+                    var _nextSelection = selector(nextSnapshot);
+                    if (isEqual !== undefined) // Even if the selector has changed, the currently rendered selection
+                    // may be equal to the new selection. We should attempt to reuse the
+                    // current value if possible, to preserve downstream memoizations.
+                    {
+                        if (inst.hasValue) {
+                            var currentSelection = inst.value;
+                            if (isEqual(currentSelection, _nextSelection)) {
+                                memoizedSelection = currentSelection;
+                                return currentSelection;
+                            }
+                        }
+                    }
+                    memoizedSelection = _nextSelection;
+                    return _nextSelection;
+                } // We may be able to reuse the previous invocation's result.
+                // We may be able to reuse the previous invocation's result.
+                var prevSnapshot = memoizedSnapshot;
+                var prevSelection = memoizedSelection;
+                if (objectIs(prevSnapshot, nextSnapshot)) // The snapshot is the same as last time. Reuse the previous selection.
+                return prevSelection;
+                 // The snapshot has changed, so we need to compute a new selection.
+                // The snapshot has changed, so we need to compute a new selection.
+                var nextSelection = selector(nextSnapshot); // If a custom isEqual function is provided, use that to check if the data
+                // has changed. If it hasn't, return the previous selection. That signals
+                // to React that the selections are conceptually equal, and we can bail
+                // out of rendering.
+                // If a custom isEqual function is provided, use that to check if the data
+                // has changed. If it hasn't, return the previous selection. That signals
+                // to React that the selections are conceptually equal, and we can bail
+                // out of rendering.
+                if (isEqual !== undefined && isEqual(prevSelection, nextSelection)) return prevSelection;
+                memoizedSnapshot = nextSnapshot;
+                memoizedSelection = nextSelection;
+                return nextSelection;
+            }; // Assigning this to a constant so that Flow knows it can't change.
+            // Assigning this to a constant so that Flow knows it can't change.
+            var maybeGetServerSnapshot = getServerSnapshot === undefined ? null : getServerSnapshot;
+            var getSnapshotWithSelector = function() {
+                return memoizedSelector(getSnapshot());
+            };
+            var getServerSnapshotWithSelector = maybeGetServerSnapshot === null ? undefined : function() {
+                return memoizedSelector(maybeGetServerSnapshot());
+            };
+            return [
+                getSnapshotWithSelector,
+                getServerSnapshotWithSelector
+            ];
+        }, [
+            getSnapshot,
+            getServerSnapshot,
+            selector,
+            isEqual
+        ]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
+        var value = useSyncExternalStore(subscribe, getSelection, getServerSelection);
+        useEffect(function() {
+            inst.hasValue = true;
+            inst.value = value;
+        }, [
+            value
+        ]);
+        useDebugValue(value);
+        return value;
+    }
+    exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector;
+    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
+})();
+
+},{"2f25dc3829c8e76e":"21dqq","c4afd16660885105":"hyxdF"}],"5K86X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "unstable_batchedUpdates", ()=>(0, _reactDom.unstable_batchedUpdates));
+var _reactDom = require("react-dom");
+
+},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -33544,2253 +33847,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"cosKY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ea6f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ea6f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _s = $RefreshSig$();
-const Error = ()=>{
-    _s();
-    const err = (0, _reactRouterDom.useRouteError)();
-    const { status , statusText  } = err;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Oops!!"
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Something went Wrong \uD83D\uDE35\uD83D\uDE35"
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: status + ": " + statusText
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/Error.js",
-        lineNumber: 9,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
-    return [
-        (0, _reactRouterDom.useRouteError)
-    ];
-});
-_c = Error;
-exports.default = Error;
-var _c;
-$RefreshReg$(_c, "Error");
-
-  $parcel$ReactRefreshHelpers$ea6f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"3He1d":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fc23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$fc23.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Contact us Page"
-            }, void 0, false, {
-                fileName: "src/component/Contact.js",
-                lineNumber: 3,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "contact us page finding the path..."
-            }, void 0, false, {
-                fileName: "src/component/Contact.js",
-                lineNumber: 4,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$fc23.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dclnc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7fd8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Cart = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Cart"
-    }, void 0, false, {
-        fileName: "src/component/Cart.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Cart;
-exports.default = Cart;
-var _c;
-$RefreshReg$(_c, "Cart");
-
-  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kwDLv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$76ed.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _contants = require("../contants");
-var _shimmerUi = require("../component/ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
-var _useRestrauntMenuHook = require("../utils/useRestrauntMenuHook");
-var _useRestrauntMenuHookDefault = parcelHelpers.interopDefault(_useRestrauntMenuHook);
-var _s = $RefreshSig$();
-const RestrauntMenu = ()=>{
-    _s();
-    // COME FROM URL-(ID)
-    const { id  } = (0, _reactRouterDom.useParams)();
-    // OWN HOOK
-    const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
-    // EARLY RETURN
-    if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-            fileName: "src/component/RestrauntMenu.js",
-            lineNumber: 18,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 17,
-        columnNumber: 12
-    }, undefined);
-    const { cards  } = restaurant;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: [
-                    "Restaurant Id: ",
-                    id
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 25,
-                columnNumber: 7
-            }, undefined),
-            cards ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: cards[0]?.data?.data?.name
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 27,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        width: "400px",
-                        src: (0, _contants.IMG_CND_URL) + cards[0]?.data?.cloudinaryImageId
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 28,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.area
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 29,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.city
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 30,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.totalRatingsString
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 31,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            cards[0]?.data?.data?.avgRating,
-                            " Rating"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 32,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            "Address : ",
-                            cards[0]?.data?.data?.address
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 33,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            "DeliveryTime : ",
-                            cards[0]?.data?.data?.deliveryTime,
-                            " min"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 34,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "No restaurant data available"
-            }, void 0, false, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 35,
-                columnNumber: 15
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 24,
-        columnNumber: 10
-    }, undefined);
-};
-_s(RestrauntMenu, "XmMZ8deKTUHsxBlO3pTbbiJnxvw=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams),
-        (0, _useRestrauntMenuHookDefault.default)
-    ];
-});
-_c = RestrauntMenu;
-exports.default = RestrauntMenu; /* 
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { IMG_CND_URL } from "../contants";
-import Shimmer from "../component/ShimmerUi"
-
-const RestrauntMenu = () => {
-  const { id } = useParams();
-  console.log(id);
-
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
-      );
-      const data = await response.json();
-      console.log(data);
-      setRestaurant(data?.data);
-    } catch (error) {
-      console.error("Error fetching restaurant info:", error);
-    }
-  }
-
-  // EARLY RETURN 
-  if (!restaurant) {
-    return <div><Shimmer/></div>;
-  }
-
-  const { cards } = restaurant;
-
-  return (
-    <div className="">
-      <h1>Restaurant Id: {id}</h1>
-      {cards ? (
-        <>
-          <h2>{cards[0]?.data?.data?.name}</h2>
-          <img
-            width='400px'
-            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
-          />
-          <h3>{cards[0]?.data?.data?.area}</h3>
-          <h3>{cards[0]?.data?.data?.city}</h3>
-          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
-          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
-          <h3>Address : {cards[0]?.data?.data?.address}</h3>
-          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
-        </>
-      ) : (
-        <h2>No restaurant data available</h2>
-      )}
-    </div>
-  );
-};
-
-export default RestrauntMenu;
-
-
-
-
-*/ 
-var _c;
-$RefreshReg$(_c, "RestrauntMenu");
-
-  $parcel$ReactRefreshHelpers$76ed.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn"}],"6xi3Y":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
-parcelHelpers.export(exports, "FETCH_RESTRA_MENU_URL", ()=>FETCH_RESTRA_MENU_URL);
-parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
-const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
-const FETCH_RESTRA_MENU_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING";
-const restrauntList = [
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56347",
-                name: "Shabana's Bakery & Kitchen",
-                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
-                city: "16",
-                area: "Chaoni",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "wskutvs1uewnasd0xakj",
-                cuisines: [
-                    "Bakery",
-                    "Fast Food",
-                    "Chinese"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 23,
-                minDeliveryTime: 23,
-                maxDeliveryTime: 23,
-                slaString: "23 MINS",
-                lastMileTravel: 3,
-                slugs: {
-                    restaurant: "shabanas-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "36, Koradi Rd, Byramji Town, Nagpur",
-                locality: "Koradi Road",
-                parentId: 180414,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56347",
-                    deliveryTime: 23,
-                    minDeliveryTime: 23,
-                    maxDeliveryTime: 23,
-                    lastMileTravel: 3,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.9",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "54053",
-                name: "Pizza Hut",
-                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "1000+ ratings",
-                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-                cuisines: [
-                    "Pizzas"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
-                locality: "Sitabuldi",
-                parentId: 721,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "60% OFF",
-                    subHeader: "UPTO ₹120",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "54053",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.4",
-                totalRatings: 1000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "368226",
-                name: "Maharashtrian Aaswad",
-                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
-                cuisines: [
-                    "Indian",
-                    "Maharashtrian",
-                    "Snacks",
-                    "North Indian",
-                    "Desserts",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 33,
-                minDeliveryTime: 33,
-                maxDeliveryTime: 33,
-                slaString: "33 MINS",
-                lastMileTravel: 3.700000047683716,
-                slugs: {
-                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
-                locality: "Shankar Nagar",
-                parentId: 8483,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹499",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "368226",
-                    deliveryTime: 33,
-                    minDeliveryTime: 33,
-                    maxDeliveryTime: 33,
-                    lastMileTravel: 3.700000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "3.6",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "620948",
-                name: "Chaskaa",
-                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
-                city: "16",
-                area: "Sitabuldi",
-                totalRatingsString: "20+ ratings",
-                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
-                cuisines: [
-                    "North Indian",
-                    "Chinese",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 18,
-                minDeliveryTime: 18,
-                maxDeliveryTime: 18,
-                slaString: "18 MINS",
-                lastMileTravel: 1,
-                slugs: {
-                    restaurant: "chaskaa-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
-                locality: "AmBazaari Road ",
-                parentId: 14224,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "1 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "50% OFF",
-                    subHeader: "UPTO ₹100",
-                    discountTag: "",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "620948",
-                    deliveryTime: 18,
-                    minDeliveryTime: 18,
-                    maxDeliveryTime: 18,
-                    lastMileTravel: 1,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "3.9",
-                totalRatings: 20,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "578720",
-                name: "Thali corner",
-                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
-                cuisines: [
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "thali-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Hanuman Street",
-                parentId: 204150,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "578720",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "588863",
-                name: "GetAWay-Desserts",
-                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
-                city: "16",
-                area: "Gokulpeth",
-                totalRatingsString: "100+ ratings",
-                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
-                cuisines: [
-                    "Healthy Food",
-                    "Ice Cream",
-                    "Desserts",
-                    "Sweets"
-                ],
-                tags: [],
-                costForTwo: 15000,
-                costForTwoString: "₹150 FOR TWO",
-                deliveryTime: 19,
-                minDeliveryTime: 19,
-                maxDeliveryTime: 19,
-                slaString: "19 MINS",
-                lastMileTravel: 3.799999952316284,
-                slugs: {
-                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
-                locality: "Dharmpeth Extention",
-                parentId: 354819,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2900,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2900,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2900",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "3.7 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "588863",
-                    deliveryTime: 19,
-                    minDeliveryTime: 19,
-                    maxDeliveryTime: 19,
-                    lastMileTravel: 3.799999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 100,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "56382",
-                name: "Krishnum Food Plaza",
-                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
-                city: "16",
-                area: "Civil Lines",
-                totalRatingsString: "10000+ ratings",
-                cloudinaryImageId: "guubti1buwtjyhywkzkv",
-                cuisines: [
-                    "South Indian",
-                    "Biryani",
-                    "Pizzas",
-                    "Thalis",
-                    "North Indian",
-                    "Indian",
-                    "American"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 24,
-                minDeliveryTime: 24,
-                maxDeliveryTime: 24,
-                slaString: "24 MINS",
-                lastMileTravel: 2.200000047683716,
-                slugs: {
-                    restaurant: "krishnum-food-plaza-sadar-sadar",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "Mount Road, Sadar, Nagpur",
-                locality: "Mount Road",
-                parentId: 121089,
-                unserviceable: false,
-                veg: false,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹125 OFF",
-                    subHeader: "ABOVE ₹199",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "56382",
-                    deliveryTime: 24,
-                    minDeliveryTime: 24,
-                    maxDeliveryTime: 24,
-                    lastMileTravel: 2.200000047683716,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "4.0",
-                totalRatings: 10000,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "579495",
-                name: "Aaloo Paratha corner",
-                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
-                city: "16",
-                area: "Dharampeth",
-                totalRatingsString: "Too Few Ratings",
-                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
-                cuisines: [
-                    "Indian",
-                    "Snacks"
-                ],
-                tags: [],
-                costForTwo: 20000,
-                costForTwoString: "₹200 FOR TWO",
-                deliveryTime: 25,
-                minDeliveryTime: 25,
-                maxDeliveryTime: 25,
-                slaString: "25 MINS",
-                lastMileTravel: 0.6000000238418579,
-                slugs: {
-                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
-                locality: "Sadar Bazaar Road",
-                parentId: 346992,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "0.6 kms",
-                hasSurge: false,
-                sla: {
-                    restaurantId: "579495",
-                    deliveryTime: 25,
-                    minDeliveryTime: 25,
-                    maxDeliveryTime: 25,
-                    lastMileTravel: 0.6000000238418579,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: false,
-                avgRating: "--",
-                totalRatings: 0,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    },
-    {
-        cardType: "restaurant",
-        layoutAlignmentType: "VERTICAL",
-        data: {
-            type: "restaurant",
-            data: {
-                type: "F",
-                id: "443149",
-                name: "Udupi Gokula",
-                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
-                city: "16",
-                area: "Sadar",
-                totalRatingsString: "500+ ratings",
-                cloudinaryImageId: "qla5mtyndfbgrglahah4",
-                cuisines: [
-                    "South Indian",
-                    "Beverages"
-                ],
-                tags: [],
-                costForTwo: 30000,
-                costForTwoString: "₹300 FOR TWO",
-                deliveryTime: 22,
-                minDeliveryTime: 22,
-                maxDeliveryTime: 22,
-                slaString: "22 MINS",
-                lastMileTravel: 2.299999952316284,
-                slugs: {
-                    restaurant: "udupi-gokula-sadar-sadar-2",
-                    city: "nagpur"
-                },
-                cityState: "16",
-                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
-                locality: "Mohan Nagar",
-                parentId: 258496,
-                unserviceable: false,
-                veg: true,
-                select: false,
-                favorite: false,
-                tradeCampaignHeaders: [],
-                ribbon: [
-                    {
-                        type: "PROMOTED"
-                    }
-                ],
-                chain: [],
-                feeDetails: {
-                    fees: [
-                        {
-                            name: "distance",
-                            fee: 2400,
-                            message: ""
-                        },
-                        {
-                            name: "time",
-                            fee: 0,
-                            message: ""
-                        },
-                        {
-                            name: "special",
-                            fee: 0,
-                            message: ""
-                        }
-                    ],
-                    totalFees: 2400,
-                    message: "",
-                    title: "Delivery Charge",
-                    amount: "2400",
-                    icon: ""
-                },
-                availability: {
-                    opened: true,
-                    nextOpenMessage: "",
-                    nextCloseMessage: ""
-                },
-                longDistanceEnabled: 0,
-                rainMode: "NONE",
-                thirdPartyAddress: false,
-                thirdPartyVendor: "",
-                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
-                badges: {
-                    imageBased: [],
-                    textBased: [],
-                    textExtendedBadges: []
-                },
-                lastMileTravelString: "2.2 kms",
-                hasSurge: false,
-                aggregatedDiscountInfoV3: {
-                    header: "₹75 OFF",
-                    subHeader: "ABOVE ₹249",
-                    discountTag: "FLAT DEAL",
-                    headerTypeV2: 0
-                },
-                sla: {
-                    restaurantId: "443149",
-                    deliveryTime: 22,
-                    minDeliveryTime: 22,
-                    maxDeliveryTime: 22,
-                    lastMileTravel: 2.299999952316284,
-                    lastMileDistance: 0,
-                    serviceability: "SERVICEABLE",
-                    rainMode: "NONE",
-                    longDistance: "NOT_LONG_DISTANCE",
-                    preferentialService: false,
-                    iconType: "EMPTY"
-                },
-                promoted: true,
-                avgRating: "4.3",
-                totalRatings: 500,
-                new: false
-            },
-            subtype: "basic"
-        },
-        parentWidget: false
-    }
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJAh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d020.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const ShimmerUi = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-wrap",
-        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
-            }, index, false, {
-                fileName: "src/component/ShimmerUi.js",
-                lineNumber: 4,
-                columnNumber: 45
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/component/ShimmerUi.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = ShimmerUi;
-exports.default = ShimmerUi;
-var _c;
-$RefreshReg$(_c, "ShimmerUi");
-
-  $parcel$ReactRefreshHelpers$d020.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bA7hn":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c526 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c526.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _contants = require("../contants");
-var _s = $RefreshSig$();
-const useRestrauntMenuHook = (id)=>{
-    _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)(null);
-    // get data from Api 
-    (0, _react.useEffect)(()=>{
-        getRestaurantInfo();
-    }, []);
-    // return restaurant Data 
-    async function getRestaurantInfo() {
-        try {
-            const response = await fetch((0, _contants.FETCH_RESTRA_MENU_URL) + id);
-            const data = await response.json();
-            console.log(data);
-            setRestaurant(data?.data);
-        } catch (error) {
-            console.error("Error fetching restaurant info:", error);
-        }
-    }
-    return restaurant;
-};
-_s(useRestrauntMenuHook, "xTHIp85kevrNjFQ3g5ZiTLKWCkg=");
-exports.default = useRestrauntMenuHook;
-
-  $parcel$ReactRefreshHelpers$c526.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"7kLfj":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8530.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const Profile = (props)=>{
-    _s();
-    const [count, setCount] = (0, _react.useState)(0);
-    const [count2, setCount2] = (0, _react.useState)(2);
-    (0, _react.useEffect)(()=>{
-        const timer = setInterval(()=>{
-            console.log("Hellow");
-        }, 1000);
-        console.log("useEffect");
-        // Unmounting The stuff(class:componentWillUnmount)
-        return ()=>{
-            clearInterval(timer);
-            console.log("useEffect return");
-        };
-    }, []);
-    console.log("render");
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Profile Functional Base Component"
-            }, void 0, false, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 18,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "Name:",
-                    props.name
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "F-Count:",
-                    count
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setCount(count + 1);
-                    setCount2(count + 1);
-                },
-                children: "Add"
-            }, void 0, false, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: [
-                    "F-Count:",
-                    count2
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Profile.js",
-                lineNumber: 27,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/Profile.js",
-        lineNumber: 17,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Profile, "wkdueDwNjmx3dT3WXTCEgF3grs4=");
-_c = Profile;
-exports.default = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$8530.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4EFS6":[function(require,module,exports) {
-module.exports = require("58e361d82ea135b")(require("f3ffe91b294acba3").getBundleURL("lPpKD") + "Instamart.add16a2c.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("5aN6S"));
-
-},{"58e361d82ea135b":"61B45","f3ffe91b294acba3":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"4ifUV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bcf9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-var _s = $RefreshSig$();
-const Footer = ()=>{
-    _s();
-    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-            children: [
-                user.name,
-                "-",
-                user.email
-            ]
-        }, void 0, true, {
-            fileName: "src/component/Footer.js",
-            lineNumber: 8,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/Footer.js",
-        lineNumber: 7,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Footer, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iizf5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$cee4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contants = require("../contants");
-var _restaurantCart = require("./RestaurantCart");
-var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
-var _shimmerUi = require("./ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
-var _reactRouterDom = require("react-router-dom");
-var _helper = require("../utils/helper");
-var _useOnline = require("../utils/useOnline");
-var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-var _s = $RefreshSig$();
-const Body = ()=>{
-    _s();
-    // COPY OF ALL RESTURANT
-    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
-    //FILTERED LIST
-    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    /* 
-  -SEARCH FUNCTIONALITY
-  -IN JS - CONST SEARCHTEXT = "KFC"
-  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
-    // USE CONTAX
-    const { user , setUser  } = (0, _react.useContext)((0, _userContextDefault.default));
-    //CALL USEFFECT
-    (0, _react.useEffect)(()=>{
-        //call API Here once after completion of "render" UI/loads
-        getRestaurants();
-    }, []);
-    // LIVE DATA
-    async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
-        const json = await data.json();
-        console.log(json);
-        // Check if data is available before setting states
-        if (json?.data?.cards) {
-            setAllRestaurants(json.data.cards);
-            setFilteredRestaurants(json.data.cards);
-        }
-    }
-    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
-    // IN CASE, OFFLINE
-    const isOnline = (0, _useOnlineDefault.default)();
-    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "\uD83D\uDD34\uD83D\uDD34 Seems Like internet OFF, Please Check"
-    }, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 51,
-        columnNumber: 12
-    }, undefined);
-    // AVOID(Early render)!RENDER COMPONENT
-    if (!allRestaurants) return null;
-    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
-    // INLINE CSS
-    const searchBtnCss = {
-        backgroundColor: "pink"
-    };
-    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-        fileName: "src/component/Body.js",
-        lineNumber: 63,
-        columnNumber: 41
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        placeholder: "Search",
-                        className: "h-10 rounded mt-2 focus:bg-green-50",
-                        value: searchText,
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                        }
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 65,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg",
-                        style: searchBtnCss,
-                        onClick: ()=>{
-                            const data = (0, _helper.filterData)(searchText, allRestaurants);
-                            //UPDATE THE STATE - RESTURANT
-                            setFilteredRestaurants(data);
-                        },
-                        children: "Search"
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 68,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        value: user.name,
-                        onChange: (e)=>setUser({
-                                ...user,
-                                name: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 77,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        value: user.email,
-                        onChange: (e)=>setUser({
-                                ...user,
-                                email: e.target.value
-                            })
-                    }, void 0, false, {
-                        fileName: "src/component/Body.js",
-                        lineNumber: 82,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/component/Body.js",
-                lineNumber: 64,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex flex-wrap bg-pink-100"
-            }, void 0, false, {
-                fileName: "src/component/Body.js",
-                lineNumber: 87,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(Body, "7QernHtOoj6/wBp3DvuNkfgfMys=", false, function() {
-    return [
-        (0, _useOnlineDefault.default)
-    ];
-});
-_c = Body;
-exports.default = Body; /**
-//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
-
-// const searchTxt = "KFC"
-
-// searchText is local state varaible 
-// const [searchText,setSearchText] = useState("KFC");
-
-//  <input
-//  type='text'
-//  className='search-input'
-//  placeholder='search'
-//  value={searchText}
-//  // onChange={()=>onChangeInput}
-//  // onChange={(e)=>console.log("dsdf")}
-//  // onChange={(e)=>console.log(e.target.value)}
-//  onChange={(e)=>{
-//    setSearchText(e.target.value)
-//  }}
-// />
- */ 
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$cee4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aW5DX":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8b14.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _contants = require("../contants");
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-var _s = $RefreshSig$();
-const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
-    _s();
-    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                alt: "logo",
-                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "font-bold text-xl",
-                children: name
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: cuisines
-            }, void 0, false, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    avgRating,
-                    " Rating"
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                className: " text-red-600 font-bold",
-                children: [
-                    user.name,
-                    "-",
-                    user.email
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestaurantCart.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/RestaurantCart.js",
-        lineNumber: 13,
-        columnNumber: 10
-    }, undefined);
-};
-_s(RestaurantCart, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
-_c = RestaurantCart;
-exports.default = RestaurantCart;
-var _c;
-$RefreshReg$(_c, "RestaurantCart");
-
-  $parcel$ReactRefreshHelpers$8b14.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
-// SEARCH FUNCTIONALITY with filtering process
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "filterData", ()=>filterData);
-function filterData(searchText, restaurant) {
-    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
-    return filterDatas;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UZbe":[function(require,module,exports) {
-module.exports = require("86d22f0a9311825f")(require("294b19ebd6a9cdd4").getBundleURL("lPpKD") + "About.f8621144.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("94Koj"));
-
-},{"86d22f0a9311825f":"61B45","294b19ebd6a9cdd4":"lgJ39"}],"bdVon":[function(require,module,exports) {
-// The primary entry point assumes we're working with standard ReactDOM/RN, but
-// older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
-// Because of that, the useSyncExternalStore compat shim is needed.
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "batch", ()=>(0, _reactBatchedUpdates.unstable_batchedUpdates));
-var _shim = require("use-sync-external-store/shim");
-var _withSelector = require("use-sync-external-store/shim/with-selector");
-var _reactBatchedUpdates = require("./utils/reactBatchedUpdates");
-var _batch = require("./utils/batch");
-var _useSelector = require("./hooks/useSelector");
-var _connect = require("./components/connect");
-var _exports = require("./exports");
-parcelHelpers.exportAll(_exports, exports);
-(0, _useSelector.initializeUseSelector)((0, _withSelector.useSyncExternalStoreWithSelector));
-(0, _connect.initializeConnect)((0, _shim.useSyncExternalStore)); // Enable batched updates in our subscriptions for use
-// with standard React renderers (ReactDOM, React Native)
-(0, _batch.setBatch)((0, _reactBatchedUpdates.unstable_batchedUpdates));
-
-},{"use-sync-external-store/shim":"hyxdF","use-sync-external-store/shim/with-selector":"iDrhg","./utils/reactBatchedUpdates":"5K86X","./utils/batch":"ikw0G","./hooks/useSelector":"l3rFI","./components/connect":"5gOIw","./exports":"iAa1P","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hyxdF":[function(require,module,exports) {
-"use strict";
-module.exports = require("5ab7799a565bbe74");
-
-},{"5ab7799a565bbe74":"khU3l"}],"khU3l":[function(require,module,exports) {
-/**
- * @license React
- * use-sync-external-store-shim.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("d49206e28a986e9f");
-    var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-    function error(format) {
-        for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
-        printWarning("error", format, args);
-    }
-    function printWarning(level, format, args) {
-        var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
-        var stack = ReactDebugCurrentFrame.getStackAddendum();
-        if (stack !== "") {
-            format += "%s";
-            args = args.concat([
-                stack
-            ]);
-        } // eslint-disable-next-line react-internal/safe-string-coercion
-        var argsWithFormat = args.map(function(item) {
-            return String(item);
-        }); // Careful: RN currently depends on this prefix
-        argsWithFormat.unshift("Warning: " + format); // We intentionally don't use spread (or .apply) directly because it
-        // breaks IE9: https://github.com/facebook/react/issues/13610
-        // eslint-disable-next-line react-internal/no-production-logging
-        Function.prototype.apply.call(console[level], console, argsWithFormat);
-    }
-    /**
- * inlined Object.is polyfill to avoid requiring consumers ship their own
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
- */ function is(x, y) {
-        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
-        ;
-    }
-    var objectIs = typeof Object.is === "function" ? Object.is : is;
-    // dispatch for CommonJS interop named imports.
-    var useState = React.useState, useEffect = React.useEffect, useLayoutEffect = React.useLayoutEffect, useDebugValue = React.useDebugValue;
-    var didWarnOld18Alpha = false;
-    var didWarnUncachedGetSnapshot = false; // Disclaimer: This shim breaks many of the rules of React, and only works
-    // because of a very particular set of implementation details and assumptions
-    // -- change any one of them and it will break. The most important assumption
-    // is that updates are always synchronous, because concurrent rendering is
-    // only available in versions of React that also have a built-in
-    // useSyncExternalStore API. And we only use this shim when the built-in API
-    // does not exist.
-    //
-    // Do not assume that the clever hacks used by this hook also work in general.
-    // The point of this shim is to replace the need for hacks by other libraries.
-    function useSyncExternalStore(subscribe, getSnapshot, // React do not expose a way to check if we're hydrating. So users of the shim
-    // will need to track that themselves and return the correct value
-    // from `getSnapshot`.
-    getServerSnapshot) {
-        if (!didWarnOld18Alpha) {
-            if (React.startTransition !== undefined) {
-                didWarnOld18Alpha = true;
-                error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
-            }
-        }
-        // breaks the rules of React, and only works here because of specific
-        // implementation details, most importantly that updates are
-        // always synchronous.
-        var value = getSnapshot();
-        if (!didWarnUncachedGetSnapshot) {
-            var cachedValue = getSnapshot();
-            if (!objectIs(value, cachedValue)) {
-                error("The result of getSnapshot should be cached to avoid an infinite loop");
-                didWarnUncachedGetSnapshot = true;
-            }
-        }
-        // re-render whenever the subscribed state changes by updating an some
-        // arbitrary useState hook. Then, during render, we call getSnapshot to read
-        // the current value.
-        //
-        // Because we don't actually use the state returned by the useState hook, we
-        // can save a bit of memory by storing other stuff in that slot.
-        //
-        // To implement the early bailout, we need to track some things on a mutable
-        // object. Usually, we would put that in a useRef hook, but we can stash it in
-        // our useState hook instead.
-        //
-        // To force a re-render, we call forceUpdate({inst}). That works because the
-        // new object always fails an equality check.
-        var _useState = useState({
-            inst: {
-                value: value,
-                getSnapshot: getSnapshot
-            }
-        }), inst = _useState[0].inst, forceUpdate = _useState[1]; // Track the latest getSnapshot function with a ref. This needs to be updated
-        // in the layout phase so we can access it during the tearing check that
-        // happens on subscribe.
-        useLayoutEffect(function() {
-            inst.value = value;
-            inst.getSnapshot = getSnapshot; // Whenever getSnapshot or subscribe changes, we need to check in the
-            // commit phase if there was an interleaved mutation. In concurrent mode
-            // this can happen all the time, but even in synchronous mode, an earlier
-            // effect may have mutated the store.
-            if (checkIfSnapshotChanged(inst)) // Force a re-render.
-            forceUpdate({
-                inst: inst
-            });
-        }, [
-            subscribe,
-            value,
-            getSnapshot
-        ]);
-        useEffect(function() {
-            // Check for changes right before subscribing. Subsequent changes will be
-            // detected in the subscription handler.
-            if (checkIfSnapshotChanged(inst)) // Force a re-render.
-            forceUpdate({
-                inst: inst
-            });
-            var handleStoreChange = function() {
-                // TODO: Because there is no cross-renderer API for batching updates, it's
-                // up to the consumer of this library to wrap their subscription event
-                // with unstable_batchedUpdates. Should we try to detect when this isn't
-                // the case and print a warning in development?
-                // The store changed. Check if the snapshot changed since the last time we
-                // read from the store.
-                if (checkIfSnapshotChanged(inst)) // Force a re-render.
-                forceUpdate({
-                    inst: inst
-                });
-            }; // Subscribe to the store and return a clean-up function.
-            return subscribe(handleStoreChange);
-        }, [
-            subscribe
-        ]);
-        useDebugValue(value);
-        return value;
-    }
-    function checkIfSnapshotChanged(inst) {
-        var latestGetSnapshot = inst.getSnapshot;
-        var prevValue = inst.value;
-        try {
-            var nextValue = latestGetSnapshot();
-            return !objectIs(prevValue, nextValue);
-        } catch (error) {
-            return true;
-        }
-    }
-    function useSyncExternalStore$1(subscribe, getSnapshot, getServerSnapshot) {
-        // Note: The shim does not use getServerSnapshot, because pre-18 versions of
-        // React do not expose a way to check if we're hydrating. So users of the shim
-        // will need to track that themselves and return the correct value
-        // from `getSnapshot`.
-        return getSnapshot();
-    }
-    var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
-    var isServerEnvironment = !canUseDOM;
-    var shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore;
-    var useSyncExternalStore$2 = React.useSyncExternalStore !== undefined ? React.useSyncExternalStore : shim;
-    exports.useSyncExternalStore = useSyncExternalStore$2;
-    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
-})();
-
-},{"d49206e28a986e9f":"21dqq"}],"iDrhg":[function(require,module,exports) {
-"use strict";
-module.exports = require("825b2585cf61f03e");
-
-},{"825b2585cf61f03e":"vU6Qe"}],"vU6Qe":[function(require,module,exports) {
-/**
- * @license React
- * use-sync-external-store-shim/with-selector.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("2f25dc3829c8e76e");
-    var shim = require("c4afd16660885105");
-    /**
- * inlined Object.is polyfill to avoid requiring consumers ship their own
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
- */ function is(x, y) {
-        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
-        ;
-    }
-    var objectIs = typeof Object.is === "function" ? Object.is : is;
-    var useSyncExternalStore = shim.useSyncExternalStore;
-    // for CommonJS interop.
-    var useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue; // Same as useSyncExternalStore, but supports selector and isEqual arguments.
-    function useSyncExternalStoreWithSelector(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
-        // Use this to track the rendered snapshot.
-        var instRef = useRef(null);
-        var inst;
-        if (instRef.current === null) {
-            inst = {
-                hasValue: false,
-                value: null
-            };
-            instRef.current = inst;
-        } else inst = instRef.current;
-        var _useMemo = useMemo(function() {
-            // Track the memoized state using closure variables that are local to this
-            // memoized instance of a getSnapshot function. Intentionally not using a
-            // useRef hook, because that state would be shared across all concurrent
-            // copies of the hook/component.
-            var hasMemo = false;
-            var memoizedSnapshot;
-            var memoizedSelection;
-            var memoizedSelector = function(nextSnapshot) {
-                if (!hasMemo) {
-                    // The first time the hook is called, there is no memoized result.
-                    hasMemo = true;
-                    memoizedSnapshot = nextSnapshot;
-                    var _nextSelection = selector(nextSnapshot);
-                    if (isEqual !== undefined) // Even if the selector has changed, the currently rendered selection
-                    // may be equal to the new selection. We should attempt to reuse the
-                    // current value if possible, to preserve downstream memoizations.
-                    {
-                        if (inst.hasValue) {
-                            var currentSelection = inst.value;
-                            if (isEqual(currentSelection, _nextSelection)) {
-                                memoizedSelection = currentSelection;
-                                return currentSelection;
-                            }
-                        }
-                    }
-                    memoizedSelection = _nextSelection;
-                    return _nextSelection;
-                } // We may be able to reuse the previous invocation's result.
-                // We may be able to reuse the previous invocation's result.
-                var prevSnapshot = memoizedSnapshot;
-                var prevSelection = memoizedSelection;
-                if (objectIs(prevSnapshot, nextSnapshot)) // The snapshot is the same as last time. Reuse the previous selection.
-                return prevSelection;
-                 // The snapshot has changed, so we need to compute a new selection.
-                // The snapshot has changed, so we need to compute a new selection.
-                var nextSelection = selector(nextSnapshot); // If a custom isEqual function is provided, use that to check if the data
-                // has changed. If it hasn't, return the previous selection. That signals
-                // to React that the selections are conceptually equal, and we can bail
-                // out of rendering.
-                // If a custom isEqual function is provided, use that to check if the data
-                // has changed. If it hasn't, return the previous selection. That signals
-                // to React that the selections are conceptually equal, and we can bail
-                // out of rendering.
-                if (isEqual !== undefined && isEqual(prevSelection, nextSelection)) return prevSelection;
-                memoizedSnapshot = nextSnapshot;
-                memoizedSelection = nextSelection;
-                return nextSelection;
-            }; // Assigning this to a constant so that Flow knows it can't change.
-            // Assigning this to a constant so that Flow knows it can't change.
-            var maybeGetServerSnapshot = getServerSnapshot === undefined ? null : getServerSnapshot;
-            var getSnapshotWithSelector = function() {
-                return memoizedSelector(getSnapshot());
-            };
-            var getServerSnapshotWithSelector = maybeGetServerSnapshot === null ? undefined : function() {
-                return memoizedSelector(maybeGetServerSnapshot());
-            };
-            return [
-                getSnapshotWithSelector,
-                getServerSnapshotWithSelector
-            ];
-        }, [
-            getSnapshot,
-            getServerSnapshot,
-            selector,
-            isEqual
-        ]), getSelection = _useMemo[0], getServerSelection = _useMemo[1];
-        var value = useSyncExternalStore(subscribe, getSelection, getServerSelection);
-        useEffect(function() {
-            inst.hasValue = true;
-            inst.value = value;
-        }, [
-            value
-        ]);
-        useDebugValue(value);
-        return value;
-    }
-    exports.useSyncExternalStoreWithSelector = useSyncExternalStoreWithSelector;
-    /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
-})();
-
-},{"2f25dc3829c8e76e":"21dqq","c4afd16660885105":"hyxdF"}],"5K86X":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "unstable_batchedUpdates", ()=>(0, _reactDom.unstable_batchedUpdates));
-var _reactDom = require("react-dom");
-
-},{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ikw0G":[function(require,module,exports) {
+},{}],"ikw0G":[function(require,module,exports) {
 // Default to a dummy "batch" implementation that just runs the callback
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -37283,51 +35340,1561 @@ const useStore = /*#__PURE__*/ createStoreHook();
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k2jPV":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lOjBx":[function(require,module,exports) {
+"use strict";
+var m = require("aaccff5d309d9239");
+var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.createRoot(c, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.hydrateRoot(c, h, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+
+},{"aaccff5d309d9239":"j6uA9"}],"cosKY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ea6f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ea6f.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _s = $RefreshSig$();
+const Error = ()=>{
+    _s();
+    const err = (0, _reactRouterDom.useRouteError)();
+    const { status , statusText  } = err;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Oops!!"
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Something went Wrong \uD83D\uDE35\uD83D\uDE35"
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: status + ": " + statusText
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Error.js",
+        lineNumber: 9,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
+    return [
+        (0, _reactRouterDom.useRouteError)
+    ];
+});
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$ea6f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"3He1d":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fc23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fc23.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Contact us Page"
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 3,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "contact us page finding the path..."
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$fc23.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dclnc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fd8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Cart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Cart"
+    }, void 0, false, {
+        fileName: "src/component/Cart.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kwDLv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$76ed.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _contants = require("../contants");
+var _shimmerUi = require("../component/ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _useRestrauntMenuHook = require("../utils/useRestrauntMenuHook");
+var _useRestrauntMenuHookDefault = parcelHelpers.interopDefault(_useRestrauntMenuHook);
+var _cartSlice = require("../utils/cartSlice");
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
+const RestrauntMenu = ()=>{
+    _s();
+    // COME FROM URL-(ID)
+    const { id  } = (0, _reactRouterDom.useParams)();
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleCallItem = ()=>{
+        dispatch((0, _cartSlice.addItem)("Grapes"));
+    };
+    /* dispatch an action & pass the payload */ // OWN HOOK
+    const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
+    // EARLY RETURN
+    if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+            fileName: "src/component/RestrauntMenu.js",
+            lineNumber: 25,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 24,
+        columnNumber: 12
+    }, undefined);
+    const { cards  } = restaurant;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: [
+                    "Restaurant Id: ",
+                    id
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
+            cards ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: cards[0]?.data?.data?.name
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 34,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        width: "400px",
+                        src: (0, _contants.IMG_CND_URL) + cards[0]?.data?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 35,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.area
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 36,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.city
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 37,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.totalRatingsString
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 38,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            cards[0]?.data?.data?.avgRating,
+                            " Rating"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 39,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            "Address : ",
+                            cards[0]?.data?.data?.address
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 40,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            "DeliveryTime : ",
+                            cards[0]?.data?.data?.deliveryTime,
+                            " min"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 41,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "No restaurant data available"
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 42,
+                columnNumber: 15
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "p-2 m-2 bg-green-600",
+                    onClick: ()=>handleCallItem(),
+                    children: "Add Item Cart"
+                }, void 0, false, {
+                    fileName: "src/component/RestrauntMenu.js",
+                    lineNumber: 45,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 44,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 31,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestrauntMenu, "xV17OoEpZmBQAstGzin8/aWNtVY=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _reactRedux.useDispatch),
+        (0, _useRestrauntMenuHookDefault.default)
+    ];
+});
+_c = RestrauntMenu;
+exports.default = RestrauntMenu; /* 
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { IMG_CND_URL } from "../contants";
+import Shimmer from "../component/ShimmerUi"
+
+const RestrauntMenu = () => {
+  const { id } = useParams();
+  console.log(id);
+
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
+
+  async function getRestaurantInfo() {
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
+      );
+      const data = await response.json();
+      console.log(data);
+      setRestaurant(data?.data);
+    } catch (error) {
+      console.error("Error fetching restaurant info:", error);
+    }
+  }
+
+  // EARLY RETURN 
+  if (!restaurant) {
+    return <div><Shimmer/></div>;
+  }
+
+  const { cards } = restaurant;
+
+  return (
+    <div className="">
+      <h1>Restaurant Id: {id}</h1>
+      {cards ? (
+        <>
+          <h2>{cards[0]?.data?.data?.name}</h2>
+          <img
+            width='400px'
+            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
+          />
+          <h3>{cards[0]?.data?.data?.area}</h3>
+          <h3>{cards[0]?.data?.data?.city}</h3>
+          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
+          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
+          <h3>Address : {cards[0]?.data?.data?.address}</h3>
+          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
+        </>
+      ) : (
+        <h2>No restaurant data available</h2>
+      )}
+    </div>
+  );
+};
+
+export default RestrauntMenu;
+
+
+
+
+*/ 
+var _c;
+$RefreshReg$(_c, "RestrauntMenu");
+
+  $parcel$ReactRefreshHelpers$76ed.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn","../utils/cartSlice":"5RXlr","react-redux":"bdVon"}],"6xi3Y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
+parcelHelpers.export(exports, "FETCH_RESTRA_MENU_URL", ()=>FETCH_RESTRA_MENU_URL);
+parcelHelpers.export(exports, "restrauntList", ()=>restrauntList);
+const IMG_CND_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024,h_800,c_fill/";
+const FETCH_RESTRA_MENU_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING";
+const restrauntList = [
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56347",
+                name: "Shabana's Bakery & Kitchen",
+                uuid: "f2aebfef-976a-4507-80da-85667c48ccb8",
+                city: "16",
+                area: "Chaoni",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "wskutvs1uewnasd0xakj",
+                cuisines: [
+                    "Bakery",
+                    "Fast Food",
+                    "Chinese"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 23,
+                minDeliveryTime: 23,
+                maxDeliveryTime: 23,
+                slaString: "23 MINS",
+                lastMileTravel: 3,
+                slugs: {
+                    restaurant: "shabanas-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "36, Koradi Rd, Byramji Town, Nagpur",
+                locality: "Koradi Road",
+                parentId: 180414,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6986532~p=22~eid=00000188-ccdb-81aa-10e7-755b00af1673",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56347",
+                    deliveryTime: 23,
+                    minDeliveryTime: 23,
+                    maxDeliveryTime: 23,
+                    lastMileTravel: 3,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.9",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "54053",
+                name: "Pizza Hut",
+                uuid: "0f21833a-8719-4048-a39c-a80a72e8a32e",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "1000+ ratings",
+                cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+                cuisines: [
+                    "Pizzas"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "pizza-hut-1st-flr-eternity-mall-variety-square-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "SN F1 & F2, 1st Flr, Eternity Mall, Variety Square, Sitabuldi, Nagpur, Maharashtra 440012",
+                locality: "Sitabuldi",
+                parentId: 721,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "60% OFF",
+                    subHeader: "UPTO ₹120",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "54053",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.4",
+                totalRatings: 1000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "368226",
+                name: "Maharashtrian Aaswad",
+                uuid: "a324919d-5d6a-4f56-93e4-f4f32b617c20",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "jigmdhmrlnfmuwkff6d6",
+                cuisines: [
+                    "Indian",
+                    "Maharashtrian",
+                    "Snacks",
+                    "North Indian",
+                    "Desserts",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 33,
+                minDeliveryTime: 33,
+                maxDeliveryTime: 33,
+                slaString: "33 MINS",
+                lastMileTravel: 3.700000047683716,
+                slugs: {
+                    restaurant: "maharashtrian-aaswad-dharampeth-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Plot No. 137, Near Walmiki Nagar, Shankar Nagar Nagpur",
+                locality: "Shankar Nagar",
+                parentId: 8483,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7147688~p=25~eid=00000188-ccdb-81aa-10e7-755c00af190d",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹499",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "368226",
+                    deliveryTime: 33,
+                    minDeliveryTime: 33,
+                    maxDeliveryTime: 33,
+                    lastMileTravel: 3.700000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "3.6",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "620948",
+                name: "Chaskaa",
+                uuid: "0c3d04d9-fdec-44cd-a4c3-b0a544dd5231",
+                city: "16",
+                area: "Sitabuldi",
+                totalRatingsString: "20+ ratings",
+                cloudinaryImageId: "jxkexm4c2qggafkzgbvl",
+                cuisines: [
+                    "North Indian",
+                    "Chinese",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 18,
+                minDeliveryTime: 18,
+                maxDeliveryTime: 18,
+                slaString: "18 MINS",
+                lastMileTravel: 1,
+                slugs: {
+                    restaurant: "chaskaa-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "House No. 208/A, Regent Talkies Campus, Sitabuldi, Nagpur 440012",
+                locality: "AmBazaari Road ",
+                parentId: 14224,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "1 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "50% OFF",
+                    subHeader: "UPTO ₹100",
+                    discountTag: "",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "620948",
+                    deliveryTime: 18,
+                    minDeliveryTime: 18,
+                    maxDeliveryTime: 18,
+                    lastMileTravel: 1,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "3.9",
+                totalRatings: 20,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "578720",
+                name: "Thali corner",
+                uuid: "9fb3185f-0886-4176-bd56-df49d7dd3013",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vmfyjexzimgukkmczpxw",
+                cuisines: [
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "thali-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Modi No 3, Shopping Corner Hodi No 3, Sitabuildi, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Hanuman Street",
+                parentId: 204150,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "578720",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "588863",
+                name: "GetAWay-Desserts",
+                uuid: "a53b5940-120a-49e0-a346-c732f41812d6",
+                city: "16",
+                area: "Gokulpeth",
+                totalRatingsString: "100+ ratings",
+                cloudinaryImageId: "2e93c40100a50e4bfabce89c35154ec6",
+                cuisines: [
+                    "Healthy Food",
+                    "Ice Cream",
+                    "Desserts",
+                    "Sweets"
+                ],
+                tags: [],
+                costForTwo: 15000,
+                costForTwoString: "₹150 FOR TWO",
+                deliveryTime: 19,
+                minDeliveryTime: 19,
+                maxDeliveryTime: 19,
+                slaString: "19 MINS",
+                lastMileTravel: 3.799999952316284,
+                slugs: {
+                    restaurant: "get-a-whey-healthy-ice-creams-nagpur-dharampeth",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "COMMERCIAL FIRST FLOOR F 1 F 2 INDU YASH 2 186 DHARMPETH EXTENTION RAMNAGAR CHOWK NAGPUR 440010, Nagpur urban, Nagpur-1, Maharashtra-440010",
+                locality: "Dharmpeth Extention",
+                parentId: 354819,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2900,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2900,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2900",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=6954890~p=28~eid=00000188-ccdb-81aa-10e7-755d00af1c38",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "3.7 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "588863",
+                    deliveryTime: 19,
+                    minDeliveryTime: 19,
+                    maxDeliveryTime: 19,
+                    lastMileTravel: 3.799999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 100,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "56382",
+                name: "Krishnum Food Plaza",
+                uuid: "f5f8a543-c4c6-4d57-b01c-589962b93779",
+                city: "16",
+                area: "Civil Lines",
+                totalRatingsString: "10000+ ratings",
+                cloudinaryImageId: "guubti1buwtjyhywkzkv",
+                cuisines: [
+                    "South Indian",
+                    "Biryani",
+                    "Pizzas",
+                    "Thalis",
+                    "North Indian",
+                    "Indian",
+                    "American"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 24,
+                minDeliveryTime: 24,
+                maxDeliveryTime: 24,
+                slaString: "24 MINS",
+                lastMileTravel: 2.200000047683716,
+                slugs: {
+                    restaurant: "krishnum-food-plaza-sadar-sadar",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "Mount Road, Sadar, Nagpur",
+                locality: "Mount Road",
+                parentId: 121089,
+                unserviceable: false,
+                veg: false,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹125 OFF",
+                    subHeader: "ABOVE ₹199",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "56382",
+                    deliveryTime: 24,
+                    minDeliveryTime: 24,
+                    maxDeliveryTime: 24,
+                    lastMileTravel: 2.200000047683716,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "4.0",
+                totalRatings: 10000,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "579495",
+                name: "Aaloo Paratha corner",
+                uuid: "e1362d22-d384-475b-a466-e022bd249dd2",
+                city: "16",
+                area: "Dharampeth",
+                totalRatingsString: "Too Few Ratings",
+                cloudinaryImageId: "vocvnnn2oqzjshmj8fku",
+                cuisines: [
+                    "Indian",
+                    "Snacks"
+                ],
+                tags: [],
+                costForTwo: 20000,
+                costForTwoString: "₹200 FOR TWO",
+                deliveryTime: 25,
+                minDeliveryTime: 25,
+                maxDeliveryTime: 25,
+                slaString: "25 MINS",
+                lastMileTravel: 0.6000000238418579,
+                slugs: {
+                    restaurant: "aaloo-paratha-corner-sitabuldi-sitabuldi",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "279, near White House, Modi No.3, Sitabuldi, Nagpur, Maharashtra 440012, India",
+                locality: "Sadar Bazaar Road",
+                parentId: 346992,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "0.6 kms",
+                hasSurge: false,
+                sla: {
+                    restaurantId: "579495",
+                    deliveryTime: 25,
+                    minDeliveryTime: 25,
+                    maxDeliveryTime: 25,
+                    lastMileTravel: 0.6000000238418579,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: false,
+                avgRating: "--",
+                totalRatings: 0,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    },
+    {
+        cardType: "restaurant",
+        layoutAlignmentType: "VERTICAL",
+        data: {
+            type: "restaurant",
+            data: {
+                type: "F",
+                id: "443149",
+                name: "Udupi Gokula",
+                uuid: "f71cb165-31a6-4a3a-b0e7-a8a5e33b43aa",
+                city: "16",
+                area: "Sadar",
+                totalRatingsString: "500+ ratings",
+                cloudinaryImageId: "qla5mtyndfbgrglahah4",
+                cuisines: [
+                    "South Indian",
+                    "Beverages"
+                ],
+                tags: [],
+                costForTwo: 30000,
+                costForTwoString: "₹300 FOR TWO",
+                deliveryTime: 22,
+                minDeliveryTime: 22,
+                maxDeliveryTime: 22,
+                slaString: "22 MINS",
+                lastMileTravel: 2.299999952316284,
+                slugs: {
+                    restaurant: "udupi-gokula-sadar-sadar-2",
+                    city: "nagpur"
+                },
+                cityState: "16",
+                address: "3, Mount Rd, Opp. LIC Office, Mohan Nagar, Nagpur, Maharashtra 440001, India",
+                locality: "Mohan Nagar",
+                parentId: 258496,
+                unserviceable: false,
+                veg: true,
+                select: false,
+                favorite: false,
+                tradeCampaignHeaders: [],
+                ribbon: [
+                    {
+                        type: "PROMOTED"
+                    }
+                ],
+                chain: [],
+                feeDetails: {
+                    fees: [
+                        {
+                            name: "distance",
+                            fee: 2400,
+                            message: ""
+                        },
+                        {
+                            name: "time",
+                            fee: 0,
+                            message: ""
+                        },
+                        {
+                            name: "special",
+                            fee: 0,
+                            message: ""
+                        }
+                    ],
+                    totalFees: 2400,
+                    message: "",
+                    title: "Delivery Charge",
+                    amount: "2400",
+                    icon: ""
+                },
+                availability: {
+                    opened: true,
+                    nextOpenMessage: "",
+                    nextCloseMessage: ""
+                },
+                longDistanceEnabled: 0,
+                rainMode: "NONE",
+                thirdPartyAddress: false,
+                thirdPartyVendor: "",
+                adTrackingID: "cid=7146675~p=31~eid=00000188-ccdb-81aa-10e7-755e00af1f76",
+                badges: {
+                    imageBased: [],
+                    textBased: [],
+                    textExtendedBadges: []
+                },
+                lastMileTravelString: "2.2 kms",
+                hasSurge: false,
+                aggregatedDiscountInfoV3: {
+                    header: "₹75 OFF",
+                    subHeader: "ABOVE ₹249",
+                    discountTag: "FLAT DEAL",
+                    headerTypeV2: 0
+                },
+                sla: {
+                    restaurantId: "443149",
+                    deliveryTime: 22,
+                    minDeliveryTime: 22,
+                    maxDeliveryTime: 22,
+                    lastMileTravel: 2.299999952316284,
+                    lastMileDistance: 0,
+                    serviceability: "SERVICEABLE",
+                    rainMode: "NONE",
+                    longDistance: "NOT_LONG_DISTANCE",
+                    preferentialService: false,
+                    iconType: "EMPTY"
+                },
+                promoted: true,
+                avgRating: "4.3",
+                totalRatings: 500,
+                new: false
+            },
+            subtype: "basic"
+        },
+        parentWidget: false
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJAh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d020.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ShimmerUi = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-wrap",
+        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
+            }, index, false, {
+                fileName: "src/component/ShimmerUi.js",
+                lineNumber: 4,
+                columnNumber: 45
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/component/ShimmerUi.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ShimmerUi;
+exports.default = ShimmerUi;
+var _c;
+$RefreshReg$(_c, "ShimmerUi");
+
+  $parcel$ReactRefreshHelpers$d020.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bA7hn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c526 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c526.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _contants = require("../contants");
+var _s = $RefreshSig$();
+const useRestrauntMenuHook = (id)=>{
+    _s();
+    const [restaurant, setRestaurant] = (0, _react.useState)(null);
+    // get data from Api 
+    (0, _react.useEffect)(()=>{
+        getRestaurantInfo();
+    }, []);
+    // return restaurant Data 
+    async function getRestaurantInfo() {
+        try {
+            const response = await fetch((0, _contants.FETCH_RESTRA_MENU_URL) + id);
+            const data = await response.json();
+            console.log(data);
+            setRestaurant(data?.data);
+        } catch (error) {
+            console.error("Error fetching restaurant info:", error);
+        }
+    }
+    return restaurant;
+};
+_s(useRestrauntMenuHook, "xTHIp85kevrNjFQ3g5ZiTLKWCkg=");
+exports.default = useRestrauntMenuHook;
+
+  $parcel$ReactRefreshHelpers$c526.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"5RXlr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addItem", ()=>addItem);
+parcelHelpers.export(exports, "removeItem", ()=>removeItem);
+parcelHelpers.export(exports, "clearCart", ()=>clearCart);
 var _toolkit = require("@reduxjs/toolkit");
-var _cartSlice = require("./cartSlice");
-var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
-const store = (0, _toolkit.configureStore)({
-    reducer: {
-        cart: (0, _cartSliceDefault.default)
+const cartSlice = (0, _toolkit.createSlice)({
+    name: "cart",
+    initialState: {
+        items: [
+            "banana",
+            "Potato",
+            "Carrot"
+        ]
+    },
+    // MODIFY SLICE State
+    reducers: {
+        addItem: (state, action)=>{
+            state.items.push(action.payload);
+        },
+        removeItem: (state, action)=>{
+            //H.W set it properly it remove from last Need to remove sequentionals
+            state.items.pop();
+        },
+        clearCart: (state)=>{
+            state.items = [];
+        }
     }
 });
-exports.default = store; /**
- * @REVISE CONCEPT 
- * Create Store
- * API -configureStore() - RTK
- * Provide my store to app
- *   -<Provider store={store} - import from react-redux
- *
- * create Slice
- *   Api - RTK - createSlice({
- *   name:"",
- *   initialState: reducers:{
- *   addItem:(state,action)
- * }})
- *
- * export default cartSlice.reducer
- * export const = {addItem,removeItem} = cartSlice.actions
- *
- * Put that Slice into store(store.js)
- *
- * - {
- * reducer:{
- * cart: cartSlice,
- * user: userSlice,
- * }
- *   }
- * REMEMBER Each slice export it's his reducers in this care cartSlice.js is personal reducers,userSlice his personal ... So all this come inside this here called it as 'reducer' object see above code
- * Name of Object is "reducer"
- * 
- * Now Finnaly Let's Subscrip the store By using "SELECTOR" for add item to cart 
- * 
- * GO To 🗃️component/Header.js 
+const { addItem , removeItem , clearCart  } = cartSlice.actions;
+exports.default = cartSlice.reducer; /* 
+-♎initialState Always Empty for counting What should you put into this Cart.js
+-♎For that time being Puts Empty items
+-♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
+-♎For modifying this we use know as "reducer()" function As per 💹reducer.png
+-♎when it is called "on distpatched of an action"
+-♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
+-♎reducer() is the function at end of the day  
+-Here is the mapping BETWEEN Action & reducer function 
+-♎"addItem" is call base on the reducer call 
+-♎ So how do i modify store is this reducer takes two thing (state,action(payload)) so this is the place (talkAbout_action(payload)) where i'll get items which i'll add to my cart or store inside This "addItem"
+-♎state-> it mean initialState that i decleared 
+-♎action-> it is place where the data is coming in 
+Now let's modify Let's suppose i've 1 item with me so how do i put this inside my State Nothing much just push it!!
+-♎state.items.push(action.payload)
+-♎While clicking onClick(add to cart) button which mean we send data or will send data so that data will receive like this because it dispatched and action while clicking add to cart btn that's so that info receive here below one!
+-♎state.items.push(action.payload) @NOTE:here state hold current value 
+Then,
+Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
+🤔😵@REMEMBER:Never ever "Return" Any stuff O.w create mess/throwgh error Inside reducer 
+This Fuction does'nt return anything it takes a state & directly modify it! 
+Now Need to export this one 
+-♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one
+-♎Need to export It action Also 
+like export const {addItem,removeItem,clearCart} = cartSlice.reducer; 
+
+Why We export Stuff Because cartSlice behind the since it is is Big Object it manage all the things like this is how we manage!
+cartSlice = {
+  actions:{
+    addItem,removeItem,clearCart
+  },
+  reducer: reducers
+}
+
+Now,it's time to inject into our Store!
+
+Go 🗃️store.js & import stuff
+
  */ 
 
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cartSlice":"5RXlr"}],"lL1Ef":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lL1Ef":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "EnhancerArray", ()=>EnhancerArray);
@@ -41201,73 +40768,559 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5RXlr":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7kLfj":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8530.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "addItem", ()=>addItem);
-parcelHelpers.export(exports, "removeItem", ()=>removeItem);
-parcelHelpers.export(exports, "clearCart", ()=>clearCart);
-var _toolkit = require("@reduxjs/toolkit");
-const cartSlice = (0, _toolkit.createSlice)({
-    name: "cart",
-    initialState: {
-        items: []
-    },
-    // MODIFY SLICE State
-    reducers: {
-        addItem: (state, action)=>{
-            state.items.push(action.payload);
-        },
-        removeItem: (state, action)=>{
-            //H.W set it properly it remove from last Need to remove sequentionals
-            state.items.pop();
-        },
-        clearCart: (state)=>{
-            state.items = [];
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const Profile = (props)=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(0);
+    const [count2, setCount2] = (0, _react.useState)(2);
+    (0, _react.useEffect)(()=>{
+        const timer = setInterval(()=>{
+            console.log("Hellow");
+        }, 1000);
+        console.log("useEffect");
+        // Unmounting The stuff(class:componentWillUnmount)
+        return ()=>{
+            clearInterval(timer);
+            console.log("useEffect return");
+        };
+    }, []);
+    console.log("render");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Profile Functional Base Component"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "Name:",
+                    props.name
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setCount(count + 1);
+                    setCount2(count + 1);
+                },
+                children: "Add"
+            }, void 0, false, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 21,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: [
+                    "F-Count:",
+                    count2
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Profile.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Profile.js",
+        lineNumber: 17,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Profile, "wkdueDwNjmx3dT3WXTCEgF3grs4=");
+_c = Profile;
+exports.default = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
+
+  $parcel$ReactRefreshHelpers$8530.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4EFS6":[function(require,module,exports) {
+module.exports = require("58e361d82ea135b")(require("f3ffe91b294acba3").getBundleURL("lPpKD") + "Instamart.add16a2c.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("5aN6S"));
+
+},{"58e361d82ea135b":"61B45","f3ffe91b294acba3":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"4ifUV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$bcf9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const Footer = ()=>{
+    _s();
+    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            children: [
+                user.name,
+                "-",
+                user.email
+            ]
+        }, void 0, true, {
+            fileName: "src/component/Footer.js",
+            lineNumber: 8,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/Footer.js",
+        lineNumber: 7,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Footer, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iizf5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cee4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cee4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contants = require("../contants");
+var _restaurantCart = require("./RestaurantCart");
+var _restaurantCartDefault = parcelHelpers.interopDefault(_restaurantCart);
+var _shimmerUi = require("./ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _reactRouterDom = require("react-router-dom");
+var _helper = require("../utils/helper");
+var _useOnline = require("../utils/useOnline");
+var _useOnlineDefault = parcelHelpers.interopDefault(_useOnline);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const Body = ()=>{
+    _s();
+    // COPY OF ALL RESTURANT
+    const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
+    //FILTERED LIST
+    const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
+    /* 
+  -SEARCH FUNCTIONALITY
+  -IN JS - CONST SEARCHTEXT = "KFC"
+  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
+    // USE CONTAX
+    const { user , setUser  } = (0, _react.useContext)((0, _userContextDefault.default));
+    //CALL USEFFECT
+    (0, _react.useEffect)(()=>{
+        //call API Here once after completion of "render" UI/loads
+        getRestaurants();
+    }, []);
+    // LIVE DATA
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const json = await data.json();
+        console.log(json);
+        // Check if data is available before setting states
+        if (json?.data?.cards) {
+            setAllRestaurants(json.data.cards);
+            setFilteredRestaurants(json.data.cards);
         }
     }
+    console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
+    // IN CASE, OFFLINE
+    const isOnline = (0, _useOnlineDefault.default)();
+    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "\uD83D\uDD34\uD83D\uDD34 Seems Like internet OFF, Please Check"
+    }, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 51,
+        columnNumber: 12
+    }, undefined);
+    // AVOID(Early render)!RENDER COMPONENT
+    if (!allRestaurants) return null;
+    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+    // INLINE CSS
+    const searchBtnCss = {
+        backgroundColor: "pink"
+    };
+    return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/Body.js",
+        lineNumber: 63,
+        columnNumber: 41
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container p-5 my-4 bg-pink-100 shadow-lg gap-3 flex",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        placeholder: "Search",
+                        className: "h-10 rounded mt-2 focus:bg-green-50",
+                        value: searchText,
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 65,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "p-2 m-2 bg-sky-500 hover:bg-sky-700 rounded-lg",
+                        style: searchBtnCss,
+                        onClick: ()=>{
+                            const data = (0, _helper.filterData)(searchText, allRestaurants);
+                            //UPDATE THE STATE - RESTURANT
+                            setFilteredRestaurants(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 68,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: user.name,
+                        onChange: (e)=>setUser({
+                                ...user,
+                                name: e.target.value
+                            })
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 77,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        value: user.email,
+                        onChange: (e)=>setUser({
+                                ...user,
+                                email: e.target.value
+                            })
+                    }, void 0, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 82,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Body.js",
+                lineNumber: 64,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-wrap bg-pink-100",
+                children: !filteredRestaurants.length > 0 ? filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/restaurant/" + restaurant.data.data.id,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCartDefault.default), {
+                            ...restaurant.data.data
+                        }, void 0, false, {
+                            fileName: "src/component/Body.js",
+                            lineNumber: 89,
+                            columnNumber: 13
+                        }, undefined)
+                    }, restaurant.data.data.id, false, {
+                        fileName: "src/component/Body.js",
+                        lineNumber: 88,
+                        columnNumber: 78
+                    }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    children: "No Restaurant Match Your Filter"
+                }, void 0, false, {
+                    fileName: "src/component/Body.js",
+                    lineNumber: 90,
+                    columnNumber: 22
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/component/Body.js",
+                lineNumber: 87,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_s(Body, "7QernHtOoj6/wBp3DvuNkfgfMys=", false, function() {
+    return [
+        (0, _useOnlineDefault.default)
+    ];
 });
-const { addItem , removeItem , clearCart  } = cartSlice.actions;
-exports.default = cartSlice.reducer; /* 
--♎initialState Always Empty for counting What should you put into this Cart.js
--♎For that time being Puts Empty items
--♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
--♎For modifying this we use know as "reducer()" function As per 💹reducer.png
--♎when it is called "on distpatched of an action"
--♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
--♎reducer() is the function at end of the day  
--Here is the mapping BETWEEN Action & reducer function 
--♎"addItem" is call base on the reducer call 
--♎ So how do i modify store is this reducer takes two thing (state,action(payload)) so this is the place (talkAbout_action(payload)) where i'll get items which i'll add to my cart or store inside This "addItem"
--♎state-> it mean initialState that i decleared 
--♎action-> it is place where the data is coming in 
-Now let's modify Let's suppose i've 1 item with me so how do i put this inside my State Nothing much just push it!!
--♎state.items.push(action.payload)
--♎While clicking onClick(add to cart) button which mean we send data or will send data so that data will receive like this because it dispatched and action while clicking add to cart btn that's so that info receive here below one!
--♎state.items.push(action.payload) @NOTE:here state hold current value 
-Then,
-Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
-🤔😵@REMEMBER:Never ever Return Any stuff O.w create mess/throwgh error Inside reducer 
-This Fuction does'nt return anything it takes a state & directly modify it! 
-Now Need to export this one 
--♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one
--♎Need to export It action Also 
-like export const {addItem,removeItem,clearCart} = cartSlice.reducer; 
+_c = Body;
+exports.default = Body; /**
+//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
 
-Why We export Stuff Because cartSlice behind the since it is is Big Object it manage all the things like this is how we manage!
-cartSlice = {
-  actions:{
-    addItem,removeItem,clearCart
-  },
-  reducer: reducers
+// const searchTxt = "KFC"
+
+// searchText is local state varaible 
+// const [searchText,setSearchText] = useState("KFC");
+
+//  <input
+//  type='text'
+//  className='search-input'
+//  placeholder='search'
+//  value={searchText}
+//  // onChange={()=>onChangeInput}
+//  // onChange={(e)=>console.log("dsdf")}
+//  // onChange={(e)=>console.log(e.target.value)}
+//  onChange={(e)=>{
+//    setSearchText(e.target.value)
+//  }}
+// />
+ */ 
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$cee4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","./RestaurantCart":"aW5DX","./ShimmerUi":"3UJAh","react-router-dom":"9xmpe","../utils/helper":"3GF3D","../utils/useOnline":"74Yls","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aW5DX":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8b14.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _contants = require("../contants");
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const RestaurantCart = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
+    _s();
+    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
+                children: name
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: cuisines
+            }, void 0, false, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRating,
+                    " Rating"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: " text-red-600 font-bold",
+                children: [
+                    user.name,
+                    "-",
+                    user.email
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestaurantCart.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/RestaurantCart.js",
+        lineNumber: 13,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestaurantCart, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
+_c = RestaurantCart;
+exports.default = RestaurantCart;
+var _c;
+$RefreshReg$(_c, "RestaurantCart");
+
+  $parcel$ReactRefreshHelpers$8b14.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../contants":"6xi3Y","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3GF3D":[function(require,module,exports) {
+// SEARCH FUNCTIONALITY with filtering process
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterData", ()=>filterData);
+function filterData(searchText, restaurant) {
+    const filterDatas = restaurant.filter((restaurant)=>restaurant?.data?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    return filterDatas;
 }
 
-Now,it's time to inject into our Store!
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UZbe":[function(require,module,exports) {
+module.exports = require("86d22f0a9311825f")(require("294b19ebd6a9cdd4").getBundleURL("lPpKD") + "About.f8621144.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("94Koj"));
 
-Go 🗃️store.js & import stuff
-
+},{"86d22f0a9311825f":"61B45","294b19ebd6a9cdd4":"lgJ39"}],"k2jPV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _toolkit = require("@reduxjs/toolkit");
+var _cartSlice = require("./cartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+const store = (0, _toolkit.configureStore)({
+    reducer: {
+        cart: (0, _cartSliceDefault.default)
+    }
+});
+exports.default = store; /**
+ * @REVISE CONCEPT 
+ * Create Store
+ * API -configureStore() - RTK
+ * Provide my store to app
+ *   -<Provider store={store} - import from react-redux
+ *
+ * create Slice
+ *   Api - RTK - createSlice({
+ *   name:"",
+ *   initialState: reducers:{
+ *   addItem:(state,action)
+ * }})
+ *
+ * export default cartSlice.reducer
+ * export const = {addItem,removeItem} = cartSlice.actions
+ *
+ * Put that Slice into store(store.js)
+ *
+ * - {
+ * reducer:{
+ * cart: cartSlice,
+ * user: userSlice,
+ * }
+ *   }
+ * REMEMBER Each slice export it's his reducers in this care cartSlice.js is personal reducers,userSlice his personal ... So all this come inside this here called it as 'reducer' object see above code
+ * Name of Object is "reducer"
+ * 
+ * Now Finnaly Let's Subscrip the store By using "SELECTOR" for add item to cart 
+ * 
+ * GO To 🗃️component/Header.js 
  */ 
 
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cartSlice":"5RXlr"}]},["hklly","1xC6H","bNKaB"], "bNKaB", "parcelRequire5b12")
 
 //# sourceMappingURL=index.0641b553.js.map

@@ -107,7 +107,7 @@ const Body = () => {
           }></input>
       </div>
       <div className='flex flex-wrap bg-pink-100'>
-      {/*{filteredRestaurants.length > 0 ? (
+    {!filteredRestaurants.length > 0 ? (
         filteredRestaurants.map((restaurant) => (
           <Link to={"/restaurant/" + restaurant.data.data.id} key={restaurant.data.data.id}>
             <RestaurantCart {...restaurant.data.data} />
@@ -116,7 +116,7 @@ const Body = () => {
       ) : (
         <h1>No Restaurant Match Your Filter</h1>
       )
-    }*/}
+    }
     </div>
     
     </>

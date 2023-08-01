@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: [],
+    items: ["banana","Potato","Carrot"],
   },
   // MODIFY SLICE State
   reducers: {
@@ -41,7 +41,7 @@ Now let's modify Let's suppose i've 1 item with me so how do i put this inside m
 -♎state.items.push(action.payload) @NOTE:here state hold current value 
 Then,
 Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
-🤔😵@REMEMBER:Never ever Return Any stuff O.w create mess/throwgh error Inside reducer 
+🤔😵@REMEMBER:Never ever "Return" Any stuff O.w create mess/throwgh error Inside reducer 
 This Fuction does'nt return anything it takes a state & directly modify it! 
 Now Need to export this one 
 -♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one

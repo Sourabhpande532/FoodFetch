@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 // const loggedInUser = () => {
 //   return true;
@@ -25,6 +26,8 @@ const Header = () => {
 
   const { user } = useContext(UserContext);
 
+  const cartItems = useSelector(store => store.cart.items)
+
   return (
     <div className='flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950'>
       <Title />
@@ -40,10 +43,10 @@ const Header = () => {
             <Link to='/contact'>Contact</Link>
           </li>
           <li>
-            <Link to='/cart'>Cart</Link>
+            <Link to='/instamart'>instamart</Link>
           </li>
           <li>
-            <Link to='/instamart'>instamart</Link>
+            <Link to='/cart'>Cart {cartItems.length} items</Link>
           </li>
         </ul>
       </div>

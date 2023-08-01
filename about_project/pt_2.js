@@ -885,10 +885,35 @@ Ok ?? 🤔🤔what was the function/API that use to create store "configureStore
 -------------------
 
 Now It's time to create a slices After finishing above Process!! 
--🎯create New 🗃️CartSlice.js or any other file & inject it into 🗃️Store.js 
+-🎯create New and Go here 1st 🗃️CartSlice.js or any other file & inject it into 🗃️Store.js 
 -Then Go 🗃️Store.js 
--Then 🗃️component/Header.js 
-Start 1:56
+
+-Then Go🗃️component/Header.js && Then component/RestrauntMenu.js
+
+(@Thery of 🗃️Header.js && 🗃️RestrauntMenu.js)
+
+* for add to cart Need to import useSelector
+ * useSelector is an Bridge BETWEEN redux store & component
+ * come from react-redux via named import
+ * it gives a directly access to this "store "so you Directly access it.
+ * this hooks useSelector(store) directly give access it it's 🎯Specility
+ * what you want to Subscribe just mention after store=> like (store => store.cart.items)
+ * now use this {cartItems.lenght} in /cart route Go nd check Heder.js 
+ * 
+ * 
+ * Now, time to reach 🗃️RestrauntMenu.js file 
+ * create button for adding iterm 
+ * so what should you while click on this button do call "onClick" event inside button 
+ * call callback function inside it "handleCallItem()"
+ * Imp things come how would i dispatch an action How would I store items inside cart 
+ * Remember Line see 💹reducer.png As soon as i click on AddToItem it dispatch an action then ....AddToCart
+ * do all process inside "handleCallItem" function 
+ * call event dispatch() inside handleCallItem function
+ * it dispatch an action & pass the payload
+ * dispatch comes from hook useDispatch react-redux
+ * From where this addItem come from it's come from cartSlice see while exporting
+Start 
+2.8m
  
  
 

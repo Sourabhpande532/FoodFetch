@@ -3,11 +3,21 @@ import { useParams } from "react-router-dom";
 import { IMG_CND_URL } from "../contants";
 import Shimmer from "../component/ShimmerUi";
 import useRestrauntMenuHook from "../utils/useRestrauntMenuHook";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+
 
 const RestrauntMenu = () => {
   // COME FROM URL-(ID)
   const { id } = useParams();
-  
+
+  const dispatch = useDispatch()
+
+  const handleCallItem = () => {
+    dispatch(addItem("Grapes"));
+  };
+  /* dispatch an action & pass the payload */
+
   // OWN HOOK
   const restaurant = useRestrauntMenuHook(id);
 
@@ -41,6 +51,14 @@ const RestrauntMenu = () => {
       ) : (
         <h2>No restaurant data available</h2>
       )}
+
+      <div>
+        <button
+          className='p-2 m-2 bg-green-600'
+          onClick={() => handleCallItem()}>
+          Add Item Cart
+        </button>
+      </div>
     </div>
   );
 };
