@@ -26,7 +26,7 @@ export default cartSlice.reducer;
 -♎initialState Always Empty for counting What should you put into this Cart.js
 -♎For that time being Puts Empty items
 -♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
--♎For modifying this we use know as "reducer()" function As per 💹reducer.png
+-♎For modifying this we use know as "reducers()" function As per 💹reducer.png
 -♎when it is called "on distpatched of an action"
 -♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
 -♎reducer() is the function at end of the day  

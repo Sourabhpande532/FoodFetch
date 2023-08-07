@@ -35524,7 +35524,7 @@ const RestrauntMenu = ()=>{
     const handleCallItem = ()=>{
         dispatch((0, _cartSlice.addItem)("Grapes"));
     };
-    /* dispatch an action & pass the payload */ // OWN HOOK
+    /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */ // OWN HOOK
     const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
     // EARLY RETURN
     if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36858,7 +36858,7 @@ exports.default = cartSlice.reducer; /*
 -♎initialState Always Empty for counting What should you put into this Cart.js
 -♎For that time being Puts Empty items
 -♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
--♎For modifying this we use know as "reducer()" function As per 💹reducer.png
+-♎For modifying this we use know as "reducers()" function As per 💹reducer.png
 -♎when it is called "on distpatched of an action"
 -♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
 -♎reducer() is the function at end of the day  
@@ -41022,7 +41022,7 @@ const Body = ()=>{
     }, []);
     // LIVE DATA
     async function getRestaurants() {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
+        const data = await fetch(false);
         const json = await data.json();
         console.log(json);
         // Check if data is available before setting states

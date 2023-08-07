@@ -911,9 +911,19 @@ Now It's time to create a slices After finishing above Process!!
  * call event dispatch() inside handleCallItem function
  * it dispatch an action & pass the payload
  * dispatch comes from hook useDispatch react-redux
- * From where this addItem come from it's come from cartSlice see while exporting
+ * From where this ""addItem"" come from it's come from cartSlice.js see while exporting
 Start 
 2.8m
+
+
+-------------------------------000--------------------------------
+it follow this CYCLEES :
+-create store (store.js)
+-connect store to whole APPLICATION(app.js)
+-create slices(e.g cart,user)
+-Then build or modify cart +1....via useSelector(); located at Header top (header.js)
+-then go to add to cart page for depatch an action e.g (RestrauntMenu)
+-you'r ready to add item now 
  
  
 
