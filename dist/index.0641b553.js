@@ -6061,12 +6061,13 @@ const Header = ()=>{
     const isOnline = (0, _useOnlineDefault.default)();
     const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    console.log(cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -6081,12 +6082,12 @@ const Header = ()=>{
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 34,
+                                lineNumber: 35,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6095,12 +6096,12 @@ const Header = ()=>{
                                 children: "About"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6109,12 +6110,12 @@ const Header = ()=>{
                                 children: "Contact"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6123,12 +6124,12 @@ const Header = ()=>{
                                 children: "instamart"
                             }, void 0, false, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 43,
+                                lineNumber: 44,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 42,
+                            lineNumber: 43,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -6141,30 +6142,30 @@ const Header = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/component/Header.js",
-                                lineNumber: 46,
+                                lineNumber: 47,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header.js",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header.js",
-                    lineNumber: 32,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 31,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: isOnline ? "\uD83D\uDCB9" : "\uD83D\uDD34"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -6172,7 +6173,7 @@ const Header = ()=>{
                 children: user.name
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 7
             }, undefined),
             isLoggedIn ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -6181,7 +6182,7 @@ const Header = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 54,
+                lineNumber: 55,
                 columnNumber: 21
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: " text-white",
@@ -6189,13 +6190,13 @@ const Header = ()=>{
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/component/Header.js",
-                lineNumber: 56,
+                lineNumber: 57,
                 columnNumber: 21
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Header.js",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 10
     }, undefined);
 };
@@ -35476,15 +35477,28 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
 const Cart = ()=>{
+    _s();
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Cart"
-    }, void 0, false, {
+        className: " font-bold text-3xl",
+        children: [
+            "Cart Items - ",
+            cartItems.length
+        ]
+    }, void 0, true, {
         fileName: "src/component/Cart.js",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 10
     }, undefined);
 };
+_s(Cart, "sOGYiwJY+kD+ABxufRt7JbvggIE=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
 _c = Cart;
 exports.default = Cart;
 var _c;
@@ -35521,21 +35535,24 @@ const RestrauntMenu = ()=>{
     // COME FROM URL-(ID)
     const { id  } = (0, _reactRouterDom.useParams)();
     const dispatch = (0, _reactRedux.useDispatch)();
-    const handleCallItem = ()=>{
-        dispatch((0, _cartSlice.addItem)("Grapes"));
+    // const handleCallItem = () => {
+    //   dispatch(addItem("Grapes"));
+    // };
+    /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */ const addFoodItem = (item)=>{
+        dispatch((0, _cartSlice.addItem)(item));
     };
-    /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */ // OWN HOOK
+    // OWN HOOK
     const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
     // EARLY RETURN
     if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
             fileName: "src/component/RestrauntMenu.js",
-            lineNumber: 25,
+            lineNumber: 30,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 24,
+        lineNumber: 29,
         columnNumber: 12
     }, undefined);
     const { cards  } = restaurant;
@@ -35549,7 +35566,7 @@ const RestrauntMenu = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 32,
+                lineNumber: 37,
                 columnNumber: 7
             }, undefined),
             cards ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -35558,7 +35575,7 @@ const RestrauntMenu = ()=>{
                         children: cards[0]?.data?.data?.name
                     }, void 0, false, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 34,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -35566,28 +35583,28 @@ const RestrauntMenu = ()=>{
                         src: (0, _contants.IMG_CND_URL) + cards[0]?.data?.cloudinaryImageId
                     }, void 0, false, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 35,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: cards[0]?.data?.data?.area
                     }, void 0, false, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 36,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: cards[0]?.data?.data?.city
                     }, void 0, false, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 37,
+                        lineNumber: 42,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         children: cards[0]?.data?.data?.totalRatingsString
                     }, void 0, false, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 38,
+                        lineNumber: 43,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35597,7 +35614,7 @@ const RestrauntMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 39,
+                        lineNumber: 44,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35607,7 +35624,7 @@ const RestrauntMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 40,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35618,7 +35635,7 @@ const RestrauntMenu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 41,
+                        lineNumber: 46,
                         columnNumber: 11
                     }, undefined)
                 ]
@@ -35626,7 +35643,7 @@ const RestrauntMenu = ()=>{
                 children: "No restaurant data available"
             }, void 0, false, {
                 fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 42,
+                lineNumber: 47,
                 columnNumber: 15
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35636,18 +35653,48 @@ const RestrauntMenu = ()=>{
                     children: "Add Item Cart"
                 }, void 0, false, {
                     fileName: "src/component/RestrauntMenu.js",
-                    lineNumber: 45,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 44,
+                lineNumber: 49,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                children: object.value(restaurant?.menu?.items).map((item)=>{
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: [
+                            item.name,
+                            "-",
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "p-1 bg-green-50",
+                                onClick: ()=>{
+                                    addFoodItem(item);
+                                },
+                                children: "Add"
+                            }, void 0, false, {
+                                fileName: "src/component/RestrauntMenu.js",
+                                lineNumber: 62,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, item.id, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 60,
+                        columnNumber: 9
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 58,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 31,
+        lineNumber: 36,
         columnNumber: 10
     }, undefined);
 };

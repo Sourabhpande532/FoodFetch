@@ -13,11 +13,15 @@ const RestrauntMenu = () => {
 
   const dispatch = useDispatch()
 
-  const handleCallItem = () => {
-    dispatch(addItem("Grapes"));
-  };
+  // const handleCallItem = () => {
+  //   dispatch(addItem("Grapes"));
+  // };
   /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */
 
+
+  const addFoodItem = (item)=>{
+  dispatch(addItem(item))
+  }
 
   // OWN HOOK
   const restaurant = useRestrauntMenuHook(id);
@@ -60,7 +64,23 @@ const RestrauntMenu = () => {
           Add Item Cart
         </button>
       </div>
+     
+
+      {/* Optionally perform*/}
+
+      <ul>
+      {object.value(restaurant?.menu?.items).map((item)=>{
+        <li key={item.id}>
+        {item.name}-{" "}
+        <button className="p-1 bg-green-50" onClick={()=>{addFoodItem(item)}}>
+        Add
+        </button>
+        </li>
+      })}
+      </ul>
+      
     </div>
+
   );
 };
 

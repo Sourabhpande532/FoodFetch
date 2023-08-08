@@ -27,6 +27,7 @@ const Header = () => {
   const { user } = useContext(UserContext);
 
   const cartItems = useSelector(store => store.cart.items)
+  console.log(cartItems)
 
   return (
     <div className='flex space-x-0 justify-between bg-fuchsia-300 shadow-lg sm:bg-red-500 md:bg-yellow-300 lg:bg-purple-950'>

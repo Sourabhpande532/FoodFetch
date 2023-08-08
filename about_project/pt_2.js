@@ -924,6 +924,9 @@ it follow this CYCLEES :
 -Then build or modify cart +1....via useSelector(); located at Header top (header.js)
 -then go to add to cart page for depatch an action e.g (RestrauntMenu)
 -you'r ready to add item now 
+-READ Theory about 🗃️🗃️component/cart.js 
+
+
  
  
 
