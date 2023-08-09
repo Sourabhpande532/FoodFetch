@@ -241,6 +241,10 @@ img, video {
   margin: .5rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .m-\[20px\] {
   margin: 20px;
 }
@@ -329,6 +333,11 @@ img, video {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 
 .bg-green-50 {

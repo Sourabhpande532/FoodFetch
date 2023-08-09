@@ -14,10 +14,6 @@ const Body = () => {
   //FILTERED LIST
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  /* 
-  -SEARCH FUNCTIONALITY
-  -IN JS - CONST SEARCHTEXT = "KFC"
-  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */
   const [searchText, setSearchText] = useState("");
 
   // USE CONTAX
@@ -25,24 +21,22 @@ const Body = () => {
 
   //CALL USEFFECT
   useEffect(() => {
-    //call API Here once after completion of "render" UI/loads
     getRestaurants();
   }, []);
 
   // LIVE DATA
- async function getRestaurants() {
-  const data = await fetch(
-    !"https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
-  );
-  const json = await data.json();
-  console.log(json);
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
+    );
+    const json = await data.json();
+    console.log(json);
 
-  // Check if data is available before setting states
-  if (json?.data?.cards) {
-    setAllRestaurants(json.data.cards);
-    setFilteredRestaurants(json.data.cards);
+    if (json?.data?.cards) {
+      setAllRestaurants(json.data.cards);
+      setFilteredRestaurants(json.data.cards);
+    }
   }
-}
 
   console.log("RENDERING FOR DEMO ENSURE IT FIRST THEN CALL USE-EFFECT");
 
@@ -55,7 +49,7 @@ const Body = () => {
   // AVOID(Early render)!RENDER COMPONENT
   if (!allRestaurants) return null;
 
-  // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
+  /* if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1> */
 
   // INLINE CSS
   const searchBtnCss = {
@@ -107,42 +101,21 @@ const Body = () => {
           }></input>
       </div>
       <div className='flex flex-wrap bg-pink-100'>
-    {!filteredRestaurants.length > 0 ? (
-        filteredRestaurants.map((restaurant) => (
-          <Link to={"/restaurant/" + restaurant.data.data.id} key={restaurant.data.data.id}>
-            <RestaurantCart {...restaurant.data.data} />
-          </Link>
-        ))
-      ) : (
-        <h1>No Restaurant Match Your Filter</h1>
-      )
-    }
-    </div>
-    
+        {/*use Either here filteredRestaurants or restrauntList  */}
+        {filteredRestaurants.length > 0 || restrauntList.length > 0 ? (
+          restrauntList.map((restaurant) => (
+            <Link
+              to={"/restaurant/" + restaurant.data.data.id}
+              key={restaurant.data.data.id}>
+              <RestaurantCart {...restaurant.data.data} />
+            </Link>
+          ))
+        ) : (
+          <h1>No Restaurant Match Your Filter</h1>
+        )}
+      </div>
     </>
   );
 };
 
 export default Body;
-
-/**
-//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
-
-// const searchTxt = "KFC"
-
-// searchText is local state varaible 
-// const [searchText,setSearchText] = useState("KFC");
-
-//  <input
-//  type='text'
-//  className='search-input'
-//  placeholder='search'
-//  value={searchText}
-//  // onChange={()=>onChangeInput}
-//  // onChange={(e)=>console.log("dsdf")}
-//  // onChange={(e)=>console.log(e.target.value)}
-//  onChange={(e)=>{
-//    setSearchText(e.target.value)
-//  }}
-// />
- */

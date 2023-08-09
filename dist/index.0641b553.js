@@ -35478,25 +35478,69 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRedux = require("react-redux");
+var _foodItem = require("./FoodItem");
+var _foodItemDefault = parcelHelpers.interopDefault(_foodItem);
+var _cartSlice = require("../utils/cartSlice");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleClearCart = ()=>{
+        // here need to dispatch an action mandatory!!
+        dispatch((0, _cartSlice.clearCart)());
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: " font-bold text-3xl",
         children: [
-            "Cart Items - ",
-            cartItems.length
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "font-bold text-3xl",
+                children: [
+                    "Cart Items - ",
+                    cartItems.length
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-green-100 p-2 m-5",
+                onClick: ()=>{
+                    handleClearCart();
+                },
+                children: "Clear Cart"
+            }, void 0, false, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex",
+                children: cartItems.map((item)=>{
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemDefault.default), {
+                        ...item
+                    }, item.id, false, {
+                        fileName: "src/component/Cart.js",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/component/Cart.js",
-        lineNumber: 5,
+        lineNumber: 12,
         columnNumber: 10
     }, undefined);
 };
-_s(Cart, "sOGYiwJY+kD+ABxufRt7JbvggIE=", false, function() {
+_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
     return [
-        (0, _reactRedux.useSelector)
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
     ];
 });
 _c = Cart;
@@ -35509,278 +35553,72 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kwDLv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","./FoodItem":"k206E","../utils/cartSlice":"5RXlr"}],"k206E":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$113b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$76ed.prelude(module);
+$parcel$ReactRefreshHelpers$113b.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
 var _contants = require("../contants");
-var _shimmerUi = require("../component/ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
-var _useRestrauntMenuHook = require("../utils/useRestrauntMenuHook");
-var _useRestrauntMenuHookDefault = parcelHelpers.interopDefault(_useRestrauntMenuHook);
-var _cartSlice = require("../utils/cartSlice");
-var _reactRedux = require("react-redux");
-var _s = $RefreshSig$();
-const RestrauntMenu = ()=>{
-    _s();
-    // COME FROM URL-(ID)
-    const { id  } = (0, _reactRouterDom.useParams)();
-    const dispatch = (0, _reactRedux.useDispatch)();
-    // const handleCallItem = () => {
-    //   dispatch(addItem("Grapes"));
-    // };
-    /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */ const addFoodItem = (item)=>{
-        dispatch((0, _cartSlice.addItem)(item));
-    };
-    // OWN HOOK
-    const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
-    // EARLY RETURN
-    if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-            fileName: "src/component/RestrauntMenu.js",
-            lineNumber: 30,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 29,
-        columnNumber: 12
-    }, undefined);
-    const { cards  } = restaurant;
+const FoodItem = ({ cloudinaryImageId , name , description , price  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "",
+        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
+                children: name
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: description
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: [
-                    "Restaurant Id: ",
-                    id
+                    price / 100,
+                    " Rating"
                 ]
             }, void 0, true, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 37,
-                columnNumber: 7
-            }, undefined),
-            cards ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: cards[0]?.data?.data?.name
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 39,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        width: "400px",
-                        src: (0, _contants.IMG_CND_URL) + cards[0]?.data?.cloudinaryImageId
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 40,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.area
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 41,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.city
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 42,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: cards[0]?.data?.data?.totalRatingsString
-                    }, void 0, false, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 43,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            cards[0]?.data?.data?.avgRating,
-                            " Rating"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 44,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            "Address : ",
-                            cards[0]?.data?.data?.address
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 45,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: [
-                            "DeliveryTime : ",
-                            cards[0]?.data?.data?.deliveryTime,
-                            " min"
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 46,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "No restaurant data available"
-            }, void 0, false, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 47,
-                columnNumber: 15
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "p-2 m-2 bg-green-600",
-                    onClick: ()=>handleCallItem(),
-                    children: "Add Item Cart"
-                }, void 0, false, {
-                    fileName: "src/component/RestrauntMenu.js",
-                    lineNumber: 50,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 49,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                children: object.value(restaurant?.menu?.items).map((item)=>{
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                        children: [
-                            item.name,
-                            "-",
-                            " ",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "p-1 bg-green-50",
-                                onClick: ()=>{
-                                    addFoodItem(item);
-                                },
-                                children: "Add"
-                            }, void 0, false, {
-                                fileName: "src/component/RestrauntMenu.js",
-                                lineNumber: 62,
-                                columnNumber: 9
-                            }, undefined)
-                        ]
-                    }, item.id, true, {
-                        fileName: "src/component/RestrauntMenu.js",
-                        lineNumber: 60,
-                        columnNumber: 9
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 58,
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 36,
+        fileName: "src/component/FoodItem.js",
+        lineNumber: 8,
         columnNumber: 10
     }, undefined);
 };
-_s(RestrauntMenu, "xV17OoEpZmBQAstGzin8/aWNtVY=", false, function() {
-    return [
-        (0, _reactRouterDom.useParams),
-        (0, _reactRedux.useDispatch),
-        (0, _useRestrauntMenuHookDefault.default)
-    ];
-});
-_c = RestrauntMenu;
-exports.default = RestrauntMenu; /* 
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { IMG_CND_URL } from "../contants";
-import Shimmer from "../component/ShimmerUi"
-
-const RestrauntMenu = () => {
-  const { id } = useParams();
-  console.log(id);
-
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
-      );
-      const data = await response.json();
-      console.log(data);
-      setRestaurant(data?.data);
-    } catch (error) {
-      console.error("Error fetching restaurant info:", error);
-    }
-  }
-
-  // EARLY RETURN 
-  if (!restaurant) {
-    return <div><Shimmer/></div>;
-  }
-
-  const { cards } = restaurant;
-
-  return (
-    <div className="">
-      <h1>Restaurant Id: {id}</h1>
-      {cards ? (
-        <>
-          <h2>{cards[0]?.data?.data?.name}</h2>
-          <img
-            width='400px'
-            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
-          />
-          <h3>{cards[0]?.data?.data?.area}</h3>
-          <h3>{cards[0]?.data?.data?.city}</h3>
-          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
-          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
-          <h3>Address : {cards[0]?.data?.data?.address}</h3>
-          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
-        </>
-      ) : (
-        <h2>No restaurant data available</h2>
-      )}
-    </div>
-  );
-};
-
-export default RestrauntMenu;
-
-
-
-
-*/ 
+_c = FoodItem;
+exports.default = FoodItem;
 var _c;
-$RefreshReg$(_c, "RestrauntMenu");
+$RefreshReg$(_c, "FoodItem");
 
-  $parcel$ReactRefreshHelpers$76ed.postlude(module);
+  $parcel$ReactRefreshHelpers$113b.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn","../utils/cartSlice":"5RXlr","react-redux":"bdVon"}],"6xi3Y":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../contants":"6xi3Y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6xi3Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "IMG_CND_URL", ()=>IMG_CND_URL);
@@ -36791,86 +36629,7 @@ const restrauntList = [
     }
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3UJAh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d020.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const ShimmerUi = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-wrap",
-        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
-            }, index, false, {
-                fileName: "src/component/ShimmerUi.js",
-                lineNumber: 4,
-                columnNumber: 45
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/component/ShimmerUi.js",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = ShimmerUi;
-exports.default = ShimmerUi;
-var _c;
-$RefreshReg$(_c, "ShimmerUi");
-
-  $parcel$ReactRefreshHelpers$d020.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bA7hn":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c526 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c526.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _contants = require("../contants");
-var _s = $RefreshSig$();
-const useRestrauntMenuHook = (id)=>{
-    _s();
-    const [restaurant, setRestaurant] = (0, _react.useState)(null);
-    // get data from Api 
-    (0, _react.useEffect)(()=>{
-        getRestaurantInfo();
-    }, []);
-    // return restaurant Data 
-    async function getRestaurantInfo() {
-        try {
-            const response = await fetch((0, _contants.FETCH_RESTRA_MENU_URL) + id);
-            const data = await response.json();
-            console.log(data);
-            setRestaurant(data?.data);
-        } catch (error) {
-            console.error("Error fetching restaurant info:", error);
-        }
-    }
-    return restaurant;
-};
-_s(useRestrauntMenuHook, "xTHIp85kevrNjFQ3g5ZiTLKWCkg=");
-exports.default = useRestrauntMenuHook;
-
-  $parcel$ReactRefreshHelpers$c526.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"5RXlr":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5RXlr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "addItem", ()=>addItem);
@@ -40815,7 +40574,357 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7kLfj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kwDLv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$76ed.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _contants = require("../contants");
+var _shimmerUi = require("../component/ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
+var _useRestrauntMenuHook = require("../utils/useRestrauntMenuHook");
+var _useRestrauntMenuHookDefault = parcelHelpers.interopDefault(_useRestrauntMenuHook);
+var _cartSlice = require("../utils/cartSlice");
+var _reactRedux = require("react-redux");
+var _s = $RefreshSig$();
+const RestrauntMenu = ()=>{
+    _s();
+    // COME FROM URL-(ID)
+    const { id  } = (0, _reactRouterDom.useParams)();
+    const dispatch = (0, _reactRedux.useDispatch)();
+    // const handleCallItem = () => {
+    //   dispatch(addItem("Grapes"));
+    // };
+    /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */ const addFoodItem = (item)=>{
+        dispatch((0, _cartSlice.addItem)(item));
+    };
+    // OWN HOOK
+    const restaurant = (0, _useRestrauntMenuHookDefault.default)(id);
+    // EARLY RETURN
+    if (!restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+            fileName: "src/component/RestrauntMenu.js",
+            lineNumber: 30,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 29,
+        columnNumber: 12
+    }, undefined);
+    const { cards  } = restaurant;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: [
+                    "Restaurant Id: ",
+                    id
+                ]
+            }, void 0, true, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 37,
+                columnNumber: 7
+            }, undefined),
+            cards ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: cards[0]?.data?.data?.name
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 39,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        width: "400px",
+                        src: (0, _contants.IMG_CND_URL) + cards[0]?.data?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 40,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.area
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 41,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.city
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 42,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: cards[0]?.data?.data?.totalRatingsString
+                    }, void 0, false, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            cards[0]?.data?.data?.avgRating,
+                            " Rating"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            "Address : ",
+                            cards[0]?.data?.data?.address
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 45,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: [
+                            "DeliveryTime : ",
+                            cards[0]?.data?.data?.deliveryTime,
+                            " min"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 46,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "No restaurant data available"
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 47,
+                columnNumber: 15
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "p-2 m-2 bg-green-600",
+                    onClick: ()=>handleCallItem(),
+                    children: "Add Item Cart"
+                }, void 0, false, {
+                    fileName: "src/component/RestrauntMenu.js",
+                    lineNumber: 50,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 49,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                children: object.value(restaurant?.menu?.items).map((item)=>{
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                        children: [
+                            item.name,
+                            "-",
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "p-1 bg-green-50",
+                                onClick: ()=>{
+                                    addFoodItem(item);
+                                },
+                                children: "Add"
+                            }, void 0, false, {
+                                fileName: "src/component/RestrauntMenu.js",
+                                lineNumber: 62,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, item.id, true, {
+                        fileName: "src/component/RestrauntMenu.js",
+                        lineNumber: 60,
+                        columnNumber: 9
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 58,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 36,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestrauntMenu, "xV17OoEpZmBQAstGzin8/aWNtVY=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _reactRedux.useDispatch),
+        (0, _useRestrauntMenuHookDefault.default)
+    ];
+});
+_c = RestrauntMenu;
+exports.default = RestrauntMenu; /* 
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { IMG_CND_URL } from "../contants";
+import Shimmer from "../component/ShimmerUi"
+
+const RestrauntMenu = () => {
+  const { id } = useParams();
+  console.log(id);
+
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
+
+  async function getRestaurantInfo() {
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
+      );
+      const data = await response.json();
+      console.log(data);
+      setRestaurant(data?.data);
+    } catch (error) {
+      console.error("Error fetching restaurant info:", error);
+    }
+  }
+
+  // EARLY RETURN 
+  if (!restaurant) {
+    return <div><Shimmer/></div>;
+  }
+
+  const { cards } = restaurant;
+
+  return (
+    <div className="">
+      <h1>Restaurant Id: {id}</h1>
+      {cards ? (
+        <>
+          <h2>{cards[0]?.data?.data?.name}</h2>
+          <img
+            width='400px'
+            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
+          />
+          <h3>{cards[0]?.data?.data?.area}</h3>
+          <h3>{cards[0]?.data?.data?.city}</h3>
+          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
+          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
+          <h3>Address : {cards[0]?.data?.data?.address}</h3>
+          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
+        </>
+      ) : (
+        <h2>No restaurant data available</h2>
+      )}
+    </div>
+  );
+};
+
+export default RestrauntMenu;
+
+
+
+
+*/ 
+var _c;
+$RefreshReg$(_c, "RestrauntMenu");
+
+  $parcel$ReactRefreshHelpers$76ed.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y","../component/ShimmerUi":"3UJAh","../utils/useRestrauntMenuHook":"bA7hn","../utils/cartSlice":"5RXlr","react-redux":"bdVon"}],"3UJAh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d020 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d020.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ShimmerUi = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-wrap",
+        children: Array(18).fill("").map((e, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-[200px] h-[200px] bg-gray-200 m-[20px]"
+            }, index, false, {
+                fileName: "src/component/ShimmerUi.js",
+                lineNumber: 4,
+                columnNumber: 45
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/component/ShimmerUi.js",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ShimmerUi;
+exports.default = ShimmerUi;
+var _c;
+$RefreshReg$(_c, "ShimmerUi");
+
+  $parcel$ReactRefreshHelpers$d020.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bA7hn":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c526 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c526.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _contants = require("../contants");
+var _s = $RefreshSig$();
+const useRestrauntMenuHook = (id)=>{
+    _s();
+    const [restaurant, setRestaurant] = (0, _react.useState)(null);
+    // get data from Api 
+    (0, _react.useEffect)(()=>{
+        getRestaurantInfo();
+    }, []);
+    // return restaurant Data 
+    async function getRestaurantInfo() {
+        try {
+            const response = await fetch((0, _contants.FETCH_RESTRA_MENU_URL) + id);
+            const data = await response.json();
+            console.log(data);
+            setRestaurant(data?.data);
+        } catch (error) {
+            console.error("Error fetching restaurant info:", error);
+        }
+    }
+    return restaurant;
+};
+_s(useRestrauntMenuHook, "xTHIp85kevrNjFQ3g5ZiTLKWCkg=");
+exports.default = useRestrauntMenuHook;
+
+  $parcel$ReactRefreshHelpers$c526.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../contants":"6xi3Y"}],"7kLfj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41056,23 +41165,18 @@ const Body = ()=>{
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
     //FILTERED LIST
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
-    /* 
-  -SEARCH FUNCTIONALITY
-  -IN JS - CONST SEARCHTEXT = "KFC"
-  -IN REACT:SEARCHTEXT IS LOCAL STATE VARIABLE */ const [searchText, setSearchText] = (0, _react.useState)("");
+    const [searchText, setSearchText] = (0, _react.useState)("");
     // USE CONTAX
     const { user , setUser  } = (0, _react.useContext)((0, _userContextDefault.default));
     //CALL USEFFECT
     (0, _react.useEffect)(()=>{
-        //call API Here once after completion of "render" UI/loads
         getRestaurants();
     }, []);
     // LIVE DATA
     async function getRestaurants() {
-        const data = await fetch(false);
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
         const json = await data.json();
         console.log(json);
-        // Check if data is available before setting states
         if (json?.data?.cards) {
             setAllRestaurants(json.data.cards);
             setFilteredRestaurants(json.data.cards);
@@ -41085,19 +41189,18 @@ const Body = ()=>{
         children: "\uD83D\uDD34\uD83D\uDD34 Seems Like internet OFF, Please Check"
     }, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 51,
+        lineNumber: 43,
         columnNumber: 12
     }, undefined);
     // AVOID(Early render)!RENDER COMPONENT
     if (!allRestaurants) return null;
-    // if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1>
-    // INLINE CSS
+    /* if(filteredRestaurants?.length === 0) return <h1>No Restaurant Match Your Filter</h1> */ // INLINE CSS
     const searchBtnCss = {
         backgroundColor: "pink"
     };
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
         fileName: "src/component/Body.js",
-        lineNumber: 63,
+        lineNumber: 55,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -41114,7 +41217,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 65,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -41128,7 +41231,7 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 68,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -41139,7 +41242,7 @@ const Body = ()=>{
                             })
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 77,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -41150,40 +41253,40 @@ const Body = ()=>{
                             })
                     }, void 0, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 82,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/component/Body.js",
-                lineNumber: 64,
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex flex-wrap bg-pink-100",
-                children: !filteredRestaurants.length > 0 ? filteredRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                children: filteredRestaurants.length > 0 || (0, _contants.restrauntList).length > 0 ? (0, _contants.restrauntList).map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                         to: "/restaurant/" + restaurant.data.data.id,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCartDefault.default), {
                             ...restaurant.data.data
                         }, void 0, false, {
                             fileName: "src/component/Body.js",
-                            lineNumber: 89,
-                            columnNumber: 13
+                            lineNumber: 82,
+                            columnNumber: 15
                         }, undefined)
                     }, restaurant.data.data.id, false, {
                         fileName: "src/component/Body.js",
-                        lineNumber: 88,
-                        columnNumber: 78
+                        lineNumber: 81,
+                        columnNumber: 103
                     }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                     children: "No Restaurant Match Your Filter"
                 }, void 0, false, {
                     fileName: "src/component/Body.js",
-                    lineNumber: 90,
-                    columnNumber: 22
+                    lineNumber: 83,
+                    columnNumber: 24
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/component/Body.js",
-                lineNumber: 87,
+                lineNumber: 79,
                 columnNumber: 7
             }, undefined)
         ]
@@ -41195,27 +41298,7 @@ _s(Body, "7QernHtOoj6/wBp3DvuNkfgfMys=", false, function() {
     ];
 });
 _c = Body;
-exports.default = Body; /**
-//  We'r map the stuff the key should be in Link component & this is dynamic Routing;
-
-// const searchTxt = "KFC"
-
-// searchText is local state varaible 
-// const [searchText,setSearchText] = useState("KFC");
-
-//  <input
-//  type='text'
-//  className='search-input'
-//  placeholder='search'
-//  value={searchText}
-//  // onChange={()=>onChangeInput}
-//  // onChange={(e)=>console.log("dsdf")}
-//  // onChange={(e)=>console.log(e.target.value)}
-//  onChange={(e)=>{
-//    setSearchText(e.target.value)
-//  }}
-// />
- */ 
+exports.default = Body;
 var _c;
 $RefreshReg$(_c, "Body");
 

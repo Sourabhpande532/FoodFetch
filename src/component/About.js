@@ -5,7 +5,6 @@ import Profile from "./ProfileClass";
 import ProfileFunctionalComponent from "./Profile";
 import UserContext from "../utils/UserContext";
 
-
 class About extends React.Component {
   // PROPS & STATE PLACE
   constructor(props) {
@@ -22,7 +21,6 @@ class About extends React.Component {
     console.log("[Parent-componentDidMount]:At 3rd");
   }
 
-  
   //COMPONENT PLACE
   render() {
     console.log("[Parent-render]At 2nd Position it Render Called");
@@ -47,10 +45,6 @@ class About extends React.Component {
 }
 
 export default About;
-
-
-
-
 
 
 // FUNCTION BASE COMPONENT
