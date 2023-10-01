@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
-import Body from "../src/component/Body";
+import Body from "./component/Body";
 import Footer from "../src/component/Footer";
 import Error from "../src/component/Error";
 import Contact from "../src/component/Contact";
@@ -85,10 +85,7 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-      {
-        path: "/restaurant/:id",
-        element: <RestrauntMenu />,
-      },
+      
       {
         path: "/instamart",
         element: (
