@@ -62,6 +62,10 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
+        path:"/resmenu/:id",
+        element: <RestrauntMenu/>,
+       },
+      {
         path: "/about",
         element: (
           <Suspense fallback={<ShimmerUi />}>
@@ -85,7 +89,7 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-      
+     
       {
         path: "/instamart",
         element: (

@@ -1,18 +1,19 @@
 import React from "react";
+import { IMG_URL } from "../contants";
 
-const RestaurantCart = ({ cardInfo }) => {
-  console.log(cardInfo);
-  // Access the nested array and map through it
-  const restaurants = cardInfo?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
+const RestaurantCart = ({cardInfo}) => {
+  const {cloudinaryImageId,name,avgRating,cuisines} = cardInfo;
   return (
-    <div>
-      <h1>Hello</h1>
-      <ul>
-        {restaurants.map((restaurant) => (
-          <li key={restaurant?.info.id}>{restaurant?.info?.name}</li>
-        ))}
-      </ul>
+    <div className='w-56 p-4 m-2 shadow-lg bg-pink-50'>
+      <img className="w-[300px] h-[210px]" src={IMG_URL + cloudinaryImageId}></img>
+      <div className='rest-name'>{name}</div>
+      <div className='card-bottom'>
+        {/* <span>{costForTwo}</span> */}
+        <span className='orange'>Rating {avgRating}</span>
+        {/* <h5>{user.name}- {user.email}</h5> */}
+      </div>
+      <div className=' text-[16px]'>{cuisines.join(",")}</div>
     </div>
   );
 };

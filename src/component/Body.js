@@ -17,8 +17,22 @@ const Body = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const json = await response.json();
-      // console.log(json?.data?.cards);
-      setRestaurant(json?.data?.cards);
+      // console.log(json);
+
+      async function checkJsonInfoData(jsonInfoData) {
+        for (let i = 0; i < jsonInfoData?.data?.cards.length; i++) {
+          let checkData =
+            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants;
+          // console.log(checkData);
+          if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+      const responseData = await checkJsonInfoData(json);
+      setRestaurant(responseData);
+      // setRestaurant(json?.data?.cards);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -35,9 +49,9 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className='flex flex-wrap bg-pink-100'>
+      <div className='flex flex-wrap bg-pink-100 mt-12'>
         {restaurant.map((restroCard) => (
-          <RestaurantCart cardInfo={restroCard} />
+          <RestaurantCart key={restroCard?.info?.id} cardInfo={restroCard?.info} />
         ))}
       </div>
     </>

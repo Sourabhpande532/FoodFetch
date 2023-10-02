@@ -1,27 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { FETCH_MENU_URL } from "../contants"; // Make sure it's "constants," not "contants"
 
-const RestrauntMenu = () => {
+const RestaurantMenu = () => {
+  const { id } = useParams(); // Use destructuring to directly get 'id'
+  const [resId, setResId] = useState(null);
+
+  useEffect(() => {
+    getResIdInfo();
+  }, [id]); // Include 'id' as a dependency in useEffect
+
+  async function getResIdInfo() {
+    try {
+      const response = await fetch(`${FETCH_MENU_URL}/${id}`); // Concatenate 'id' properly
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const json = await response.json();
+      console.log(json);
+
+      const resData = checkJson(json);
+      setResId(resData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+  function checkJson(data) {
+    const result = [];
+    if (data?.data?.cards) {
+      for (let i = 0; i < data.data.cards.length; i++) {
+        let xyz = data.data.cards[i]?.card?.card?.info;
+        console.log(xyz);
+        if (xyz !== undefined) {
+          result.push(xyz);
+        }
+      }
+    }
+    return result;
+  }
+
   return (
-    <div>RestrauntMenu</div>
-  )
-}
+    <div>
+      <h1>URL ID: {id}</h1>
+      {resId && resId.map((y, index) => (
+        <h1 key={index}>{y?.name}</h1>
+      ))}
+    </div>
+  );
+};
 
-export default RestrauntMenu
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default RestaurantMenu;
 
 
 
@@ -34,7 +63,6 @@ export default RestrauntMenu
 // import { addItem } from "../utils/cartSlice";
 // import { useDispatch } from "react-redux";
 
-
 // const RestrauntMenu = () => {
 //   // COME FROM URL-(ID)
 //   const { id } = useParams();
@@ -45,7 +73,6 @@ export default RestrauntMenu
 //   //   dispatch(addItem("Grapes"));
 //   // };
 //   /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */
-
 
 //   const addFoodItem = (item)=>{
 //   dispatch(addItem(item))
@@ -92,10 +119,9 @@ export default RestrauntMenu
 //           Add Item Cart
 //         </button>
 //       </div>
-     
 
 //       {/* Optionally perform*/}
-      
+
 //     </div>
 
 //   );
