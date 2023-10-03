@@ -2,22 +2,22 @@ import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
-import Footer from "../src/component/Footer";
-import Error from "../src/component/Error";
-import Contact from "../src/component/Contact";
-import Cart from "../src/component/Cart";
+import Footer from "./component/Footer";
+import Error from "./component/Error";
+import Contact from "./component/Contact";
+import Cart from "./component/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./component/RestrauntMenu";
 import { Provider } from "react-redux";
-import Profile from "../src/component/Profile";
-import ShimmerUi from "../src/component/ShimmerUi";
+import Profile from "./component/Profile";
+import ShimmerUi from "./component/ShimmerUi";
 import UserContext from "./utils/UserContext";
 import store from "./utils/store";
 // import Instamart from "./component/Instamart";
 
 // CHUNKING,ON DEMAND LOADING,DYANAMIC IMPORT,LAZY IMPORT
 const Instamart = lazy(() => import("./component/Instamart"));
-const About = lazy(() => import("../src/component/About.js"));
+const About = lazy(() => import("./component/About.js"));
 
 const AppLayout = () => {
   const [user, setUser] = useState({
