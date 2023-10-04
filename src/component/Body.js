@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCart from "./RestaurantCart";
+import { Link } from "react-router-dom";
+import ShimmerUi from "../component/ShimmerUi";
+
 
 const Body = () => {
   const [restaurant, setRestaurant] = useState([]);
@@ -37,7 +40,7 @@ const Body = () => {
       console.error("Error:", error);
     }
   }
-  return (
+  return restaurant.length === 0 ? <ShimmerUi/> : (
     <>
       <div>
         <input
@@ -51,7 +54,11 @@ const Body = () => {
       </div>
       <div className='flex flex-wrap bg-pink-100 mt-12'>
         {restaurant.map((restroCard) => (
-          <RestaurantCart key={restroCard?.info?.id} cardInfo={restroCard?.info} />
+          <Link
+            key={restroCard?.info?.id}
+            to={"/resmenu/" + restroCard?.info?.id}>
+            <RestaurantCart cardInfo={restroCard?.info} />
+          </Link>
         ))}
       </div>
     </>

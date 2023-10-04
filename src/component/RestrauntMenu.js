@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { FETCH_MENU_URL } from "../contants"; // Make sure it's "constants," not "contants"
+import { FETCH_MENU_URL, IMG_URL } from "../contants"; // Make sure it's "constants," not "contants"
+import ShimmerUi from "./ShimmerUi";
+
 
 const RestaurantMenu = () => {
   const { id } = useParams(); // Use destructuring to directly get 'id'
@@ -40,20 +42,25 @@ const RestaurantMenu = () => {
     return result;
   }
 
-  return (
+  return !resId ? <ShimmerUi/> : (
     <div>
       <h1>URL ID: {id}</h1>
-      {resId && resId.map((y, index) => (
-        <h1 key={index}>{y?.name}</h1>
-      ))}
+      {resId &&
+        resId.map((y) => (
+          <div key={y.id}>
+            <img width={"129px"} src={IMG_URL + y.cloudinaryImageId}/>
+            <h1>{y?.name}</h1>
+            <h1>{y.city}</h1>
+            <p>{y.areaName}</p>
+            <span>{y.cuisines.join(",")}</span>
+
+          </div>
+        ))}
     </div>
   );
 };
 
 export default RestaurantMenu;
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
