@@ -647,7 +647,7 @@ class About extends (0, _reactDefault.default).Component {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userContextDefault.default).Consumer, {
-                    children: ({ user  })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                    children: ({ user })=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                             className: "font-bold text-red-500",
                             children: [
                                 user.name,

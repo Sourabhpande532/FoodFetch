@@ -608,7 +608,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
 // Function Pass PROPS
-const Section = ({ title , description , isVisible , toggleVisibility  })=>{
+const Section = ({ title, description, isVisible, toggleVisibility })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "border border-black p-2 m-2",
         children: [

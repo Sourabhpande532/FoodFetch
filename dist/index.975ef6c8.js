@@ -3137,7 +3137,7 @@ $RefreshReg$(_c2, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./component/Header":"knXDc","./component/Body":"iizf5","react-router-dom":"9xmpe","./component/RestrauntMenu":"kwDLv","react-redux":"bdVon","./utils/UserContext":"c5vgB","./utils/store":"k2jPV","8a46d5d235aafc10":"9iwz2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Footer":"4ifUV","./component/Error":"cosKY","./component/Contact":"3He1d","./component/Cart":"dclnc","./component/Profile":"7kLfj","./component/ShimmerUi":"3UJAh","952b544929475f53":"cA6WO"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./component/Header":"knXDc","./component/Body":"iizf5","./component/Footer":"4ifUV","./component/Error":"cosKY","./component/Contact":"3He1d","./component/Cart":"dclnc","react-router-dom":"9xmpe","./component/RestrauntMenu":"kwDLv","react-redux":"bdVon","./component/Profile":"7kLfj","./component/ShimmerUi":"3UJAh","./utils/UserContext":"c5vgB","./utils/store":"k2jPV","8a46d5d235aafc10":"9iwz2","952b544929475f53":"cA6WO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27371,7 +27371,7 @@ const Header = ()=>{
     _s();
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const isOnline = (0, _useOnlineDefault.default)();
-    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
+    const { user } = (0, _react.useContext)((0, _userContextDefault.default));
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     console.log(cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27805,7 +27805,7 @@ function getFormSubmissionInfo(target, basename) {
         // solution that is not 100% spec compliant.  For complete support in older
         // browsers, consider using the `formdata-submitter-polyfill` package
         if (!isFormDataSubmitterSupported()) {
-            let { name , type , value  } = target;
+            let { name, type, value } = target;
             if (type === "image") {
                 let prefix = name ? name + "." : "";
                 formData.append(prefix + "x", "0");
@@ -27959,7 +27959,7 @@ const startTransitionImpl = _react[START_TRANSITION];
 /**
  * A `<Router>` for use in web browsers. Provides the cleanest URLs.
  */ function BrowserRouter(_ref) {
-    let { basename , children , future , window: window1  } = _ref;
+    let { basename, children, future, window: window1 } = _ref;
     let historyRef = _react.useRef();
     if (historyRef.current == null) historyRef.current = (0, _router.createBrowserHistory)({
         window: window1,
@@ -27970,7 +27970,7 @@ const startTransitionImpl = _react[START_TRANSITION];
         action: history.action,
         location: history.location
     });
-    let { v7_startTransition  } = future || {};
+    let { v7_startTransition } = future || {};
     let setState = _react.useCallback((newState)=>{
         v7_startTransition && startTransitionImpl ? startTransitionImpl(()=>setStateImpl(newState)) : setStateImpl(newState);
     }, [
@@ -27993,7 +27993,7 @@ const startTransitionImpl = _react[START_TRANSITION];
  * A `<Router>` for use in web browsers. Stores the location in the hash
  * portion of the URL so it is not sent to the server.
  */ function HashRouter(_ref2) {
-    let { basename , children , future , window: window1  } = _ref2;
+    let { basename, children, future, window: window1 } = _ref2;
     let historyRef = _react.useRef();
     if (historyRef.current == null) historyRef.current = (0, _router.createHashHistory)({
         window: window1,
@@ -28004,7 +28004,7 @@ const startTransitionImpl = _react[START_TRANSITION];
         action: history.action,
         location: history.location
     });
-    let { v7_startTransition  } = future || {};
+    let { v7_startTransition } = future || {};
     let setState = _react.useCallback((newState)=>{
         v7_startTransition && startTransitionImpl ? startTransitionImpl(()=>setStateImpl(newState)) : setStateImpl(newState);
     }, [
@@ -28029,12 +28029,12 @@ const startTransitionImpl = _react[START_TRANSITION];
  * two versions of the history library to your bundles unless you use the same
  * version of the history library that React Router uses internally.
  */ function HistoryRouter(_ref3) {
-    let { basename , children , future , history  } = _ref3;
+    let { basename, children, future, history } = _ref3;
     let [state, setStateImpl] = _react.useState({
         action: history.action,
         location: history.location
     });
-    let { v7_startTransition  } = future || {};
+    let { v7_startTransition } = future || {};
     let setState = _react.useCallback((newState)=>{
         v7_startTransition && startTransitionImpl ? startTransitionImpl(()=>setStateImpl(newState)) : setStateImpl(newState);
     }, [
@@ -28059,8 +28059,8 @@ const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 /**
  * The public API for rendering a history-aware <a>.
  */ const Link = /*#__PURE__*/ _react.forwardRef(function LinkWithRef(_ref4, ref) {
-    let { onClick , relative , reloadDocument , replace , state , target , to , preventScrollReset  } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
-    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { onClick, relative, reloadDocument, replace, state, target, to, preventScrollReset } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+    let { basename } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     // Rendered into <a href> for absolute URLs
     let absoluteHref;
     let isExternal = false;
@@ -28106,13 +28106,13 @@ Link.displayName = "Link";
 /**
  * A <Link> wrapper that knows if it's "active" or not.
  */ const NavLink = /*#__PURE__*/ _react.forwardRef(function NavLinkWithRef(_ref5, ref) {
-    let { "aria-current": ariaCurrentProp = "page" , caseSensitive =false , className: classNameProp = "" , end =false , style: styleProp , to , children  } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+    let { "aria-current": ariaCurrentProp = "page", caseSensitive = false, className: classNameProp = "", end = false, style: styleProp, to, children } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
     let path = (0, _reactRouter.useResolvedPath)(to, {
         relative: rest.relative
     });
     let location = (0, _reactRouter.useLocation)();
     let routerState = _react.useContext((0, _reactRouter.UNSAFE_DataRouterStateContext));
-    let { navigator  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { navigator } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     let toPathname = navigator.encodeLocation ? navigator.encodeLocation(path).pathname : path.pathname;
     let locationPathname = location.pathname;
     let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
@@ -28169,7 +28169,7 @@ NavLink.displayName = "NavLink";
 });
 Form.displayName = "Form";
 const FormImpl = /*#__PURE__*/ _react.forwardRef((_ref6, forwardedRef)=>{
-    let { reloadDocument , replace , state , method =defaultMethod , action , onSubmit , submit , relative , preventScrollReset  } = _ref6, props = _objectWithoutPropertiesLoose(_ref6, _excluded3);
+    let { reloadDocument, replace, state, method = defaultMethod, action, onSubmit, submit, relative, preventScrollReset } = _ref6, props = _objectWithoutPropertiesLoose(_ref6, _excluded3);
     let formMethod = method.toLowerCase() === "get" ? "get" : "post";
     let formAction = useFormAction(action, {
         relative
@@ -28200,7 +28200,7 @@ FormImpl.displayName = "FormImpl";
  * This component will emulate the browser's scroll restoration on location
  * changes.
  */ function ScrollRestoration(_ref7) {
-    let { getKey , storageKey  } = _ref7;
+    let { getKey, storageKey } = _ref7;
     useScrollRestoration({
         getKey,
         storageKey
@@ -28242,7 +28242,7 @@ function useDataRouterState(hookName) {
  * you need to create custom `<Link>` components with the same click behavior we
  * use in our exported `<Link>`.
  */ function useLinkClickHandler(to, _temp) {
-    let { target , replace: replaceProp , state , preventScrollReset , relative  } = _temp === void 0 ? {} : _temp;
+    let { target, replace: replaceProp, state, preventScrollReset, relative } = _temp === void 0 ? {} : _temp;
     let navigate = (0, _reactRouter.useNavigate)();
     let location = (0, _reactRouter.useLocation)();
     let path = (0, _reactRouter.useResolvedPath)(to, {
@@ -28308,13 +28308,13 @@ function validateClientSideSubmission() {
  * Returns a function that may be used to programmatically submit a form (or
  * some arbitrary data) to the server.
  */ function useSubmit() {
-    let { router  } = useDataRouterContext(DataRouterHook.UseSubmit);
-    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { router } = useDataRouterContext(DataRouterHook.UseSubmit);
+    let { basename } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     let currentRouteId = (0, _reactRouter.UNSAFE_useRouteId)();
     return _react.useCallback(function(target, options) {
         if (options === void 0) options = {};
         validateClientSideSubmission();
-        let { action , method , encType , formData , body  } = getFormSubmissionInfo(target, basename);
+        let { action, method, encType, formData, body } = getFormSubmissionInfo(target, basename);
         router.navigate(options.action || action, {
             preventScrollReset: options.preventScrollReset,
             formData,
@@ -28334,12 +28334,12 @@ function validateClientSideSubmission() {
 /**
  * Returns the implementation for fetcher.submit
  */ function useSubmitFetcher(fetcherKey, fetcherRouteId) {
-    let { router  } = useDataRouterContext(DataRouterHook.UseSubmitFetcher);
-    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { router } = useDataRouterContext(DataRouterHook.UseSubmitFetcher);
+    let { basename } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     return _react.useCallback(function(target, options) {
         if (options === void 0) options = {};
         validateClientSideSubmission();
-        let { action , method , encType , formData , body  } = getFormSubmissionInfo(target, basename);
+        let { action, method, encType, formData, body } = getFormSubmissionInfo(target, basename);
         !(fetcherRouteId != null) && (0, _router.UNSAFE_invariant)(false, "No routeId available for useFetcher()");
         router.fetch(fetcherKey, fetcherRouteId, options.action || action, {
             preventScrollReset: options.preventScrollReset,
@@ -28358,8 +28358,8 @@ function validateClientSideSubmission() {
 // v7: Eventually we should deprecate this entirely in favor of using the
 // router method directly?
 function useFormAction(action, _temp2) {
-    let { relative  } = _temp2 === void 0 ? {} : _temp2;
-    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { relative } = _temp2 === void 0 ? {} : _temp2;
+    let { basename } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     let routeContext = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
     !routeContext && (0, _router.UNSAFE_invariant)(false, "useFormAction must be used inside a RouteContext");
     let [match] = routeContext.matches.slice(-1);
@@ -28416,7 +28416,7 @@ let fetcherId = 0;
  * for any interaction that stays on the same page.
  */ function useFetcher() {
     var _route$matches;
-    let { router  } = useDataRouterContext(DataRouterHook.UseFetcher);
+    let { router } = useDataRouterContext(DataRouterHook.UseFetcher);
     let route = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
     !route && (0, _router.UNSAFE_invariant)(false, "useFetcher must be used inside a RouteContext");
     let routeId = (_route$matches = route.matches[route.matches.length - 1]) == null ? void 0 : _route$matches.route.id;
@@ -28474,10 +28474,10 @@ let savedScrollPositions = {};
 /**
  * When rendered inside a RouterProvider, will restore scroll positions on navigations
  */ function useScrollRestoration(_temp3) {
-    let { getKey , storageKey  } = _temp3 === void 0 ? {} : _temp3;
-    let { router  } = useDataRouterContext(DataRouterHook.UseScrollRestoration);
-    let { restoreScrollPosition , preventScrollReset  } = useDataRouterState(DataRouterStateHook.UseScrollRestoration);
-    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let { getKey, storageKey } = _temp3 === void 0 ? {} : _temp3;
+    let { router } = useDataRouterContext(DataRouterHook.UseScrollRestoration);
+    let { restoreScrollPosition, preventScrollReset } = useDataRouterState(DataRouterStateHook.UseScrollRestoration);
+    let { basename } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
     let location = (0, _reactRouter.useLocation)();
     let matches = (0, _reactRouter.useMatches)();
     let navigation = (0, _reactRouter.useNavigation)();
@@ -28566,7 +28566,7 @@ let savedScrollPositions = {};
  * Note: The `callback` argument should be a function created with
  * `React.useCallback()`.
  */ function useBeforeUnload(callback, options) {
-    let { capture  } = options || {};
+    let { capture } = options || {};
     _react.useEffect(()=>{
         let opts = capture != null ? {
             capture
@@ -28588,7 +28588,7 @@ let savedScrollPositions = {};
  * Note: The `callback` argument should be a function created with
  * `React.useCallback()`.
  */ function usePageHide(callback, options) {
-    let { capture  } = options || {};
+    let { capture } = options || {};
     _react.useEffect(()=>{
         let opts = capture != null ? {
             capture
@@ -28610,7 +28610,7 @@ let savedScrollPositions = {};
  * very incorrectly in some cases) across browsers if user click addition
  * back/forward navigations while the confirm is open.  Use at your own risk.
  */ function usePrompt(_ref8) {
-    let { when , message  } = _ref8;
+    let { when, message } = _ref8;
     let blocker = (0, _reactRouter.unstable_useBlocker)(when);
     _react.useEffect(()=>{
         if (blocker.state === "blocked") {
@@ -28745,11 +28745,11 @@ RouteErrorContext.displayName = "RouteError";
  *
  * @see https://reactrouter.com/hooks/use-href
  */ function useHref(to, _temp) {
-    let { relative  } = _temp === void 0 ? {} : _temp;
+    let { relative } = _temp === void 0 ? {} : _temp;
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
     "useHref() may be used only in the context of a <Router> component.");
-    let { basename , navigator  } = _react.useContext(NavigationContext);
-    let { hash , pathname , search  } = useResolvedPath(to, {
+    let { basename, navigator } = _react.useContext(NavigationContext);
+    let { hash, pathname, search } = useResolvedPath(to, {
         relative
     });
     let joinedPathname = pathname;
@@ -28805,7 +28805,7 @@ RouteErrorContext.displayName = "RouteError";
  */ function useMatch(pattern) {
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
     "useMatch() may be used only in the context of a <Router> component.");
-    let { pathname  } = useLocation();
+    let { pathname } = useLocation();
     return _react.useMemo(()=>(0, _router.matchPath)(pattern, pathname), [
         pathname,
         pattern
@@ -28828,7 +28828,7 @@ function useIsomorphicLayoutEffect(cb) {
  *
  * @see https://reactrouter.com/hooks/use-navigate
  */ function useNavigate() {
-    let { isDataRoute  } = _react.useContext(RouteContext);
+    let { isDataRoute } = _react.useContext(RouteContext);
     // Conditional usage is OK here because the usage of a data router is static
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return isDataRoute ? useNavigateStable() : useNavigateUnstable();
@@ -28837,9 +28837,9 @@ function useNavigateUnstable() {
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
     "useNavigate() may be used only in the context of a <Router> component.");
     let dataRouterContext = _react.useContext(DataRouterContext);
-    let { basename , navigator  } = _react.useContext(NavigationContext);
-    let { matches  } = _react.useContext(RouteContext);
-    let { pathname: locationPathname  } = useLocation();
+    let { basename, navigator } = _react.useContext(NavigationContext);
+    let { matches } = _react.useContext(RouteContext);
+    let { pathname: locationPathname } = useLocation();
     let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
     let activeRef = _react.useRef(false);
     useIsomorphicLayoutEffect(()=>{
@@ -28902,7 +28902,7 @@ const OutletContext = /*#__PURE__*/ _react.createContext(null);
  *
  * @see https://reactrouter.com/hooks/use-params
  */ function useParams() {
-    let { matches  } = _react.useContext(RouteContext);
+    let { matches } = _react.useContext(RouteContext);
     let routeMatch = matches[matches.length - 1];
     return routeMatch ? routeMatch.params : {};
 }
@@ -28911,9 +28911,9 @@ const OutletContext = /*#__PURE__*/ _react.createContext(null);
  *
  * @see https://reactrouter.com/hooks/use-resolved-path
  */ function useResolvedPath(to, _temp2) {
-    let { relative  } = _temp2 === void 0 ? {} : _temp2;
-    let { matches  } = _react.useContext(RouteContext);
-    let { pathname: locationPathname  } = useLocation();
+    let { relative } = _temp2 === void 0 ? {} : _temp2;
+    let { matches } = _react.useContext(RouteContext);
+    let { pathname: locationPathname } = useLocation();
     let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
     return _react.useMemo(()=>(0, _router.resolveTo)(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [
         to,
@@ -28936,8 +28936,8 @@ const OutletContext = /*#__PURE__*/ _react.createContext(null);
 function useRoutesImpl(routes, locationArg, dataRouterState) {
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
     "useRoutes() may be used only in the context of a <Router> component.");
-    let { navigator  } = _react.useContext(NavigationContext);
-    let { matches: parentMatches  } = _react.useContext(RouteContext);
+    let { navigator } = _react.useContext(NavigationContext);
+    let { matches: parentMatches } = _react.useContext(RouteContext);
     let routeMatch = parentMatches[parentMatches.length - 1];
     let parentParams = routeMatch ? routeMatch.params : {};
     let parentPathname = routeMatch ? routeMatch.pathname : "/";
@@ -29092,7 +29092,7 @@ class RenderErrorBoundary extends _react.Component {
     }
 }
 function RenderedRoute(_ref) {
-    let { routeContext , match , children  } = _ref;
+    let { routeContext, match, children } = _ref;
     let dataRouterContext = _react.useContext(DataRouterContext);
     // Track how deep we got in our render pass to emulate SSR componentDidCatch
     // in a DataStaticRouter
@@ -29239,7 +29239,7 @@ function useCurrentRouteId(hookName) {
  * Returns the active route matches, useful for accessing loaderData for
  * parent/child routes or the route "handle" property
  */ function useMatches() {
-    let { matches , loaderData  } = useDataRouterState(DataRouterStateHook.UseMatches);
+    let { matches, loaderData } = useDataRouterState(DataRouterStateHook.UseMatches);
     return _react.useMemo(()=>matches.map((m)=>(0, _router.UNSAFE_convertRouteMatchToUiMatch)(m, loaderData)), [
         matches,
         loaderData
@@ -29304,7 +29304,7 @@ let blockerId = 0;
  * using half-filled form data.  This does not handle hard-reloads or
  * cross-origin navigations.
  */ function useBlocker(shouldBlock) {
-    let { router , basename  } = useDataRouterContext(DataRouterHook.UseBlocker);
+    let { router, basename } = useDataRouterContext(DataRouterHook.UseBlocker);
     let state = useDataRouterState(DataRouterStateHook.UseBlocker);
     let [blockerKey, setBlockerKey] = _react.useState("");
     let blockerFunction = _react.useCallback((arg)=>{
@@ -29313,7 +29313,7 @@ let blockerId = 0;
         // If they provided us a function and we've got an active basename, strip
         // it from the locations we expose to the user to match the behavior of
         // useLocation
-        let { currentLocation , nextLocation , historyAction  } = arg;
+        let { currentLocation, nextLocation, historyAction } = arg;
         return shouldBlock({
             currentLocation: _extends({}, currentLocation, {
                 pathname: (0, _router.stripBasename)(currentLocation.pathname, basename) || currentLocation.pathname
@@ -29355,7 +29355,7 @@ let blockerId = 0;
  * Stable version of useNavigate that is used when we are in the context of
  * a RouterProvider.
  */ function useNavigateStable() {
-    let { router  } = useDataRouterContext(DataRouterHook.UseNavigateStable);
+    let { router } = useDataRouterContext(DataRouterHook.UseNavigateStable);
     let id = useCurrentRouteId(DataRouterStateHook.UseNavigateStable);
     let activeRef = _react.useRef(false);
     useIsomorphicLayoutEffect(()=>{
@@ -29409,11 +29409,11 @@ const startTransitionImpl = _react[START_TRANSITION];
 /**
  * Given a Remix Router instance, render the appropriate UI
  */ function RouterProvider(_ref) {
-    let { fallbackElement , router , future  } = _ref;
+    let { fallbackElement, router, future } = _ref;
     // Need to use a layout effect here so we are subscribed early enough to
     // pick up on any render-driven redirects/navigations (useEffect/<Navigate>)
     let [state, setStateImpl] = _react.useState(router.state);
-    let { v7_startTransition  } = future || {};
+    let { v7_startTransition } = future || {};
     let setState = _react.useCallback((newState)=>{
         v7_startTransition && startTransitionImpl ? startTransitionImpl(()=>setStateImpl(newState)) : setStateImpl(newState);
     }, [
@@ -29474,7 +29474,7 @@ const startTransitionImpl = _react[START_TRANSITION];
     }) : fallbackElement))), null);
 }
 function DataRoutes(_ref2) {
-    let { routes , state  } = _ref2;
+    let { routes, state } = _ref2;
     return useRoutesImpl(routes, undefined, state);
 }
 /**
@@ -29482,7 +29482,7 @@ function DataRoutes(_ref2) {
  *
  * @see https://reactrouter.com/router-components/memory-router
  */ function MemoryRouter(_ref3) {
-    let { basename , children , initialEntries , initialIndex , future  } = _ref3;
+    let { basename, children, initialEntries, initialIndex, future } = _ref3;
     let historyRef = _react.useRef();
     if (historyRef.current == null) historyRef.current = (0, _router.createMemoryHistory)({
         initialEntries,
@@ -29494,7 +29494,7 @@ function DataRoutes(_ref2) {
         action: history.action,
         location: history.location
     });
-    let { v7_startTransition  } = future || {};
+    let { v7_startTransition } = future || {};
     let setState = _react.useCallback((newState)=>{
         v7_startTransition && startTransitionImpl ? startTransitionImpl(()=>setStateImpl(newState)) : setStateImpl(newState);
     }, [
@@ -29522,12 +29522,12 @@ function DataRoutes(_ref2) {
  *
  * @see https://reactrouter.com/components/navigate
  */ function Navigate(_ref4) {
-    let { to , replace , state , relative  } = _ref4;
+    let { to, replace, state, relative } = _ref4;
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // the router loaded. We can help them understand how to avoid that.
     "<Navigate> may be used only in the context of a <Router> component.");
     (0, _router.UNSAFE_warning)(!_react.useContext(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.");
-    let { matches  } = _react.useContext(RouteContext);
-    let { pathname: locationPathname  } = useLocation();
+    let { matches } = _react.useContext(RouteContext);
+    let { pathname: locationPathname } = useLocation();
     let navigate = useNavigate();
     // Resolve the path outside of the effect so that when effects run twice in
     // StrictMode they navigate to the same place
@@ -29569,7 +29569,7 @@ function DataRoutes(_ref2) {
  *
  * @see https://reactrouter.com/router-components/router
  */ function Router(_ref5) {
-    let { basename: basenameProp = "/" , children =null , location: locationProp , navigationType =(0, _router.Action).Pop , navigator , static: staticProp = false  } = _ref5;
+    let { basename: basenameProp = "/", children = null, location: locationProp, navigationType = (0, _router.Action).Pop, navigator, static: staticProp = false } = _ref5;
     !!useInRouterContext() && (0, _router.UNSAFE_invariant)(false, "You cannot render a <Router> inside another <Router>. You should never have more than one in your app.");
     // Preserve trailing slashes on basename, so we can let the user control
     // the enforcement of trailing slashes throughout the app
@@ -29584,7 +29584,7 @@ function DataRoutes(_ref2) {
         staticProp
     ]);
     if (typeof locationProp === "string") locationProp = (0, _router.parsePath)(locationProp);
-    let { pathname ="/" , search ="" , hash ="" , state =null , key ="default"  } = locationProp;
+    let { pathname = "/", search = "", hash = "", state = null, key = "default" } = locationProp;
     let locationContext = _react.useMemo(()=>{
         let trailingPathname = (0, _router.stripBasename)(pathname, basename);
         if (trailingPathname == null) return null;
@@ -29622,14 +29622,14 @@ function DataRoutes(_ref2) {
  *
  * @see https://reactrouter.com/components/routes
  */ function Routes(_ref6) {
-    let { children , location  } = _ref6;
+    let { children, location } = _ref6;
     return useRoutes(createRoutesFromChildren(children), location);
 }
 /**
  * Component to use for rendering lazily loaded data from returning defer()
  * in a loader function
  */ function Await(_ref7) {
-    let { children , errorElement , resolve  } = _ref7;
+    let { children, errorElement, resolve } = _ref7;
     return /*#__PURE__*/ _react.createElement(AwaitErrorBoundary, {
         resolve: resolve,
         errorElement: errorElement
@@ -29658,7 +29658,7 @@ class AwaitErrorBoundary extends _react.Component {
         console.error("<Await> caught the following error during render", error, errorInfo);
     }
     render() {
-        let { children , errorElement , resolve  } = this.props;
+        let { children, errorElement, resolve } = this.props;
         let promise = null;
         let status = AwaitRenderStatus.pending;
         if (!(resolve instanceof Promise)) {
@@ -29720,7 +29720,7 @@ class AwaitErrorBoundary extends _react.Component {
  * @private
  * Indirection to leverage useAsyncValue for a render-prop API on <Await>
  */ function ResolveAwait(_ref8) {
-    let { children  } = _ref8;
+    let { children } = _ref8;
     let data = useAsyncValue();
     let toRender = typeof children === "function" ? children(data) : children;
     return /*#__PURE__*/ _react.createElement(_react.Fragment, null, toRender);
@@ -29905,9 +29905,9 @@ const PopStateEventType = "popstate";
  * in stateful non-browser environments like tests and React Native.
  */ function createMemoryHistory(options) {
     if (options === void 0) options = {};
-    let { initialEntries =[
+    let { initialEntries = [
         "/"
-    ] , initialIndex , v5Compat =false  } = options;
+    ], initialIndex, v5Compat = false } = options;
     let entries; // Declare so we can access from createMemoryLocation
     entries = initialEntries.map((entry, index)=>createMemoryLocation(entry, typeof entry === "string" ? null : entry.state, index === 0 ? "default" : undefined));
     let index = clampIndex(initialIndex == null ? entries.length - 1 : initialIndex);
@@ -30000,7 +30000,7 @@ const PopStateEventType = "popstate";
  */ function createBrowserHistory(options) {
     if (options === void 0) options = {};
     function createBrowserLocation(window1, globalHistory) {
-        let { pathname , search , hash  } = window1.location;
+        let { pathname, search, hash } = window1.location;
         return createLocation("", {
             pathname,
             search,
@@ -30023,7 +30023,7 @@ const PopStateEventType = "popstate";
  */ function createHashHistory(options) {
     if (options === void 0) options = {};
     function createHashLocation(window1, globalHistory) {
-        let { pathname ="/" , search ="" , hash =""  } = parsePath(window1.location.hash.substr(1));
+        let { pathname = "/", search = "", hash = "" } = parsePath(window1.location.hash.substr(1));
         // Hash URL should always have a leading / just like window.location.pathname
         // does, so if an app ends up at a route like /#something then we add a
         // leading slash so all of our path-matching behaves the same as if it would
@@ -30104,7 +30104,7 @@ function createKey() {
 /**
  * Creates a string URL path from the given pathname, search, and hash components.
  */ function createPath(_ref) {
-    let { pathname ="/" , search ="" , hash =""  } = _ref;
+    let { pathname = "/", search = "", hash = "" } = _ref;
     if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
     if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
     return pathname;
@@ -30130,7 +30130,7 @@ function createKey() {
 }
 function getUrlBasedHistory(getLocation, createHref, validateLocation, options) {
     if (options === void 0) options = {};
-    let { window: window1 = document.defaultView , v5Compat =false  } = options;
+    let { window: window1 = document.defaultView, v5Compat = false } = options;
     let globalHistory = window1.history;
     let action = Action.Pop;
     let listener = null;
@@ -30318,7 +30318,7 @@ function convertRoutesToDataRoutes(routes, mapRouteProperties, parentPath, manif
     return matches;
 }
 function convertRouteMatchToUiMatch(match, loaderData) {
-    let { route , pathname , params  } = match;
+    let { route, pathname, params } = match;
     return {
         id: route.id,
         pathname,
@@ -30449,7 +30449,7 @@ function compareIndexes(a, b) {
     0;
 }
 function matchRouteBranch(branch, pathname) {
-    let { routesMeta  } = branch;
+    let { routesMeta } = branch;
     let matchedParams = {};
     let matchedPathname = "/";
     let matches = [];
@@ -30621,7 +30621,7 @@ function safelyDecodeURIComponent(value, paramName) {
  * @see https://reactrouter.com/utils/resolve-path
  */ function resolvePath(to, fromPathname) {
     if (fromPathname === void 0) fromPathname = "/";
-    let { pathname: toPathname , search ="" , hash =""  } = typeof to === "string" ? parsePath(to) : to;
+    let { pathname: toPathname, search = "", hash = "" } = typeof to === "string" ? parsePath(to) : to;
     let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
     return {
         pathname,
@@ -31040,7 +31040,7 @@ const defaultMapRouteProperties = (route)=>({
         let error = getInternalRouterError(404, {
             pathname: init.history.location.pathname
         });
-        let { matches , route  } = getShortCircuitMatches(dataRoutes);
+        let { matches, route } = getShortCircuitMatches(dataRoutes);
         initialMatches = matches;
         initialErrors = {
             [route.id]: error
@@ -31121,7 +31121,7 @@ const defaultMapRouteProperties = (route)=>({
         // If history informs us of a POP navigation, start the navigation but do not update
         // state.  We'll update our own state once the navigation completes
         unlistenHistory = init.history.listen((_ref)=>{
-            let { action: historyAction , location , delta  } = _ref;
+            let { action: historyAction, location, delta } = _ref;
             // Ignore this event if it was just us resetting the URL from a
             // blocked POP navigation
             if (ignoreNextHistoryUpdate) {
@@ -31260,7 +31260,7 @@ const defaultMapRouteProperties = (route)=>({
             return;
         }
         let normalizedPath = normalizeTo(state.location, state.matches, basename, future.v7_prependBasename, to, opts == null ? void 0 : opts.fromRouteId, opts == null ? void 0 : opts.relative);
-        let { path , submission , error  } = normalizeNavigateOptions(future.v7_normalizeFormMethod, false, normalizedPath, opts);
+        let { path, submission, error } = normalizeNavigateOptions(future.v7_normalizeFormMethod, false, normalizedPath, opts);
         let currentLocation = state.location;
         let nextLocation = createLocation(state.location, path, opts && opts.state);
         // When using navigate as a PUSH/REPLACE we aren't reading an already-encoded
@@ -31368,7 +31368,7 @@ const defaultMapRouteProperties = (route)=>({
             let error = getInternalRouterError(404, {
                 pathname: location.pathname
             });
-            let { matches: notFoundMatches , route  } = getShortCircuitMatches(routesToUse);
+            let { matches: notFoundMatches, route } = getShortCircuitMatches(routesToUse);
             // Cancel all pending deferred on 404s since we don't keep any routes
             cancelActiveDeferreds();
             completeNavigation(location, {
@@ -31419,7 +31419,7 @@ const defaultMapRouteProperties = (route)=>({
             });
         }
         // Call loaders
-        let { shortCircuited , loaderData , errors  } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
+        let { shortCircuited, loaderData, errors } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
         if (shortCircuited) return;
         // Clean up now that the action/loaders have completed.  Don't clean up if
         // we short circuited because pendingNavigationController will have already
@@ -31565,7 +31565,7 @@ const defaultMapRouteProperties = (route)=>({
         // Proxy navigation abort through to revalidation fetchers
         let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((f)=>abortFetcher(f.key));
         if (pendingNavigationController) pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
-        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
+        let { results, loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
         if (request.signal.aborted) return {
             shortCircuited: true
         };
@@ -31592,7 +31592,7 @@ const defaultMapRouteProperties = (route)=>({
             };
         }
         // Process and commit output from loaders
-        let { loaderData , errors  } = processLoaderData(state, matches, matchesToLoad, loaderResults, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds);
+        let { loaderData, errors } = processLoaderData(state, matches, matchesToLoad, loaderResults, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds);
         // Wire up subscribers to update loaderData as promises settle
         activeDeferreds.forEach((deferredData, routeId)=>{
             deferredData.subscribe((aborted)=>{
@@ -31628,7 +31628,7 @@ const defaultMapRouteProperties = (route)=>({
             }));
             return;
         }
-        let { path , submission , error  } = normalizeNavigateOptions(future.v7_normalizeFormMethod, true, normalizedPath, opts);
+        let { path, submission, error } = normalizeNavigateOptions(future.v7_normalizeFormMethod, true, normalizedPath, opts);
         if (error) {
             setFetcherError(key, routeId, error);
             return;
@@ -31744,7 +31744,7 @@ const defaultMapRouteProperties = (route)=>({
         });
         let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((rf)=>abortFetcher(rf.key));
         abortController.signal.addEventListener("abort", abortPendingFetchRevalidations);
-        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
+        let { results, loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
         if (abortController.signal.aborted) return;
         abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
         fetchReloadIds.delete(key);
@@ -31762,7 +31762,7 @@ const defaultMapRouteProperties = (route)=>({
             return startRedirectNavigation(state, redirect.result);
         }
         // Process and commit output from loaders
-        let { loaderData , errors  } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
+        let { loaderData, errors } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
         // Since we let revalidations complete even if the submitting fetcher was
         // deleted, only put it back to idle if it hasn't been deleted
         if (state.fetchers.has(key)) {
@@ -31878,7 +31878,7 @@ const defaultMapRouteProperties = (route)=>({
    * actually touch history until we've processed redirects, so we just use
    * the history action from the original navigation (PUSH or REPLACE).
    */ async function startRedirectNavigation(state, redirect, _temp) {
-        let { submission , fetcherSubmission , replace  } = _temp === void 0 ? {} : _temp;
+        let { submission, fetcherSubmission, replace } = _temp === void 0 ? {} : _temp;
         if (redirect.revalidate) isRevalidationRequired = true;
         let redirectLocation = createLocation(state.location, redirect.location, {
             _isRedirect: true
@@ -31906,7 +31906,7 @@ const defaultMapRouteProperties = (route)=>({
         let redirectHistoryAction = replace === true ? Action.Replace : Action.Push;
         // Use the incoming submission if provided, fallback on the active one in
         // state.navigation
-        let { formMethod , formAction , formEncType  } = state.navigation;
+        let { formMethod, formAction, formEncType } = state.navigation;
         if (!submission && !fetcherSubmission && formMethod && formAction && formEncType) submission = getSubmissionFromNavigation(state.navigation);
         // If this was a 307/308 submission we want to preserve the HTTP method and
         // re-submit the GET/POST/PUT/PATCH/DELETE as a submission navigation to the
@@ -32062,7 +32062,7 @@ const defaultMapRouteProperties = (route)=>({
         });
     }
     function shouldBlockNavigation(_ref2) {
-        let { currentLocation , nextLocation , historyAction  } = _ref2;
+        let { currentLocation, nextLocation, historyAction } = _ref2;
         if (blockerFunctions.size === 0) return;
         // We ony support a single active blocker at the moment since we don't have
         // any compelling use cases for multi-blocker yet
@@ -32213,7 +32213,7 @@ function createStaticHandler(routes, opts) {
    * propagate that out and return the raw Response so the HTTP server can
    * return it directly.
    */ async function query(request, _temp2) {
-        let { requestContext  } = _temp2 === void 0 ? {} : _temp2;
+        let { requestContext } = _temp2 === void 0 ? {} : _temp2;
         let url = new URL(request.url);
         let method = request.method;
         let location = createLocation("", createPath(url), null, "default");
@@ -32223,7 +32223,7 @@ function createStaticHandler(routes, opts) {
             let error = getInternalRouterError(405, {
                 method
             });
-            let { matches: methodNotAllowedMatches , route  } = getShortCircuitMatches(dataRoutes);
+            let { matches: methodNotAllowedMatches, route } = getShortCircuitMatches(dataRoutes);
             return {
                 basename,
                 location,
@@ -32242,7 +32242,7 @@ function createStaticHandler(routes, opts) {
             let error = getInternalRouterError(404, {
                 pathname: location.pathname
             });
-            let { matches: notFoundMatches , route  } = getShortCircuitMatches(dataRoutes);
+            let { matches: notFoundMatches, route } = getShortCircuitMatches(dataRoutes);
             return {
                 basename,
                 location,
@@ -32288,7 +32288,7 @@ function createStaticHandler(routes, opts) {
    * code.  Examples here are 404 and 405 errors that occur prior to reaching
    * any user-defined loaders.
    */ async function queryRoute(request, _temp3) {
-        let { routeId , requestContext  } = _temp3 === void 0 ? {} : _temp3;
+        let { routeId, requestContext } = _temp3 === void 0 ? {} : _temp3;
         let url = new URL(request.url);
         let method = request.method;
         let location = createLocation("", createPath(url), null, "default");
@@ -33003,7 +33003,7 @@ function createClientSideRequest(history, location, signal, submission) {
         signal
     };
     if (submission && isMutationMethod(submission.formMethod)) {
-        let { formMethod , formEncType  } = submission;
+        let { formMethod, formEncType } = submission;
         // Didn't think we needed this but it turns out unlike other methods, patch
         // won't be properly normalized to uppercase and results in a 405 error.
         // See: https://fetch.spec.whatwg.org/#concept-method
@@ -33094,10 +33094,10 @@ function processRouteLoaderData(matches, matchesToLoad, results, pendingError, a
     };
 }
 function processLoaderData(state, matches, matchesToLoad, results, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds) {
-    let { loaderData , errors  } = processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds);
+    let { loaderData, errors } = processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds);
     // Process results from our revalidating fetchers
     for(let index = 0; index < revalidatingFetchers.length; index++){
-        let { key , match , controller  } = revalidatingFetchers[index];
+        let { key, match, controller } = revalidatingFetchers[index];
         invariant(fetcherResults !== undefined && fetcherResults[index] !== undefined, "Did not find corresponding fetcher result");
         let result = fetcherResults[index];
         // Process fetcher non-redirect errors
@@ -33164,7 +33164,7 @@ function getShortCircuitMatches(routes) {
     };
 }
 function getInternalRouterError(status, _temp4) {
-    let { pathname , routeId , method , type  } = _temp4 === void 0 ? {} : _temp4;
+    let { pathname, routeId, method, type } = _temp4 === void 0 ? {} : _temp4;
     let statusText = "Unknown Server Error";
     let errorMessage = "Unknown @remix-run/router error";
     if (status === 400) {
@@ -33300,7 +33300,7 @@ function getTargetMatch(matches, location) {
     return pathMatches[pathMatches.length - 1];
 }
 function getSubmissionFromNavigation(navigation) {
-    let { formMethod , formAction , formEncType , text , formData , json  } = navigation;
+    let { formMethod, formAction, formEncType, text, formData, json } = navigation;
     if (!formMethod || !formAction || !formEncType) return;
     if (text != null) return {
         formMethod,
@@ -34004,13 +34004,13 @@ const refEquality = (a, b)=>a === b;
 function createSelectorHook(context = (0, _context.ReactReduxContext)) {
     const useReduxContext = context === (0, _context.ReactReduxContext) ? (0, _useReduxContext.useReduxContext) : (0, _useReduxContext.createReduxContextHook)(context);
     return function useSelector(selector, equalityFnOrOptions = {}) {
-        const { equalityFn =refEquality , stabilityCheck , noopCheck  } = typeof equalityFnOrOptions === "function" ? {
+        const { equalityFn = refEquality, stabilityCheck, noopCheck } = typeof equalityFnOrOptions === "function" ? {
             equalityFn: equalityFnOrOptions
         } : equalityFnOrOptions;
         if (!selector) throw new Error(`You must pass a selector to useSelector`);
         if (typeof selector !== "function") throw new Error(`You must pass a function as a selector to useSelector`);
         if (typeof equalityFn !== "function") throw new Error(`You must pass a function as an equality function to useSelector`);
-        const { store , subscription , getServerState , stabilityCheck: globalStabilityCheck , noopCheck: globalNoopCheck  } = useReduxContext();
+        const { store, subscription, getServerState, stabilityCheck: globalStabilityCheck, noopCheck: globalNoopCheck } = useReduxContext();
         const firstRun = (0, _react.useRef)(true);
         const wrappedSelector = (0, _react.useCallback)({
             [selector.name] (state) {
@@ -34247,9 +34247,9 @@ function strictEqual(a, b) {
  *
  */ function connect(mapStateToProps, mapDispatchToProps, mergeProps, { // The `pure` option has been removed, so TS doesn't like us destructuring this to check its existence.
 // @ts-ignore
-pure , areStatesEqual =strictEqual , areOwnPropsEqual =(0, _shallowEqualDefault.default) , areStatePropsEqual =(0, _shallowEqualDefault.default) , areMergedPropsEqual =(0, _shallowEqualDefault.default) , // use React's forwardRef to expose a ref of the wrapped component
-forwardRef =false , // the context consumer to use
-context =(0, _context.ReactReduxContext)  } = {}) {
+pure, areStatesEqual = strictEqual, areOwnPropsEqual = (0, _shallowEqualDefault.default), areStatePropsEqual = (0, _shallowEqualDefault.default), areMergedPropsEqual = (0, _shallowEqualDefault.default), // use React's forwardRef to expose a ref of the wrapped component
+forwardRef = false, // the context consumer to use
+context = (0, _context.ReactReduxContext) } = {}) {
     if (pure !== undefined && !hasWarnedAboutDeprecatedPureOption) {
         hasWarnedAboutDeprecatedPureOption = true;
         (0, _warningDefault.default)('The `pure` option has been removed. `connect` is now always a "pure/memoized" component');
@@ -34283,7 +34283,7 @@ context =(0, _context.ReactReduxContext)  } = {}) {
                 // Distinguish between actual "data" props that were passed to the wrapper component,
                 // and values needed to control behavior (forwarded refs, alternate context instances).
                 // To maintain the wrapperProps object reference, memoize this destructuring.
-                const { reactReduxForwardedRef  } = props, wrapperProps = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
+                const { reactReduxForwardedRef } = props, wrapperProps = (0, _objectWithoutPropertiesLooseDefault.default)(props, _excluded);
                 return [
                     props.context,
                     reactReduxForwardedRef,
@@ -34940,7 +34940,7 @@ const _excluded = [
     "initMapDispatchToProps",
     "initMergeProps"
 ];
-function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, { areStatesEqual , areOwnPropsEqual , areStatePropsEqual  }) {
+function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, { areStatesEqual, areOwnPropsEqual, areStatePropsEqual }) {
     let hasRunAtLeastOnce = false;
     let state;
     let ownProps;
@@ -34990,7 +34990,7 @@ function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, merg
     };
 }
 function finalPropsSelectorFactory(dispatch, _ref) {
-    let { initMapStateToProps , initMapDispatchToProps , initMergeProps  } = _ref, options = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
+    let { initMapStateToProps, initMapDispatchToProps, initMergeProps } = _ref, options = (0, _objectWithoutPropertiesLooseDefault.default)(_ref, _excluded);
     const mapStateToProps = initMapStateToProps(dispatch, options);
     const mapDispatchToProps = initMapDispatchToProps(dispatch, options);
     const mergeProps = initMergeProps(dispatch, options);
@@ -35108,7 +35108,7 @@ function getDependsOnOwnProps(mapToProps) {
     return mapToProps.dependsOnOwnProps ? Boolean(mapToProps.dependsOnOwnProps) : mapToProps.length !== 1;
 }
 function wrapMapToPropsFunc(mapToProps, methodName) {
-    return function initProxySelector(dispatch, { displayName  }) {
+    return function initProxySelector(dispatch, { displayName }) {
         const proxy = function mapToPropsProxy(stateOrDispatch, ownProps) {
             return proxy.dependsOnOwnProps ? proxy.mapToProps(stateOrDispatch, ownProps) : proxy.mapToProps(stateOrDispatch, undefined);
         }; // allow detectFactoryAndVerify to get ownProps
@@ -35193,7 +35193,7 @@ function defaultMergeProps(stateProps, dispatchProps, ownProps) {
     return (0, _extendsDefault.default)({}, ownProps, stateProps, dispatchProps);
 }
 function wrapMergePropsFunc(mergeProps) {
-    return function initMergePropsProxy(dispatch, { displayName , areMergedPropsEqual  }) {
+    return function initMergePropsProxy(dispatch, { displayName, areMergedPropsEqual }) {
         let hasRunOnce = false;
         let mergedProps;
         return function mergePropsProxy(stateProps, dispatchProps, ownProps) {
@@ -35376,7 +35376,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _context = require("./Context");
 var _subscription = require("../utils/Subscription");
 var _useIsomorphicLayoutEffect = require("../utils/useIsomorphicLayoutEffect");
-function Provider({ store , context , children , serverState , stabilityCheck ="once" , noopCheck ="once"  }) {
+function Provider({ store, context, children, serverState, stabilityCheck = "once", noopCheck = "once" }) {
     const contextValue = (0, _react.useMemo)(()=>{
         const subscription = (0, _subscription.createSubscription)(store);
         return {
@@ -35396,7 +35396,7 @@ function Provider({ store , context , children , serverState , stabilityCheck ="
         store
     ]);
     (0, _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect)(()=>{
-        const { subscription  } = contextValue;
+        const { subscription } = contextValue;
         subscription.onStateChange = subscription.notifyNestedSubs;
         subscription.trySubscribe();
         if (previousState !== store.getState()) subscription.notifyNestedSubs();
@@ -35451,7 +35451,7 @@ var _useReduxContext = require("./useReduxContext");
 function createStoreHook(context = (0, _context.ReactReduxContext)) {
     const useReduxContext = context === (0, _context.ReactReduxContext) ? (0, _useReduxContext.useReduxContext) : (0, _useReduxContext.createReduxContextHook)(context);
     return function useStore() {
-        const { store  } = useReduxContext(); // @ts-ignore
+        const { store } = useReduxContext(); // @ts-ignore
         return store;
     };
 }
@@ -35675,7 +35675,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCart":"aW5DX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../component/ShimmerUi":"3UJAh"}],"aW5DX":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./RestaurantCart":"aW5DX","react-router-dom":"9xmpe","../component/ShimmerUi":"3UJAh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aW5DX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8b14 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35688,8 +35688,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _contants = require("../contants");
-const RestaurantCart = ({ cardInfo  })=>{
-    const { cloudinaryImageId , name , avgRating , cuisines  } = cardInfo;
+const RestaurantCart = ({ cardInfo })=>{
+    const { cloudinaryImageId, name, avgRating, cuisines } = cardInfo;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
         children: [
@@ -36818,11 +36818,58 @@ $RefreshReg$(_c, "ShimmerUi");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kwDLv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4ifUV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$76ed.prelude(module);
+$parcel$ReactRefreshHelpers$bcf9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _userContext = require("../utils/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _s = $RefreshSig$();
+const Footer = ()=>{
+    _s();
+    const { user } = (0, _react.useContext)((0, _userContextDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            children: [
+                user.name,
+                "-",
+                user.email
+            ]
+        }, void 0, true, {
+            fileName: "src/component/Footer.js",
+            lineNumber: 8,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/component/Footer.js",
+        lineNumber: 7,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Footer, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cosKY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ea6f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ea6f.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -36831,293 +36878,321 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _contants = require("../contants"); // Make sure it's "constants," not "contants"
-var _shimmerUi = require("./ShimmerUi");
-var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
 var _s = $RefreshSig$();
-const RestaurantMenu = ()=>{
+const Error = ()=>{
     _s();
-    const { id  } = (0, _reactRouterDom.useParams)(); // Use destructuring to directly get 'id'
-    const [resId, setResId] = (0, _react.useState)(null);
-    (0, _react.useEffect)(()=>{
-        getResIdInfo();
-    }, [
-        id
-    ]); // Include 'id' as a dependency in useEffect
-    async function getResIdInfo() {
-        try {
-            const response = await fetch(`${(0, _contants.FETCH_MENU_URL)}/${id}`); // Concatenate 'id' properly
-            if (!response.ok) throw new Error("Network response was not ok");
-            const json = await response.json();
-            console.log(json);
-            const resData = checkJson(json);
-            setResId(resData);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
-    function checkJson(data) {
-        const result = [];
-        if (data?.data?.cards) for(let i = 0; i < data.data.cards.length; i++){
-            let xyz = data.data.cards[i]?.card?.card?.info;
-            console.log(xyz);
-            if (xyz !== undefined) result.push(xyz);
-        }
-        return result;
-    }
-    return !resId ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 41,
-        columnNumber: 19
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const err = (0, _reactRouterDom.useRouteError)();
+    const { status, statusText } = err;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: [
-                    "URL ID: ",
-                    id
-                ]
-            }, void 0, true, {
-                fileName: "src/component/RestrauntMenu.js",
-                lineNumber: 42,
+                children: "Oops!!"
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
-            resId && resId.map((y)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            width: "129px",
-                            src: (0, _contants.IMG_URL) + y.cloudinaryImageId
-                        }, void 0, false, {
-                            fileName: "src/component/RestrauntMenu.js",
-                            lineNumber: 44,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                            children: y?.name
-                        }, void 0, false, {
-                            fileName: "src/component/RestrauntMenu.js",
-                            lineNumber: 45,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                            children: y.city
-                        }, void 0, false, {
-                            fileName: "src/component/RestrauntMenu.js",
-                            lineNumber: 46,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: y.areaName
-                        }, void 0, false, {
-                            fileName: "src/component/RestrauntMenu.js",
-                            lineNumber: 47,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            children: y.cuisines.join(",")
-                        }, void 0, false, {
-                            fileName: "src/component/RestrauntMenu.js",
-                            lineNumber: 48,
-                            columnNumber: 13
-                        }, undefined)
-                    ]
-                }, y.id, true, {
-                    fileName: "src/component/RestrauntMenu.js",
-                    lineNumber: 43,
-                    columnNumber: 32
-                }, undefined))
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Something went Wrong \uD83D\uDE35\uD83D\uDE35"
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: status + ": " + statusText
+            }, void 0, false, {
+                fileName: "src/component/Error.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/component/RestrauntMenu.js",
-        lineNumber: 41,
-        columnNumber: 35
+        fileName: "src/component/Error.js",
+        lineNumber: 9,
+        columnNumber: 10
     }, undefined);
 };
-_s(RestaurantMenu, "xkx7aodGRr+JXnIy+tytUKngZ+Y=", false, function() {
+_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
     return [
-        (0, _reactRouterDom.useParams)
+        (0, _reactRouterDom.useRouteError)
     ];
 });
-_c = RestaurantMenu;
-exports.default = RestaurantMenu; // import React, { useEffect, useState } from "react";
- // import { useParams } from "react-router-dom";
- // import { IMG_CND_URL } from "../contants";
- // import Shimmer from "../component/ShimmerUi";
- // import useRestrauntMenuHook from "../utils/useRestrauntMenuHook";
- // import { addItem } from "../utils/cartSlice";
- // import { useDispatch } from "react-redux";
- // const RestrauntMenu = () => {
- //   // COME FROM URL-(ID)
- //   const { id } = useParams();
- //   const dispatch = useDispatch()
- //   // const handleCallItem = () => {
- //   //   dispatch(addItem("Grapes"));
- //   // };
- //   /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */
- //   const addFoodItem = (item)=>{
- //   dispatch(addItem(item))
- //   }
- //   // OWN HOOK
- //   const restaurant = useRestrauntMenuHook(id);
- //   // EARLY RETURN
- //   if (!restaurant) {
- //     return (
- //       <div>
- //         <Shimmer />
- //       </div>
- //     );
- //   }
- //   const { cards } = restaurant;
- //   return (
- //     <div className=''>
- //       <h1>Restaurant Id: {id}</h1>
- //       {cards ? (
- //         <>
- //           <h2>{cards[0]?.data?.data?.name}</h2>
- //           <img
- //             width='400px'
- //             src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
- //           />
- //           <h3>{cards[0]?.data?.data?.area}</h3>
- //           <h3>{cards[0]?.data?.data?.city}</h3>
- //           <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
- //           <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
- //           <h3>Address : {cards[0]?.data?.data?.address}</h3>
- //           <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
- //         </>
- //       ) : (
- //         <h2>No restaurant data available</h2>
- //       )}
- //       <div>
- //         <button
- //           className='p-2 m-2 bg-green-600'
- //           onClick={() => handleCallItem()}>
- //           Add Item Cart
- //         </button>
- //       </div>
- //       {/* Optionally perform*/}
- //     </div>
- //   );
- // };
- // export default RestrauntMenu;
- /* 
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { IMG_CND_URL } from "../contants";
-import Shimmer from "../component/ShimmerUi"
-
-const RestrauntMenu = () => {
-  const { id } = useParams();
-  console.log(id);
-
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    try {
-      const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
-      );
-      const data = await response.json();
-      console.log(data);
-      setRestaurant(data?.data);
-    } catch (error) {
-      console.error("Error fetching restaurant info:", error);
-    }
-  }
-
-  // EARLY RETURN 
-  if (!restaurant) {
-    return <div><Shimmer/></div>;
-  }
-
-  const { cards } = restaurant;
-
-  return (
-    <div className="">
-      <h1>Restaurant Id: {id}</h1>
-      {cards ? (
-        <>
-          <h2>{cards[0]?.data?.data?.name}</h2>
-          <img
-            width='400px'
-            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
-          />
-          <h3>{cards[0]?.data?.data?.area}</h3>
-          <h3>{cards[0]?.data?.data?.city}</h3>
-          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
-          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
-          <h3>Address : {cards[0]?.data?.data?.address}</h3>
-          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
-        </>
-      ) : (
-        <h2>No restaurant data available</h2>
-      )}
-    </div>
-  );
-};
-
-export default RestrauntMenu;
-
-
-
-
-*/ 
+_c = Error;
+exports.default = Error;
 var _c;
-$RefreshReg$(_c, "RestaurantMenu");
+$RefreshReg$(_c, "Error");
 
-  $parcel$ReactRefreshHelpers$76ed.postlude(module);
+  $parcel$ReactRefreshHelpers$ea6f.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../contants":"6xi3Y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ShimmerUi":"3UJAh"}],"k2jPV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3He1d":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fc23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fc23.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Contact us Page"
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 3,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "contact us page finding the path..."
+            }, void 0, false, {
+                fileName: "src/component/Contact.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$fc23.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dclnc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fd8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRedux = require("react-redux");
+var _foodItem = require("./FoodItem");
+var _foodItemDefault = parcelHelpers.interopDefault(_foodItem);
+var _cartSlice = require("../utils/cartSlice");
+var _s = $RefreshSig$();
+const Cart = ()=>{
+    _s();
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleClearCart = ()=>{
+        // here need to dispatch an action mandatory!!
+        dispatch((0, _cartSlice.clearCart)());
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "font-bold text-3xl",
+                children: [
+                    "Cart Items - ",
+                    cartItems.length
+                ]
+            }, void 0, true, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-green-100 p-2 m-5",
+                onClick: ()=>{
+                    handleClearCart();
+                },
+                children: "Clear Cart"
+            }, void 0, false, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex",
+                children: cartItems.map((item)=>{
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemDefault.default), {
+                        ...item
+                    }, item.id, false, {
+                        fileName: "src/component/Cart.js",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/component/Cart.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/Cart.js",
+        lineNumber: 12,
+        columnNumber: 10
+    }, undefined);
+};
+_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
+    return [
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
+    ];
+});
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","./FoodItem":"k206E","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k206E":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$113b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$113b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _contants = require("../contants");
+const FoodItem = ({ cloudinaryImageId, name, description, price })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                alt: "logo",
+                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                className: "font-bold text-xl",
+                children: name
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: description
+            }, void 0, false, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    price / 100,
+                    " Rating"
+                ]
+            }, void 0, true, {
+                fileName: "src/component/FoodItem.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/component/FoodItem.js",
+        lineNumber: 8,
+        columnNumber: 10
+    }, undefined);
+};
+_c = FoodItem;
+exports.default = FoodItem;
+var _c;
+$RefreshReg$(_c, "FoodItem");
+
+  $parcel$ReactRefreshHelpers$113b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../contants":"6xi3Y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5RXlr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addItem", ()=>addItem);
+parcelHelpers.export(exports, "removeItem", ()=>removeItem);
+parcelHelpers.export(exports, "clearCart", ()=>clearCart);
 var _toolkit = require("@reduxjs/toolkit");
-var _cartSlice = require("./cartSlice");
-var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
-const store = (0, _toolkit.configureStore)({
-    reducer: {
-        cart: (0, _cartSliceDefault.default)
+const cartSlice = (0, _toolkit.createSlice)({
+    name: "cart",
+    initialState: {
+        items: [
+            "banana",
+            "Potato",
+            "Carrot"
+        ]
+    },
+    // MODIFY SLICE State
+    reducers: {
+        addItem: (state, action)=>{
+            state.items.push(action.payload);
+        },
+        removeItem: (state, action)=>{
+            //H.W set it properly it remove from last Need to remove sequentionals
+            state.items.pop();
+        },
+        clearCart: (state)=>{
+            state.items = [];
+        }
     }
 });
-exports.default = store; /**
- * @REVISE CONCEPT 
- * Create Store
- * API -configureStore() - RTK
- * Provide my store to app
- *   -<Provider store={store} - import from react-redux
- *
- * create Slice
- *   Api - RTK - createSlice({
- *   name:"",
- *   initialState: reducers:{
- *   addItem:(state,action)
- * }})
- *
- * export default cartSlice.reducer
- * export const = {addItem,removeItem} = cartSlice.actions
- *
- * Put that Slice into store(store.js)
- *
- * - {
- * reducer:{
- * cart: cartSlice,
- * user: userSlice,
- * }
- *   }
- * REMEMBER Each slice export it's his reducers in this care cartSlice.js is personal reducers,userSlice his personal ... So all this come inside this here called it as 'reducer' object see above code
- * Name of Object is "reducer"
- * 
- * Now Finnaly Let's Subscrip the store By using "SELECTOR" for add item to cart 
- * 
- * GO To 🗃️component/Header.js 
+const { addItem, removeItem, clearCart } = cartSlice.actions;
+exports.default = cartSlice.reducer; /* 
+-♎initialState Always Empty for counting What should you put into this Cart.js
+-♎For that time being Puts Empty items
+-♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
+-♎For modifying this we use know as "reducers()" function As per 💹reducer.png
+-♎when it is called "on distpatched of an action"
+-♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
+-♎reducer() is the function at end of the day  
+-Here is the mapping BETWEEN Action & reducer function 
+-♎"addItem" is call base on the reducer call 
+-♎ So how do i modify store is this reducer takes two thing (state,action(payload)) so this is the place (talkAbout_action(payload)) where i'll get items which i'll add to my cart or store inside This "addItem"
+-♎state-> it mean initialState that i decleared 
+-♎action-> it is place where the data is coming in 
+Now let's modify Let's suppose i've 1 item with me so how do i put this inside my State Nothing much just push it!!
+-♎state.items.push(action.payload)
+-♎While clicking onClick(add to cart) button which mean we send data or will send data so that data will receive like this because it dispatched and action while clicking add to cart btn that's so that info receive here below one!
+-♎state.items.push(action.payload) @NOTE:here state hold current value 
+Then,
+Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
+🤔😵@REMEMBER:Never ever "Return" Any stuff O.w create mess/throwgh error Inside reducer 
+This Fuction does'nt return anything it takes a state & directly modify it! 
+Now Need to export this one 
+-♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one
+-♎Need to export It action Also 
+like export const {addItem,removeItem,clearCart} = cartSlice.reducer; 
+
+Why We export Stuff Because cartSlice behind the since it is is Big Object it manage all the things like this is how we manage!
+cartSlice = {
+  actions:{
+    addItem,removeItem,clearCart
+  },
+  reducer: reducers
+}
+
+Now,it's time to inject into our Store!
+
+Go 🗃️store.js & import stuff
+
  */ 
 
-},{"@reduxjs/toolkit":"lL1Ef","./cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lL1Ef":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lL1Ef":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "EnhancerArray", ()=>EnhancerArray);
@@ -40991,197 +41066,11 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5RXlr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "addItem", ()=>addItem);
-parcelHelpers.export(exports, "removeItem", ()=>removeItem);
-parcelHelpers.export(exports, "clearCart", ()=>clearCart);
-var _toolkit = require("@reduxjs/toolkit");
-const cartSlice = (0, _toolkit.createSlice)({
-    name: "cart",
-    initialState: {
-        items: [
-            "banana",
-            "Potato",
-            "Carrot"
-        ]
-    },
-    // MODIFY SLICE State
-    reducers: {
-        addItem: (state, action)=>{
-            state.items.push(action.payload);
-        },
-        removeItem: (state, action)=>{
-            //H.W set it properly it remove from last Need to remove sequentionals
-            state.items.pop();
-        },
-        clearCart: (state)=>{
-            state.items = [];
-        }
-    }
-});
-const { addItem , removeItem , clearCart  } = cartSlice.actions;
-exports.default = cartSlice.reducer; /* 
--♎initialState Always Empty for counting What should you put into this Cart.js
--♎For that time being Puts Empty items
--♎Now we created Name:of cart Slice & & it has empty object to count you use items.lenght 
--♎For modifying this we use know as "reducers()" function As per 💹reducer.png
--♎when it is called "on distpatched of an action"
--♎Ok what can be action inside my cart "ADD Item(click)" this is the place talk about reducer 'what action will call this reducer function'
--♎reducer() is the function at end of the day  
--Here is the mapping BETWEEN Action & reducer function 
--♎"addItem" is call base on the reducer call 
--♎ So how do i modify store is this reducer takes two thing (state,action(payload)) so this is the place (talkAbout_action(payload)) where i'll get items which i'll add to my cart or store inside This "addItem"
--♎state-> it mean initialState that i decleared 
--♎action-> it is place where the data is coming in 
-Now let's modify Let's suppose i've 1 item with me so how do i put this inside my State Nothing much just push it!!
--♎state.items.push(action.payload)
--♎While clicking onClick(add to cart) button which mean we send data or will send data so that data will receive like this because it dispatched and action while clicking add to cart btn that's so that info receive here below one!
--♎state.items.push(action.payload) @NOTE:here state hold current value 
-Then,
-Call clearCart((state)=>state.items = []) for empty the item stuff How it is !
-🤔😵@REMEMBER:Never ever "Return" Any stuff O.w create mess/throwgh error Inside reducer 
-This Fuction does'nt return anything it takes a state & directly modify it! 
-Now Need to export this one 
--♎export default cartSlice.reducer Note:use here .reducer it'll combine all the reducers & make it one
--♎Need to export It action Also 
-like export const {addItem,removeItem,clearCart} = cartSlice.reducer; 
-
-Why We export Stuff Because cartSlice behind the since it is is Big Object it manage all the things like this is how we manage!
-cartSlice = {
-  actions:{
-    addItem,removeItem,clearCart
-  },
-  reducer: reducers
-}
-
-Now,it's time to inject into our Store!
-
-Go 🗃️store.js & import stuff
-
- */ 
-
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9iwz2":[function(require,module,exports) {
-module.exports = require("7af3f934c20a30d3")(require("bbfb2846614c4983").getBundleURL("bLxZJ") + "Instamart.add16a2c.js" + "?" + Date.now()).catch((err)=>{
-    delete module.bundle.cache[module.id];
-    throw err;
-}).then(()=>module.bundle.root("5aN6S"));
-
-},{"7af3f934c20a30d3":"61B45","bbfb2846614c4983":"lgJ39"}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"4ifUV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$bcf9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kwDLv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$76ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$bcf9.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _userContext = require("../utils/UserContext");
-var _userContextDefault = parcelHelpers.interopDefault(_userContext);
-var _s = $RefreshSig$();
-const Footer = ()=>{
-    _s();
-    const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-            children: [
-                user.name,
-                "-",
-                user.email
-            ]
-        }, void 0, true, {
-            fileName: "src/component/Footer.js",
-            lineNumber: 8,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/component/Footer.js",
-        lineNumber: 7,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Footer, "fV01W0EFhpxcsxwq9eE2kaSNZKA=");
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$bcf9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/UserContext":"c5vgB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cosKY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ea6f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ea6f.prelude(module);
+$parcel$ReactRefreshHelpers$76ed.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -41190,250 +41079,249 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
+var _contants = require("../contants"); // Make sure it's "constants," not "contants"
+var _shimmerUi = require("./ShimmerUi");
+var _shimmerUiDefault = parcelHelpers.interopDefault(_shimmerUi);
 var _s = $RefreshSig$();
-const Error = ()=>{
+const RestaurantMenu = ()=>{
     _s();
-    const err = (0, _reactRouterDom.useRouteError)();
-    const { status , statusText  } = err;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const { id } = (0, _reactRouterDom.useParams)(); // Use destructuring to directly get 'id'
+    const [resId, setResId] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        getResIdInfo();
+    }, [
+        id
+    ]); // Include 'id' as a dependency in useEffect
+    async function getResIdInfo() {
+        try {
+            const response = await fetch(`${(0, _contants.FETCH_MENU_URL)}/${id}`); // Concatenate 'id' properly
+            if (!response.ok) throw new Error("Network response was not ok");
+            const json = await response.json();
+            console.log(json);
+            const resData = checkJson(json);
+            setResId(resData);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+    function checkJson(data) {
+        const result = [];
+        if (data?.data?.cards) for(let i = 0; i < data.data.cards.length; i++){
+            let xyz = data.data.cards[i]?.card?.card?.info;
+            console.log(xyz);
+            if (xyz !== undefined) result.push(xyz);
+        }
+        return result;
+    }
+    return !resId ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerUiDefault.default), {}, void 0, false, {
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 41,
+        columnNumber: 19
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Oops!!"
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Something went Wrong \uD83D\uDE35\uD83D\uDE35"
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: status + ": " + statusText
-            }, void 0, false, {
-                fileName: "src/component/Error.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/Error.js",
-        lineNumber: 9,
-        columnNumber: 10
-    }, undefined);
-};
-_s(Error, "U5GmGaAmh0j0MVy+E8WdBnjlm7s=", false, function() {
-    return [
-        (0, _reactRouterDom.useRouteError)
-    ];
-});
-_c = Error;
-exports.default = Error;
-var _c;
-$RefreshReg$(_c, "Error");
-
-  $parcel$ReactRefreshHelpers$ea6f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3He1d":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fc23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$fc23.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Contact us Page"
-            }, void 0, false, {
-                fileName: "src/component/Contact.js",
-                lineNumber: 3,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "contact us page finding the path..."
-            }, void 0, false, {
-                fileName: "src/component/Contact.js",
-                lineNumber: 4,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$fc23.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dclnc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7fd8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7fd8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRedux = require("react-redux");
-var _foodItem = require("./FoodItem");
-var _foodItemDefault = parcelHelpers.interopDefault(_foodItem);
-var _cartSlice = require("../utils/cartSlice");
-var _s = $RefreshSig$();
-const Cart = ()=>{
-    _s();
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
-    const dispatch = (0, _reactRedux.useDispatch)();
-    const handleClearCart = ()=>{
-        // here need to dispatch an action mandatory!!
-        dispatch((0, _cartSlice.clearCart)());
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "font-bold text-3xl",
                 children: [
-                    "Cart Items - ",
-                    cartItems.length
+                    "URL ID: ",
+                    id
                 ]
             }, void 0, true, {
-                fileName: "src/component/Cart.js",
-                lineNumber: 13,
+                fileName: "src/component/RestrauntMenu.js",
+                lineNumber: 42,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "bg-green-100 p-2 m-5",
-                onClick: ()=>{
-                    handleClearCart();
-                },
-                children: "Clear Cart"
-            }, void 0, false, {
-                fileName: "src/component/Cart.js",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "flex",
-                children: cartItems.map((item)=>{
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemDefault.default), {
-                        ...item
-                    }, item.id, false, {
-                        fileName: "src/component/Cart.js",
-                        lineNumber: 21,
-                        columnNumber: 9
-                    }, undefined);
-                })
-            }, void 0, false, {
-                fileName: "src/component/Cart.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, undefined)
+            resId && resId.map((y)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            width: "129px",
+                            src: (0, _contants.IMG_URL) + y.cloudinaryImageId
+                        }, void 0, false, {
+                            fileName: "src/component/RestrauntMenu.js",
+                            lineNumber: 44,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: y?.name
+                        }, void 0, false, {
+                            fileName: "src/component/RestrauntMenu.js",
+                            lineNumber: 45,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: y.city
+                        }, void 0, false, {
+                            fileName: "src/component/RestrauntMenu.js",
+                            lineNumber: 46,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            children: y.areaName
+                        }, void 0, false, {
+                            fileName: "src/component/RestrauntMenu.js",
+                            lineNumber: 47,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: y.cuisines.join(",")
+                        }, void 0, false, {
+                            fileName: "src/component/RestrauntMenu.js",
+                            lineNumber: 48,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, y.id, true, {
+                    fileName: "src/component/RestrauntMenu.js",
+                    lineNumber: 43,
+                    columnNumber: 32
+                }, undefined))
         ]
     }, void 0, true, {
-        fileName: "src/component/Cart.js",
-        lineNumber: 12,
-        columnNumber: 10
+        fileName: "src/component/RestrauntMenu.js",
+        lineNumber: 41,
+        columnNumber: 35
     }, undefined);
 };
-_s(Cart, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
+_s(RestaurantMenu, "xkx7aodGRr+JXnIy+tytUKngZ+Y=", false, function() {
     return [
-        (0, _reactRedux.useSelector),
-        (0, _reactRedux.useDispatch)
+        (0, _reactRouterDom.useParams)
     ];
 });
-_c = Cart;
-exports.default = Cart;
-var _c;
-$RefreshReg$(_c, "Cart");
+_c = RestaurantMenu;
+exports.default = RestaurantMenu; // import React, { useEffect, useState } from "react";
+ // import { useParams } from "react-router-dom";
+ // import { IMG_CND_URL } from "../contants";
+ // import Shimmer from "../component/ShimmerUi";
+ // import useRestrauntMenuHook from "../utils/useRestrauntMenuHook";
+ // import { addItem } from "../utils/cartSlice";
+ // import { useDispatch } from "react-redux";
+ // const RestrauntMenu = () => {
+ //   // COME FROM URL-(ID)
+ //   const { id } = useParams();
+ //   const dispatch = useDispatch()
+ //   // const handleCallItem = () => {
+ //   //   dispatch(addItem("Grapes"));
+ //   // };
+ //   /* dispatch an action & pass the payload "Grapes" Remember cartSlice.js while calling reduceres we pass 2 Parameters "state"&"action" so the "Grapes" is an action behind since it work like that {payload: "Grapes"} */
+ //   const addFoodItem = (item)=>{
+ //   dispatch(addItem(item))
+ //   }
+ //   // OWN HOOK
+ //   const restaurant = useRestrauntMenuHook(id);
+ //   // EARLY RETURN
+ //   if (!restaurant) {
+ //     return (
+ //       <div>
+ //         <Shimmer />
+ //       </div>
+ //     );
+ //   }
+ //   const { cards } = restaurant;
+ //   return (
+ //     <div className=''>
+ //       <h1>Restaurant Id: {id}</h1>
+ //       {cards ? (
+ //         <>
+ //           <h2>{cards[0]?.data?.data?.name}</h2>
+ //           <img
+ //             width='400px'
+ //             src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
+ //           />
+ //           <h3>{cards[0]?.data?.data?.area}</h3>
+ //           <h3>{cards[0]?.data?.data?.city}</h3>
+ //           <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
+ //           <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
+ //           <h3>Address : {cards[0]?.data?.data?.address}</h3>
+ //           <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
+ //         </>
+ //       ) : (
+ //         <h2>No restaurant data available</h2>
+ //       )}
+ //       <div>
+ //         <button
+ //           className='p-2 m-2 bg-green-600'
+ //           onClick={() => handleCallItem()}>
+ //           Add Item Cart
+ //         </button>
+ //       </div>
+ //       {/* Optionally perform*/}
+ //     </div>
+ //   );
+ // };
+ // export default RestrauntMenu;
+ /* 
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { IMG_CND_URL } from "../contants";
+import Shimmer from "../component/ShimmerUi"
 
-  $parcel$ReactRefreshHelpers$7fd8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","./FoodItem":"k206E","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k206E":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$113b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$113b.prelude(module);
+const RestrauntMenu = () => {
+  const { id } = useParams();
+  console.log(id);
 
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _contants = require("../contants");
-const FoodItem = ({ cloudinaryImageId , name , description , price  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "w-56 p-4 m-2 shadow-lg bg-pink-50",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                alt: "logo",
-                src: (0, _contants.IMG_CND_URL) + cloudinaryImageId
-            }, void 0, false, {
-                fileName: "src/component/FoodItem.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                className: "font-bold text-xl",
-                children: name
-            }, void 0, false, {
-                fileName: "src/component/FoodItem.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: description
-            }, void 0, false, {
-                fileName: "src/component/FoodItem.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    price / 100,
-                    " Rating"
-                ]
-            }, void 0, true, {
-                fileName: "src/component/FoodItem.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/component/FoodItem.js",
-        lineNumber: 8,
-        columnNumber: 10
-    }, undefined);
+  const [restaurant, setRestaurant] = useState(null);
+
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
+
+  async function getRestaurantInfo() {
+    try {
+      const response = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1458004&lng=79.0881546&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING" + id
+      );
+      const data = await response.json();
+      console.log(data);
+      setRestaurant(data?.data);
+    } catch (error) {
+      console.error("Error fetching restaurant info:", error);
+    }
+  }
+
+  // EARLY RETURN 
+  if (!restaurant) {
+    return <div><Shimmer/></div>;
+  }
+
+  const { cards } = restaurant;
+
+  return (
+    <div className="">
+      <h1>Restaurant Id: {id}</h1>
+      {cards ? (
+        <>
+          <h2>{cards[0]?.data?.data?.name}</h2>
+          <img
+            width='400px'
+            src={IMG_CND_URL + cards[0]?.data?.cloudinaryImageId}
+          />
+          <h3>{cards[0]?.data?.data?.area}</h3>
+          <h3>{cards[0]?.data?.data?.city}</h3>
+          <h3>{cards[0]?.data?.data?.totalRatingsString}</h3>
+          <h3>{cards[0]?.data?.data?.avgRating} Rating</h3>
+          <h3>Address : {cards[0]?.data?.data?.address}</h3>
+          <h3>DeliveryTime : {cards[0]?.data?.data?.deliveryTime} min</h3>
+        </>
+      ) : (
+        <h2>No restaurant data available</h2>
+      )}
+    </div>
+  );
 };
-_c = FoodItem;
-exports.default = FoodItem;
-var _c;
-$RefreshReg$(_c, "FoodItem");
 
-  $parcel$ReactRefreshHelpers$113b.postlude(module);
+export default RestrauntMenu;
+
+
+
+
+*/ 
+var _c;
+$RefreshReg$(_c, "RestaurantMenu");
+
+  $parcel$ReactRefreshHelpers$76ed.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../contants":"6xi3Y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../contants":"6xi3Y","./ShimmerUi":"3UJAh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7kLfj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8530 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41530,7 +41418,119 @@ $RefreshReg$(_c, "Profile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cA6WO":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k2jPV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _toolkit = require("@reduxjs/toolkit");
+var _cartSlice = require("./cartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+const store = (0, _toolkit.configureStore)({
+    reducer: {
+        cart: (0, _cartSliceDefault.default)
+    }
+});
+exports.default = store; /**
+ * @REVISE CONCEPT 
+ * Create Store
+ * API -configureStore() - RTK
+ * Provide my store to app
+ *   -<Provider store={store} - import from react-redux
+ *
+ * create Slice
+ *   Api - RTK - createSlice({
+ *   name:"",
+ *   initialState: reducers:{
+ *   addItem:(state,action)
+ * }})
+ *
+ * export default cartSlice.reducer
+ * export const = {addItem,removeItem} = cartSlice.actions
+ *
+ * Put that Slice into store(store.js)
+ *
+ * - {
+ * reducer:{
+ * cart: cartSlice,
+ * user: userSlice,
+ * }
+ *   }
+ * REMEMBER Each slice export it's his reducers in this care cartSlice.js is personal reducers,userSlice his personal ... So all this come inside this here called it as 'reducer' object see above code
+ * Name of Object is "reducer"
+ * 
+ * Now Finnaly Let's Subscrip the store By using "SELECTOR" for add item to cart 
+ * 
+ * GO To 🗃️component/Header.js 
+ */ 
+
+},{"@reduxjs/toolkit":"lL1Ef","./cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9iwz2":[function(require,module,exports) {
+module.exports = require("7af3f934c20a30d3")(require("bbfb2846614c4983").getBundleURL("bLxZJ") + "Instamart.add16a2c.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("5aN6S"));
+
+},{"7af3f934c20a30d3":"61B45","bbfb2846614c4983":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"cA6WO":[function(require,module,exports) {
 module.exports = require("b52f556b387ed8ca")(require("aa98648fbcdb6773").getBundleURL("bLxZJ") + "About.f8621144.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
